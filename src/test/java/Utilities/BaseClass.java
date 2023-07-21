@@ -19,13 +19,12 @@ public class BaseClass {
 	public static WebDriver alcDriver;
 	public static AndroidDriver pbDriver;
 
-	
-	  public String randomPhoneNumber;
-	  public String randomBusinessName;
-	  public String randomMemberPhoneNumber;
-	  public String randomMemberName;
-	  
-	 
+	protected static String randomBusinessName; 
+	protected static String randomMemberPhoneNumber;
+	protected static String randomMemberName;
+	protected static String randomPhoneNumber;
+	protected static String randomLastName;
+
 	@SuppressWarnings("deprecation")
 	@BeforeClass
 
@@ -43,43 +42,32 @@ public class BaseClass {
 
 		pbDriver = new AndroidDriver(url, caps);
 
-		WebDriverManager.chromedriver().setup();
-		alcDriver = new ChromeDriver();
-		alcDriver.manage().window().maximize();
-		alcDriver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		alcDriver.get("https://qa-admin.cognitionfoundry.io/#/login");
-
-	}
-
-//String randomPhoneNumber, String randomBusinessName, String randomMemberName,String randomMemberPhoneNumber 
-	@BeforeSuite
-	public void generateRandomData(String randomPhoneNumber, String randomBusinessName, String randomMemberName,String randomMemberPhoneNumber) 
-	{
-		randomPhoneNumber = RandomStringUtils.randomNumeric(8);
-		System.out.println("Collector Number " + "+63" + randomPhoneNumber);
-		this.randomPhoneNumber=randomPhoneNumber;
-
-		randomBusinessName = RandomStringUtils.randomAlphabetic(5);
-		System.out.println("Branch Name " + "Gayas" + randomBusinessName);
-		this.randomBusinessName=randomBusinessName;
-
-		randomMemberName = RandomStringUtils.randomAlphabetic(5);
-		System.out.println("Branch Member Name " + "Gayas" + randomMemberName);
-		this.randomMemberName=randomMemberName;
-
-		randomMemberPhoneNumber = RandomStringUtils.randomNumeric(8);
-		System.out.println("Branch Member Phone Number " + randomMemberPhoneNumber);
-		this.randomMemberPhoneNumber=randomMemberPhoneNumber;
 		
+		  WebDriverManager.chromedriver().setup(); alcDriver = new ChromeDriver();
+		  alcDriver.manage().window().maximize();
+		  alcDriver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		  alcDriver.get("https://qa-admin.cognitionfoundry.io/#/login");
+		  
+		 
 	}
 
-	/*
-	 * protected String getRandomPhoneNumber() { return randomPhoneNumber; }
-	 * 
-	 * protected String getGenerateBranchName() { return randomBusinessName; }
-	 * protected String getRandomBranchMemberName() { return randomMemberName; }
-	 * protected String getRandomBranchMemberPhoneNumber() { return
-	 * randomMemberPhoneNumber; }
-	 */
-
+	
+	  @BeforeSuite 
+	  public void generateRandomNumber() {
+	  randomPhoneNumber =RandomStringUtils.randomNumeric(8);
+	  System.out.println(randomPhoneNumber); 
+	  }
+	  
+	  protected String getRandomPhoneNumber() { 
+	  return randomPhoneNumber; }
+	  
+	  @BeforeSuite
+	  public void generateRandomLastName() 
+	  { 
+	  randomLastName =RandomStringUtils.randomAlphabetic(5);
+	  System.out.println(randomLastName);
+	  }
+	  protected String getRandomLastName() {
+	  return randomLastName; }
+	 
 }

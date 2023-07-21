@@ -6,9 +6,9 @@
       <class name="smoke_Suite.ALC_4351">
         <methods>
           <include name="branchVerify"/>
-          <include name="generateRandomData"/>
+          <include name="generateRandomNumber"/>
           <include name="setup"/>
-          <include name="signUp"/>
+          <include name="generateRandomLastName"/>
         </methods>
       </class> <!-- smoke_Suite.ALC_4351 -->
     </classes>

@@ -131,8 +131,7 @@ public void createBranch(String branchName) throws InterruptedException {
 	permission.click();
 	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(allow)));
 	allow.click();
-	Thread.sleep(10000);
-	// pbDriver.pressKey(new KeyEvent(AndroidKey.CAMERA));
+	Thread.sleep(2000);
 	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(shutter)));
 	shutter.click();
 	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(photoDone)));
@@ -230,6 +229,7 @@ public void addMemberToCreatedBranch(String branchmemberName,String branchMember
     pbDriver.perform(Arrays.asList(scrollcameraicon));
     wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(takeA_PictureOption)));
 	takeA_PictureOption.click();
+	Thread.sleep(2000);
 	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(shutter)));
 	shutter.click();
 	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(photoDone)));

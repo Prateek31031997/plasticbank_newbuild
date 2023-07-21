@@ -31,7 +31,7 @@ public class ALC_4350 extends BaseClass {
 		Thread.sleep(3000);
 		pbsignup.logout();	
 		PB_LoginPage pblogin = new PB_LoginPage(pbDriver);
-		pblogin.loginRandom(phoneNumber,password);
+		pblogin.loginRandom(password);
 		Thread.sleep(5000);
 		
 	}	

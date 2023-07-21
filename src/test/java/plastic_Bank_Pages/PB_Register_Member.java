@@ -15,6 +15,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import Utilities.BaseClass;
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.nativekey.AndroidKey;
+import io.appium.java_client.android.nativekey.KeyEvent;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 
@@ -123,7 +125,8 @@ public WebElement permission;
 @AndroidFindBy(uiAutomator = "new UiSelector().text(\"Allow\")")
 public WebElement allow;
 
-
+@AndroidFindBy(uiAutomator = "new UiSelector().text(\"Afghanistan (+93)\")")
+public WebElement selectAfghanistan;
 
 
 
@@ -215,26 +218,36 @@ public void enterPhoneNumber(String phoneNumber) {
   
 }
 
-public void chosenCountryCode() {
+public void chosenCountryCode() throws InterruptedException {
 	WebDriverWait wait = new WebDriverWait(pbDriver,Duration.ofSeconds(30));
 	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(phoneCountryCodedropdown)));
 	phoneCountryCodedropdown.click();
 	
 	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(countrylist)));
-  do {
-      PointerInput finger1 = new PointerInput(PointerInput.Kind.TOUCH, "finger1");
-      Sequence scrolla = new Sequence(finger1, 1);
-      scrolla.addAction(finger1.createPointerMove(Duration.ofMillis(0),
-          PointerInput.Origin.viewport(), countrylist.getLocation().getX() + 600, countrylist.getLocation().getY() + 700));
-      scrolla.addAction(finger1.createPointerDown(0));
-      scrolla.addAction(finger1.createPointerMove(Duration.ofMillis(400),
-          PointerInput.Origin.viewport(), countrylist.getLocation().getX() + 600, countrylist.getLocation().getY() + 200));
-      scrolla.addAction(finger1.createPointerUp(0));
-      pbDriver.perform(Arrays.asList(scrolla));
-  } while (!isElementDisplayed(selectdummycountry));
+	
+	
+	selectAfghanistan.click();
+	Thread.sleep(100);
+	for (int i = 0; i < 173; i++) {
 
-  selectPhilipines.click();  
-	oKButton.click();
+		pbDriver.pressKey(new KeyEvent(AndroidKey.DPAD_DOWN));
+		System.out.println(i);
+
+    }
+	do {
+        PointerInput finger1 = new PointerInput(PointerInput.Kind.TOUCH, "finger1");
+        Sequence scrolla = new Sequence(finger1, 1);
+        scrolla.addAction(finger1.createPointerMove(Duration.ofMillis(0),
+                PointerInput.Origin.viewport(), countrylist.getLocation().getX() + 600, countrylist.getLocation().getY() + 700));
+             scrolla.addAction(finger1.createPointerDown(0));
+             scrolla.addAction(finger1.createPointerMove(Duration.ofMillis(450),
+                 PointerInput.Origin.viewport(), countrylist.getLocation().getX() + 600, countrylist.getLocation().getY() + 200));
+             scrolla.addAction(finger1.createPointerUp(0));
+             pbDriver.perform(Arrays.asList(scrolla));
+         } while (!isElementDisplayed(selectdummycountry));
+     	Thread.sleep(100);
+     	selectPhilipines.click();  
+     	oKButton.click();
 }
 
 private boolean isElementDisplayed(WebElement element) {
@@ -313,15 +326,15 @@ public void verifyAccount() throws InterruptedException {
 	
 	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(verifyAccount)));
 	verifyAccount.click();
-	
+	Thread.sleep(2000);
 	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(enterSMS)));
 	enterSMS.sendKeys("778899");
-	
+	Thread.sleep(1000);
 	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(oKButton)));
-  oKButton.click();
- Thread.sleep(2000);
+    oKButton.click();
+    Thread.sleep(2000);
 	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(oKButton)));
-  oKButton.click();
+    oKButton.click();
 	
 }
 

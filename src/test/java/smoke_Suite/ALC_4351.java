@@ -12,8 +12,9 @@ public class ALC_4351 extends BaseClass {
 
 
 	public String name= "Gayas";
+	public String lastname= "Gayas";
 	public String password= "password1";
-	public String branchName="Gayas "+randomBusinessName;
+	public String branchName="Gayas Branch444";
 	public String phoneNumber= "+63"+randomPhoneNumber;
 	
 	
@@ -21,10 +22,11 @@ public class ALC_4351 extends BaseClass {
 	public void signUp()throws InterruptedException {
 		
 		PB_Register_Member pbsignup= new PB_Register_Member(pbDriver);
-		pbsignup.signUpRandom(name,password);
+		//pbsignup.signUp(name,lastname,password,phoneNumber);
+		pbsignup.signUpRandom(this.name,this.password);
 		pbsignup.logout();
 		PB_LoginPage pblogin = new PB_LoginPage(pbDriver);
-		pblogin.loginRandom(phoneNumber,password);
+		pblogin.loginRandom(this.password);
 		Thread.sleep(5000);
 	}
 	@Test(priority=1)

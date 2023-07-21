@@ -40,7 +40,7 @@ public WebElement loadedPage;
 public void enterRandomPhoneNumber() {
 	WebDriverWait wait = new WebDriverWait(pbDriver,Duration.ofSeconds(300));
 	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(phoneNumberTextFeild)));
-	phoneNumberTextFeild.sendKeys(randomPhoneNumber);
+	phoneNumberTextFeild.sendKeys("+63"+randomPhoneNumber);
 	}
 
 public void enterPhoneNumber(String phoneNumber) {
@@ -91,9 +91,9 @@ public void clickloginButton() {
 	}
 	 
 }
-public void loginRandom(String phoneNumber,String password) {
+public void loginRandom(String password) {
 	clickloginButton();
-	enterPhoneNumber(phoneNumber);
+	enterRandomPhoneNumber();
 	enterPassword(password);
 }
 public void login(String phoneNumber, String password) {
