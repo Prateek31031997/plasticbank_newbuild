@@ -198,7 +198,6 @@ public void enterLastName(String lastname) {
 public void random_enterLastName() {
 	WebDriverWait wait = new WebDriverWait(pbDriver,Duration.ofSeconds(30));
 	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(lastNameTextField)));
-	String randomLastName = RandomStringUtils.randomAlphabetic(5);
 	lastNameTextField.sendKeys(randomLastName);
 	System.out.println(randomLastName);
 }
@@ -231,7 +230,6 @@ public void chosenCountryCode() throws InterruptedException {
 	for (int i = 0; i < 173; i++) {
 
 		pbDriver.pressKey(new KeyEvent(AndroidKey.DPAD_DOWN));
-		System.out.println(i);
 
     }
 	do {

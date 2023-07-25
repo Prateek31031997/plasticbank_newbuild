@@ -3,7 +3,6 @@ package plastic_Bank_Pages;
 import java.time.Duration;
 import java.util.Arrays;
 
-import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.PointerInput;
 import org.openqa.selenium.interactions.Sequence;
@@ -110,9 +109,9 @@ public WebElement genderButton;
 @AndroidFindBy(uiAutomator = "new UiSelector().text(\"Male\")")
 public WebElement maleOption;
 
-public void createBranch(String branchName) throws InterruptedException {
+public void createBranch() throws InterruptedException {
 //Creating branch after member signup or login.
-	WebDriverWait wait = new WebDriverWait(pbDriver,Duration.ofSeconds(40));
+	WebDriverWait wait = new WebDriverWait(pbDriver,Duration.ofSeconds(30));
 	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(menuButton)));
 	menuButton.click();
 	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(createBusinessButton)));
@@ -127,16 +126,26 @@ public void createBranch(String branchName) throws InterruptedException {
 	cameraButton.click();
 	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(takeA_PictureOption)));
 	takeA_PictureOption.click();
-	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(permission)));
-	permission.click();
-	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(allow)));
-	allow.click();
-	Thread.sleep(2000);
-	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(shutter)));
-	shutter.click();
-	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(photoDone)));
-	photoDone.click();
-	Thread.sleep(2000);
+	/*
+	 * try{ wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(
+	 * permission))); permission.click();
+	 * wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(allow
+	 * ))); allow.click(); }catch(Exception e) {
+	 */
+		Thread.sleep(2000);
+		PointerInput fingerShutter = new PointerInput(PointerInput.Kind.TOUCH, "fingerShutter");
+	    Sequence scrollShutter = new Sequence(fingerShutter, 1);
+	    scrollShutter.addAction(fingerShutter.createPointerMove(Duration.ofMillis(0),
+	        PointerInput.Origin.viewport(), 550, 1930));
+	    scrollShutter.addAction(fingerShutter.createPointerDown(0));
+	    scrollShutter.addAction(fingerShutter.createPointerMove(Duration.ofMillis(100),
+	        PointerInput.Origin.viewport(), 550, 1930));
+	    scrollShutter.addAction(fingerShutter.createPointerUp(0));
+	    pbDriver.perform(Arrays.asList(scrollShutter));
+		wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(photoDone)));
+		photoDone.click();	
+		
+	Thread.sleep(7000);
 	PointerInput fingerconfirm = new PointerInput(PointerInput.Kind.TOUCH, "fingerconfirm");
     Sequence scrollconfirm = new Sequence(fingerconfirm, 1);
     scrollconfirm.addAction(fingerconfirm.createPointerMove(Duration.ofMillis(0),
@@ -146,9 +155,13 @@ public void createBranch(String branchName) throws InterruptedException {
         PointerInput.Origin.viewport(), 550, 2030));
     scrollconfirm.addAction(fingerconfirm.createPointerUp(0));
     pbDriver.perform(Arrays.asList(scrollconfirm));
-	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(businessNameTextField)));
 	
-	businessNameTextField.sendKeys(branchName);
+    Thread.sleep(5000);
+	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(businessNameTextField)));
+    System.out.println(randomBusinessName);
+	//businessNameTextField.click();
+	businessNameTextField.sendKeys(randomBusinessName);
+	System.out.println(randomBusinessName);
 	Thread.sleep(2000);
 	PointerInput fingerscrolluptocheckbox = new PointerInput(PointerInput.Kind.TOUCH, "fingerscrolluptocheckbox");
     Sequence scrollscrolluptocheckbox = new Sequence(fingerscrolluptocheckbox, 1);
@@ -182,7 +195,7 @@ public void createBranch(String branchName) throws InterruptedException {
     doneButton.click();
  }
 
-public void addMemberToCreatedBranch(String branchmemberName,String branchMemberphoneNumber) throws InterruptedException {
+public void addMemberToCreatedBranch() throws InterruptedException {
 	WebDriverWait wait = new WebDriverWait(pbDriver,Duration.ofSeconds(40));
 	Thread.sleep(2000);
 	PointerInput fingermembertab = new PointerInput(PointerInput.Kind.TOUCH, "fingermembertab");
@@ -197,12 +210,12 @@ public void addMemberToCreatedBranch(String branchmemberName,String branchMember
 	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(addmember)));
 	addmember.click();
 	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(addmember)));
-	
-	branchMemberNameTextField.sendKeys(branchmemberName);
+	System.out.println("branch adding member name "+randomBranchMemberName);
+	branchMemberNameTextField.sendKeys("Gayas "+randomBranchMemberName);
 	
 	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(branchMemberPhoneNumberTextField)));
 	
-	branchMemberPhoneNumberTextField.sendKeys(branchMemberphoneNumber);
+	branchMemberPhoneNumberTextField.sendKeys(randomBranchMemberPhoneNumber);
 	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(nextButton)));
 	nextButton.click();
 	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(genderButton)));
@@ -234,7 +247,7 @@ public void addMemberToCreatedBranch(String branchmemberName,String branchMember
 	shutter.click();
 	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(photoDone)));
 	photoDone.click();
-	Thread.sleep(2000);
+	Thread.sleep(4000);
 	PointerInput fingerConfirm = new PointerInput(PointerInput.Kind.TOUCH, "fingerConfirm");
     Sequence scrollConfirm = new Sequence(fingerConfirm, 1);
     scrollConfirm.addAction(fingerConfirm.createPointerMove(Duration.ofMillis(0),

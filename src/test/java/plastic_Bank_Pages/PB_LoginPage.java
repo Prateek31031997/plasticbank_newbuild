@@ -19,6 +19,8 @@ public PB_LoginPage(AndroidDriver driver) {
 		
 		PageFactory.initElements(new AppiumFieldDecorator(driver), this);
 	}
+@AndroidFindBy(uiAutomator ="new UiSelector().className(\"android.widget.Button\").instance(1)")
+public WebElement finalLogin;
 @AndroidFindBy(uiAutomator = "new UiSelector().text(\"Log in\")")
 public WebElement loginButton;
 @AndroidFindBy(uiAutomator = "new UiSelector().text(\"Logout\")")
@@ -34,29 +36,38 @@ public WebElement passwordTextFeild;
 @AndroidFindBy(id= "org.plasticbank.app:id/action_bar_root")
 public WebElement loadedPage;
 
+@AndroidFindBy(uiAutomator = "new UiSelector().text(\"OK\")")
+public WebElement oKButton;
 
-
+@AndroidFindBy(uiAutomator = "new UiSelector().text(\"MEMBER\")")
+public WebElement suspendedMember;
 
 public void enterRandomPhoneNumber() {
 	WebDriverWait wait = new WebDriverWait(pbDriver,Duration.ofSeconds(300));
 	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(phoneNumberTextFeild)));
+	phoneNumberTextFeild.clear();
 	phoneNumberTextFeild.sendKeys("+63"+randomPhoneNumber);
 	}
 
 public void enterPhoneNumber(String phoneNumber) {
 	WebDriverWait wait = new WebDriverWait(pbDriver,Duration.ofSeconds(300));
 	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(phoneNumberTextFeild)));
+	phoneNumberTextFeild.clear();
 	phoneNumberTextFeild.sendKeys(phoneNumber);
 	}
 
 public void enterPassword(String password) {
 	WebDriverWait wait = new WebDriverWait(pbDriver,Duration.ofSeconds(300));
 	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(passwordTextFeild)));
+	passwordTextFeild.clear();
 	passwordTextFeild.sendKeys(password);
-	passwordTextFeild.click();
-	pbDriver.pressKey(new KeyEvent(AndroidKey.ENTER));
-}
-	
+	}
+public void clickFinalLogin() {
+	WebDriverWait wait = new WebDriverWait(pbDriver,Duration.ofSeconds(300));
+	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(finalLogin)));
+	finalLogin.click();
+	}
+
 public void menu() {
 	WebDriverWait wait = new WebDriverWait(pbDriver,Duration.ofSeconds(300));
 	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(menuButton)));
@@ -95,10 +106,23 @@ public void loginRandom(String password) {
 	clickloginButton();
 	enterRandomPhoneNumber();
 	enterPassword(password);
+	clickFinalLogin();
 }
 public void login(String phoneNumber, String password) {
 	clickloginButton();
 	enterPhoneNumber(phoneNumber);
 	enterPassword(password);
+	clickFinalLogin();
+}
+public void oK() {
+	WebDriverWait wait = new WebDriverWait(pbDriver,Duration.ofSeconds(300));
+	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(oKButton)));
+	oKButton.click();
+}
+
+public void clickSuspendedMemebr() {
+	WebDriverWait wait = new WebDriverWait(pbDriver,Duration.ofSeconds(300));
+	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(suspendedMember)));
+	suspendedMember.click();
 }
 }

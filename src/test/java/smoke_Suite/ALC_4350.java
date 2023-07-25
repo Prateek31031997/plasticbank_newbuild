@@ -13,15 +13,7 @@ import plastic_Bank_Pages.PB_Register_Member;
 
 public class ALC_4350 extends BaseClass {
 	
-	public String memberName= "Gayas";
-	public String branchmemberName= "Gayas";
 	
-	public String password= "password1";
-	public String phoneNumber="+63"+randomPhoneNumber;
-	public String branchMemberphoneNumber=randomMemberPhoneNumber;
-	public String adminphoneNumber="+919560071590";
-	public String adminpassword="123456a";
-	public String branchName="Gayas "+randomBusinessName;
 	
 	@Test(priority=0)
 	public void signUp()throws InterruptedException {
@@ -41,43 +33,66 @@ public class ALC_4350 extends BaseClass {
 		
 		AlchemyLoginPage loginAlchmey=new AlchemyLoginPage(alcDriver);
 		loginAlchmey.alc_adminlogin(adminphoneNumber,adminpassword);
-		Members alc_mem =new Members(alcDriver);
-		alc_mem.verifyMember(memberName);
+		Thread.sleep(3000);
+		
 	}
-	@Test(priority=2)
+	@Test(priority =2)
+	public void VerifyMemberAlchmey() throws InterruptedException {
+		Members alc_mem =new Members(alcDriver);
+		alc_mem.selectAndverifyMember(phoneNumber);
+		Thread.sleep(5000);
+	}
+	//{"VerifyMemberAlchmey"}
+	@Test(priority =3 )
 	public void createBranchAndMember() throws InterruptedException {
 		
 		PB_Register_CollectionPoint branchCreate=new PB_Register_CollectionPoint(pbDriver);
-		branchCreate.createBranch(branchName);
-		branchCreate.addMemberToCreatedBranch(branchmemberName,branchMemberphoneNumber);
+		branchCreate.createBranch();
+		branchCreate.addMemberToCreatedBranch();
 		Thread.sleep(5000);
 		PB_Register_Member pbRegMem=new PB_Register_Member(pbDriver);
 		pbRegMem.logout();		
 	}
-	@Test(priority=3)
-	public void EditMemberDetails() {
-		Members mem=new Members(alcDriver);
-		mem.editMemberDetails();
-	}
+	
 	@Test(priority=4)
+	public void EditMemberDetails() throws InterruptedException {
+		Members mem=new Members(alcDriver);
+		mem.editMemberDetails(branchMemberphoneNumber);
+	}
+	@Test(priority=5)
 	public void loginBranchMemberPB() throws InterruptedException {
 		PB_LoginPage lp =new PB_LoginPage(pbDriver);
 		lp.login(branchMemberphoneNumber, password);
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		PB_Register_Member pbRegMem=new PB_Register_Member(pbDriver);
 		pbRegMem.logout();
-	}
-	@Test(priority=5)
-	public void suspendMemberALC() {
-		Members mem=new Members(alcDriver);
-		mem.suspendMember();
 	}
 	@Test(priority=6)
+	public void suspendMemberALC() throws InterruptedException {
+		Members mem=new Members(alcDriver);
+		System.out.println("Suspending this member "+branchMemberphoneNumber);
+		mem.suspendMember(branchMemberphoneNumber);
+		Thread.sleep(4000);
+	}
+	@Test(priority=7)
 	public void memberSuspendVerify() {
-		PB_Register_Member pbRegMem=new PB_Register_Member(pbDriver);
-		pbRegMem.logout();
+		/*
+		 * PB_Register_Member pbRegMem=new PB_Register_Member(pbDriver);
+		 * pbRegMem.logout();
+		 */
 		PB_LoginPage lp =new PB_LoginPage(pbDriver);
 		lp.login(branchMemberphoneNumber,password);
+		lp.oK();	
+	}
+	@Test(priority=8)
+	public void branchSuspendMemberVerification() throws InterruptedException {
+	
+		Thread.sleep(3000);
+		PB_LoginPage lp = new PB_LoginPage(pbDriver);
+		lp.loginRandom(password);
+		Thread.sleep(2000);
+		lp.clickSuspendedMemebr();
+		lp.oK();
 		
 	}
 }
