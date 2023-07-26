@@ -1,5 +1,7 @@
 package smoke_Suite;
 
+import io.qameta.allure.testng.AllureTestNg;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import Utilities.BaseClass;
@@ -8,6 +10,7 @@ import alchemy_Pages.Branches;
 import io.qameta.allure.Description;
 import plastic_Bank_Pages.PB_LoginPage;
 
+@Listeners({AllureTestNg.class})
 public class ALC_4351 extends BaseClass {
 	
 	@Test(priority=0)
