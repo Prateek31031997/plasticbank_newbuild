@@ -8,6 +8,7 @@ import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
 
@@ -75,7 +76,7 @@ public class BaseClass {
 	  @BeforeSuite 
 	  public void generateRandomNumber() {
 	  randomPhoneNumber =RandomStringUtils.randomNumeric(8);
-	  System.out.println("Member Number :"+randomPhoneNumber); 
+	  System.out.println("Member Number :+63"+randomPhoneNumber); 
 	  }
 	  
 	  protected String getRandomPhoneNumber() { 
@@ -117,6 +118,11 @@ public class BaseClass {
 	  protected String getBranchName() {
 	  return randomBusinessName; }
 	 
+	  @AfterClass
+	  public void quit() {
+		  pbDriver.quit();
+		  alcDriver.quit();
+	  }
 	 
 }
 

@@ -109,6 +109,9 @@ public WebElement genderButton;
 @AndroidFindBy(uiAutomator = "new UiSelector().text(\"Male\")")
 public WebElement maleOption;
 
+@AndroidFindBy(uiAutomator = "new UiSelector().text(\"REGISTER MEMBER\")")
+public WebElement registerUser;
+
 public void createBranch() throws InterruptedException {
 //Creating branch after member signup or login.
 	WebDriverWait wait = new WebDriverWait(pbDriver,Duration.ofSeconds(30));
@@ -197,18 +200,9 @@ public void createBranch() throws InterruptedException {
 
 public void addMemberToCreatedBranch() throws InterruptedException {
 	WebDriverWait wait = new WebDriverWait(pbDriver,Duration.ofSeconds(40));
-	Thread.sleep(2000);
-	PointerInput fingermembertab = new PointerInput(PointerInput.Kind.TOUCH, "fingermembertab");
-    Sequence scrollmembertab = new Sequence(fingermembertab, 1);
-    scrollmembertab.addAction(fingermembertab.createPointerMove(Duration.ofMillis(0),
-        PointerInput.Origin.viewport(), 690, 2050));
-    scrollmembertab.addAction(fingermembertab.createPointerDown(0));
-    scrollmembertab.addAction(fingermembertab.createPointerMove(Duration.ofMillis(100),
-        PointerInput.Origin.viewport(), 690, 2050));
-    scrollmembertab.addAction(fingermembertab.createPointerUp(0));
-    pbDriver.perform(Arrays.asList(scrollmembertab));
-	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(addmember)));
-	addmember.click();
+	Thread.sleep(1000);
+	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(registerUser)));
+	registerUser.click();
 	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(addmember)));
 	System.out.println("branch adding member name "+randomBranchMemberName);
 	branchMemberNameTextField.sendKeys("Gayas "+randomBranchMemberName);

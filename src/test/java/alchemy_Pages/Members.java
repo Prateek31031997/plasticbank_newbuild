@@ -1,6 +1,5 @@
 package alchemy_Pages;
 
-import static org.testng.Assert.assertEquals;
 
 import java.time.Duration;
 
@@ -140,6 +139,10 @@ public void clickSpecificMember() throws InterruptedException {
 	
 }
 public void suspendAccount() {
+	/*
+	 * WebDriverWait wait = new WebDriverWait(pbDriver,Duration.ofSeconds(300));
+	 * wait.until(ExpectedConditions.elementToBeClickable(suspendAccount));
+	 */
 	suspendAccount.click();
 }
 private void clickAlertBoxBtnOK() {
@@ -171,7 +174,7 @@ public void selectAndverifyMember(String pNum) throws InterruptedException {
 //	    System.out.println("Name verification failed");
 //		}
 	}
-public void editMemberDetails(String pNumber) throws InterruptedException {
+public void editMemberDetails(String pNumber,String editdetail) throws InterruptedException {
 	Thread.sleep(2000);
 	members_TAB.click();
 	Thread.sleep(10000);
@@ -185,7 +188,7 @@ public void editMemberDetails(String pNumber) throws InterruptedException {
 	wait.until(ExpectedConditions.elementToBeClickable(edit));
 	edit.click();
 	edit_name.clear();
-	edit_name.sendKeys("Gayas Khan");
+	edit_name.sendKeys(editdetail);
 	saveButton.click();	
 }
 public void suspendMember(String suspendPNumber) throws InterruptedException {
@@ -194,12 +197,12 @@ public void suspendMember(String suspendPNumber) throws InterruptedException {
 	Thread.sleep(5000);
 	WebDriverWait wait = new WebDriverWait(pbDriver,Duration.ofSeconds(300));
 	wait.until(ExpectedConditions.elementToBeClickable(phone));
-	//phone.click();
 	phone.clear();
 	phone.sendKeys(suspendPNumber);
 	clickSpecificMember();
 	Thread.sleep(3000);
 	suspendAccount();
+	Thread.sleep(2000);
 	Boolean verify = verfiyAlertBox();
 	assert verify.equals(true);
 	clickAlertBoxBtnOK();

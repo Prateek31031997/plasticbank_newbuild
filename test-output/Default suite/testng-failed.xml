@@ -3,18 +3,18 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="smoke_Suite.ALC_4350">
+      <class name="smoke_Suite.ALC_4351">
         <methods>
           <include name="generateRandomBranchMemberNumber"/>
           <include name="generateRandomNumber"/>
-          <include name="VerifyMemberAlchmey"/>
+          <include name="branchVerifyAndEdit"/>
           <include name="setup"/>
-          <include name="branchSuspendMemberVerification"/>
           <include name="generateRandomLastName"/>
+          <include name="quit"/>
           <include name="generateBranchMemberName"/>
           <include name="generateBranchName"/>
         </methods>
-      </class> <!-- smoke_Suite.ALC_4350 -->
+      </class> <!-- smoke_Suite.ALC_4351 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

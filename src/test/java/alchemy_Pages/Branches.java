@@ -7,6 +7,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -65,6 +66,14 @@ private WebElement suspendAccount_checkbox;
 @FindBy(xpath = "//div[@role='document']/div")
 private WebElement popUp_alert;
 
+
+@FindBy(xpath="//div[@class='partner-info name']")
+@CacheLookup private WebElement verifyNameText;
+
+@FindBy(xpath="//input[@name='name']")
+@CacheLookup private WebElement editNameTextFeild;
+
+
 @FindBy(xpath = "//div/button[text()='OK']")
 private WebElement okBtn_alertBox;
 
@@ -108,18 +117,41 @@ public Boolean verfiyAlertBox() {
 public void clickAlertBoxBtnOK() {
 	okBtn_alertBox.click();
 }
-
-public void editBranchDetails() throws InterruptedException {
+public void editBranchCityDetails(String pNum) throws InterruptedException {
 	clickBranchsTab();
+	Thread.sleep(5000);
+	WebDriverWait wait = new WebDriverWait(pbDriver,Duration.ofSeconds(300));
+	wait.until(ExpectedConditions.elementToBeClickable(phone_SearchBox));
+	phone_SearchBox.clear();
+	phone_SearchBox.sendKeys(pNum);
 	clickSpecificBranch();
 	editBranch();
 	editUserCity("Dehradun");
 	saveUserDetails();
+	
 }
 
-public void suspendedAccount() throws InterruptedException {
+public void editBranchNameDetails(String pNum) throws InterruptedException {
 	clickBranchsTab();
+	WebDriverWait wait = new WebDriverWait(pbDriver,Duration.ofSeconds(300));
+	wait.until(ExpectedConditions.elementToBeClickable(phone_SearchBox));
+	phone_SearchBox.clear();
+	phone_SearchBox.sendKeys(pNum);
 	clickSpecificBranch();
+	editBranch();
+	editNameTextFeild.clear();
+	editNameTextFeild.sendKeys("Ashish Rawat");
+	saveUserDetails();
+}
+
+public void suspendBranchAccount(String Num) throws InterruptedException {
+	clickBranchsTab();
+	WebDriverWait wait = new WebDriverWait(pbDriver,Duration.ofSeconds(300));
+	wait.until(ExpectedConditions.elementToBeClickable(phone_SearchBox));
+	phone_SearchBox.clear();
+	phone_SearchBox.sendKeys(Num);
+	clickSpecificBranch();
+	Thread.sleep(2000);
 	suspendAccount();
 	Boolean verify = verfiyAlertBox();
 	assert verify.equals(true);

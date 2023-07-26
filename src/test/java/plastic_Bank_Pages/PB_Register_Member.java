@@ -3,7 +3,6 @@ package plastic_Bank_Pages;
 import java.time.Duration;
 import java.util.Arrays;
 
-import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;

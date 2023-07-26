@@ -1,16 +1,17 @@
 package plastic_Bank_Pages;
 
 import java.time.Duration;
+import java.util.Arrays;
 
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.PointerInput;
+import org.openqa.selenium.interactions.Sequence;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import Utilities.BaseClass;
 import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.android.nativekey.AndroidKey;
-import io.appium.java_client.android.nativekey.KeyEvent;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 
@@ -29,6 +30,9 @@ public WebElement logoutButton;
 public WebElement settingsButton;
 @AndroidFindBy(uiAutomator = "new UiSelector().text(\"menu\")")
 public WebElement menuButton;
+
+@AndroidFindBy(uiAutomator = "new UiSelector().text(\"Edit\")")
+public WebElement editButton;
 @AndroidFindBy(xpath= "//android.view.View[1]/android.view.View/android.view.View/android.view.View/android.widget.EditText")
 public WebElement phoneNumberTextFeild;
 @AndroidFindBy(xpath= "//android.view.View[2]/android.view.View/android.view.View/android.view.View/android.widget.EditText")
@@ -36,11 +40,29 @@ public WebElement passwordTextFeild;
 @AndroidFindBy(id= "org.plasticbank.app:id/action_bar_root")
 public WebElement loadedPage;
 
+@AndroidFindBy(uiAutomator = "new UiSelector().text(\"While using the app\")")
+public WebElement permission;
+
 @AndroidFindBy(uiAutomator = "new UiSelector().text(\"OK\")")
 public WebElement oKButton;
 
 @AndroidFindBy(uiAutomator = "new UiSelector().text(\"MEMBER\")")
 public WebElement suspendedMember;
+
+@AndroidFindBy(uiAutomator = "new UiSelector().text(\"menu\")")
+public WebElement menu;
+@AndroidFindBy(uiAutomator = "new UiSelector().text(\"Logout\")")
+public WebElement logout;
+
+@AndroidFindBy(uiAutomator = "UiSelector().className(\"android.view.View\").instance(20)")
+public WebElement nameToBeVerified;
+
+
+public void permission() {
+	WebDriverWait wait = new WebDriverWait(pbDriver,Duration.ofSeconds(300));
+	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(permission)));
+	permission.click();
+}
 
 public void enterRandomPhoneNumber() {
 	WebDriverWait wait = new WebDriverWait(pbDriver,Duration.ofSeconds(300));
@@ -124,5 +146,37 @@ public void clickSuspendedMemebr() {
 	WebDriverWait wait = new WebDriverWait(pbDriver,Duration.ofSeconds(300));
 	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(suspendedMember)));
 	suspendedMember.click();
+}
+
+public void clickmenu() {
+	WebDriverWait wait = new WebDriverWait(pbDriver,Duration.ofSeconds(30));
+	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(menu)));
+	menu.click();
+}
+
+public void clicklogout() {
+	WebDriverWait wait = new WebDriverWait(pbDriver,Duration.ofSeconds(30));
+	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(logout)));
+	logout.click();
+}
+public void logout(){
+	clickmenu();
+	clicklogout();
+}
+public void nameVerify() throws InterruptedException {
+	Thread.sleep(2000);
+	PointerInput globetab = new PointerInput(PointerInput.Kind.TOUCH, "globetab");
+    Sequence scrollconfirmpassword = new Sequence(globetab, 1);
+    scrollconfirmpassword.addAction(globetab.createPointerMove(Duration.ofMillis(0),
+        PointerInput.Origin.viewport(), 400, 2050));
+    scrollconfirmpassword.addAction(globetab.createPointerDown(0));
+    scrollconfirmpassword.addAction(globetab.createPointerMove(Duration.ofMillis(1000),
+        PointerInput.Origin.viewport(), 400, 2050));
+    scrollconfirmpassword.addAction(globetab.createPointerUp(0));
+    pbDriver.perform(Arrays.asList(scrollconfirmpassword));
+    WebDriverWait wait = new WebDriverWait(pbDriver,Duration.ofSeconds(30));
+	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(nameToBeVerified)));
+	String VerifyName=nameToBeVerified.getText();
+	assert VerifyName.contentEquals("Ashish Rawat");  
 }
 }
