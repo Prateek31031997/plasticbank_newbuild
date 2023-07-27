@@ -1,27 +1,31 @@
 package smoke_Suite;
 
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import Utilities.BaseClass;
 import alchemy_Pages.AlchemyLoginPage;
 import alchemy_Pages.Processors;
 import io.qameta.allure.Description;
+import io.qameta.allure.testng.AllureTestNg;
 import plastic_Bank_Pages.PB_LoginPage;
 import plastic_Bank_Pages.PB_Register_Processor;
 
+@Listeners({AllureTestNg.class})
 public class ALC_4354 extends BaseClass {
 	
-	@Test	
+	@Test(priority =0)	
 	@Description("Create Processor with already Created Branch")
-	public void myTest() throws InterruptedException {
+	public void createProcessor() throws InterruptedException {
 		
 		System.out.println("Create Processor with already Created Branch");
 		PB_LoginPage l=new PB_LoginPage(pbDriver);
+		l.permission();
 		l.loginRandom(password);
 		PB_Register_Processor cbp =new PB_Register_Processor(pbDriver);
 	    cbp.createProcessor();
 	}
-	@Test
+	@Test(priority =1)
 	@Description("Search and Edit Processor In Alchmey")
 	public void seacrchAndEditProcessorInAlchmey() throws InterruptedException {
 		
@@ -32,7 +36,7 @@ public class ALC_4354 extends BaseClass {
 	    System.out.println(phoneNumber);
 	    apt.SearchAndEditProcessorInAlchemy(phoneNumber);
 	}
-	@Test
+	@Test(priority =2)
 	@Description("Login In app and Verify")
 	public void VerifyInApp() throws InterruptedException {
 		
@@ -43,6 +47,8 @@ public class ALC_4354 extends BaseClass {
 	    Thread.sleep(2000);
 	    l.logout();
 	    l.loginRandom(password);
+	    l.menu();
+	    Thread.sleep(4000);
 	}
 
 }

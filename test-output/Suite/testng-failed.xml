@@ -3,26 +3,24 @@
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="smoke_Suite.ALC_4352">
+      <class name="smoke_Suite.ALC_4354">
         <methods>
           <include name="generateRandomBranchMemberNumber"/>
           <include name="generateRandomNumber"/>
-          <include name="createNewStore"/>
-          <include name="loginAlchmey"/>
+          <include name="VerifyInApp"/>
+          <include name="createProcessor"/>
+          <include name="seacrchAndEditProcessorInAlchmey"/>
           <include name="setup"/>
-          <include name="verifyNewStore"/>
           <include name="generateRandomLastName"/>
           <include name="quit"/>
           <include name="generateBranchMemberName"/>
           <include name="generateBranchName"/>
         </methods>
-      </class> <!-- smoke_Suite.ALC_4352 -->
+      </class> <!-- smoke_Suite.ALC_4354 -->
       <class name="smoke_Suite.ALC_4351">
         <methods>
           <include name="generateRandomBranchMemberNumber"/>
           <include name="generateRandomNumber"/>
-          <include name="openRegisterdBranchInApp"/>
-          <include name="branchVerifyAndEdit"/>
           <include name="verifySuspendedAccount"/>
           <include name="verifyEditInApp"/>
           <include name="setup"/>
@@ -33,37 +31,17 @@
           <include name="generateBranchName"/>
         </methods>
       </class> <!-- smoke_Suite.ALC_4351 -->
-      <class name="smoke_Suite.ALC_4354">
-        <methods>
-          <include name="myTest"/>
-          <include name="generateRandomBranchMemberNumber"/>
-          <include name="generateRandomNumber"/>
-          <include name="VerifyInApp"/>
-          <include name="seacrchAndEditProcessorInAlchmey"/>
-          <include name="setup"/>
-          <include name="generateRandomLastName"/>
-          <include name="quit"/>
-          <include name="generateBranchMemberName"/>
-          <include name="generateBranchName"/>
-        </methods>
-      </class> <!-- smoke_Suite.ALC_4354 -->
       <class name="smoke_Suite.ALC_4350">
         <methods>
-          <include name="VerifyMemberAlchmey"/>
-          <include name="branchSuspendMemberVerification"/>
-          <include name="createBranchAndMember"/>
-          <include name="generateRandomLastName"/>
-          <include name="generateBranchName"/>
-          <include name="suspendMemberALC"/>
-          <include name="loginBranchMemberPB"/>
           <include name="generateRandomBranchMemberNumber"/>
           <include name="generateRandomNumber"/>
-          <include name="memberSuspendVerify"/>
-          <include name="EditMemberDetails"/>
+          <include name="VerifyMemberAlchmey"/>
           <include name="setup"/>
+          <include name="generateRandomLastName"/>
           <include name="quit"/>
           <include name="generateBranchMemberName"/>
           <include name="signUp"/>
+          <include name="generateBranchName"/>
         </methods>
       </class> <!-- smoke_Suite.ALC_4350 -->
     </classes>

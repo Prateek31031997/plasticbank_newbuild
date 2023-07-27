@@ -1,5 +1,7 @@
 package smoke_Suite;
 
+import org.testng.annotations.Listeners;
+import io.qameta.allure.testng.AllureTestNg;
 import org.testng.annotations.Test;
 
 import Utilities.BaseClass;
@@ -12,8 +14,8 @@ import plastic_Bank_Pages.PB_Register_Member;
 
 //ALC-4350 = In App, Member - Create , new user login, edit, check in Alchemy to confirm new user exists , suspend account
 
+@Listeners({AllureTestNg.class})
 public class ALC_4350 extends BaseClass {
-	
 	
 	
 	@Test(priority=0)

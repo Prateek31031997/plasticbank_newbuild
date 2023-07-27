@@ -203,7 +203,8 @@ public void addMemberToCreatedBranch() throws InterruptedException {
 	Thread.sleep(1000);
 	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(registerUser)));
 	registerUser.click();
-	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(addmember)));
+	Thread.sleep(2000);
+	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(branchMemberNameTextField)));
 	System.out.println("branch adding member name "+randomBranchMemberName);
 	branchMemberNameTextField.sendKeys("Gayas "+randomBranchMemberName);
 	

@@ -137,10 +137,12 @@ public void createProcessor() throws InterruptedException {
 	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(takeA_PictureOption)));
 	takeA_PictureOption.click();
 	
-	  wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(
-	  permission))); permission.click();
-	  wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(allow
-	  ))); allow.click();
+	/*
+	 * wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(
+	 * permission))); permission.click();
+	 * wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(allow
+	 * ))); allow.click();
+	 */
 	 
 	Thread.sleep(7000);
 	PointerInput fingerShutter = new PointerInput(PointerInput.Kind.TOUCH, "fingerShutter");

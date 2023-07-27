@@ -1,1 +1,0 @@
-{"uuid":"bc225e02-8bbf-4e5e-bea4-68b61ceb2abe","name":"smoke_Suite.ALC_4350","children":["7da5b275-2002-4e5c-ab2f-828d1937c46e"],"befores":[{"name":"chrome_setup","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1689670287849,"stop":1689670381694}],"afters":[],"start":1689670287815,"stop":1689670388026}

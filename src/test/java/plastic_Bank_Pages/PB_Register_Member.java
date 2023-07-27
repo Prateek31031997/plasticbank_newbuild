@@ -27,11 +27,11 @@ public PB_Register_Member(AndroidDriver pBriver) {
 		PageFactory.initElements(new AppiumFieldDecorator(pbDriver), this);
 		}
 //elements:-
-@AndroidFindBy(xpath= "//android.view.View[1]/android.view.View/android.view.View/android.view.View/android.widget.EditText")
+@AndroidFindBy(uiAutomator= "new UiSelector().className(\"android.widget.EditText\").instance(0)")
 public WebElement loginPagePhoneNumberTextField;
-@AndroidFindBy(xpath= "//android.view.View[2]/android.view.View/android.view.View/android.view.View/android.widget.EditText")
+@AndroidFindBy(uiAutomator= "new UiSelector().className(\"android.widget.EditText\").instance(0)")
 public WebElement loginPagePasswordTextField;
-@AndroidFindBy(xpath= "//android.widget.CheckBox")
+@AndroidFindBy(uiAutomator= "new UiSelector().className(\"android.widget.CheckBox\").instance(0)")
 public WebElement termsAndConditionsCheckBox;
 @AndroidFindBy(uiAutomator = "new UiScrollable(new UiSelector()).scrollIntoView(text(\"Password\"));")
 public WebElement passwordTextField;
@@ -41,7 +41,7 @@ public WebElement confirmPasswordTextField;
 public WebElement shutter;
 @AndroidFindBy(xpath= "//android.widget.ImageButton[@content-desc=\"Done\"]")
 public WebElement photoDone;
-@AndroidFindBy(xpath= "//android.view.View[2]/android.view.View/android.view.View[8]/android.view.View/android.widget.EditText")
+@AndroidFindBy(uiAutomator= "new UiSelector().className(\"android.widget.EditText\").instance(2)")
 public WebElement phoneNumberTextField;
 @AndroidFindBy(uiAutomator = "new UiSelector().text(\"Sign up\")")
 public WebElement signUpButton;
@@ -63,18 +63,18 @@ public WebElement logout;
 public WebElement male;
 @AndroidFindBy(uiAutomator = "new UiSelector().text(\"Collectors\")")
 public WebElement collectorsPannel;
-@AndroidFindBy(xpath = "//android.view.View[3]/android.view.View/android.view.View/android.widget.Button")
+@AndroidFindBy(uiAutomator = "new UiSelector().className(\"android.widget.Button\").instance(1)")
 public WebElement becomeACollectorButton;
-@AndroidFindBy(xpath= "//android.view.View[3]/android.view.View/android.widget.EditText")
+@AndroidFindBy(uiAutomator= "new UiSelector().className(\"android.widget.EditText\").instance(0)")
 public WebElement firstNameTextField;
-@AndroidFindBy(xpath= "//android.view.View[5]/android.view.View/android.widget.EditText")
+@AndroidFindBy(uiAutomator= "new UiSelector().className(\"android.widget.EditText\").instance(1)")
 public WebElement lastNameTextField;
-@AndroidFindBy(xpath= "(//android.widget.Spinner)[1]")
+@AndroidFindBy(uiAutomator= "new UiSelector().className(\"android.widget.Spinner\").instance(0)")
 public WebElement phoneCountryCodedropdown;
 //@AndroidFindBy(uiAutomator = "new UiSelector().text(\"Philippines (+63)\")")
 @AndroidFindBy(uiAutomator = "new UiScrollable(new UiSelector()).scrollIntoView(text(\"Philippines (+63)\"));")
 public WebElement selectPhilipines;
-@AndroidFindBy(xpath= "//android.app.Dialog/android.view.View")
+@AndroidFindBy(uiAutomator= "new UiScrollable(new UiSelector().className(\"android.view.View\").instance(52))")
 public WebElement countrylist;
 @AndroidFindBy(uiAutomator = "new UiSelector().text(\"OK\")")
 public WebElement oKButton;
@@ -82,7 +82,7 @@ public WebElement oKButton;
 public WebElement dateOfBirthTextField;
 @AndroidFindBy(uiAutomator= "new UiSelector().text(\"Verify Phone\")")
 public WebElement  verifyPhoneText;
-@AndroidFindBy(xpath= "//android.app.Dialog/android.view.View/android.view.View[2]/android.view.View[3]")
+@AndroidFindBy(uiAutomator= "new UiSelector().className(\"android.view.View\").instance(60)")
 public WebElement years;
 @AndroidFindBy(uiAutomator = "new UiSelector().text(\"Qatar (+974)\")")
 public WebElement selectdummycountry;
@@ -90,7 +90,7 @@ public WebElement selectdummycountry;
 public WebElement doneButton;
 @AndroidFindBy(uiAutomator = "new UiScrollable(new UiSelector().scrollable(true)).scrollForward()")
 public WebElement scrollablePhilipines;
-@AndroidFindBy(xpath= "//android.view.View/android.view.View/android.app.Dialog/android.view.View")
+@AndroidFindBy(uiAutomator = "new UiSelector().text(\"Gender\")")
 public WebElement genders;
 @AndroidFindBy(uiAutomator= "new UiSelector().text(\"camera\")")
 public WebElement takePhoto;
@@ -98,23 +98,11 @@ public WebElement takePhoto;
 public WebElement finalconfirmation;
 @AndroidFindBy(uiAutomator = "new UiSelector().className(\"android.widget.Button\").instance(2)")
 public WebElement camera;
-@AndroidFindBy(xpath ="//android.view.View/android.view.View[4]/android.view.View/android.view.View[1]/android.widget.EditText")
-public WebElement verify1;
-@AndroidFindBy(xpath ="//android.view.View/android.view.View[4]/android.view.View/android.view.View[2]/android.widget.EditText")
-public WebElement verify2;
-@AndroidFindBy(xpath ="//android.view.View/android.view.View[4]/android.view.View/android.view.View[3]/android.widget.EditText")
-public WebElement verify3;
-@AndroidFindBy(xpath ="//android.view.View/android.view.View[4]/android.view.View/android.view.View[4]/android.widget.EditText")
-public WebElement verify4;
-@AndroidFindBy(xpath ="//android.view.View/android.view.View[4]/android.view.View/android.view.View[5]/android.widget.EditText")
-public WebElement verify5;
-@AndroidFindBy(xpath ="//android.view.View/android.view.View[4]/android.view.View/android.view.View[6]/android.widget.EditText")
-public WebElement verify6;
 @AndroidFindBy(uiAutomator = "new UiSelector().text(\"Edit\")")
 public WebElement editButton;
 @AndroidFindBy(uiAutomator = "new UiSelector().text(\"Your account is not verified. Click here to verify.\")")
 public WebElement verifyAccount;
-@AndroidFindBy(uiAutomator ="new UiSelector().className(\"android.widget.EditText\").instance(2)")
+@AndroidFindBy(uiAutomator= "new UiSelector().className(\"android.widget.EditText\").instance(2)")
 public WebElement enterSMS;
 @AndroidFindBy(uiAutomator = "new UiSelector().text(\"arrow back\")")
 public WebElement arrowBack;

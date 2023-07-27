@@ -3,6 +3,7 @@ package alchemy_Pages;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.WebDriver;
@@ -60,7 +61,7 @@ private WebElement totalRowsInventory_tabel;
 @FindBy(xpath = "//div[@role='tabpanel']//table/tbody/tr/td[2]//div/mdl-checkbox/span[2]")
 private WebElement invertoryView_checkBox;
 
-@FindBy(xpath = "//input[@type='checkbox']/parent::div/span")
+@FindBy(xpath = "//*[text()=' Suspend Account ']/input")
 private WebElement suspendAccount_checkbox;
 
 @FindBy(xpath = "//div[@role='document']/div")
@@ -106,7 +107,11 @@ public void saveUserDetails() {
 }
 
 public void suspendAccount() {
-	suspendAccount_checkbox.click();
+	WebDriverWait wait = new WebDriverWait(pbDriver,Duration.ofSeconds(300));
+	wait.until(ExpectedConditions.elementToBeClickable(suspendAccount_checkbox));
+	JavascriptExecutor executor = (JavascriptExecutor) alcDriver;
+	executor.executeScript("arguments[0].click();", suspendAccount_checkbox);
+	//suspendAccount_checkbox.click();
 }
 
 public Boolean verfiyAlertBox() {
@@ -146,17 +151,17 @@ public void editBranchNameDetails(String pNum) throws InterruptedException {
 
 public void suspendBranchAccount(String Num) throws InterruptedException {
 	clickBranchsTab();
+	Thread.sleep(2000);
 	WebDriverWait wait = new WebDriverWait(pbDriver,Duration.ofSeconds(300));
 	wait.until(ExpectedConditions.elementToBeClickable(phone_SearchBox));
 	phone_SearchBox.clear();
 	phone_SearchBox.sendKeys(Num);
 	clickSpecificBranch();
-	Thread.sleep(2000);
 	suspendAccount();
 	Boolean verify = verfiyAlertBox();
 	assert verify.equals(true);
 	clickAlertBoxBtnOK();
-	
+	Thread.sleep(2000);
 }
 }
 

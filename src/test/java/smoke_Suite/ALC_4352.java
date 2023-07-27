@@ -1,16 +1,19 @@
 package smoke_Suite;
 
 import org.apache.commons.lang3.RandomStringUtils;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import Utilities.BaseClass;
 import alchemy_Pages.AlchemyLoginPage;
 import alchemy_Pages.Stores;
 import io.qameta.allure.Description;
+import io.qameta.allure.testng.AllureTestNg;
 import plastic_Bank_Pages.PB_LoginPage;
 import plastic_Bank_Pages.PB_Menu_Options;
 import plastic_Bank_Pages.PB_Register_Store;
 
+@Listeners({AllureTestNg.class})
 public class ALC_4352  extends BaseClass {
 	String loginNumber = "+63789654";
 	String loginPassword = "password1";
