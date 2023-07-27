@@ -1,5 +1,6 @@
 package smoke_Suite;
 
+import io.qameta.allure.testng.AllureTestNg;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
