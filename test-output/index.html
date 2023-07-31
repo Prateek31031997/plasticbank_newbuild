@@ -26,7 +26,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite, 8 failed tests</span>
+      <span class="top-banner-font-1">1 suite, 5 failed tests</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -93,7 +93,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">20 methods, 8 failed,   12 passed</span>
+                    <span class="method-stats">20 methods, 5 failed,   15 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title failed">Failed methods</span>
@@ -110,21 +110,6 @@
                       <span>
                         <img src="failed.png" width="3%"/>
                         <a href="#" panel-name="suite-Suite" title="smoke_Suite.ALC_4350" class="method navigator-link" hash-for-method="VerifyMemberAlchmey">VerifyMemberAlchmey</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="smoke_Suite.ALC_4354" class="method navigator-link" hash-for-method="createProcessor">createProcessor</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="smoke_Suite.ALC_4354" class="method navigator-link" hash-for-method="seacrchAndEditProcessorInAlchmey">seacrchAndEditProcessorInAlchmey</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="smoke_Suite.ALC_4350" class="method navigator-link" hash-for-method="signUp">signUp</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -178,6 +163,11 @@
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="smoke_Suite.ALC_4354" class="method navigator-link" hash-for-method="createProcessor">createProcessor</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Suite" title="smoke_Suite.ALC_4350" class="method navigator-link" hash-for-method="loginAlchmey">loginAlchmey</a> <!-- method navigator-link -->
                       </span>
                       <br/>
@@ -199,6 +189,16 @@
                       <span>
                         <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Suite" title="smoke_Suite.ALC_4351" class="method navigator-link" hash-for-method="openRegisterdBranchInApp">openRegisterdBranchInApp</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="smoke_Suite.ALC_4354" class="method navigator-link" hash-for-method="seacrchAndEditProcessorInAlchmey">seacrchAndEditProcessorInAlchmey</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="smoke_Suite.ALC_4350" class="method navigator-link" hash-for-method="signUp">signUp</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -234,13 +234,13 @@
                   <a name="VerifyInApp">
                   </a> <!-- VerifyInApp -->
                   <span class="method-name">VerifyInApp</span>
-                  <div class="stack-trace">org.openqa.selenium.WebDriverException: org.openqa.selenium.WebDriverException: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to the remote server. Original error: socket hang up
+                  <div class="stack-trace">org.openqa.selenium.WebDriverException: org.openqa.selenium.NoSuchSessionException: A session is either terminated or not started
 Build info: version: &apos;4.10.0&apos;, revision: &apos;c14d967899&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.7&apos;
 Driver info: io.appium.java_client.android.AndroidDriver
-Command: [2216a221-86a2-4086-a408-bddce72128ab, findElement {using=-android uiautomator, value=new UiSelector().text(&quot;menu&quot;)}]
+Command: [2734133a-1037-443f-bc4e-39d854a80783, findElement {using=-android uiautomator, value=new UiSelector().text(&quot;menu&quot;)}]
 Capabilities {appium:appActivity: org.plasticbank.app.MainAct..., appium:appPackage: org.plasticbank.app, appium:automationName: Appium, appium:databaseEnabled: false, appium:desired: {appActivity: org.plasticbank.app.MainAct..., appPackage: org.plasticbank.app, automationName: Appium, deviceName: Android Emulator, platformName: ANDROID, platformVersion: 11.0, udid: emulator-5554}, appium:deviceApiLevel: 30, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone_x86, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 440, appium:deviceScreenSize: 1080x2280, appium:deviceUDID: emulator-5554, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:pixelRatio: 2.75, appium:platformVersion: 11, appium:statBarHeight: 135, appium:takesScreenshot: true, appium:udid: emulator-5554, appium:viewportRect: {height: 1842, left: 0, top: 135, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
-Session ID: 2216a221-86a2-4086-a408-bddce72128ab
+Session ID: 2734133a-1037-443f-bc4e-39d854a80783
 	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:191)
 	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:164)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:205)
@@ -258,13 +258,13 @@ Session ID: 2216a221-86a2-4086-a408-bddce72128ab
 	at plastic_Bank_Pages.PB_LoginPage.menu(PB_LoginPage.java:95)
 	at smoke_Suite.ALC_4354.VerifyInApp(ALC_4354.java:46)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-Caused by: org.openqa.selenium.WebDriverException: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to the remote server. Original error: socket hang up
+Caused by: org.openqa.selenium.NoSuchSessionException: A session is either terminated or not started
 Build info: version: &apos;4.10.0&apos;, revision: &apos;c14d967899&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.7&apos;
 Driver info: io.appium.java_client.android.AndroidDriver
-Command: [2216a221-86a2-4086-a408-bddce72128ab, findElement {using=-android uiautomator, value=new UiSelector().text(&quot;menu&quot;)}]
+Command: [2734133a-1037-443f-bc4e-39d854a80783, findElement {using=-android uiautomator, value=new UiSelector().text(&quot;menu&quot;)}]
 Capabilities {appium:appActivity: org.plasticbank.app.MainAct..., appium:appPackage: org.plasticbank.app, appium:automationName: Appium, appium:databaseEnabled: false, appium:desired: {appActivity: org.plasticbank.app.MainAct..., appPackage: org.plasticbank.app, automationName: Appium, deviceName: Android Emulator, platformName: ANDROID, platformVersion: 11.0, udid: emulator-5554}, appium:deviceApiLevel: 30, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone_x86, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 440, appium:deviceScreenSize: 1080x2280, appium:deviceUDID: emulator-5554, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:pixelRatio: 2.75, appium:platformVersion: 11, appium:statBarHeight: 135, appium:takesScreenshot: true, appium:udid: emulator-5554, appium:viewportRect: {height: 1842, left: 0, top: 135, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
-Session ID: 2216a221-86a2-4086-a408-bddce72128ab
+Session ID: 2734133a-1037-443f-bc4e-39d854a80783
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:199)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:132)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:51)
@@ -291,106 +291,6 @@ Session ID: 2216a221-86a2-4086-a408-bddce72128ab
 	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:171)
 	... 43 more
 ... Removed 32 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="createProcessor">
-                  </a> <!-- createProcessor -->
-                  <span class="method-name">createProcessor</span>
-                  <div class="stack-trace">org.openqa.selenium.WebDriverException: org.openqa.selenium.WebDriverException: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to the remote server. Original error: socket hang up
-Build info: version: &apos;4.10.0&apos;, revision: &apos;c14d967899&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.7&apos;
-Driver info: io.appium.java_client.android.AndroidDriver
-Command: [2216a221-86a2-4086-a408-bddce72128ab, findElement {using=-android uiautomator, value=new UiSelector().text(&quot;While using the app&quot;)}]
-Capabilities {appium:appActivity: org.plasticbank.app.MainAct..., appium:appPackage: org.plasticbank.app, appium:automationName: Appium, appium:databaseEnabled: false, appium:desired: {appActivity: org.plasticbank.app.MainAct..., appPackage: org.plasticbank.app, automationName: Appium, deviceName: Android Emulator, platformName: ANDROID, platformVersion: 11.0, udid: emulator-5554}, appium:deviceApiLevel: 30, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone_x86, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 440, appium:deviceScreenSize: 1080x2280, appium:deviceUDID: emulator-5554, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:pixelRatio: 2.75, appium:platformVersion: 11, appium:statBarHeight: 135, appium:takesScreenshot: true, appium:udid: emulator-5554, appium:viewportRect: {height: 1842, left: 0, top: 135, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
-Session ID: 2216a221-86a2-4086-a408-bddce72128ab
-	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:191)
-	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:164)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:205)
-	at io.appium.java_client.pagefactory.AppiumElementLocator.waitFor(AppiumElementLocator.java:98)
-	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:118)
-	at io.appium.java_client.pagefactory.interceptors.InterceptorOfASingleElement.intercept(InterceptorOfASingleElement.java:59)
-	at org.openqa.selenium.remote.RemoteWebElement$$EnhancerByCGLIB$$d27c0df4.isDisplayed(&lt;generated&gt;)
-	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:304)
-	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:37)
-	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
-	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)
-	at org.openqa.selenium.support.ui.ExpectedConditions$25.apply(ExpectedConditions.java:717)
-	at org.openqa.selenium.support.ui.ExpectedConditions$25.apply(ExpectedConditions.java:713)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:205)
-	at plastic_Bank_Pages.PB_LoginPage.permission(PB_LoginPage.java:63)
-	at smoke_Suite.ALC_4354.createProcessor(ALC_4354.java:23)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-Caused by: org.openqa.selenium.WebDriverException: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to the remote server. Original error: socket hang up
-Build info: version: &apos;4.10.0&apos;, revision: &apos;c14d967899&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.7&apos;
-Driver info: io.appium.java_client.android.AndroidDriver
-Command: [2216a221-86a2-4086-a408-bddce72128ab, findElement {using=-android uiautomator, value=new UiSelector().text(&quot;While using the app&quot;)}]
-Capabilities {appium:appActivity: org.plasticbank.app.MainAct..., appium:appPackage: org.plasticbank.app, appium:automationName: Appium, appium:databaseEnabled: false, appium:desired: {appActivity: org.plasticbank.app.MainAct..., appPackage: org.plasticbank.app, automationName: Appium, deviceName: Android Emulator, platformName: ANDROID, platformVersion: 11.0, udid: emulator-5554}, appium:deviceApiLevel: 30, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone_x86, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 440, appium:deviceScreenSize: 1080x2280, appium:deviceUDID: emulator-5554, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:pixelRatio: 2.75, appium:platformVersion: 11, appium:statBarHeight: 135, appium:takesScreenshot: true, appium:udid: emulator-5554, appium:viewportRect: {height: 1842, left: 0, top: 135, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
-Session ID: 2216a221-86a2-4086-a408-bddce72128ab
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:199)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:132)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:51)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
-	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:262)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:531)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
-	at io.appium.java_client.pagefactory.bys.builder.ByChained.lambda$getSearchingFunction$0(ByChained.java:41)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:205)
-	at io.appium.java_client.pagefactory.bys.builder.ByChained.findElement(ByChained.java:75)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$1.findElement(ElementLocation.java:139)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
-	at io.appium.java_client.pagefactory.bys.ContentMappedBy.findElement(ContentMappedBy.java:50)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$1.findElement(ElementLocation.java:139)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
-	at io.appium.java_client.pagefactory.AppiumElementLocator.lambda$findElement$0(AppiumElementLocator.java:119)
-	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:171)
-	... 43 more
-... Removed 32 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="seacrchAndEditProcessorInAlchmey">
-                  </a> <!-- seacrchAndEditProcessorInAlchmey -->
-                  <span class="method-name">seacrchAndEditProcessorInAlchmey</span>
-                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[contains(text(),&apos;Gayas&apos;)]&quot;}
-  (Session info: chrome=115.0.5790.110)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: &apos;4.10.0&apos;, revision: &apos;c14d967899&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.7&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [113cc5ba5249211b848c6f7d9476ca85, findElement {using=xpath, value=//div[contains(text(),&apos;Gayas&apos;)]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 115.0.5790.110, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: C:\Users\Fleek\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:61136}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61136/devtoo..., se:cdpVersion: 115.0.5790.110, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 113cc5ba5249211b848c6f7d9476ca85
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:199)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:132)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:51)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:531)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy22.click(Unknown Source)
-	at alchemy_Pages.Processors.SearchAndEditProcessorInAlchemy(Processors.java:45)
-	at smoke_Suite.ALC_4354.seacrchAndEditProcessorInAlchmey(ALC_4354.java:37)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 31 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
@@ -407,17 +307,17 @@ Session ID: 113cc5ba5249211b848c6f7d9476ca85
                   <a name="suspendBranch">
                   </a> <!-- suspendBranch -->
                   <span class="method-name">suspendBranch</span>
-                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: [[ChromeDriver: chrome on windows (5b4d4599d236f9ba6203850582fdd18b)] -&gt; xpath: //*[text()=&apos; Suspend Account &apos;]/input] (tried for 300 second(s) with 500 milliseconds interval)
+                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: [[ChromeDriver: chrome on windows (7715387303c1227249f3daa1d0ee8b75)] -&gt; xpath: //*[text()=&apos; Suspend Account &apos;]/input] (tried for 300 second(s) with 500 milliseconds interval)
 Build info: version: &apos;4.10.0&apos;, revision: &apos;c14d967899&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.7&apos;
 Driver info: io.appium.java_client.android.AndroidDriver
 Capabilities {appium:appActivity: org.plasticbank.app.MainAct..., appium:appPackage: org.plasticbank.app, appium:automationName: Appium, appium:databaseEnabled: false, appium:desired: {appActivity: org.plasticbank.app.MainAct..., appPackage: org.plasticbank.app, automationName: Appium, deviceName: Android Emulator, platformName: ANDROID, platformVersion: 11.0, udid: emulator-5554}, appium:deviceApiLevel: 30, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone_x86, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 440, appium:deviceScreenSize: 1080x2280, appium:deviceUDID: emulator-5554, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:pixelRatio: 2.75, appium:platformVersion: 11, appium:statBarHeight: 135, appium:takesScreenshot: true, appium:udid: emulator-5554, appium:viewportRect: {height: 1842, left: 0, top: 135, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
-Session ID: 9af86fb1-a641-489f-9c57-2033b117efea
+Session ID: ba6952ec-3d0c-4b64-96b9-c0c4303c93ab
 	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
-	at alchemy_Pages.Branches.suspendAccount(Branches.java:111)
-	at alchemy_Pages.Branches.suspendBranchAccount(Branches.java:160)
-	at smoke_Suite.ALC_4351.suspendBranch(ALC_4351.java:65)
+	at alchemy_Pages.Branches.suspendAccount(Branches.java:122)
+	at alchemy_Pages.Branches.suspendBranchAccount(Branches.java:171)
+	at smoke_Suite.ALC_4351.suspendBranch(ALC_4351.java:66)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 ... Removed 27 stack frames
 </div> <!-- stack-trace -->
@@ -430,7 +330,7 @@ Session ID: 9af86fb1-a641-489f-9c57-2033b117efea
                   <span class="method-name">verifyEditInApp</span>
                   <div class="stack-trace">java.lang.AssertionError
 	at plastic_Bank_Pages.PB_LoginPage.nameVerify(PB_LoginPage.java:180)
-	at smoke_Suite.ALC_4351.verifyEditInApp(ALC_4351.java:54)
+	at smoke_Suite.ALC_4351.verifyEditInApp(ALC_4351.java:55)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 ... Removed 27 stack frames
 </div> <!-- stack-trace -->
@@ -445,9 +345,9 @@ Session ID: 9af86fb1-a641-489f-9c57-2033b117efea
 Build info: version: &apos;4.10.0&apos;, revision: &apos;c14d967899&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.7&apos;
 Driver info: io.appium.java_client.android.AndroidDriver
-Command: [9af86fb1-a641-489f-9c57-2033b117efea, findElement {using=id, value=org.plasticbank.app:id/action_bar_root}]
+Command: [ba6952ec-3d0c-4b64-96b9-c0c4303c93ab, findElement {using=id, value=org.plasticbank.app:id/action_bar_root}]
 Capabilities {appium:appActivity: org.plasticbank.app.MainAct..., appium:appPackage: org.plasticbank.app, appium:automationName: Appium, appium:databaseEnabled: false, appium:desired: {appActivity: org.plasticbank.app.MainAct..., appPackage: org.plasticbank.app, automationName: Appium, deviceName: Android Emulator, platformName: ANDROID, platformVersion: 11.0, udid: emulator-5554}, appium:deviceApiLevel: 30, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone_x86, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 440, appium:deviceScreenSize: 1080x2280, appium:deviceUDID: emulator-5554, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:pixelRatio: 2.75, appium:platformVersion: 11, appium:statBarHeight: 135, appium:takesScreenshot: true, appium:udid: emulator-5554, appium:viewportRect: {height: 1842, left: 0, top: 135, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
-Session ID: 9af86fb1-a641-489f-9c57-2033b117efea
+Session ID: ba6952ec-3d0c-4b64-96b9-c0c4303c93ab
 	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:191)
 	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:164)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:205)
@@ -464,15 +364,15 @@ Session ID: 9af86fb1-a641-489f-9c57-2033b117efea
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:205)
 	at plastic_Bank_Pages.PB_LoginPage.clickloginButton(PB_LoginPage.java:105)
 	at plastic_Bank_Pages.PB_LoginPage.loginRandom(PB_LoginPage.java:128)
-	at smoke_Suite.ALC_4351.verifySuspendedAccount(ALC_4351.java:75)
+	at smoke_Suite.ALC_4351.verifySuspendedAccount(ALC_4351.java:76)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 Caused by: org.openqa.selenium.NoSuchSessionException: A session is either terminated or not started
 Build info: version: &apos;4.10.0&apos;, revision: &apos;c14d967899&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.7&apos;
 Driver info: io.appium.java_client.android.AndroidDriver
-Command: [9af86fb1-a641-489f-9c57-2033b117efea, findElement {using=id, value=org.plasticbank.app:id/action_bar_root}]
+Command: [ba6952ec-3d0c-4b64-96b9-c0c4303c93ab, findElement {using=id, value=org.plasticbank.app:id/action_bar_root}]
 Capabilities {appium:appActivity: org.plasticbank.app.MainAct..., appium:appPackage: org.plasticbank.app, appium:automationName: Appium, appium:databaseEnabled: false, appium:desired: {appActivity: org.plasticbank.app.MainAct..., appPackage: org.plasticbank.app, automationName: Appium, deviceName: Android Emulator, platformName: ANDROID, platformVersion: 11.0, udid: emulator-5554}, appium:deviceApiLevel: 30, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone_x86, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 440, appium:deviceScreenSize: 1080x2280, appium:deviceUDID: emulator-5554, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:pixelRatio: 2.75, appium:platformVersion: 11, appium:statBarHeight: 135, appium:takesScreenshot: true, appium:udid: emulator-5554, appium:viewportRect: {height: 1842, left: 0, top: 135, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
-Session ID: 9af86fb1-a641-489f-9c57-2033b117efea
+Session ID: ba6952ec-3d0c-4b64-96b9-c0c4303c93ab
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:199)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:132)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:51)
@@ -524,60 +424,6 @@ Session ID: 9af86fb1-a641-489f-9c57-2033b117efea
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="signUp">
-                  </a> <!-- signUp -->
-                  <span class="method-name">signUp</span>
-                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for condition (visibility of Located by By.chained({AppiumBy.androidUIAutomator: new UiSelector().text(&quot;menu&quot;)})) to be refreshed (tried for 30 second(s) with 500 milliseconds interval)
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
-	at plastic_Bank_Pages.PB_Register_Member.clickmenu(PB_Register_Member.java:340)
-	at plastic_Bank_Pages.PB_Register_Member.logout(PB_Register_Member.java:395)
-	at smoke_Suite.ALC_4350.signUp(ALC_4350.java:29)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-Caused by: org.openqa.selenium.NoSuchElementException: Can&apos;t locate an element by this strategy: By.chained({AppiumBy.androidUIAutomator: new UiSelector().text(&quot;menu&quot;)})
-	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:125)
-	at io.appium.java_client.pagefactory.interceptors.InterceptorOfASingleElement.intercept(InterceptorOfASingleElement.java:59)
-	at org.openqa.selenium.remote.RemoteWebElement$$EnhancerByCGLIB$$d27c0df4.isDisplayed(&lt;generated&gt;)
-	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:304)
-	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:37)
-	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
-	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)
-	at org.openqa.selenium.support.ui.ExpectedConditions$25.apply(ExpectedConditions.java:717)
-	at org.openqa.selenium.support.ui.ExpectedConditions$25.apply(ExpectedConditions.java:713)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:205)
-	... 31 more
-Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction@e97f115 (tried for 1 second(s) with 500 milliseconds interval)
-	at org.openqa.selenium.support.ui.FluentWait.timeoutException(FluentWait.java:262)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
-	at io.appium.java_client.pagefactory.AppiumElementLocator.waitFor(AppiumElementLocator.java:98)
-	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:118)
-	... 40 more
-Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.chained({AppiumBy.androidUIAutomator: new UiSelector().text(&quot;menu&quot;)})
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: &apos;4.10.0&apos;, revision: &apos;c14d967899&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.7&apos;
-Driver info: driver.version: RemoteWebDriver
-	at io.appium.java_client.pagefactory.bys.builder.ByChained.findElement(ByChained.java:77)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$1.findElement(ElementLocation.java:139)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
-	at io.appium.java_client.pagefactory.bys.ContentMappedBy.findElement(ContentMappedBy.java:50)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$1.findElement(ElementLocation.java:139)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
-	at io.appium.java_client.pagefactory.AppiumElementLocator.lambda$findElement$0(AppiumElementLocator.java:119)
-	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:171)
-	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:164)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:205)
-	... 42 more
-... Removed 27 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
           </div> <!-- suite-Suite-class-failed -->
           <div class="suite-Suite-class-passed">
@@ -605,6 +451,28 @@ Driver info: driver.version: RemoteWebDriver
                   <a name="verifyNewStore">
                   </a> <!-- verifyNewStore -->
                   <span class="method-name">verifyNewStore</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-passed -->
+          <div class="suite-Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">smoke_Suite.ALC_4354</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="createProcessor">
+                  </a> <!-- createProcessor -->
+                  <span class="method-name">createProcessor</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="seacrchAndEditProcessorInAlchmey">
+                  </a> <!-- seacrchAndEditProcessorInAlchmey -->
+                  <span class="method-name">seacrchAndEditProcessorInAlchmey</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -681,6 +549,13 @@ Driver info: driver.version: RemoteWebDriver
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
+                  <a name="signUp">
+                  </a> <!-- signUp -->
+                  <span class="method-name">signUp</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
                   <a name="suspendMemberALC">
                   </a> <!-- suspendMemberALC -->
                   <span class="method-name">suspendMemberALC</span>
@@ -747,88 +622,88 @@ data.addRows(20);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'suspendBranch')
 data.setCell(0, 2, 'smoke_Suite.ALC_4351')
-data.setCell(0, 3, 317833);
+data.setCell(0, 3, 317959);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'VerifyInApp')
-data.setCell(1, 2, 'smoke_Suite.ALC_4354')
-data.setCell(1, 3, 267056);
+data.setCell(1, 1, 'signUp')
+data.setCell(1, 2, 'smoke_Suite.ALC_4350')
+data.setCell(1, 3, 142206);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'signUp')
+data.setCell(2, 1, 'createBranchAndMember')
 data.setCell(2, 2, 'smoke_Suite.ALC_4350')
-data.setCell(2, 3, 173879);
+data.setCell(2, 3, 98985);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'createBranchAndMember')
-data.setCell(3, 2, 'smoke_Suite.ALC_4350')
-data.setCell(3, 3, 98924);
+data.setCell(3, 1, 'createProcessor')
+data.setCell(3, 2, 'smoke_Suite.ALC_4354')
+data.setCell(3, 3, 76122);
 data.setCell(4, 0, 4)
-data.setCell(4, 1, 'seacrchAndEditProcessorInAlchmey')
-data.setCell(4, 2, 'smoke_Suite.ALC_4354')
-data.setCell(4, 3, 72555);
+data.setCell(4, 1, 'createNewStore')
+data.setCell(4, 2, 'smoke_Suite.ALC_4352')
+data.setCell(4, 3, 68264);
 data.setCell(5, 0, 5)
-data.setCell(5, 1, 'createNewStore')
-data.setCell(5, 2, 'smoke_Suite.ALC_4352')
-data.setCell(5, 3, 63696);
+data.setCell(5, 1, 'seacrchAndEditProcessorInAlchmey')
+data.setCell(5, 2, 'smoke_Suite.ALC_4354')
+data.setCell(5, 3, 63547);
 data.setCell(6, 0, 6)
 data.setCell(6, 1, 'EditMemberDetails')
 data.setCell(6, 2, 'smoke_Suite.ALC_4350')
-data.setCell(6, 3, 31128);
+data.setCell(6, 3, 31263);
 data.setCell(7, 0, 7)
-data.setCell(7, 1, 'suspendMemberALC')
-data.setCell(7, 2, 'smoke_Suite.ALC_4350')
-data.setCell(7, 3, 29865);
+data.setCell(7, 1, 'branchVerifyAndEdit')
+data.setCell(7, 2, 'smoke_Suite.ALC_4351')
+data.setCell(7, 3, 30126);
 data.setCell(8, 0, 8)
-data.setCell(8, 1, 'verifyNewStore')
-data.setCell(8, 2, 'smoke_Suite.ALC_4352')
-data.setCell(8, 3, 28367);
+data.setCell(8, 1, 'suspendMemberALC')
+data.setCell(8, 2, 'smoke_Suite.ALC_4350')
+data.setCell(8, 3, 29910);
 data.setCell(9, 0, 9)
-data.setCell(9, 1, 'VerifyMemberAlchmey')
-data.setCell(9, 2, 'smoke_Suite.ALC_4350')
-data.setCell(9, 3, 26268);
+data.setCell(9, 1, 'verifyNewStore')
+data.setCell(9, 2, 'smoke_Suite.ALC_4352')
+data.setCell(9, 3, 26910);
 data.setCell(10, 0, 10)
-data.setCell(10, 1, 'branchVerifyAndEdit')
-data.setCell(10, 2, 'smoke_Suite.ALC_4351')
-data.setCell(10, 3, 26115);
+data.setCell(10, 1, 'VerifyMemberAlchmey')
+data.setCell(10, 2, 'smoke_Suite.ALC_4350')
+data.setCell(10, 3, 26288);
 data.setCell(11, 0, 11)
 data.setCell(11, 1, 'branchSuspendMemberVerification')
 data.setCell(11, 2, 'smoke_Suite.ALC_4350')
-data.setCell(11, 3, 15814);
+data.setCell(11, 3, 17036);
 data.setCell(12, 0, 12)
 data.setCell(12, 1, 'verifyEditInApp')
 data.setCell(12, 2, 'smoke_Suite.ALC_4351')
-data.setCell(12, 3, 12627);
+data.setCell(12, 3, 12670);
 data.setCell(13, 0, 13)
 data.setCell(13, 1, 'openRegisterdBranchInApp')
 data.setCell(13, 2, 'smoke_Suite.ALC_4351')
-data.setCell(13, 3, 10634);
+data.setCell(13, 3, 11113);
 data.setCell(14, 0, 14)
 data.setCell(14, 1, 'loginBranchMemberPB')
 data.setCell(14, 2, 'smoke_Suite.ALC_4350')
-data.setCell(14, 3, 9673);
+data.setCell(14, 3, 9995);
 data.setCell(15, 0, 15)
 data.setCell(15, 1, 'loginAlchmey')
 data.setCell(15, 2, 'smoke_Suite.ALC_4350')
-data.setCell(15, 3, 8919);
+data.setCell(15, 3, 9066);
 data.setCell(16, 0, 16)
 data.setCell(16, 1, 'loginAlchmey')
 data.setCell(16, 2, 'smoke_Suite.ALC_4352')
-data.setCell(16, 3, 5975);
+data.setCell(16, 3, 5980);
 data.setCell(17, 0, 17)
 data.setCell(17, 1, 'memberSuspendVerify')
 data.setCell(17, 2, 'smoke_Suite.ALC_4350')
-data.setCell(17, 3, 5219);
+data.setCell(17, 3, 5043);
 data.setCell(18, 0, 18)
-data.setCell(18, 1, 'verifySuspendedAccount')
-data.setCell(18, 2, 'smoke_Suite.ALC_4351')
-data.setCell(18, 3, 147);
+data.setCell(18, 1, 'VerifyInApp')
+data.setCell(18, 2, 'smoke_Suite.ALC_4354')
+data.setCell(18, 3, 2786);
 data.setCell(19, 0, 19)
-data.setCell(19, 1, 'createProcessor')
-data.setCell(19, 2, 'smoke_Suite.ALC_4354')
-data.setCell(19, 3, 70);
+data.setCell(19, 1, 'verifySuspendedAccount')
+data.setCell(19, 2, 'smoke_Suite.ALC_4351')
+data.setCell(19, 3, 181);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 20 minutes</span>
+              <span class="suite-total-time">Total running time: 16 minutes</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -906,158 +781,154 @@ return data;
               </div> <!-- configuration-suite before -->
               <div class="configuration-suite before">
                 <span class="method-name">generateBranchName</span>
-                <span class="method-start">12 ms</span>
+                <span class="method-start">15 ms</span>
               </div> <!-- configuration-suite before -->
               <div class="configuration-suite before">
                 <span class="method-name">generateRandomBranchMemberNumber</span>
-                <span class="method-start">13 ms</span>
+                <span class="method-start">16 ms</span>
               </div> <!-- configuration-suite before -->
               <div class="configuration-suite before">
                 <span class="method-name">generateRandomLastName</span>
-                <span class="method-start">14 ms</span>
+                <span class="method-start">16 ms</span>
               </div> <!-- configuration-suite before -->
               <div class="configuration-suite before">
                 <span class="method-name">generateRandomNumber</span>
-                <span class="method-start">14 ms</span>
+                <span class="method-start">22 ms</span>
               </div> <!-- configuration-suite before -->
               <div class="configuration-class before">
                 <span class="method-name">setup</span>
-                <span class="method-start">56 ms</span>
+                <span class="method-start">43 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
                 <span class="method-name">signUp</span>
-                <span class="method-start">32801 ms</span>
+                <span class="method-start">27474 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">loginAlchmey</span>
-                <span class="method-start">206865 ms</span>
+                <span class="method-start">169932 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">VerifyMemberAlchmey</span>
-                <span class="method-start">215816 ms</span>
+                <span class="method-start">179012 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">createBranchAndMember</span>
-                <span class="method-start">242091 ms</span>
+                <span class="method-start">205373 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">EditMemberDetails</span>
-                <span class="method-start">341026 ms</span>
+                <span class="method-start">304407 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">loginBranchMemberPB</span>
-                <span class="method-start">372163 ms</span>
+                <span class="method-start">335682 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">suspendMemberALC</span>
-                <span class="method-start">381840 ms</span>
+                <span class="method-start">345682 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">memberSuspendVerify</span>
-                <span class="method-start">411712 ms</span>
+                <span class="method-start">375597 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">branchSuspendMemberVerification</span>
-                <span class="method-start">416934 ms</span>
+                <span class="method-start">380645 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">quit</span>
-                <span class="method-start">432767 ms</span>
+                <span class="method-start">397732 ms</span>
               </div> <!-- configuration-class after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">smoke_Suite.ALC_4354</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">setup</span>
-                <span class="method-start">434222 ms</span>
+                <span class="method-start">400462 ms</span>
               </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <span class="method-name">createProcessor</span>
+                <span class="method-start">419617 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">seacrchAndEditProcessorInAlchmey</span>
+                <span class="method-start">495782 ms</span>
+              </div> <!-- test-method -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">VerifyInApp</span>
-                <span class="method-start">473522 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">createProcessor</span>
-                <span class="method-start">740648 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">seacrchAndEditProcessorInAlchmey</span>
-                <span class="method-start">740728 ms</span>
+                <span class="method-start">559418 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">quit</span>
-                <span class="method-start">813392 ms</span>
+                <span class="method-start">562214 ms</span>
               </div> <!-- configuration-class after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">smoke_Suite.ALC_4351</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">setup</span>
-                <span class="method-start">815715 ms</span>
+                <span class="method-start">562253 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">openRegisterdBranchInApp</span>
-                <span class="method-start">854866 ms</span>
+                <span class="method-start">670430 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">branchVerifyAndEdit</span>
-                <span class="method-start">865515 ms</span>
+                <span class="method-start">681591 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">verifyEditInApp</span>
-                <span class="method-start">891650 ms</span>
+                <span class="method-start">711803 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">suspendBranch</span>
-                <span class="method-start">904291 ms</span>
+                <span class="method-start">724506 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">verifySuspendedAccount</span>
-                <span class="method-start">1222208 ms</span>
+                <span class="method-start">1042542 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">quit</span>
-                <span class="method-start">1222364 ms</span>
+                <span class="method-start">1042736 ms</span>
               </div> <!-- configuration-class after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">smoke_Suite.ALC_4352</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">setup</span>
-                <span class="method-start">1222434 ms</span>
+                <span class="method-start">1042752 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">createNewStore</span>
-                <span class="method-start">1241791 ms</span>
+                <span class="method-start">1063369 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">loginAlchmey</span>
-                <span class="method-start">1305555 ms</span>
+                <span class="method-start">1131757 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">verifyNewStore</span>
-                <span class="method-start">1311537 ms</span>
+                <span class="method-start">1137741 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">quit</span>
-                <span class="method-start">1339907 ms</span>
+                <span class="method-start">1164673 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

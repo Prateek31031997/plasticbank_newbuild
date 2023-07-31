@@ -3,8 +3,6 @@ package plastic_Bank_Pages;
 import java.time.Duration;
 import java.util.Arrays;
 
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.PointerInput;
 import org.openqa.selenium.interactions.Sequence;
@@ -72,7 +70,7 @@ public WebElement lastNameTextField;
 @AndroidFindBy(uiAutomator= "new UiSelector().className(\"android.widget.Spinner\").instance(0)")
 public WebElement phoneCountryCodedropdown;
 //@AndroidFindBy(uiAutomator = "new UiSelector().text(\"Philippines (+63)\")")
-@AndroidFindBy(uiAutomator = "new UiScrollable(new UiSelector()).scrollIntoView(text(\"Philippines (+63)\"));")
+@AndroidFindBy(uiAutomator = "new UiScrollable(new UiSelector()).scrollIntoView(text(\"Philippines (+63)\"))")
 public WebElement selectPhilipines;
 @AndroidFindBy(uiAutomator= "new UiScrollable(new UiSelector().className(\"android.view.View\").instance(52))")
 public WebElement countrylist;
@@ -82,8 +80,8 @@ public WebElement oKButton;
 public WebElement dateOfBirthTextField;
 @AndroidFindBy(uiAutomator= "new UiSelector().text(\"Verify Phone\")")
 public WebElement  verifyPhoneText;
-@AndroidFindBy(uiAutomator= "new UiSelector().className(\"android.view.View\").instance(60)")
-public WebElement years;
+@AndroidFindBy(uiAutomator = "new UiSelector().text(\"CANCEL\")")
+public WebElement cancel;
 @AndroidFindBy(uiAutomator = "new UiSelector().text(\"Qatar (+974)\")")
 public WebElement selectdummycountry;
 @AndroidFindBy(uiAutomator = "new UiSelector().text(\"DONE\")")
@@ -115,7 +113,18 @@ public WebElement allow;
 @AndroidFindBy(uiAutomator = "new UiSelector().text(\"Afghanistan (+93)\")")
 public WebElement selectAfghanistan;
 
-
+@AndroidFindBy(xpath ="//android.view.View/android.view.View[4]/android.view.View/android.view.View[1]/android.widget.EditText")
+public WebElement verify1;
+@AndroidFindBy(xpath ="//android.view.View/android.view.View[4]/android.view.View/android.view.View[2]/android.widget.EditText")
+public WebElement verify2;
+@AndroidFindBy(xpath ="//android.view.View/android.view.View[4]/android.view.View/android.view.View[3]/android.widget.EditText")
+public WebElement verify3;
+@AndroidFindBy(xpath ="//android.view.View/android.view.View[4]/android.view.View/android.view.View[4]/android.widget.EditText")
+public WebElement verify4;
+@AndroidFindBy(xpath ="//android.view.View/android.view.View[4]/android.view.View/android.view.View[5]/android.widget.EditText")
+public WebElement verify5;
+@AndroidFindBy(xpath ="//android.view.View/android.view.View[4]/android.view.View/android.view.View[6]/android.widget.EditText")
+public WebElement verify6;
 
 
 //functions:-
@@ -194,6 +203,7 @@ public void enterPhoneNumberRandom() {
 	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(phoneNumberTextField)));
 	phoneNumberTextField.click();
 	phoneNumberTextField.sendKeys(randomPhoneNumber);
+	pbDriver.pressKey(new KeyEvent(AndroidKey.BACK));
   
 }
 public void enterPhoneNumber(String phoneNumber) {
@@ -205,67 +215,36 @@ public void enterPhoneNumber(String phoneNumber) {
 }
 
 public void chosenCountryCode() throws InterruptedException {
-	WebDriverWait wait = new WebDriverWait(pbDriver,Duration.ofSeconds(30));
+	WebDriverWait wait = new WebDriverWait(pbDriver,Duration.ofSeconds(10));
 	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(phoneCountryCodedropdown)));
 	phoneCountryCodedropdown.click();
-	
 	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(countrylist)));
-	
-	
 	selectAfghanistan.click();
-	Thread.sleep(100);
-	for (int i = 0; i < 173; i++) {
-
+	for (int i = 0; i < 178; i++) {
 		pbDriver.pressKey(new KeyEvent(AndroidKey.DPAD_DOWN));
-
-    }
-	do {
-        PointerInput finger1 = new PointerInput(PointerInput.Kind.TOUCH, "finger1");
-        Sequence scrolla = new Sequence(finger1, 1);
-        scrolla.addAction(finger1.createPointerMove(Duration.ofMillis(0),
-                PointerInput.Origin.viewport(), countrylist.getLocation().getX() + 600, countrylist.getLocation().getY() + 700));
-             scrolla.addAction(finger1.createPointerDown(0));
-             scrolla.addAction(finger1.createPointerMove(Duration.ofMillis(450),
-                 PointerInput.Origin.viewport(), countrylist.getLocation().getX() + 600, countrylist.getLocation().getY() + 200));
-             scrolla.addAction(finger1.createPointerUp(0));
-             pbDriver.perform(Arrays.asList(scrolla));
-         } while (!isElementDisplayed(selectdummycountry));
-     	Thread.sleep(100);
-     	selectPhilipines.click();  
-     	oKButton.click();
-}
-
-private boolean isElementDisplayed(WebElement element) {
-  try {
-      return element.isDisplayed();
-  } catch (NoSuchElementException | StaleElementReferenceException e) {
-      return false;
-  }
- 
+	}
+	selectPhilipines.click();  
+	oKButton.click();
 }
 
 public void enterDOB() throws InterruptedException {
-	WebDriverWait wait = new WebDriverWait(pbDriver,Duration.ofSeconds(30));
-	pbDriver.hideKeyboard();
+	WebDriverWait wait = new WebDriverWait(pbDriver,Duration.ofSeconds(10));
 	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(dateOfBirthTextField)));
 	dateOfBirthTextField.click();
 	
 	
-	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(years)));
-	PointerInput finger1 = new PointerInput(PointerInput.Kind.TOUCH, "finger1");
-  Sequence scrolla = new Sequence(finger1, 1);
-  scrolla.addAction(finger1.createPointerMove(Duration.ofMillis(0),
-      PointerInput.Origin.viewport(), years.getLocation().getX() + 300, years.getLocation().getY() + 300));
-  scrolla.addAction(finger1.createPointerDown(0));
-  scrolla.addAction(finger1.createPointerMove(Duration.ofMillis(50),
-      PointerInput.Origin.viewport(), years.getLocation().getX() + 300, years.getLocation().getY() + 10));
-  scrolla.addAction(finger1.createPointerUp(0));
-  
-  
-  
-  pbDriver.perform(Arrays.asList(scrolla));
+	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(cancel)));
+	PointerInput fingerYears = new PointerInput(PointerInput.Kind.TOUCH, "fingerYears");
+    Sequence scrollYears = new Sequence(fingerYears, 1);
+    scrollYears.addAction(fingerYears.createPointerMove(Duration.ofMillis(0),
+        PointerInput.Origin.viewport(), cancel.getLocation().getX()+100, cancel.getLocation().getY() + 500));
+    scrollYears.addAction(fingerYears.createPointerDown(0));
+    scrollYears.addAction(fingerYears.createPointerMove(Duration.ofMillis(100),
+        PointerInput.Origin.viewport(), cancel.getLocation().getX()+100, cancel.getLocation().getY() + 100));
+    scrollYears.addAction(fingerYears.createPointerUp(0));
+    pbDriver.perform(Arrays.asList(scrollYears));
 Thread.sleep(1000);
-  doneButton.click();
+    doneButton.click();
 	}
 
 public void selectGender() throws InterruptedException {

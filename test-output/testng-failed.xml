@@ -8,8 +8,6 @@
           <include name="generateRandomBranchMemberNumber"/>
           <include name="generateRandomNumber"/>
           <include name="VerifyInApp"/>
-          <include name="createProcessor"/>
-          <include name="seacrchAndEditProcessorInAlchmey"/>
           <include name="setup"/>
           <include name="generateRandomLastName"/>
           <include name="quit"/>
@@ -40,7 +38,6 @@
           <include name="generateRandomLastName"/>
           <include name="quit"/>
           <include name="generateBranchMemberName"/>
-          <include name="signUp"/>
           <include name="generateBranchName"/>
         </methods>
       </class> <!-- smoke_Suite.ALC_4350 -->

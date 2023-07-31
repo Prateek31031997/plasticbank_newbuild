@@ -3,7 +3,6 @@ package alchemy_Pages;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.WebDriver;
@@ -61,12 +60,11 @@ private WebElement totalRowsInventory_tabel;
 @FindBy(xpath = "//div[@role='tabpanel']//table/tbody/tr/td[2]//div/mdl-checkbox/span[2]")
 private WebElement invertoryView_checkBox;
 
-@FindBy(xpath = "//*[text()=' Suspend Account ']/input")
+@FindBy(xpath = "//*[text()=' Suspend Account ']/span")
 private WebElement suspendAccount_checkbox;
 
 @FindBy(xpath = "//div[@role='document']/div")
 private WebElement popUp_alert;
-
 
 @FindBy(xpath="//div[@class='partner-info name']")
 @CacheLookup private WebElement verifyNameText;
@@ -77,6 +75,21 @@ private WebElement popUp_alert;
 
 @FindBy(xpath = "//div/button[text()='OK']")
 private WebElement okBtn_alertBox;
+
+@FindBy(xpath = "//loader/div//table") 
+WebElement pageLoader;
+@FindBy(xpath = "//label[text()='Tokens Active']/parent::div/div")
+WebElement tokensActive;
+@FindBy(xpath = "//label[text()='Split Mode']/parent::div/div")
+WebElement splitModeToggle;
+@FindBy(xpath = "//label[text()='Upload Buy Receipts']/parent::div/div")
+WebElement uploadBuyReceiptsToggle;
+@FindBy(xpath = "//label[text()='Show Token/Market Rate']/parent::div/div")
+WebElement tokenMarketToggle;
+
+
+
+
 
 public void searchAddedBranch(String Name) {
 	name_SearchBox.sendKeys(Name);
@@ -107,11 +120,15 @@ public void saveUserDetails() {
 }
 
 public void suspendAccount() {
-	WebDriverWait wait = new WebDriverWait(pbDriver,Duration.ofSeconds(300));
-	wait.until(ExpectedConditions.elementToBeClickable(suspendAccount_checkbox));
-	JavascriptExecutor executor = (JavascriptExecutor) alcDriver;
-	executor.executeScript("arguments[0].click();", suspendAccount_checkbox);
-	//suspendAccount_checkbox.click();
+	/*
+	 * WebDriverWait wait = new WebDriverWait(pbDriver,Duration.ofSeconds(300));
+	 * wait.until(ExpectedConditions.elementToBeClickable(suspendAccount_checkbox));
+	 */
+	/*
+	 * JavascriptExecutor executor = (JavascriptExecutor) alcDriver;
+	 * executor.executeScript("arguments[0].click();", suspendAccount_checkbox);
+	 */
+	suspendAccount_checkbox.click();
 }
 
 public Boolean verfiyAlertBox() {
@@ -162,6 +179,32 @@ public void suspendBranchAccount(String Num) throws InterruptedException {
 	assert verify.equals(true);
 	clickAlertBoxBtnOK();
 	Thread.sleep(2000);
+}
+
+public void clickTokensActiveToggle(){
+	tokensActive.click();
+}
+
+public void clickSplitModeToggle(){
+	splitModeToggle.click();
+}
+
+public void clickUploadButReceiptsToggle(){
+	uploadBuyReceiptsToggle.click();
+}
+
+public void clickTokenMarketToggle(){
+	tokenMarketToggle.click();
+}
+
+public void clickTogglesInBranches() throws InterruptedException {
+	clickBranchsTab();
+	searchAddedBranch("gayas branch1");
+	clickSpecificBranch();
+	editBranch();
+	clickTokenMarketToggle();
+	clickSplitModeToggle();
+	clickUploadButReceiptsToggle();
 }
 }
 

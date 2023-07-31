@@ -1,125 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="15" total="35" passed="12" failed="8" skipped="0">
+<testng-results ignored="15" total="35" passed="15" failed="5" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-07-27T17:34:54 IST" name="Suite" finished-at="2023-07-27T17:57:16 IST" duration-ms="1341496">
+  <suite started-at="2023-07-28T13:58:07 IST" name="Suite" finished-at="2023-07-28T14:17:33 IST" duration-ms="1166797">
     <groups>
     </groups>
-    <test started-at="2023-07-27T17:34:54 IST" name="Test" finished-at="2023-07-27T17:57:16 IST" duration-ms="1341496">
+    <test started-at="2023-07-28T13:58:07 IST" name="Test" finished-at="2023-07-28T14:17:33 IST" duration-ms="1166797">
       <class name="smoke_Suite.ALC_4350">
-        <test-method is-config="true" signature="generateBranchMemberName()[pri:0, instance:smoke_Suite.ALC_4350@7dc3712]" started-at="2023-07-27T17:34:54 IST" name="generateBranchMemberName" finished-at="2023-07-27T17:34:54 IST" duration-ms="10" status="PASS">
+        <test-method is-config="true" signature="generateBranchMemberName()[pri:0, instance:smoke_Suite.ALC_4350@2f67a4d3]" started-at="2023-07-28T13:58:06 IST" name="generateBranchMemberName" finished-at="2023-07-28T13:58:07 IST" duration-ms="14" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- generateBranchMemberName -->
-        <test-method is-config="true" signature="generateBranchName()[pri:0, instance:smoke_Suite.ALC_4350@7dc3712]" started-at="2023-07-27T17:34:54 IST" name="generateBranchName" finished-at="2023-07-27T17:34:54 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="generateBranchName()[pri:0, instance:smoke_Suite.ALC_4350@2f67a4d3]" started-at="2023-07-28T13:58:07 IST" name="generateBranchName" finished-at="2023-07-28T13:58:07 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- generateBranchName -->
-        <test-method is-config="true" signature="generateRandomBranchMemberNumber()[pri:0, instance:smoke_Suite.ALC_4350@7dc3712]" started-at="2023-07-27T17:34:54 IST" name="generateRandomBranchMemberNumber" finished-at="2023-07-27T17:34:54 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="generateRandomBranchMemberNumber()[pri:0, instance:smoke_Suite.ALC_4350@2f67a4d3]" started-at="2023-07-28T13:58:07 IST" name="generateRandomBranchMemberNumber" finished-at="2023-07-28T13:58:07 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- generateRandomBranchMemberNumber -->
-        <test-method is-config="true" signature="generateRandomLastName()[pri:0, instance:smoke_Suite.ALC_4350@7dc3712]" started-at="2023-07-27T17:34:54 IST" name="generateRandomLastName" finished-at="2023-07-27T17:34:54 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="generateRandomLastName()[pri:0, instance:smoke_Suite.ALC_4350@2f67a4d3]" started-at="2023-07-28T13:58:07 IST" name="generateRandomLastName" finished-at="2023-07-28T13:58:07 IST" duration-ms="6" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- generateRandomLastName -->
-        <test-method is-config="true" signature="generateRandomNumber()[pri:0, instance:smoke_Suite.ALC_4350@7dc3712]" started-at="2023-07-27T17:34:54 IST" name="generateRandomNumber" finished-at="2023-07-27T17:34:54 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="generateRandomNumber()[pri:0, instance:smoke_Suite.ALC_4350@2f67a4d3]" started-at="2023-07-28T13:58:07 IST" name="generateRandomNumber" finished-at="2023-07-28T13:58:07 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- generateRandomNumber -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:smoke_Suite.ALC_4350@7dc3712]" started-at="2023-07-27T17:34:54 IST" name="setup" finished-at="2023-07-27T17:35:27 IST" duration-ms="32726" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:smoke_Suite.ALC_4350@2f67a4d3]" started-at="2023-07-28T13:58:07 IST" name="setup" finished-at="2023-07-28T13:58:34 IST" duration-ms="27333" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="signUp()[pri:0, instance:smoke_Suite.ALC_4350@7dc3712]" started-at="2023-07-27T17:35:27 IST" name="signUp" finished-at="2023-07-27T17:38:21 IST" duration-ms="173879" status="FAIL">
-          <exception class="org.openqa.selenium.TimeoutException">
-            <message>
-              <![CDATA[Expected condition failed: waiting for condition (visibility of Located by By.chained({AppiumBy.androidUIAutomator: new UiSelector().text("menu")})) to be refreshed (tried for 30 second(s) with 500 milliseconds interval)]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for condition (visibility of Located by By.chained({AppiumBy.androidUIAutomator: new UiSelector().text("menu")})) to be refreshed (tried for 30 second(s) with 500 milliseconds interval)
-at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
-at plastic_Bank_Pages.PB_Register_Member.clickmenu(PB_Register_Member.java:340)
-at plastic_Bank_Pages.PB_Register_Member.logout(PB_Register_Member.java:395)
-at smoke_Suite.ALC_4350.signUp(ALC_4350.java:29)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: org.openqa.selenium.NoSuchElementException: Can't locate an element by this strategy: By.chained({AppiumBy.androidUIAutomator: new UiSelector().text("menu")})
-at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:125)
-at io.appium.java_client.pagefactory.interceptors.InterceptorOfASingleElement.intercept(InterceptorOfASingleElement.java:59)
-at org.openqa.selenium.remote.RemoteWebElement$$EnhancerByCGLIB$$d27c0df4.isDisplayed(<generated>)
-at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:304)
-at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:37)
-at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
-at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)
-at org.openqa.selenium.support.ui.ExpectedConditions$25.apply(ExpectedConditions.java:717)
-at org.openqa.selenium.support.ui.ExpectedConditions$25.apply(ExpectedConditions.java:713)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:205)
-... 31 more
-Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction@e97f115 (tried for 1 second(s) with 500 milliseconds interval)
-at org.openqa.selenium.support.ui.FluentWait.timeoutException(FluentWait.java:262)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
-at io.appium.java_client.pagefactory.AppiumElementLocator.waitFor(AppiumElementLocator.java:98)
-at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:118)
-... 40 more
-Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.chained({AppiumBy.androidUIAutomator: new UiSelector().text("menu")})
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.10.0', revision: 'c14d967899'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
-Driver info: driver.version: RemoteWebDriver
-at io.appium.java_client.pagefactory.bys.builder.ByChained.findElement(ByChained.java:77)
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$1.findElement(ElementLocation.java:139)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
-at io.appium.java_client.pagefactory.bys.ContentMappedBy.findElement(ContentMappedBy.java:50)
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$1.findElement(ElementLocation.java:139)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
-at io.appium.java_client.pagefactory.AppiumElementLocator.lambda$findElement$0(AppiumElementLocator.java:119)
-at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:171)
-at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:164)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:205)
-... 42 more
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
+        <test-method signature="signUp()[pri:0, instance:smoke_Suite.ALC_4350@2f67a4d3]" started-at="2023-07-28T13:58:34 IST" name="signUp" finished-at="2023-07-28T14:00:56 IST" duration-ms="142206" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- signUp -->
-        <test-method signature="loginAlchmey()[pri:1, instance:smoke_Suite.ALC_4350@7dc3712]" started-at="2023-07-27T17:38:21 IST" name="loginAlchmey" finished-at="2023-07-27T17:38:30 IST" duration-ms="8919" status="PASS">
+        <test-method signature="loginAlchmey()[pri:1, instance:smoke_Suite.ALC_4350@2f67a4d3]" started-at="2023-07-28T14:00:56 IST" name="loginAlchmey" finished-at="2023-07-28T14:01:05 IST" duration-ms="9066" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginAlchmey -->
-        <test-method signature="VerifyMemberAlchmey()[pri:2, instance:smoke_Suite.ALC_4350@7dc3712]" started-at="2023-07-27T17:38:30 IST" name="VerifyMemberAlchmey" finished-at="2023-07-27T17:38:56 IST" duration-ms="26268" status="FAIL">
+        <test-method signature="VerifyMemberAlchmey()[pri:2, instance:smoke_Suite.ALC_4350@2f67a4d3]" started-at="2023-07-28T14:01:06 IST" name="VerifyMemberAlchmey" finished-at="2023-07-28T14:01:32 IST" duration-ms="26288" status="FAIL">
           <exception class="java.lang.NullPointerException">
             <message>
               <![CDATA[Cannot invoke "java.lang.CharSequence.toString()" because "s" is null]]>
@@ -163,54 +83,54 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- VerifyMemberAlchmey -->
-        <test-method signature="createBranchAndMember()[pri:3, instance:smoke_Suite.ALC_4350@7dc3712]" started-at="2023-07-27T17:38:56 IST" name="createBranchAndMember" finished-at="2023-07-27T17:40:35 IST" duration-ms="98924" status="PASS">
+        <test-method signature="createBranchAndMember()[pri:3, instance:smoke_Suite.ALC_4350@2f67a4d3]" started-at="2023-07-28T14:01:32 IST" name="createBranchAndMember" finished-at="2023-07-28T14:03:11 IST" duration-ms="98985" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createBranchAndMember -->
-        <test-method signature="EditMemberDetails()[pri:4, instance:smoke_Suite.ALC_4350@7dc3712]" started-at="2023-07-27T17:40:35 IST" name="EditMemberDetails" finished-at="2023-07-27T17:41:06 IST" duration-ms="31128" status="PASS">
+        <test-method signature="EditMemberDetails()[pri:4, instance:smoke_Suite.ALC_4350@2f67a4d3]" started-at="2023-07-28T14:03:11 IST" name="EditMemberDetails" finished-at="2023-07-28T14:03:42 IST" duration-ms="31263" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- EditMemberDetails -->
-        <test-method signature="loginBranchMemberPB()[pri:5, instance:smoke_Suite.ALC_4350@7dc3712]" started-at="2023-07-27T17:41:06 IST" name="loginBranchMemberPB" finished-at="2023-07-27T17:41:16 IST" duration-ms="9673" status="PASS">
+        <test-method signature="loginBranchMemberPB()[pri:5, instance:smoke_Suite.ALC_4350@2f67a4d3]" started-at="2023-07-28T14:03:42 IST" name="loginBranchMemberPB" finished-at="2023-07-28T14:03:52 IST" duration-ms="9995" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginBranchMemberPB -->
-        <test-method signature="suspendMemberALC()[pri:6, instance:smoke_Suite.ALC_4350@7dc3712]" started-at="2023-07-27T17:41:16 IST" name="suspendMemberALC" finished-at="2023-07-27T17:41:46 IST" duration-ms="29865" status="PASS">
+        <test-method signature="suspendMemberALC()[pri:6, instance:smoke_Suite.ALC_4350@2f67a4d3]" started-at="2023-07-28T14:03:52 IST" name="suspendMemberALC" finished-at="2023-07-28T14:04:22 IST" duration-ms="29910" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- suspendMemberALC -->
-        <test-method signature="memberSuspendVerify()[pri:7, instance:smoke_Suite.ALC_4350@7dc3712]" started-at="2023-07-27T17:41:46 IST" name="memberSuspendVerify" finished-at="2023-07-27T17:41:51 IST" duration-ms="5219" status="PASS">
+        <test-method signature="memberSuspendVerify()[pri:7, instance:smoke_Suite.ALC_4350@2f67a4d3]" started-at="2023-07-28T14:04:22 IST" name="memberSuspendVerify" finished-at="2023-07-28T14:04:27 IST" duration-ms="5043" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- memberSuspendVerify -->
-        <test-method signature="branchSuspendMemberVerification()[pri:8, instance:smoke_Suite.ALC_4350@7dc3712]" started-at="2023-07-27T17:41:51 IST" name="branchSuspendMemberVerification" finished-at="2023-07-27T17:42:07 IST" duration-ms="15814" status="PASS">
+        <test-method signature="branchSuspendMemberVerification()[pri:8, instance:smoke_Suite.ALC_4350@2f67a4d3]" started-at="2023-07-28T14:04:27 IST" name="branchSuspendMemberVerification" finished-at="2023-07-28T14:04:44 IST" duration-ms="17036" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- branchSuspendMemberVerification -->
-        <test-method is-config="true" signature="quit()[pri:0, instance:smoke_Suite.ALC_4350@7dc3712]" started-at="2023-07-27T17:42:07 IST" name="quit" finished-at="2023-07-27T17:42:08 IST" duration-ms="1453" status="PASS">
+        <test-method is-config="true" signature="quit()[pri:0, instance:smoke_Suite.ALC_4350@2f67a4d3]" started-at="2023-07-28T14:04:44 IST" name="quit" finished-at="2023-07-28T14:04:47 IST" duration-ms="2727" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- quit -->
       </class> <!-- smoke_Suite.ALC_4350 -->
       <class name="smoke_Suite.ALC_4351">
-        <test-method is-config="true" signature="setup()[pri:0, instance:smoke_Suite.ALC_4351@7d322cad]" started-at="2023-07-27T17:48:30 IST" name="setup" finished-at="2023-07-27T17:49:09 IST" duration-ms="39141" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:smoke_Suite.ALC_4351@21be3395]" started-at="2023-07-28T14:07:29 IST" name="setup" finished-at="2023-07-28T14:09:17 IST" duration-ms="107941" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="openRegisterdBranchInApp()[pri:0, instance:smoke_Suite.ALC_4351@7d322cad]" started-at="2023-07-27T17:49:09 IST" name="openRegisterdBranchInApp" finished-at="2023-07-27T17:49:20 IST" duration-ms="10634" status="PASS">
+        <test-method signature="openRegisterdBranchInApp()[pri:0, instance:smoke_Suite.ALC_4351@21be3395]" started-at="2023-07-28T14:09:17 IST" name="openRegisterdBranchInApp" finished-at="2023-07-28T14:09:28 IST" duration-ms="11113" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openRegisterdBranchInApp -->
-        <test-method signature="branchVerifyAndEdit()[pri:1, instance:smoke_Suite.ALC_4351@7d322cad]" started-at="2023-07-27T17:49:20 IST" name="branchVerifyAndEdit" finished-at="2023-07-27T17:49:46 IST" duration-ms="26115" status="PASS">
+        <test-method signature="branchVerifyAndEdit()[pri:1, instance:smoke_Suite.ALC_4351@21be3395]" started-at="2023-07-28T14:09:28 IST" name="branchVerifyAndEdit" finished-at="2023-07-28T14:09:58 IST" duration-ms="30126" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- branchVerifyAndEdit -->
-        <test-method signature="verifyEditInApp()[pri:2, instance:smoke_Suite.ALC_4351@7d322cad]" started-at="2023-07-27T17:49:46 IST" name="verifyEditInApp" finished-at="2023-07-27T17:49:58 IST" duration-ms="12627" status="FAIL">
+        <test-method signature="verifyEditInApp()[pri:2, instance:smoke_Suite.ALC_4351@21be3395]" started-at="2023-07-28T14:09:58 IST" name="verifyEditInApp" finished-at="2023-07-28T14:10:11 IST" duration-ms="12670" status="FAIL">
           <exception class="java.lang.AssertionError">
             <full-stacktrace>
               <![CDATA[java.lang.AssertionError
 at plastic_Bank_Pages.PB_LoginPage.nameVerify(PB_LoginPage.java:180)
-at smoke_Suite.ALC_4351.verifyEditInApp(ALC_4351.java:54)
+at smoke_Suite.ALC_4351.verifyEditInApp(ALC_4351.java:55)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -245,28 +165,28 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyEditInApp -->
-        <test-method signature="suspendBranch()[pri:3, instance:smoke_Suite.ALC_4351@7d322cad]" started-at="2023-07-27T17:49:58 IST" name="suspendBranch" finished-at="2023-07-27T17:55:16 IST" duration-ms="317833" status="FAIL">
+        <test-method signature="suspendBranch()[pri:3, instance:smoke_Suite.ALC_4351@21be3395]" started-at="2023-07-28T14:10:11 IST" name="suspendBranch" finished-at="2023-07-28T14:15:29 IST" duration-ms="317959" status="FAIL">
           <exception class="org.openqa.selenium.TimeoutException">
             <message>
-              <![CDATA[Expected condition failed: waiting for element to be clickable: [[ChromeDriver: chrome on windows (5b4d4599d236f9ba6203850582fdd18b)] -> xpath: //*[text()=' Suspend Account ']/input] (tried for 300 second(s) with 500 milliseconds interval)
+              <![CDATA[Expected condition failed: waiting for element to be clickable: [[ChromeDriver: chrome on windows (7715387303c1227249f3daa1d0ee8b75)] -> xpath: //*[text()=' Suspend Account ']/input] (tried for 300 second(s) with 500 milliseconds interval)
 Build info: version: '4.10.0', revision: 'c14d967899'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
 Driver info: io.appium.java_client.android.AndroidDriver
 Capabilities {appium:appActivity: org.plasticbank.app.MainAct..., appium:appPackage: org.plasticbank.app, appium:automationName: Appium, appium:databaseEnabled: false, appium:desired: {appActivity: org.plasticbank.app.MainAct..., appPackage: org.plasticbank.app, automationName: Appium, deviceName: Android Emulator, platformName: ANDROID, platformVersion: 11.0, udid: emulator-5554}, appium:deviceApiLevel: 30, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone_x86, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 440, appium:deviceScreenSize: 1080x2280, appium:deviceUDID: emulator-5554, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:pixelRatio: 2.75, appium:platformVersion: 11, appium:statBarHeight: 135, appium:takesScreenshot: true, appium:udid: emulator-5554, appium:viewportRect: {height: 1842, left: 0, top: 135, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
-Session ID: 9af86fb1-a641-489f-9c57-2033b117efea]]>
+Session ID: ba6952ec-3d0c-4b64-96b9-c0c4303c93ab]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: [[ChromeDriver: chrome on windows (5b4d4599d236f9ba6203850582fdd18b)] -> xpath: //*[text()=' Suspend Account ']/input] (tried for 300 second(s) with 500 milliseconds interval)
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: [[ChromeDriver: chrome on windows (7715387303c1227249f3daa1d0ee8b75)] -> xpath: //*[text()=' Suspend Account ']/input] (tried for 300 second(s) with 500 milliseconds interval)
 Build info: version: '4.10.0', revision: 'c14d967899'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
 Driver info: io.appium.java_client.android.AndroidDriver
 Capabilities {appium:appActivity: org.plasticbank.app.MainAct..., appium:appPackage: org.plasticbank.app, appium:automationName: Appium, appium:databaseEnabled: false, appium:desired: {appActivity: org.plasticbank.app.MainAct..., appPackage: org.plasticbank.app, automationName: Appium, deviceName: Android Emulator, platformName: ANDROID, platformVersion: 11.0, udid: emulator-5554}, appium:deviceApiLevel: 30, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone_x86, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 440, appium:deviceScreenSize: 1080x2280, appium:deviceUDID: emulator-5554, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:pixelRatio: 2.75, appium:platformVersion: 11, appium:statBarHeight: 135, appium:takesScreenshot: true, appium:udid: emulator-5554, appium:viewportRect: {height: 1842, left: 0, top: 135, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
-Session ID: 9af86fb1-a641-489f-9c57-2033b117efea
+Session ID: ba6952ec-3d0c-4b64-96b9-c0c4303c93ab
 at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
 at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
-at alchemy_Pages.Branches.suspendAccount(Branches.java:111)
-at alchemy_Pages.Branches.suspendBranchAccount(Branches.java:160)
-at smoke_Suite.ALC_4351.suspendBranch(ALC_4351.java:65)
+at alchemy_Pages.Branches.suspendAccount(Branches.java:122)
+at alchemy_Pages.Branches.suspendBranchAccount(Branches.java:171)
+at smoke_Suite.ALC_4351.suspendBranch(ALC_4351.java:66)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -301,25 +221,25 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- suspendBranch -->
-        <test-method signature="verifySuspendedAccount()[pri:4, instance:smoke_Suite.ALC_4351@7d322cad]" started-at="2023-07-27T17:55:16 IST" name="verifySuspendedAccount" finished-at="2023-07-27T17:55:16 IST" duration-ms="147" status="FAIL">
+        <test-method signature="verifySuspendedAccount()[pri:4, instance:smoke_Suite.ALC_4351@21be3395]" started-at="2023-07-28T14:15:29 IST" name="verifySuspendedAccount" finished-at="2023-07-28T14:15:29 IST" duration-ms="181" status="FAIL">
           <exception class="org.openqa.selenium.WebDriverException">
             <message>
               <![CDATA[org.openqa.selenium.NoSuchSessionException: A session is either terminated or not started
 Build info: version: '4.10.0', revision: 'c14d967899'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
 Driver info: io.appium.java_client.android.AndroidDriver
-Command: [9af86fb1-a641-489f-9c57-2033b117efea, findElement {using=id, value=org.plasticbank.app:id/action_bar_root}]
+Command: [ba6952ec-3d0c-4b64-96b9-c0c4303c93ab, findElement {using=id, value=org.plasticbank.app:id/action_bar_root}]
 Capabilities {appium:appActivity: org.plasticbank.app.MainAct..., appium:appPackage: org.plasticbank.app, appium:automationName: Appium, appium:databaseEnabled: false, appium:desired: {appActivity: org.plasticbank.app.MainAct..., appPackage: org.plasticbank.app, automationName: Appium, deviceName: Android Emulator, platformName: ANDROID, platformVersion: 11.0, udid: emulator-5554}, appium:deviceApiLevel: 30, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone_x86, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 440, appium:deviceScreenSize: 1080x2280, appium:deviceUDID: emulator-5554, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:pixelRatio: 2.75, appium:platformVersion: 11, appium:statBarHeight: 135, appium:takesScreenshot: true, appium:udid: emulator-5554, appium:viewportRect: {height: 1842, left: 0, top: 135, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
-Session ID: 9af86fb1-a641-489f-9c57-2033b117efea]]>
+Session ID: ba6952ec-3d0c-4b64-96b9-c0c4303c93ab]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.openqa.selenium.WebDriverException: org.openqa.selenium.NoSuchSessionException: A session is either terminated or not started
 Build info: version: '4.10.0', revision: 'c14d967899'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
 Driver info: io.appium.java_client.android.AndroidDriver
-Command: [9af86fb1-a641-489f-9c57-2033b117efea, findElement {using=id, value=org.plasticbank.app:id/action_bar_root}]
+Command: [ba6952ec-3d0c-4b64-96b9-c0c4303c93ab, findElement {using=id, value=org.plasticbank.app:id/action_bar_root}]
 Capabilities {appium:appActivity: org.plasticbank.app.MainAct..., appium:appPackage: org.plasticbank.app, appium:automationName: Appium, appium:databaseEnabled: false, appium:desired: {appActivity: org.plasticbank.app.MainAct..., appPackage: org.plasticbank.app, automationName: Appium, deviceName: Android Emulator, platformName: ANDROID, platformVersion: 11.0, udid: emulator-5554}, appium:deviceApiLevel: 30, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone_x86, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 440, appium:deviceScreenSize: 1080x2280, appium:deviceUDID: emulator-5554, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:pixelRatio: 2.75, appium:platformVersion: 11, appium:statBarHeight: 135, appium:takesScreenshot: true, appium:udid: emulator-5554, appium:viewportRect: {height: 1842, left: 0, top: 135, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
-Session ID: 9af86fb1-a641-489f-9c57-2033b117efea
+Session ID: ba6952ec-3d0c-4b64-96b9-c0c4303c93ab
 at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:191)
 at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:164)
 at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:205)
@@ -336,7 +256,7 @@ at org.openqa.selenium.support.ui.ExpectedConditions$25.apply(ExpectedConditions
 at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:205)
 at plastic_Bank_Pages.PB_LoginPage.clickloginButton(PB_LoginPage.java:105)
 at plastic_Bank_Pages.PB_LoginPage.loginRandom(PB_LoginPage.java:128)
-at smoke_Suite.ALC_4351.verifySuspendedAccount(ALC_4351.java:75)
+at smoke_Suite.ALC_4351.verifySuspendedAccount(ALC_4351.java:76)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -369,9 +289,9 @@ Caused by: org.openqa.selenium.NoSuchSessionException: A session is either termi
 Build info: version: '4.10.0', revision: 'c14d967899'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
 Driver info: io.appium.java_client.android.AndroidDriver
-Command: [9af86fb1-a641-489f-9c57-2033b117efea, findElement {using=id, value=org.plasticbank.app:id/action_bar_root}]
+Command: [ba6952ec-3d0c-4b64-96b9-c0c4303c93ab, findElement {using=id, value=org.plasticbank.app:id/action_bar_root}]
 Capabilities {appium:appActivity: org.plasticbank.app.MainAct..., appium:appPackage: org.plasticbank.app, appium:automationName: Appium, appium:databaseEnabled: false, appium:desired: {appActivity: org.plasticbank.app.MainAct..., appPackage: org.plasticbank.app, automationName: Appium, deviceName: Android Emulator, platformName: ANDROID, platformVersion: 11.0, udid: emulator-5554}, appium:deviceApiLevel: 30, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone_x86, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 440, appium:deviceScreenSize: 1080x2280, appium:deviceUDID: emulator-5554, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:pixelRatio: 2.75, appium:platformVersion: 11, appium:statBarHeight: 135, appium:takesScreenshot: true, appium:udid: emulator-5554, appium:viewportRect: {height: 1842, left: 0, top: 135, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
-Session ID: 9af86fb1-a641-489f-9c57-2033b117efea
+Session ID: ba6952ec-3d0c-4b64-96b9-c0c4303c93ab
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -408,25 +328,25 @@ at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifySuspendedAccount -->
-        <test-method is-config="true" signature="quit()[pri:0, instance:smoke_Suite.ALC_4351@7d322cad]" started-at="2023-07-27T17:55:16 IST" name="quit" finished-at="2023-07-27T17:55:16 IST" duration-ms="10" status="FAIL">
+        <test-method is-config="true" signature="quit()[pri:0, instance:smoke_Suite.ALC_4351@21be3395]" started-at="2023-07-28T14:15:29 IST" name="quit" finished-at="2023-07-28T14:15:29 IST" duration-ms="6" status="FAIL">
           <exception class="org.openqa.selenium.NoSuchSessionException">
             <message>
               <![CDATA[A session is either terminated or not started
 Build info: version: '4.10.0', revision: 'c14d967899'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
 Driver info: io.appium.java_client.android.AndroidDriver
-Command: [9af86fb1-a641-489f-9c57-2033b117efea, quit {}]
+Command: [ba6952ec-3d0c-4b64-96b9-c0c4303c93ab, quit {}]
 Capabilities {appium:appActivity: org.plasticbank.app.MainAct..., appium:appPackage: org.plasticbank.app, appium:automationName: Appium, appium:databaseEnabled: false, appium:desired: {appActivity: org.plasticbank.app.MainAct..., appPackage: org.plasticbank.app, automationName: Appium, deviceName: Android Emulator, platformName: ANDROID, platformVersion: 11.0, udid: emulator-5554}, appium:deviceApiLevel: 30, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone_x86, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 440, appium:deviceScreenSize: 1080x2280, appium:deviceUDID: emulator-5554, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:pixelRatio: 2.75, appium:platformVersion: 11, appium:statBarHeight: 135, appium:takesScreenshot: true, appium:udid: emulator-5554, appium:viewportRect: {height: 1842, left: 0, top: 135, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
-Session ID: 9af86fb1-a641-489f-9c57-2033b117efea]]>
+Session ID: ba6952ec-3d0c-4b64-96b9-c0c4303c93ab]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.openqa.selenium.NoSuchSessionException: A session is either terminated or not started
 Build info: version: '4.10.0', revision: 'c14d967899'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
 Driver info: io.appium.java_client.android.AndroidDriver
-Command: [9af86fb1-a641-489f-9c57-2033b117efea, quit {}]
+Command: [ba6952ec-3d0c-4b64-96b9-c0c4303c93ab, quit {}]
 Capabilities {appium:appActivity: org.plasticbank.app.MainAct..., appium:appPackage: org.plasticbank.app, appium:automationName: Appium, appium:databaseEnabled: false, appium:desired: {appActivity: org.plasticbank.app.MainAct..., appPackage: org.plasticbank.app, automationName: Appium, deviceName: Android Emulator, platformName: ANDROID, platformVersion: 11.0, udid: emulator-5554}, appium:deviceApiLevel: 30, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone_x86, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 440, appium:deviceScreenSize: 1080x2280, appium:deviceUDID: emulator-5554, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:pixelRatio: 2.75, appium:platformVersion: 11, appium:statBarHeight: 135, appium:takesScreenshot: true, appium:udid: emulator-5554, appium:viewportRect: {height: 1842, left: 0, top: 135, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
-Session ID: 9af86fb1-a641-489f-9c57-2033b117efea
+Session ID: ba6952ec-3d0c-4b64-96b9-c0c4303c93ab
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -476,51 +396,59 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
         </test-method> <!-- quit -->
       </class> <!-- smoke_Suite.ALC_4351 -->
       <class name="smoke_Suite.ALC_4352">
-        <test-method is-config="true" signature="setup()[pri:0, instance:smoke_Suite.ALC_4352@15d49048]" started-at="2023-07-27T17:55:17 IST" name="setup" finished-at="2023-07-27T17:55:36 IST" duration-ms="19348" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:smoke_Suite.ALC_4352@7098b907]" started-at="2023-07-28T14:15:29 IST" name="setup" finished-at="2023-07-28T14:15:50 IST" duration-ms="20560" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="createNewStore()[pri:0, instance:smoke_Suite.ALC_4352@15d49048]" started-at="2023-07-27T17:55:36 IST" name="createNewStore" finished-at="2023-07-27T17:56:40 IST" duration-ms="63696" status="PASS">
+        <test-method signature="createNewStore()[pri:0, instance:smoke_Suite.ALC_4352@7098b907]" started-at="2023-07-28T14:15:50 IST" name="createNewStore" finished-at="2023-07-28T14:16:58 IST" duration-ms="68264" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createNewStore -->
-        <test-method signature="loginAlchmey()[pri:1, instance:smoke_Suite.ALC_4352@15d49048]" started-at="2023-07-27T17:56:40 IST" name="loginAlchmey" finished-at="2023-07-27T17:56:46 IST" duration-ms="5975" status="PASS">
+        <test-method signature="loginAlchmey()[pri:1, instance:smoke_Suite.ALC_4352@7098b907]" started-at="2023-07-28T14:16:58 IST" name="loginAlchmey" finished-at="2023-07-28T14:17:04 IST" duration-ms="5980" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginAlchmey -->
-        <test-method signature="verifyNewStore()[pri:2, instance:smoke_Suite.ALC_4352@15d49048]" started-at="2023-07-27T17:56:46 IST" name="verifyNewStore" finished-at="2023-07-27T17:57:14 IST" duration-ms="28367" status="PASS">
+        <test-method signature="verifyNewStore()[pri:2, instance:smoke_Suite.ALC_4352@7098b907]" started-at="2023-07-28T14:17:04 IST" name="verifyNewStore" finished-at="2023-07-28T14:17:31 IST" duration-ms="26910" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyNewStore -->
-        <test-method is-config="true" signature="quit()[pri:0, instance:smoke_Suite.ALC_4352@15d49048]" started-at="2023-07-27T17:57:14 IST" name="quit" finished-at="2023-07-27T17:57:16 IST" duration-ms="1603" status="PASS">
+        <test-method is-config="true" signature="quit()[pri:0, instance:smoke_Suite.ALC_4352@7098b907]" started-at="2023-07-28T14:17:31 IST" name="quit" finished-at="2023-07-28T14:17:33 IST" duration-ms="2141" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- quit -->
       </class> <!-- smoke_Suite.ALC_4352 -->
       <class name="smoke_Suite.ALC_4354">
-        <test-method is-config="true" signature="setup()[pri:0, instance:smoke_Suite.ALC_4354@642a7222]" started-at="2023-07-27T17:42:08 IST" name="setup" finished-at="2023-07-27T17:42:48 IST" duration-ms="39300" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:smoke_Suite.ALC_4354@7d322cad]" started-at="2023-07-28T14:04:47 IST" name="setup" finished-at="2023-07-28T14:05:06 IST" duration-ms="19147" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="VerifyInApp()[pri:0, instance:smoke_Suite.ALC_4354@642a7222]" started-at="2023-07-27T17:42:48 IST" name="VerifyInApp" finished-at="2023-07-27T17:47:15 IST" duration-ms="267056" status="FAIL">
+        <test-method signature="createProcessor()[pri:0, instance:smoke_Suite.ALC_4354@7d322cad]" started-at="2023-07-28T14:05:06 IST" name="createProcessor" finished-at="2023-07-28T14:06:22 IST" duration-ms="76122" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createProcessor -->
+        <test-method signature="seacrchAndEditProcessorInAlchmey()[pri:1, instance:smoke_Suite.ALC_4354@7d322cad]" started-at="2023-07-28T14:06:22 IST" name="seacrchAndEditProcessorInAlchmey" finished-at="2023-07-28T14:07:26 IST" duration-ms="63547" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- seacrchAndEditProcessorInAlchmey -->
+        <test-method signature="VerifyInApp()[pri:2, instance:smoke_Suite.ALC_4354@7d322cad]" started-at="2023-07-28T14:07:26 IST" name="VerifyInApp" finished-at="2023-07-28T14:07:29 IST" duration-ms="2786" status="FAIL">
           <exception class="org.openqa.selenium.WebDriverException">
             <message>
-              <![CDATA[org.openqa.selenium.WebDriverException: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to the remote server. Original error: socket hang up
+              <![CDATA[org.openqa.selenium.NoSuchSessionException: A session is either terminated or not started
 Build info: version: '4.10.0', revision: 'c14d967899'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
 Driver info: io.appium.java_client.android.AndroidDriver
-Command: [2216a221-86a2-4086-a408-bddce72128ab, findElement {using=-android uiautomator, value=new UiSelector().text("menu")}]
+Command: [2734133a-1037-443f-bc4e-39d854a80783, findElement {using=-android uiautomator, value=new UiSelector().text("menu")}]
 Capabilities {appium:appActivity: org.plasticbank.app.MainAct..., appium:appPackage: org.plasticbank.app, appium:automationName: Appium, appium:databaseEnabled: false, appium:desired: {appActivity: org.plasticbank.app.MainAct..., appPackage: org.plasticbank.app, automationName: Appium, deviceName: Android Emulator, platformName: ANDROID, platformVersion: 11.0, udid: emulator-5554}, appium:deviceApiLevel: 30, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone_x86, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 440, appium:deviceScreenSize: 1080x2280, appium:deviceUDID: emulator-5554, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:pixelRatio: 2.75, appium:platformVersion: 11, appium:statBarHeight: 135, appium:takesScreenshot: true, appium:udid: emulator-5554, appium:viewportRect: {height: 1842, left: 0, top: 135, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
-Session ID: 2216a221-86a2-4086-a408-bddce72128ab]]>
+Session ID: 2734133a-1037-443f-bc4e-39d854a80783]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.WebDriverException: org.openqa.selenium.WebDriverException: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to the remote server. Original error: socket hang up
+              <![CDATA[org.openqa.selenium.WebDriverException: org.openqa.selenium.NoSuchSessionException: A session is either terminated or not started
 Build info: version: '4.10.0', revision: 'c14d967899'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
 Driver info: io.appium.java_client.android.AndroidDriver
-Command: [2216a221-86a2-4086-a408-bddce72128ab, findElement {using=-android uiautomator, value=new UiSelector().text("menu")}]
+Command: [2734133a-1037-443f-bc4e-39d854a80783, findElement {using=-android uiautomator, value=new UiSelector().text("menu")}]
 Capabilities {appium:appActivity: org.plasticbank.app.MainAct..., appium:appPackage: org.plasticbank.app, appium:automationName: Appium, appium:databaseEnabled: false, appium:desired: {appActivity: org.plasticbank.app.MainAct..., appPackage: org.plasticbank.app, automationName: Appium, deviceName: Android Emulator, platformName: ANDROID, platformVersion: 11.0, udid: emulator-5554}, appium:deviceApiLevel: 30, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone_x86, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 440, appium:deviceScreenSize: 1080x2280, appium:deviceUDID: emulator-5554, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:pixelRatio: 2.75, appium:platformVersion: 11, appium:statBarHeight: 135, appium:takesScreenshot: true, appium:udid: emulator-5554, appium:viewportRect: {height: 1842, left: 0, top: 135, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
-Session ID: 2216a221-86a2-4086-a408-bddce72128ab
+Session ID: 2734133a-1037-443f-bc4e-39d854a80783
 at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:191)
 at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:164)
 at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:205)
@@ -565,13 +493,13 @@ at org.testng.TestNG.run(TestNG.java:1031)
 at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: org.openqa.selenium.WebDriverException: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to the remote server. Original error: socket hang up
+Caused by: org.openqa.selenium.NoSuchSessionException: A session is either terminated or not started
 Build info: version: '4.10.0', revision: 'c14d967899'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
 Driver info: io.appium.java_client.android.AndroidDriver
-Command: [2216a221-86a2-4086-a408-bddce72128ab, findElement {using=-android uiautomator, value=new UiSelector().text("menu")}]
+Command: [2734133a-1037-443f-bc4e-39d854a80783, findElement {using=-android uiautomator, value=new UiSelector().text("menu")}]
 Capabilities {appium:appActivity: org.plasticbank.app.MainAct..., appium:appPackage: org.plasticbank.app, appium:automationName: Appium, appium:databaseEnabled: false, appium:desired: {appActivity: org.plasticbank.app.MainAct..., appPackage: org.plasticbank.app, automationName: Appium, deviceName: Android Emulator, platformName: ANDROID, platformVersion: 11.0, udid: emulator-5554}, appium:deviceApiLevel: 30, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone_x86, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 440, appium:deviceScreenSize: 1080x2280, appium:deviceUDID: emulator-5554, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:pixelRatio: 2.75, appium:platformVersion: 11, appium:statBarHeight: 135, appium:takesScreenshot: true, appium:udid: emulator-5554, appium:viewportRect: {height: 1842, left: 0, top: 135, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
-Session ID: 2216a221-86a2-4086-a408-bddce72128ab
+Session ID: 2734133a-1037-443f-bc4e-39d854a80783
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -608,76 +536,25 @@ at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(
           <reporter-output>
           </reporter-output>
         </test-method> <!-- VerifyInApp -->
-        <test-method signature="createProcessor()[pri:0, instance:smoke_Suite.ALC_4354@642a7222]" started-at="2023-07-27T17:47:15 IST" name="createProcessor" finished-at="2023-07-27T17:47:15 IST" duration-ms="70" status="FAIL">
-          <exception class="org.openqa.selenium.WebDriverException">
+        <test-method is-config="true" signature="quit()[pri:0, instance:smoke_Suite.ALC_4354@7d322cad]" started-at="2023-07-28T14:07:29 IST" name="quit" finished-at="2023-07-28T14:07:29 IST" duration-ms="10" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchSessionException">
             <message>
-              <![CDATA[org.openqa.selenium.WebDriverException: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to the remote server. Original error: socket hang up
+              <![CDATA[A session is either terminated or not started
 Build info: version: '4.10.0', revision: 'c14d967899'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
 Driver info: io.appium.java_client.android.AndroidDriver
-Command: [2216a221-86a2-4086-a408-bddce72128ab, findElement {using=-android uiautomator, value=new UiSelector().text("While using the app")}]
+Command: [2734133a-1037-443f-bc4e-39d854a80783, quit {}]
 Capabilities {appium:appActivity: org.plasticbank.app.MainAct..., appium:appPackage: org.plasticbank.app, appium:automationName: Appium, appium:databaseEnabled: false, appium:desired: {appActivity: org.plasticbank.app.MainAct..., appPackage: org.plasticbank.app, automationName: Appium, deviceName: Android Emulator, platformName: ANDROID, platformVersion: 11.0, udid: emulator-5554}, appium:deviceApiLevel: 30, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone_x86, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 440, appium:deviceScreenSize: 1080x2280, appium:deviceUDID: emulator-5554, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:pixelRatio: 2.75, appium:platformVersion: 11, appium:statBarHeight: 135, appium:takesScreenshot: true, appium:udid: emulator-5554, appium:viewportRect: {height: 1842, left: 0, top: 135, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
-Session ID: 2216a221-86a2-4086-a408-bddce72128ab]]>
+Session ID: 2734133a-1037-443f-bc4e-39d854a80783]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.WebDriverException: org.openqa.selenium.WebDriverException: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to the remote server. Original error: socket hang up
+              <![CDATA[org.openqa.selenium.NoSuchSessionException: A session is either terminated or not started
 Build info: version: '4.10.0', revision: 'c14d967899'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
 Driver info: io.appium.java_client.android.AndroidDriver
-Command: [2216a221-86a2-4086-a408-bddce72128ab, findElement {using=-android uiautomator, value=new UiSelector().text("While using the app")}]
+Command: [2734133a-1037-443f-bc4e-39d854a80783, quit {}]
 Capabilities {appium:appActivity: org.plasticbank.app.MainAct..., appium:appPackage: org.plasticbank.app, appium:automationName: Appium, appium:databaseEnabled: false, appium:desired: {appActivity: org.plasticbank.app.MainAct..., appPackage: org.plasticbank.app, automationName: Appium, deviceName: Android Emulator, platformName: ANDROID, platformVersion: 11.0, udid: emulator-5554}, appium:deviceApiLevel: 30, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone_x86, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 440, appium:deviceScreenSize: 1080x2280, appium:deviceUDID: emulator-5554, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:pixelRatio: 2.75, appium:platformVersion: 11, appium:statBarHeight: 135, appium:takesScreenshot: true, appium:udid: emulator-5554, appium:viewportRect: {height: 1842, left: 0, top: 135, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
-Session ID: 2216a221-86a2-4086-a408-bddce72128ab
-at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:191)
-at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:164)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:205)
-at io.appium.java_client.pagefactory.AppiumElementLocator.waitFor(AppiumElementLocator.java:98)
-at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:118)
-at io.appium.java_client.pagefactory.interceptors.InterceptorOfASingleElement.intercept(InterceptorOfASingleElement.java:59)
-at org.openqa.selenium.remote.RemoteWebElement$$EnhancerByCGLIB$$d27c0df4.isDisplayed(<generated>)
-at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:304)
-at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:37)
-at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
-at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)
-at org.openqa.selenium.support.ui.ExpectedConditions$25.apply(ExpectedConditions.java:717)
-at org.openqa.selenium.support.ui.ExpectedConditions$25.apply(ExpectedConditions.java:713)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:205)
-at plastic_Bank_Pages.PB_LoginPage.permission(PB_LoginPage.java:63)
-at smoke_Suite.ALC_4354.createProcessor(ALC_4354.java:23)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: org.openqa.selenium.WebDriverException: An unknown server-side error occurred while processing the command. Original error: Could not proxy command to the remote server. Original error: socket hang up
-Build info: version: '4.10.0', revision: 'c14d967899'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
-Driver info: io.appium.java_client.android.AndroidDriver
-Command: [2216a221-86a2-4086-a408-bddce72128ab, findElement {using=-android uiautomator, value=new UiSelector().text("While using the app")}]
-Capabilities {appium:appActivity: org.plasticbank.app.MainAct..., appium:appPackage: org.plasticbank.app, appium:automationName: Appium, appium:databaseEnabled: false, appium:desired: {appActivity: org.plasticbank.app.MainAct..., appPackage: org.plasticbank.app, automationName: Appium, deviceName: Android Emulator, platformName: ANDROID, platformVersion: 11.0, udid: emulator-5554}, appium:deviceApiLevel: 30, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone_x86, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 440, appium:deviceScreenSize: 1080x2280, appium:deviceUDID: emulator-5554, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:pixelRatio: 2.75, appium:platformVersion: 11, appium:statBarHeight: 135, appium:takesScreenshot: true, appium:udid: emulator-5554, appium:viewportRect: {height: 1842, left: 0, top: 135, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
-Session ID: 2216a221-86a2-4086-a408-bddce72128ab
+Session ID: 2734133a-1037-443f-bc4e-39d854a80783
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -689,86 +566,20 @@ at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpRespo
 at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
 at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:262)
 at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:531)
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
-at io.appium.java_client.pagefactory.bys.builder.ByChained.lambda$getSearchingFunction$0(ByChained.java:41)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:205)
-at io.appium.java_client.pagefactory.bys.builder.ByChained.findElement(ByChained.java:75)
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$1.findElement(ElementLocation.java:139)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
-at io.appium.java_client.pagefactory.bys.ContentMappedBy.findElement(ContentMappedBy.java:50)
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$1.findElement(ElementLocation.java:139)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
-at io.appium.java_client.pagefactory.AppiumElementLocator.lambda$findElement$0(AppiumElementLocator.java:119)
-at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:171)
-... 43 more
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.WebDriverException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createProcessor -->
-        <test-method signature="seacrchAndEditProcessorInAlchmey()[pri:0, instance:smoke_Suite.ALC_4354@642a7222]" started-at="2023-07-27T17:47:15 IST" name="seacrchAndEditProcessorInAlchmey" finished-at="2023-07-27T17:48:27 IST" duration-ms="72555" status="FAIL">
-          <exception class="org.openqa.selenium.NoSuchElementException">
-            <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//div[contains(text(),'Gayas')]"}
-  (Session info: chrome=115.0.5790.110)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.10.0', revision: 'c14d967899'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [113cc5ba5249211b848c6f7d9476ca85, findElement {using=xpath, value=//div[contains(text(),'Gayas')]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 115.0.5790.110, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: C:\Users\Fleek\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:61136}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61136/devtoo..., se:cdpVersion: 115.0.5790.110, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 113cc5ba5249211b848c6f7d9476ca85]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[contains(text(),'Gayas')]"}
-  (Session info: chrome=115.0.5790.110)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.10.0', revision: 'c14d967899'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [113cc5ba5249211b848c6f7d9476ca85, findElement {using=xpath, value=//div[contains(text(),'Gayas')]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 115.0.5790.110, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: C:\Users\Fleek\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:61136}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61136/devtoo..., se:cdpVersion: 115.0.5790.110, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 113cc5ba5249211b848c6f7d9476ca85
-at jdk.internal.reflect.GeneratedConstructorAccessor20.newInstance(Unknown Source)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:199)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:132)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:51)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:531)
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
-at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at jdk.proxy2/jdk.proxy2.$Proxy22.click(Unknown Source)
-at alchemy_Pages.Processors.SearchAndEditProcessorInAlchemy(Processors.java:45)
-at smoke_Suite.ALC_4354.seacrchAndEditProcessorInAlchmey(ALC_4354.java:37)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:590)
+at io.appium.java_client.AppiumDriver.execute(AppiumDriver.java:272)
+at org.openqa.selenium.remote.RemoteWebDriver.quit(RemoteWebDriver.java:446)
+at Utilities.BaseClass.quit(BaseClass.java:123)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 at java.base/java.lang.reflect.Method.invoke(Method.java:568)
 at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
+at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:385)
+at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:321)
+at org.testng.internal.TestMethodWorker.invokeAfterClassMethods(TestMethodWorker.java:217)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:130)
 at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 at org.testng.TestRunner.privateRun(TestRunner.java:794)
 at org.testng.TestRunner.run(TestRunner.java:596)
@@ -787,11 +598,7 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- seacrchAndEditProcessorInAlchmey -->
-        <test-method is-config="true" signature="quit()[pri:0, instance:smoke_Suite.ALC_4354@642a7222]" started-at="2023-07-27T17:48:27 IST" name="quit" finished-at="2023-07-27T17:48:30 IST" duration-ms="2315" status="PASS">
+          </exception> <!-- org.openqa.selenium.NoSuchSessionException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- quit -->
