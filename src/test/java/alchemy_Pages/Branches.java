@@ -154,7 +154,7 @@ public void saveUserDetails() {
 
 public void suspendAccount() {
 	/*
-	 * WebDriverWait wait = new WebDriverWait(pbDriver,Duration.ofSeconds(300));
+	 * WebDriverWait wait = new WebDriverWait(alcDriver,Duration.ofSeconds(300));
 	 * wait.until(ExpectedConditions.elementToBeClickable(suspendAccount_checkbox));
 	 */
 	/*
@@ -174,7 +174,7 @@ public void clickAlertBoxBtnOK() {
 }
 public void searchSpecificBranch(String pNum) throws InterruptedException {
 	Thread.sleep(5000);
-	WebDriverWait wait = new WebDriverWait(pbDriver,Duration.ofSeconds(300));
+	WebDriverWait wait = new WebDriverWait(alcDriver,Duration.ofSeconds(300));
 	wait.until(ExpectedConditions.elementToBeClickable(phone_SearchBox));
 	phone_SearchBox.clear();
 	phone_SearchBox.sendKeys(pNum);
@@ -202,7 +202,7 @@ public void editBranchNameDetails(String pNum) throws InterruptedException {
 public void suspendBranchAccount(String pNum) throws InterruptedException {
 	clickBranchsTab();
 	Thread.sleep(2000);
-	WebDriverWait wait = new WebDriverWait(pbDriver,Duration.ofSeconds(300));
+	WebDriverWait wait = new WebDriverWait(alcDriver,Duration.ofSeconds(300));
 	wait.until(ExpectedConditions.elementToBeClickable(phone_SearchBox));
 	phone_SearchBox.clear();
 	phone_SearchBox.sendKeys(pNum);
@@ -248,6 +248,7 @@ public void transactionApproveExcHisB1(String pNum) throws InterruptedException 
 	clickSpecificBranch();
 	clickExchangeHistoryButton();
 	for (WebElement transaction:transactions) {	
+		
 	transaction.click();
 	Thread.sleep(1000);
 	for (int i=0;i<2;i++)
@@ -255,9 +256,7 @@ public void transactionApproveExcHisB1(String pNum) throws InterruptedException 
 		Thread.sleep(5000);
 		noFraudNoErrorsToggle.get(i).click();
 	}
-	
-	PB_Transaction tr = new PB_Transaction(pbDriver);
-	for(int j=0; j<tr.transactions.size();j++) {
+	for(int j=0; j<transactions.size();j++) {
 	String alcBonus= branchBonusTextInAlchmeyVerify.get(j).getText();
 	assertEquals(alcBonus,alc_B1_ExngHisBonusVerify[j] );
 	String kgArr[] = {hdpeKgAlcText.getText(),petKgAlcText.getText(),totalKgAlcText.getText()};
@@ -270,7 +269,81 @@ public void transactionApproveExcHisB1(String pNum) throws InterruptedException 
 	else if(j==2) {
 		assertEquals(alc_M_B1_ExngHisKgVerify,kgArr);
 	}
-	WebDriverWait wait = new WebDriverWait(pbDriver,Duration.ofSeconds(300));
+	WebDriverWait wait = new WebDriverWait(alcDriver,Duration.ofSeconds(300));
+	wait.until(ExpectedConditions.elementToBeClickable(approveButton));
+	approveButton.click();
+	Thread.sleep(5000);
+	}
+	for(int i=0;i<=approvedConfirm.size();i++) {
+		String ac=approvedConfirm.get(i).getText();
+		assertEquals(ac, "Approved");	
+	}
+}
+}
+
+public void transactionApproveExcHisB2(String pNum) throws InterruptedException {
+	clickBranchsTab();
+	searchSpecificBranch(pNum);
+	clickSpecificBranch();
+	clickExchangeHistoryButton();
+	for (WebElement transaction:transactions) {	
+		
+	transaction.click();
+	Thread.sleep(1000);
+	for (int i=0;i<2;i++)
+	{	
+		Thread.sleep(5000);
+		noFraudNoErrorsToggle.get(i).click();
+	}
+	
+	for(int j=0; j<transactions.size();j++) {
+	String alcBonus= branchBonusTextInAlchmeyVerify.get(j).getText();
+	assertEquals(alcBonus,alc_B1_ExngHisBonusVerify[j] );
+	String kgArr[] = {hdpeKgAlcText.getText(),petKgAlcText.getText(),totalKgAlcText.getText()};
+	if(j==0) {
+		assertEquals(alc_B2_P_ExngHisKgVerify,kgArr);
+	}
+	else if(j==1) {
+		assertEquals(alc_B1_B2_ExngHisKgVerify,kgArr);
+	}
+	WebDriverWait wait = new WebDriverWait(alcDriver,Duration.ofSeconds(300));
+	wait.until(ExpectedConditions.elementToBeClickable(approveButton));
+	approveButton.click();
+	Thread.sleep(5000);
+	}
+	for(int i=0;i<=approvedConfirm.size();i++) {
+		String ac=approvedConfirm.get(i).getText();
+		assertEquals(ac, "Approved");	
+	}
+}
+}
+
+public void transactionApproveExcHisB3(String pNum) throws InterruptedException {
+	clickBranchsTab();
+	searchSpecificBranch(pNum);
+	clickSpecificBranch();
+	clickExchangeHistoryButton();
+	for (WebElement transaction:transactions) {	
+		
+	transaction.click();
+	Thread.sleep(1000);
+	for (int i=0;i<2;i++)
+	{	
+		Thread.sleep(5000);
+		noFraudNoErrorsToggle.get(i).click();
+	}
+	
+	for(int j=0; j<transactions.size();j++) {
+	String alcBonus= branchBonusTextInAlchmeyVerify.get(j).getText();
+	assertEquals(alcBonus,alc_B1_ExngHisBonusVerify[j] );
+	String kgArr[] = {hdpeKgAlcText.getText(),petKgAlcText.getText(),totalKgAlcText.getText()};
+	if(j==0) {
+		assertEquals(alc_B3_P_ExngHisKgVerify,kgArr);
+	}
+	else if(j==1) {
+		assertEquals(alc_B1_B3_ExngHisKgVerify,kgArr);
+	}
+	WebDriverWait wait = new WebDriverWait(alcDriver,Duration.ofSeconds(300));
 	wait.until(ExpectedConditions.elementToBeClickable(approveButton));
 	approveButton.click();
 	Thread.sleep(5000);
