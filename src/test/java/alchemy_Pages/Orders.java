@@ -71,7 +71,6 @@ public class Orders extends BaseClass{
         WebDriverWait wait = new WebDriverWait(alcDriver, Duration.ofSeconds(50));
         wait.until(ExpectedConditions.elementToBeClickable(tableData_FirstRow));
         tableData_FirstRow.click();
-
     }
 
     private void clickEmergencyStopBtn(){

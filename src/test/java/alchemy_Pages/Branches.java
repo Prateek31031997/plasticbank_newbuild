@@ -1,6 +1,9 @@
 package alchemy_Pages;
 
+import static org.testng.Assert.assertEquals;
+
 import java.time.Duration;
+import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -13,6 +16,7 @@ import org.openqa.selenium.support.PageFactory;
 
 
 import Utilities.BaseClass;
+import plastic_Bank_Pages.PB_Transaction;
 
 
 public class Branches extends BaseClass {
@@ -76,6 +80,10 @@ private WebElement popUp_alert;
 @FindBy(xpath = "//div/button[text()='OK']")
 private WebElement okBtn_alertBox;
 
+@FindBy(xpath = "//div[text()='Exchange History']")
+private WebElement exchangeHistory;
+
+
 @FindBy(xpath = "//loader/div//table") 
 WebElement pageLoader;
 @FindBy(xpath = "//label[text()='Tokens Active']/parent::div/div")
@@ -87,8 +95,27 @@ WebElement uploadBuyReceiptsToggle;
 @FindBy(xpath = "//label[text()='Show Token/Market Rate']/parent::div/div")
 WebElement tokenMarketToggle;
 
+@FindBy(xpath = "//label[text()='Show Token/Market Rate']/parent::div/div")
+WebElement fraudToggle;
+@FindBy(xpath = "//label[text()='Show Token/Market Rate']/parent::div/div")
+WebElement errorsToggle;
+@FindBy(xpath = "//label[text()='Show Token/Market Rate']/parent::div/div")
+WebElement bonusToggle;
+@FindBy(xpath = "//div[@class='disable-btn approve-true-state']")
+WebElement approveButton;
 
 
+@FindBy(xpath = "//div[@class='card-header']")
+List<WebElement> transactions;
+
+@FindBy(xpath = "//div[@class='card-header']/div/div/div[contains(@class, 'row')]/div/div[1]")
+List<WebElement> noFraudNoErrorsToggle;
+
+@FindBy(xpath = "//div[@class='text-natural-green']")
+List<WebElement> branchBonusTextInAlchmeyVerify;
+
+@FindBy(xpath = "//div[@class='card-header']/div/div/button")
+List<WebElement> approvedConfirm;
 
 
 public void searchAddedBranch(String Name) {
@@ -139,13 +166,16 @@ public Boolean verfiyAlertBox() {
 public void clickAlertBoxBtnOK() {
 	okBtn_alertBox.click();
 }
-public void editBranchCityDetails(String pNum) throws InterruptedException {
-	clickBranchsTab();
+public void searchSpecificBranch(String pNum) throws InterruptedException {
 	Thread.sleep(5000);
 	WebDriverWait wait = new WebDriverWait(pbDriver,Duration.ofSeconds(300));
 	wait.until(ExpectedConditions.elementToBeClickable(phone_SearchBox));
 	phone_SearchBox.clear();
 	phone_SearchBox.sendKeys(pNum);
+}
+public void editBranchCityDetails(String pNum) throws InterruptedException {
+	clickBranchsTab();
+	searchSpecificBranch(pNum);
 	clickSpecificBranch();
 	editBranch();
 	editUserCity("Dehradun");
@@ -155,10 +185,7 @@ public void editBranchCityDetails(String pNum) throws InterruptedException {
 
 public void editBranchNameDetails(String pNum) throws InterruptedException {
 	clickBranchsTab();
-	WebDriverWait wait = new WebDriverWait(pbDriver,Duration.ofSeconds(300));
-	wait.until(ExpectedConditions.elementToBeClickable(phone_SearchBox));
-	phone_SearchBox.clear();
-	phone_SearchBox.sendKeys(pNum);
+	searchSpecificBranch(pNum);
 	clickSpecificBranch();
 	editBranch();
 	editNameTextFeild.clear();
@@ -166,13 +193,13 @@ public void editBranchNameDetails(String pNum) throws InterruptedException {
 	saveUserDetails();
 }
 
-public void suspendBranchAccount(String Num) throws InterruptedException {
+public void suspendBranchAccount(String pNum) throws InterruptedException {
 	clickBranchsTab();
 	Thread.sleep(2000);
 	WebDriverWait wait = new WebDriverWait(pbDriver,Duration.ofSeconds(300));
 	wait.until(ExpectedConditions.elementToBeClickable(phone_SearchBox));
 	phone_SearchBox.clear();
-	phone_SearchBox.sendKeys(Num);
+	phone_SearchBox.sendKeys(pNum);
 	clickSpecificBranch();
 	suspendAccount();
 	Boolean verify = verfiyAlertBox();
@@ -197,14 +224,49 @@ public void clickTokenMarketToggle(){
 	tokenMarketToggle.click();
 }
 
-public void clickTogglesInBranches() throws InterruptedException {
+public void clickTogglesInBranches(String pNum) throws InterruptedException {
 	clickBranchsTab();
-	searchAddedBranch("gayas branch1");
+	searchSpecificBranch(pNum);
 	clickSpecificBranch();
 	editBranch();
 	clickTokenMarketToggle();
 	clickSplitModeToggle();
 	clickUploadButReceiptsToggle();
+}
+public void clickExchangeHistoryButton() {
+	exchangeHistory.click();
+}
+public void transactionApprove() throws InterruptedException {
+	
+	for (WebElement transaction:transactions) {	
+	transaction.click();
+	Thread.sleep(1000);
+	for (int i=0;i<2;i++)
+	{	
+		Thread.sleep(5000);
+		noFraudNoErrorsToggle.get(i).click();
+	}
+	
+	PB_Transaction tr = new PB_Transaction(pbDriver);
+	String alcBonus= branchBonusTextInAlchmeyVerify.get(0).getText();
+	assertEquals(alcBonus, tr.pbBonus);
+	
+	WebDriverWait wait = new WebDriverWait(pbDriver,Duration.ofSeconds(300));
+	wait.until(ExpectedConditions.elementToBeClickable(approveButton));
+	approveButton.click();
+	Thread.sleep(5000);
+	}
+	for(int i=0;i<=approvedConfirm.size();i++) {
+		String ac=approvedConfirm.get(i).getText();
+		assertEquals(ac, "Approved");	
+	}
+}
+public void verifyTransactionApproved(String pNum) throws InterruptedException {
+	clickBranchsTab();
+	searchSpecificBranch(pNum);
+	clickSpecificBranch();
+	clickExchangeHistoryButton();
+	transactionApprove();
 }
 }
 

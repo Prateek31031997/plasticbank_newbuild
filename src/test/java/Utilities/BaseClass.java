@@ -17,6 +17,56 @@ import io.appium.java_client.remote.MobileCapabilityType;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseClass {
+	
+	public String memberBonus ="7";
+	public String branchBonus ="2";
+	
+	public String hdpe_M_B1="10";
+	public String pet_M_B1="9";
+	
+	public String hdpe_B1_B2="8";
+	public String pet_B1_B2="7";
+
+	public String hdpe_B1_B3="6";
+	public String pet_B1_B3="5";
+
+	public String hdpe_B2_P="4";
+	public String pet_B2_P="3";
+
+	public String hdpe_B3_P="1";
+	public String pet_B3_P="1";
+
+	
+	public String total_bonus_M_B1="133";
+	public String hdpe_bonus_M_B1="70";
+	public String pet_bonus_M_B1="63";
+	public String hdpe_KG_M_B1="10";
+	public String pet_KG_M_B1="9";
+	
+	public String total_bonus_B1_B2="30";
+	public String hdpe_bonus_B1_B2="16";
+	public String pet_bonus_B1_B2="14";
+	public String hdpe_KG_B1_B2="8";
+	public String pet_KG_B1_B2="7";
+	
+	public String total_bonus_B1_B3="8";
+	public String hdpe_bonus_B1_B3="4";
+	public String pet_bonus_B1_B3="4";
+	public String hdpe_KG_B1_B3="6";
+	public String pet_KG_B1_B3="5";
+	
+	public String total_bonus_B2_P="14";
+	public String hdpe_bonus_B2_P="8";
+	public String pet_bonus_B2_P="6";
+	public String hdpe_KG_B2_P="4";
+	public String pet_KG_B2_P="3";
+	
+	public String total_bonus_B3_P="4";
+	public String hdpe_bonus_B3_P="2";
+	public String pet_bonus_B3_P="2";
+	public String hdpe_KG_B3_P="1";
+	public String pet_KG_B3_P="1";
+	
 	public static WebDriver alcDriver;
 	public static AndroidDriver pbDriver;
 
