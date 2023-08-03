@@ -104,6 +104,12 @@ WebElement bonusToggle;
 @FindBy(xpath = "//div[@class='disable-btn approve-true-state']")
 WebElement approveButton;
 
+@FindBy(xpath = "//*[text()='Plastik-HDPE-Clean-Clear']/parent::div/div[2]")
+WebElement hdpeKgAlcText;
+@FindBy(xpath = "//*[text()='Plastik-PET-Raw-Transparent']/parent::div/div[2]")
+WebElement petKgAlcText;
+@FindBy(xpath = "//*[text()='11 KG']/parent::div/div[2]")
+WebElement totalKgAlcText;
 
 @FindBy(xpath = "//div[@class='card-header']")
 List<WebElement> transactions;
@@ -229,15 +235,18 @@ public void clickTogglesInBranches(String pNum) throws InterruptedException {
 	searchSpecificBranch(pNum);
 	clickSpecificBranch();
 	editBranch();
-	clickTokenMarketToggle();
-	clickSplitModeToggle();
+	//clickTokenMarketToggle();
+	//clickSplitModeToggle();
 	clickUploadButReceiptsToggle();
 }
 public void clickExchangeHistoryButton() {
 	exchangeHistory.click();
 }
-public void transactionApprove() throws InterruptedException {
-	
+public void transactionApproveExcHisB1(String pNum) throws InterruptedException {
+	clickBranchsTab();
+	searchSpecificBranch(pNum);
+	clickSpecificBranch();
+	clickExchangeHistoryButton();
 	for (WebElement transaction:transactions) {	
 	transaction.click();
 	Thread.sleep(1000);
@@ -248,9 +257,19 @@ public void transactionApprove() throws InterruptedException {
 	}
 	
 	PB_Transaction tr = new PB_Transaction(pbDriver);
-	String alcBonus= branchBonusTextInAlchmeyVerify.get(0).getText();
-	assertEquals(alcBonus, tr.pbBonus);
-	
+	for(int j=0; j<tr.transactions.size();j++) {
+	String alcBonus= branchBonusTextInAlchmeyVerify.get(j).getText();
+	assertEquals(alcBonus,alc_B1_ExngHisBonusVerify[j] );
+	String kgArr[] = {hdpeKgAlcText.getText(),petKgAlcText.getText(),totalKgAlcText.getText()};
+	if(j==0) {
+		assertEquals(alc_B1_B3_ExngHisKgVerify,kgArr);
+	}
+	else if(j==1) {
+		assertEquals(alc_B1_B2_ExngHisKgVerify,kgArr);
+	}
+	else if(j==2) {
+		assertEquals(alc_M_B1_ExngHisKgVerify,kgArr);
+	}
 	WebDriverWait wait = new WebDriverWait(pbDriver,Duration.ofSeconds(300));
 	wait.until(ExpectedConditions.elementToBeClickable(approveButton));
 	approveButton.click();
@@ -261,12 +280,13 @@ public void transactionApprove() throws InterruptedException {
 		assertEquals(ac, "Approved");	
 	}
 }
+}
 public void verifyTransactionApproved(String pNum) throws InterruptedException {
 	clickBranchsTab();
 	searchSpecificBranch(pNum);
 	clickSpecificBranch();
 	clickExchangeHistoryButton();
-	transactionApprove();
+	
 }
 }
 

@@ -128,7 +128,7 @@ public void searchAddedMember(String memberName) {
 }
 
 public void clickMembersTab() {
-	WebDriverWait wait = new WebDriverWait(pbDriver,Duration.ofSeconds(300));
+	WebDriverWait wait = new WebDriverWait(alcDriver,Duration.ofSeconds(300));
 	wait.until(ExpectedConditions.elementToBeClickable(members_TAB));
 	members_TAB.click();
 }
@@ -140,7 +140,7 @@ public void clickSpecificMember() throws InterruptedException {
 }
 public void suspendAccount() {
 	/*
-	 * WebDriverWait wait = new WebDriverWait(pbDriver,Duration.ofSeconds(300));
+	 * WebDriverWait wait = new WebDriverWait(alcDriver,Duration.ofSeconds(300));
 	 * wait.until(ExpectedConditions.elementToBeClickable(suspendAccount));
 	 */
 	suspendAccount.click();
@@ -158,7 +158,7 @@ public void selectAndverifyMember(String pNum) throws InterruptedException {
 	
 	clickMembersTab();
 	Thread.sleep(10000);
-	WebDriverWait wait = new WebDriverWait(pbDriver,Duration.ofSeconds(300));
+	WebDriverWait wait = new WebDriverWait(alcDriver,Duration.ofSeconds(300));
 	wait.until(ExpectedConditions.elementToBeClickable(phone));
 	phone.clear();
 	phone.sendKeys(pNum);
@@ -178,7 +178,7 @@ public void editMemberDetails(String pNumber,String editdetail) throws Interrupt
 	Thread.sleep(2000);
 	members_TAB.click();
 	Thread.sleep(10000);
-	WebDriverWait wait = new WebDriverWait(pbDriver,Duration.ofSeconds(300));
+	WebDriverWait wait = new WebDriverWait(alcDriver,Duration.ofSeconds(300));
 	wait.until(ExpectedConditions.elementToBeClickable(phone));
 	//phone.click();
 	phone.clear();
@@ -195,7 +195,7 @@ public void suspendMember(String suspendPNumber) throws InterruptedException {
 	
 	clickMembersTab();
 	Thread.sleep(5000);
-	WebDriverWait wait = new WebDriverWait(pbDriver,Duration.ofSeconds(300));
+	WebDriverWait wait = new WebDriverWait(alcDriver,Duration.ofSeconds(300));
 	wait.until(ExpectedConditions.elementToBeClickable(phone));
 	phone.clear();
 	phone.sendKeys(suspendPNumber);

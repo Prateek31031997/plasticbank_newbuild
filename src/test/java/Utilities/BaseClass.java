@@ -67,6 +67,19 @@ public class BaseClass {
 	public String hdpe_KG_B3_P="1";
 	public String pet_KG_B3_P="1";
 	
+	public String alc_B1_ExngHisBonusVerify[]= {"8","30","133"};//B1-B3,B1-B2,M-B1
+	public String alc_B2_ExngHisBonusVerify[]= {"14","30"};//B2-P,B2-B1
+	public String alc_B3_ExngHisBonusVerify[]= {"4","8"};//B3-P,B3-B1
+	
+	//HDPE Kg, PET Kg, Total Kg
+	public String alc_M_B1_ExngHisKgVerify[]= {"10","9","19"};
+	public String alc_B1_B2_ExngHisKgVerify[]= {"8","7","15"};
+	public String alc_B1_B3_ExngHisKgVerify[]= {"6","5","11"};
+	public String alc_B2_P_ExngHisKgVerify[]= {"4","3","7"};
+	public String alc_B3_P_ExngHisKgVerify[]= {"1","1","2"};
+	
+	
+	
 	public static WebDriver alcDriver;
 	public static AndroidDriver pbDriver;
 
