@@ -1,5 +1,6 @@
 package alchemy_Pages;
 
+import java.io.ByteArrayInputStream;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -8,6 +9,8 @@ import java.util.List;
 import java.util.Set;
 
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -18,6 +21,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import Utilities.BaseClass;
+import io.qameta.allure.Allure;
 
 public class Bonus extends BaseClass {
 	
@@ -221,7 +225,11 @@ public void bounusTransaction1ValueVerify() throws InterruptedException {
 		actualBonusApprovalNeedingApprovalArray.add(element2.getText());
 	}
 	Assert.assertEquals(actualBonusApprovalNeedingApprovalArray, expectedBonusApprovalNeedingApprovalArray);
-	
+	  Thread.sleep(2000);
+	    TakesScreenshot ts1 = (TakesScreenshot) alcDriver;
+	    byte[] screenshot1 = ts1.getScreenshotAs(OutputType.BYTES);
+	    Allure.addAttachment("Screenshot1", new ByteArrayInputStream(screenshot1));
+	    Thread.sleep(2000);
 }
 
 
@@ -278,7 +286,11 @@ public void bonusBranch1Verification() throws InterruptedException {
 	Assert.assertEquals(actualBranchOneRecieptKgB1, expectedBranchOneRecieptKgB1);
 	Assert.assertEquals(actualBranchOneRecieptBonusB1, expectedBranchOneReciptBonusB1);
 	Assert.assertEquals(actualBranchOneRecieptTotalBonusB1, expectedBranchOneReciptTotalBonusB1);
-	
+	  Thread.sleep(2000);
+	    TakesScreenshot ts1 = (TakesScreenshot) alcDriver;
+	    byte[] screenshot1 = ts1.getScreenshotAs(OutputType.BYTES);
+	    Allure.addAttachment("Screenshot1", new ByteArrayInputStream(screenshot1));
+	    Thread.sleep(2000);
 	
 	
 
@@ -327,7 +339,12 @@ public void bonusBranch1Verification() throws InterruptedException {
 	
 	Assert.assertEquals(actualBranchOnesellTransactionsWeightB1, expectedBranchOnesellTransactionsWeightB1);
 	Assert.assertEquals(actualBranchOnesellTransactionsBonusB1, expectedBranchOnesellTransactionsBonusB1);
-
+	
+	  Thread.sleep(2000);
+	    TakesScreenshot ts2 = (TakesScreenshot) alcDriver;
+	    byte[] screenshot2 = ts2.getScreenshotAs(OutputType.BYTES);
+	    Allure.addAttachment("Screenshot2", new ByteArrayInputStream(screenshot2));
+	    Thread.sleep(2000);
 	
 	wait.until(ExpectedConditions.elementToBeClickable(payBonusButton));
 	payBonusButton.click();
@@ -361,6 +378,12 @@ public void bonusBranch1Verification() throws InterruptedException {
 	Assert.assertEquals(actualBranchOneBuyTransactionsWeightB1, expectedOneBuyTransactionsWeightB1);
 	Assert.assertEquals(actualBranchOneBuyTransactionsBonusB1, expectedOneBuyTransactionsBonusB1);
 
+	  Thread.sleep(2000);
+	    TakesScreenshot ts3 = (TakesScreenshot) alcDriver;
+	    byte[] screenshot3 = ts3.getScreenshotAs(OutputType.BYTES);
+	    Allure.addAttachment("Screenshot3", new ByteArrayInputStream(screenshot3));
+	    Thread.sleep(2000);
+	
 	wait.until(ExpectedConditions.elementToBeClickable(payBonusButton));
 	payBonusButton.click();
 
@@ -418,6 +441,11 @@ public void bonusBranch2Verification() throws InterruptedException {
 	Assert.assertEquals(actualBranchTwoReciptKgB2, expectedBranchTwoReciptKgB2);
 	Assert.assertEquals(actualBranchTwoReciptBonusB2, expectedBranchTwoReciptBonusB2);
 	Assert.assertEquals(actualBranchTwoReciptTotalBonusB2, expectedBranchTwoReciptTotalBonusB2);
+	  Thread.sleep(2000);
+	    TakesScreenshot ts1 = (TakesScreenshot) alcDriver;
+	    byte[] screenshot1 = ts1.getScreenshotAs(OutputType.BYTES);
+	    Allure.addAttachment("Screenshot1", new ByteArrayInputStream(screenshot1));
+	    Thread.sleep(2000);
 	
 	try {
 			approveRecipt.get(0).click();
@@ -455,6 +483,11 @@ public void bonusBranch2Verification() throws InterruptedException {
 	Assert.assertEquals(actualBranchTwosellTransactionsWeightB2, expectedBranchTwosellTransactionsWeightB2);
 	Assert.assertEquals(actualBranchTwosellTransactionsBonusB2, expectedBranchTwosellTransactionsBonusB2);
 
+	  Thread.sleep(2000);
+	    TakesScreenshot ts2 = (TakesScreenshot) alcDriver;
+	    byte[] screenshot2 = ts2.getScreenshotAs(OutputType.BYTES);
+	    Allure.addAttachment("Screenshot2", new ByteArrayInputStream(screenshot2));
+	    Thread.sleep(2000);
 
 	wait.until(ExpectedConditions.elementToBeClickable(payBonusButton));
 	payBonusButton.click();
@@ -514,7 +547,11 @@ public void bonusBranch3Verification() throws InterruptedException {
 	Assert.assertEquals(actualBranchThreeReciptKgB3, expectedBranchThreeReciptKgB3);
 	Assert.assertEquals(actualBranchThreeReciptBonusB3, expectedBranchThreeReciptBonusB3);
 	Assert.assertEquals(actualBranchThreeReciptTotalBonusB3, expectedBranchThreeReciptTotalBonusB3);
-	
+	  Thread.sleep(2000);
+	    TakesScreenshot ts1 = (TakesScreenshot) alcDriver;
+	    byte[] screenshot1 = ts1.getScreenshotAs(OutputType.BYTES);
+	    Allure.addAttachment("Screenshot1", new ByteArrayInputStream(screenshot1));
+	    Thread.sleep(2000);
 	
 	
 		approveRecipt.get(0).click();
@@ -553,7 +590,11 @@ public void bonusBranch3Verification() throws InterruptedException {
 	Assert.assertEquals(actualBranchThreesellTransactionsWeightB3, expectedBranchThreesellTransactionsWeightB3);
 	Assert.assertEquals(actualBranchThreesellTransactionsBonusB3, expectedBranchThreesellTransactionsBonusB3);
 
-	
+	  Thread.sleep(2000);
+	    TakesScreenshot ts2 = (TakesScreenshot) alcDriver;
+	    byte[] screenshot2 = ts2.getScreenshotAs(OutputType.BYTES);
+	    Allure.addAttachment("Screenshot1", new ByteArrayInputStream(screenshot2));
+	    Thread.sleep(2000);
 
 	wait.until(ExpectedConditions.elementToBeClickable(payBonusButton));
 	payBonusButton.click();
@@ -620,7 +661,11 @@ public void bonusBranch1ValueVerification() throws InterruptedException {
 	}
 	Assert.assertEquals(actualBonusApprovalNeedingApprovalArrayB1, expectedBonusApprovalNeedingApprovalArrayB1);
 	
-	
+	  Thread.sleep(2000);
+	    TakesScreenshot ts1 = (TakesScreenshot) alcDriver;
+	    byte[] screenshot1 = ts1.getScreenshotAs(OutputType.BYTES);
+	    Allure.addAttachment("Screenshot1", new ByteArrayInputStream(screenshot1));
+	    Thread.sleep(2000);
 	
 	Set<String>expectedBranchOneAuditTrailBuyKgB1 = new HashSet<>(Arrays.asList("PET-Raw-Transparent / 9.00 kg", "HDPE-Clean-Clear / 10.00 kg", "Total Weight: 19.00 KG"));
 	Set<String>expectedBranchOneAuditTrailBuyBonusB1 = new HashSet<>(Arrays.asList("Bonus 63", "Bonus 70"));
@@ -655,7 +700,11 @@ public void bonusBranch1ValueVerification() throws InterruptedException {
 	for (WebElement element : bonusBuyTotalValue) {
 		actualBranchOneAuditTrailBuyTotalBonusB1.add(element.getText());
 	}
-	Thread.sleep(2000);
+	  Thread.sleep(2000);
+	    TakesScreenshot ts2 = (TakesScreenshot) alcDriver;
+	    byte[] screenshot2 = ts2.getScreenshotAs(OutputType.BYTES);
+	    Allure.addAttachment("Screenshot2", new ByteArrayInputStream(screenshot2));
+	    Thread.sleep(2000);
 	Assert.assertEquals(actualBranchOneAuditTrailBuyKgB1, expectedBranchOneAuditTrailBuyKgB1);
 	Assert.assertEquals(actualBranchOneAuditTrailBuyBonusB1, expectedBranchOneAuditTrailBuyBonusB1);
 	Assert.assertEquals(actualBranchOneAuditTrailBuyTotalBonusB1, expectedBranchOneAuditTrailBuyTotalBonusB1);
@@ -676,8 +725,11 @@ public void bonusBranch1ValueVerification() throws InterruptedException {
 	for (WebElement element : bonusBuyTotalValue) {
 		actualBranchOneAuditTrailSellTotalBonusB1.add(element.getText());
 	}
-	Thread.sleep(1000);
-	
+	  Thread.sleep(2000);
+	    TakesScreenshot ts3 = (TakesScreenshot) alcDriver;
+	    byte[] screenshot3 = ts3.getScreenshotAs(OutputType.BYTES);
+	    Allure.addAttachment("Screenshot3", new ByteArrayInputStream(screenshot3));
+	    Thread.sleep(2000);
 	Assert.assertEquals(actualBranchOneAuditTrailSellKgB1, expectedBranchOneAuditTrailSellKgB1);
 	Assert.assertEquals(actualBranchOneAuditTrailSellBonusB1, expectedBranchOneAuditTrailSellBonusB1);
 	Assert.assertEquals(actualBranchOneAuditTrailSellTotalBonusB1, expectedBranchOneAuditTrailSellTotalBonusB1);
@@ -729,7 +781,11 @@ public void bonusBranch2ValueVerification() throws InterruptedException {
 	}
 	Thread.sleep(2000);
 	Assert.assertEquals(actualBonusApprovalNeedingApprovalArrayB2, expectedBonusApprovalNeedingApprovalArrayB2);
-	
+	    Thread.sleep(2000);
+	    TakesScreenshot ts1 = (TakesScreenshot) alcDriver;
+	    byte[] screenshot1 = ts1.getScreenshotAs(OutputType.BYTES);
+	    Allure.addAttachment("Screenshot1", new ByteArrayInputStream(screenshot1));
+	    Thread.sleep(2000);
 
 	Set<String>expectedBranchOneAuditTrailSellKgB2 = new HashSet<>(Arrays.asList("PET-Raw-Transparent / 3.00 kg", "HDPE-Clean-Clear / 4.00 kg","Total Weight: 7.00 KG"));
 	Set<String>expectedBranchOneAuditTrailSellBonusB2 = new HashSet<>(Arrays.asList("Bonus 6", "Bonus 8"));
@@ -761,7 +817,11 @@ public void bonusBranch2ValueVerification() throws InterruptedException {
 	Assert.assertEquals(actualBranchOneAuditTrailSellKgB2, expectedBranchOneAuditTrailSellKgB2);
 	Assert.assertEquals(actualBranchOneAuditTrailSellBonusB2, expectedBranchOneAuditTrailSellBonusB2);
 	Assert.assertEquals(actualBranchOneAuditTrailSellTotalBonusB2, expectedBranchOneAuditTrailSellTotalBonusB2);
-	Thread.sleep(1000);
+	  Thread.sleep(2000);
+	    TakesScreenshot ts2 = (TakesScreenshot) alcDriver;
+	    byte[] screenshot2 = ts2.getScreenshotAs(OutputType.BYTES);
+	    Allure.addAttachment("Screenshot2", new ByteArrayInputStream(screenshot2));
+	    Thread.sleep(2000);
 	wait.until(ExpectedConditions.elementToBeClickable(closeButton));
 	closeButton.click();
 	wait.until(ExpectedConditions.elementToBeClickable(branchButton.get(1)));
@@ -812,7 +872,11 @@ public void bonusBranch3ValueVerification() throws InterruptedException {
 	Thread.sleep(2000);
 	Assert.assertEquals(actualBonusApprovalNeedingApprovalArrayB3, expectedBonusApprovalNeedingApprovalArrayB3);
 	
-	Thread.sleep(1000);
+	  Thread.sleep(2000);
+	    TakesScreenshot ts1 = (TakesScreenshot) alcDriver;
+	    byte[] screenshot1 = ts1.getScreenshotAs(OutputType.BYTES);
+	    Allure.addAttachment("Screenshot1", new ByteArrayInputStream(screenshot1));
+	    Thread.sleep(2000);
 	
 	Set<String>expectedBranchOneAuditTrailSellKgB3 = new HashSet<>(Arrays.asList("PET-Raw-Transparent / 1.00 kg", "HDPE-Clean-Clear / 1.00 kg","Total Weight: 2.00 KG"));
 	ArrayList<String>expectedBranchOneAuditTrailSellBonusB3 = new ArrayList<>(Arrays.asList("Bonus 2", "Bonus 2"));
@@ -840,7 +904,11 @@ public void bonusBranch3ValueVerification() throws InterruptedException {
 	for (WebElement element : bonusBuyTotalValue) {
 		actualBranchOneAuditTrailSellTotalBonusB3.add(element.getText());
 	}
-	Thread.sleep(2000);
+	  Thread.sleep(2000);
+	    TakesScreenshot ts2 = (TakesScreenshot) alcDriver;
+	    byte[] screenshot2 = ts2.getScreenshotAs(OutputType.BYTES);
+	    Allure.addAttachment("Screenshot2", new ByteArrayInputStream(screenshot2));
+	    Thread.sleep(2000);
 	
 	Assert.assertEquals(actualBranchOneAuditTrailSellKgB3, expectedBranchOneAuditTrailSellKgB3);
 	Assert.assertEquals(actualBranchOneAuditTrailSellBonusB3, expectedBranchOneAuditTrailSellBonusB3);
@@ -895,7 +963,11 @@ public void processor1ValueVerification() throws InterruptedException {
 	}
 	Thread.sleep(2000);
 	Assert.assertEquals(actualBonusApprovalNeedingApprovalArrayP1, expectedBonusApprovalNeedingApprovalArrayP1);
-	
+	  Thread.sleep(2000);
+	    TakesScreenshot ts1 = (TakesScreenshot) alcDriver;
+	    byte[] screenshot1 = ts1.getScreenshotAs(OutputType.BYTES);
+	    Allure.addAttachment("Screenshot1", new ByteArrayInputStream(screenshot1));
+	    Thread.sleep(2000);
 	
 	wait.until(ExpectedConditions.elementToBeClickable(branchButton.get(3)));
 	branchButton.get(3).click();

@@ -1,13 +1,17 @@
 package alchemy_Pages;
 
 import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
 
+import java.io.ByteArrayInputStream;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -19,6 +23,7 @@ import org.openqa.selenium.support.PageFactory;
 
 
 import Utilities.BaseClass;
+import io.qameta.allure.Allure;
 
 
 public class Branches extends BaseClass {
@@ -136,6 +141,9 @@ List<WebElement> noFraudNoErrorsToggle;
 
 @FindBy(xpath = "//div[@class='text-natural-green']")
 WebElement branchBonusTextInAlchmeyVerify; ///////
+
+@FindBy(xpath = "//span[text()='(transferred)']")
+WebElement transferedTextDisplay;
 
 @FindBy(xpath = "//div[@class='card-header']/div/div/button[text()='Approved']")
 List<WebElement> approvedConfirm;
@@ -290,10 +298,13 @@ public void firstTransactionApproveExcHisB1(String pNum) throws InterruptedExcep
 		Thread.sleep(2000);
 		String alcBonus= branchBonusTextInAlchmeyVerify.getText();
 		assertEquals(total_bonus_M_B1,alcBonus);
-		System.out.println("----------");
 		String kgArr[] = {hdpeKgAlcText.getText(),petKgAlcText.getText(),totalKgAlcText.getText()};
 		assertEquals(kgArr,alc_M_B1_ExngHisKgVerify);
-		System.out.println("----------");
+		  Thread.sleep(2000);
+		    TakesScreenshot ts1 = (TakesScreenshot) alcDriver;
+		    byte[] screenshot1 = ts1.getScreenshotAs(OutputType.BYTES);
+		    Allure.addAttachment("Screenshot1", new ByteArrayInputStream(screenshot1));
+		    Thread.sleep(2000);
 	 
 }
 public void transactionApproveExcHisB1(String pNum) throws InterruptedException {
@@ -303,8 +314,17 @@ public void transactionApproveExcHisB1(String pNum) throws InterruptedException 
 	List<String> actualBr1TagsDetails = new ArrayList<>();
 	for(WebElement branchDetails: branchDetailsTagTexts)
 		actualBr1TagsDetails.add(branchDetails.getText()) ;
-	System.out.println(actualBr1TagsDetails);
+	System.out.println("B1="+actualBr1TagsDetails);
 	
+	List<String> expectedBr1TagsDetails = new ArrayList<>();
+	expectedBr1TagsDetails.addAll(Arrays.asList("19","0","1","0"));
+	//Assert.assertEquals(actualBr1TagsDetails, expectedBr1TagsDetails);
+	Thread.sleep(2000);
+	TakesScreenshot ts = (TakesScreenshot) pbDriver;
+    byte[] screenshot = ts.getScreenshotAs(OutputType.BYTES);
+    Allure.addAttachment("Screenshot", new ByteArrayInputStream(screenshot));
+    Thread.sleep(2000);
+    
 	clickExchangeHistoryButton();
 	for (int p=0; p<3; p++) {
 		
@@ -342,6 +362,11 @@ public void transactionApproveExcHisB1(String pNum) throws InterruptedException 
 		String ac=approvedConfirm.get(i).getText();
 		assertEquals(ac, "Approved");	
 }
+	  Thread.sleep(2000);
+	    TakesScreenshot ts1 = (TakesScreenshot) alcDriver;
+	    byte[] screenshot1 = ts1.getScreenshotAs(OutputType.BYTES);
+	    Allure.addAttachment("Screenshot1", new ByteArrayInputStream(screenshot1));
+	    Thread.sleep(2000);
 }
 public void transactionApproveExcHisB2(String pNum) throws InterruptedException {
 
@@ -351,7 +376,15 @@ public void transactionApproveExcHisB2(String pNum) throws InterruptedException 
 	List<String> actualBr2TagsDetails = new ArrayList<>();
 	for(WebElement branchDetails: branchDetailsTagTexts)
 		actualBr2TagsDetails.add(branchDetails.getText()) ;
-	System.out.println(actualBr2TagsDetails);
+	System.out.println("B2="+actualBr2TagsDetails);
+	List<String> expectedBr2TagsDetails = new ArrayList<>();
+	expectedBr2TagsDetails.addAll(Arrays.asList("0","0","0","0"));
+	//Assert.assertEquals(actualBr2TagsDetails, expectedBr2TagsDetails);
+	Thread.sleep(2000);
+	TakesScreenshot ts = (TakesScreenshot) pbDriver;
+    byte[] screenshot = ts.getScreenshotAs(OutputType.BYTES);
+    Allure.addAttachment("Screenshot", new ByteArrayInputStream(screenshot));
+    Thread.sleep(2000);
 	
 	clickExchangeHistoryButton();
 	for (int p=0; p<=1; p++) {
@@ -392,6 +425,11 @@ public void transactionApproveExcHisB2(String pNum) throws InterruptedException 
 		String ac=approvedConfirm.get(i).getText();
 		assertEquals(ac, "Approved");	
 }
+	  Thread.sleep(2000);
+	    TakesScreenshot ts1 = (TakesScreenshot) alcDriver;
+	    byte[] screenshot1 = ts1.getScreenshotAs(OutputType.BYTES);
+	    Allure.addAttachment("Screenshot1", new ByteArrayInputStream(screenshot1));
+	    Thread.sleep(2000);
 }
 
 public void transactionApproveExcHisB3(String pNum) throws InterruptedException {
@@ -402,7 +440,7 @@ public void transactionApproveExcHisB3(String pNum) throws InterruptedException 
 	List<String> actualBr2TagsDetails = new ArrayList<>();
 	for(WebElement branchDetails: branchDetailsTagTexts)
 		actualBr2TagsDetails.add(branchDetails.getText()) ;
-	System.out.println(actualBr2TagsDetails);
+	System.out.println("B3="+actualBr2TagsDetails);
 	
 	clickExchangeHistoryButton();
 	
@@ -445,6 +483,32 @@ public void transactionApproveExcHisB3(String pNum) throws InterruptedException 
 		String ac=approvedConfirm.get(i).getText();
 		assertEquals(ac, "Approved");	
 	}
+	  Thread.sleep(2000);
+	    TakesScreenshot ts1 = (TakesScreenshot) alcDriver;
+	    byte[] screenshot1 = ts1.getScreenshotAs(OutputType.BYTES);
+	    Allure.addAttachment("Screenshot1", new ByteArrayInputStream(screenshot1));
+	    Thread.sleep(2000);
 }
+
+public void verifyBonusTransfered(String pNum) throws InterruptedException {
+	
+	clickBranchesTab();
+	searchSpecificBranch(pNum);
+	clickSpecificBranch();
+	clickExchangeHistoryButton();
+	
+	for (WebElement transaction:transactions) {
+
+		transaction.click();
+		Thread.sleep(3000);
+		assertTrue(transferedTextDisplay.isDisplayed());
+		Thread.sleep(2000);
+			TakesScreenshot ts1 = (TakesScreenshot) alcDriver;
+		    byte[] screenshot1 = ts1.getScreenshotAs(OutputType.BYTES);
+		    Allure.addAttachment("Screenshot1", new ByteArrayInputStream(screenshot1));
+		    Thread.sleep(2000);
+		    transaction.click();
+		}
+	}
 }
 

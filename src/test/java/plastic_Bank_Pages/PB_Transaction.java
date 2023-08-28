@@ -2,9 +2,13 @@ package plastic_Bank_Pages;
 
 import static org.testng.Assert.assertTrue;
 
+import java.io.ByteArrayInputStream;
 import java.time.Duration;
 import java.util.Arrays;
 import java.util.List;
+
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.PointerInput;
 import org.openqa.selenium.interactions.Sequence;
@@ -17,6 +21,7 @@ import Utilities.BaseClass;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
+import io.qameta.allure.Allure;
 
 public class PB_Transaction extends BaseClass{
 	
@@ -103,6 +108,9 @@ public WebElement kgbranch3toProcessor;
 
 @AndroidFindBy(uiAutomator="new UiSelector().textContains(\"rocess\")")
 public WebElement processor;
+
+@AndroidFindBy(uiAutomator="new UiSelector().textContains(\"133 = 72\")")
+public WebElement bonusMemberVerify;
 
  
 WebDriverWait wait = new WebDriverWait(pbDriver,Duration.ofSeconds(10));
@@ -265,6 +273,12 @@ public void m1toB1(String m1number) throws InterruptedException {
 	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(checkmark.get(1))));
     checkmark.get(1).click();
     
+    Thread.sleep(2000);
+    TakesScreenshot ts1 = (TakesScreenshot) pbDriver;
+    byte[] screenshot1 = ts1.getScreenshotAs(OutputType.BYTES);
+    Allure.addAttachment("Screenshot1", new ByteArrayInputStream(screenshot1));
+    Thread.sleep(2000);
+    
     assertTrue(bonusToMember.isDisplayed());
     assertTrue(kgMemberToBranch1.isDisplayed());
    
@@ -312,6 +326,11 @@ public void m1toB1(String m1number) throws InterruptedException {
         				checkmark.get(0)))); checkmark.get(0).click();
        }
     
+    Thread.sleep(2000);
+    TakesScreenshot ts3 = (TakesScreenshot) pbDriver;
+    byte[] screenshot3 = ts3.getScreenshotAs(OutputType.BYTES);
+    Allure.addAttachment("Screenshot3", new ByteArrayInputStream(screenshot3));
+    Thread.sleep(2000);
     assertTrue(bonusToMember.isDisplayed());
     assertTrue(kgMemberToBranch1.isDisplayed());
     
@@ -342,6 +361,11 @@ public void m1toB1(String m1number) throws InterruptedException {
 	            wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(noBonus)));
 	            assertTrue(noBonus.isDisplayed());
 				
+	            Thread.sleep(2000);
+	            TakesScreenshot ts2 = (TakesScreenshot) pbDriver;
+	            byte[] screenshot2 = ts2.getScreenshotAs(OutputType.BYTES);
+	            Allure.addAttachment("Screenshot2", new ByteArrayInputStream(screenshot2));
+	            Thread.sleep(2000);
 }
 
 
@@ -370,6 +394,11 @@ public void b1toB2(String b1number) throws InterruptedException {
 	requiredQuantity.sendKeys("7");
 	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(checkmark.get(1))));
     checkmark.get(1).click();
+    Thread.sleep(2000);
+    TakesScreenshot ts1 = (TakesScreenshot) pbDriver;
+    byte[] screenshot1 = ts1.getScreenshotAs(OutputType.BYTES);
+    Allure.addAttachment("Screenshot1", new ByteArrayInputStream(screenshot1));
+    Thread.sleep(2000);
     assertTrue(bonusToBranch1fromBranch2.isDisplayed());
     assertTrue(kgBranch1ToBranch2.isDisplayed());
     
@@ -418,6 +447,11 @@ public void b1toB2(String b1number) throws InterruptedException {
         	
         	
         }
+    Thread.sleep(2000);
+    TakesScreenshot ts2 = (TakesScreenshot) pbDriver;
+    byte[] screenshot2 = ts2.getScreenshotAs(OutputType.BYTES);
+    Allure.addAttachment("Screenshot2", new ByteArrayInputStream(screenshot2));
+    Thread.sleep(2000);
     assertTrue(bonusToBranch1fromBranch2.isDisplayed());
     assertTrue(kgBranch1ToBranch2.isDisplayed());
     wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(checkmark.get(0))));
@@ -453,7 +487,11 @@ public void b1toB3(String b1number) throws InterruptedException {
 	requiredQuantity.sendKeys("5");
 	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(checkmark.get(1))));
     checkmark.get(1).click();
-    
+    Thread.sleep(2000);
+    TakesScreenshot ts1 = (TakesScreenshot) pbDriver;
+    byte[] screenshot1 = ts1.getScreenshotAs(OutputType.BYTES);
+    Allure.addAttachment("Screenshot1", new ByteArrayInputStream(screenshot1));
+    Thread.sleep(2000);
     assertTrue(bonusToBranch1fromBranch3.isDisplayed());
     assertTrue(kgBranch1toBranch3.isDisplayed());
     wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(checkmark.get(0))));
@@ -501,6 +539,11 @@ public void b1toB3(String b1number) throws InterruptedException {
         	
         	
         }
+    Thread.sleep(2000);
+    TakesScreenshot ts2 = (TakesScreenshot) pbDriver;
+    byte[] screenshot2 = ts2.getScreenshotAs(OutputType.BYTES);
+    Allure.addAttachment("Screenshot2", new ByteArrayInputStream(screenshot2));
+    Thread.sleep(2000);
     assertTrue(bonusToBranch1fromBranch3.isDisplayed());
     assertTrue(kgBranch1toBranch3.isDisplayed());
     wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(checkmark.get(0))));
@@ -541,7 +584,11 @@ public void b3ToP(String b3number) throws InterruptedException {
 	requiredQuantity.sendKeys("1");
 	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(checkmark.get(1))));
     checkmark.get(1).click();
-    
+    Thread.sleep(2000);
+    TakesScreenshot ts1 = (TakesScreenshot) pbDriver;
+    byte[] screenshot1 = ts1.getScreenshotAs(OutputType.BYTES);
+    Allure.addAttachment("Screenshot1", new ByteArrayInputStream(screenshot1));
+    Thread.sleep(2000);
     assertTrue(bonusTobranch3fromProcessor.isDisplayed());
     assertTrue(kgbranch3toProcessor.isDisplayed());
     
@@ -590,6 +637,11 @@ public void b3ToP(String b3number) throws InterruptedException {
         	
         	
         }
+    Thread.sleep(2000);
+    TakesScreenshot ts2 = (TakesScreenshot) pbDriver;
+    byte[] screenshot2 = ts2.getScreenshotAs(OutputType.BYTES);
+    Allure.addAttachment("Screenshot2", new ByteArrayInputStream(screenshot2));
+    Thread.sleep(2000);
     assertTrue(bonusTobranch3fromProcessor.isDisplayed());
     assertTrue(kgbranch3toProcessor.isDisplayed());
     
@@ -632,7 +684,11 @@ public void b2ToP(String b2number) throws InterruptedException {
 	requiredQuantity.sendKeys("3");
 	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(checkmark.get(1))));
     checkmark.get(1).click();
-    
+    Thread.sleep(2000);
+    TakesScreenshot ts1 = (TakesScreenshot) pbDriver;
+    byte[] screenshot1 = ts1.getScreenshotAs(OutputType.BYTES);
+    Allure.addAttachment("Screenshot1", new ByteArrayInputStream(screenshot1));
+    Thread.sleep(2000);
     assertTrue(bonusTobranch2fromProcessor.isDisplayed());
     assertTrue(kgbranch2toProcessor.isDisplayed());
     
@@ -682,6 +738,11 @@ public void b2ToP(String b2number) throws InterruptedException {
         	
         	
         }
+    Thread.sleep(2000);
+    TakesScreenshot ts2 = (TakesScreenshot) pbDriver;
+    byte[] screenshot2 = ts2.getScreenshotAs(OutputType.BYTES);
+    Allure.addAttachment("Screenshot2", new ByteArrayInputStream(screenshot2));
+    Thread.sleep(2000);
     assertTrue(bonusTobranch2fromProcessor.isDisplayed());
     assertTrue(kgbranch2toProcessor.isDisplayed());
     
@@ -692,5 +753,17 @@ public void b2ToP(String b2number) throws InterruptedException {
 	checkmark.get(0)))); checkmark.get(0).click();
 	 wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(
 				ok))); ok.click();
+}
+public void CheckMemberBonus() throws InterruptedException {
+	PB_LoginPage lo =new  PB_LoginPage(pbDriver);
+	lo.login(member_Number, password);
+	Thread.sleep(3000);
+	Assert.assertTrue(bonusMemberVerify.isDisplayed());
+	
+	Thread.sleep(2000);
+    TakesScreenshot ts2 = (TakesScreenshot) pbDriver;
+    byte[] screenshot2 = ts2.getScreenshotAs(OutputType.BYTES);
+    Allure.addAttachment("Screenshot2", new ByteArrayInputStream(screenshot2));
+    Thread.sleep(2000);
 }
 }

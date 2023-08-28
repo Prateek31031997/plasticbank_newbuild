@@ -49,23 +49,23 @@ public class BaseClass {
 	public static List<String>branchIds=new ArrayList<String>();
 	public static List<String>processorIds=new ArrayList<String>();
 
-	public static String bonusName="FleekxjocRk"; 
+	public static String bonusName="FleekPIUvOb"; 
 	public static String password = "123456a";
 
-	public static String member_Name="FleeknBkE0z";
-	public static String member_Number="+635825745058";
+	public static String member_Name="FleekNAPjYH";
+	public static String member_Number="+633795251733";
 
-	public static String branch1_Name="brancha_QIOfpaxi";
-	public static String branch1_Number="+634695528144";
+	public static String branch1_Name="brancha_3jarrtxR";
+	public static String branch1_Number="+637978283825";
 
-	public static String branch2_Name="branchb_9eepTJAO";
-	public static String branch2_Number="+633420850063";
+	public static String branch2_Name="branchb_P6ew9Hil";
+	public static String branch2_Number="+634430973253";
 
-	public static String branch3_Name="branchc_PjBSrhAS";
-	public static String branch3_Number="+636167356682";
+	public static String branch3_Name="branchc_wtnZvZhQ";
+	public static String branch3_Number="+637036420188";
 
-	public static String processor_Name="process_R7DdNWYU";
-	public static String processor_Number="+637781530559";
+	public static String processor_Name="process_G1LDAJxi";
+	public static String processor_Number="+637635655695";
 	
 
 	public String memberBonus = "7";
@@ -179,7 +179,8 @@ public class BaseClass {
 		
 		  memberName = "Gayas"; 
 		  branchmemberName = "Gayas " + randomBranchMemberName;
-		  // password= "123456a"; phoneNumber = "+63" + randomPhoneNumber;
+		  password= "123456a"; 
+		  phoneNumber = "+63" + randomPhoneNumber;
 		  branchMemberphoneNumber = "+63" + randomBranchMemberPhoneNumber;
 		  
 		  adminphoneNumber = "+919560071590"; 

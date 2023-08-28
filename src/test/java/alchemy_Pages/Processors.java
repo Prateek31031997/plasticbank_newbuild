@@ -2,9 +2,12 @@ package alchemy_Pages;
 
 	import static org.testng.Assert.assertEquals;
 
+import java.io.ByteArrayInputStream;
 import java.time.Duration;
 import java.util.List;
 
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 	import org.openqa.selenium.WebElement;
 	import org.openqa.selenium.support.CacheLookup;
@@ -13,6 +16,7 @@ import org.openqa.selenium.WebDriver;
 	import org.openqa.selenium.support.ui.ExpectedConditions;
 	import org.openqa.selenium.support.ui.WebDriverWait;
     import Utilities.BaseClass;
+import io.qameta.allure.Allure;
 
 
 	public class Processors  extends BaseClass{
@@ -117,5 +121,10 @@ public void clickExchangeHistoryButton() {
 			String ac=approvedConfirm.get(i).getText();
 			assertEquals(ac, "Approved");	
 		}
+		  Thread.sleep(2000);
+		    TakesScreenshot ts1 = (TakesScreenshot) alcDriver;
+		    byte[] screenshot1 = ts1.getScreenshotAs(OutputType.BYTES);
+		    Allure.addAttachment("Screenshot1", new ByteArrayInputStream(screenshot1));
+		    Thread.sleep(2000);
 	}
 }

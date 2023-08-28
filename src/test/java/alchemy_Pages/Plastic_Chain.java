@@ -2,10 +2,13 @@ package alchemy_Pages;
 
 import static org.testng.Assert.assertTrue;
 
+import java.io.ByteArrayInputStream;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -14,6 +17,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import Utilities.BaseClass;
+import io.qameta.allure.Allure;
 
 public class Plastic_Chain extends BaseClass {
 	
@@ -104,8 +108,13 @@ public class Plastic_Chain extends BaseClass {
     	assertTrue(greenArrow.size()==12);
     	}
 
-    	public void verifyOrangenarrows(){
+    	public void verifyOrangenarrows() throws InterruptedException{
     	assertTrue(orangeArrow.size()==12);
+    	  Thread.sleep(2000);
+  	    TakesScreenshot ts1 = (TakesScreenshot) alcDriver;
+  	    byte[] screenshot1 = ts1.getScreenshotAs(OutputType.BYTES);
+  	    Allure.addAttachment("Screenshot1", new ByteArrayInputStream(screenshot1));
+  	    Thread.sleep(2000);
     	}
 
     
@@ -322,6 +331,11 @@ public class Plastic_Chain extends BaseClass {
     	verifyGreenarrows();
     	
     	ListElementsAssertion();
+    	  Thread.sleep(2000);
+    	    TakesScreenshot ts1 = (TakesScreenshot) alcDriver;
+    	    byte[] screenshot1 = ts1.getScreenshotAs(OutputType.BYTES);
+    	    Allure.addAttachment("Screenshot1", new ByteArrayInputStream(screenshot1));
+    	    Thread.sleep(2000);
     	
     }
 	
