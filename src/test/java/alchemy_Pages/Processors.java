@@ -1,7 +1,11 @@
 package alchemy_Pages;
 
-	import java.time.Duration;
-	import org.openqa.selenium.WebDriver;
+	import static org.testng.Assert.assertEquals;
+
+import java.time.Duration;
+import java.util.List;
+
+import org.openqa.selenium.WebDriver;
 	import org.openqa.selenium.WebElement;
 	import org.openqa.selenium.support.CacheLookup;
 	import org.openqa.selenium.support.FindBy;
@@ -23,19 +27,50 @@ package alchemy_Pages;
 	public WebElement processors_TAB;
 	@FindBy(xpath ="//input[@placeholder='Phone']")
 	public WebElement phoneSearch;
-	@FindBy(xpath="//span[text()='Edit']") @CacheLookup public WebElement edit;
+	@FindBy(xpath="//span[text()='Edit']") 
+	@CacheLookup public WebElement edit;
 	@FindBy(xpath ="//input[@name='name']")
 	public WebElement editNameField;
 	@FindBy(xpath="//div[contains(text(),'Save')]")
 	public WebElement save;
 	@FindBy(xpath="//div[contains(text(),'Gayas')]")
 	public WebElement latestProcessorAdded;
+	@FindBy(xpath = "//div[@class='container-fluid']//datatable//table/tbody/tr[1]/td[1]/div/div")
+	private WebElement tableData_FirstRow;
+	@FindBy(xpath = "//a[text()='Exchange History']")
+	private WebElement exchangeHistory;
+	@FindBy(xpath = "//div[@class='card-header']/div/button")
+	List<WebElement> transactions;//div[@class='card-header']
+	
+	@FindBy(xpath = "//div[@class='text-natural-green']")
+	WebElement branchBonusTextInAlchmeyVerify;
+	
+	@FindBy(xpath = "//*[text()='Plastik-HDPE-Clean-Clear']/parent::div/div[2]")
+	WebElement hdpeKgAlcText;
+	@FindBy(xpath = "//*[text()='Plastik-PET-Raw-Transparent']/parent::div/div[2]")
+	WebElement petKgAlcText;
+	@FindBy(xpath = "//div[text()='TOTAL']/following-sibling::div")
+	WebElement totalKgAlcText;
+	@FindBy(xpath = "//div[@class='disable-btn approve-true-state']")
+	WebElement approveButton;
 
+	@FindBy(xpath = "//div[@class='card-header']/div/div[1]/button")
+	List<WebElement> approvedConfirm;
 
 	public void waitforloader() {
 		WebDriverWait wait = new WebDriverWait(alcDriver,Duration.ofSeconds(300));
 		wait.until(ExpectedConditions.refreshed(ExpectedConditions.invisibilityOf(circleLoader)));
 	}
+	
+
+public void clickSpecificProcessor() throws InterruptedException {
+	Thread.sleep(15000);
+	tableData_FirstRow.click();
+	
+}
+public void clickExchangeHistoryButton() {
+	exchangeHistory.click();
+}
 	public void SearchAndEditProcessorInAlchemy(String numberToBeEdited) {
 		processors_TAB.click();
 		waitforloader();
@@ -48,4 +83,39 @@ package alchemy_Pages;
 		editNameField.sendKeys("Gayas Processor "+randomLastName);
 		save.click();
 	}
+	
+	public void transactionApproveExcHisP1(String pNum) throws InterruptedException {
+		processors_TAB.click();
+		waitforloader();
+		phoneSearch.clear();
+		phoneSearch.sendKeys(pNum);
+		clickSpecificProcessor();
+		clickExchangeHistoryButton();
+		
+		for (int p=0; p<=1; p++) {		
+			transactions.get(p).click();
+			Thread.sleep(1000);
+		
+			String actualAlcBonus= branchBonusTextInAlchmeyVerify.getText();
+			String actualAlcKgList[] = {hdpeKgAlcText.getText(),petKgAlcText.getText(),totalKgAlcText.getText()};
+			
+		
+		
+		if(p==0) { 
+			assertEquals(alc_P_ExngHisBonusVerify[0],actualAlcBonus );
+			assertEquals(alc_B3_P_ExngHisKgVerify,actualAlcKgList);
+		}
+		else if(p==1) {
+			assertEquals(alc_P_ExngHisBonusVerify[1],actualAlcBonus );
+			assertEquals(alc_B2_P_ExngHisKgVerify,actualAlcKgList);
+		}
+		transactions.get(p).click();
+		Thread.sleep(2000);
+		}	
+		
+		for(int i=0;i<approvedConfirm.size();i++) {
+			String ac=approvedConfirm.get(i).getText();
+			assertEquals(ac, "Approved");	
+		}
 	}
+}

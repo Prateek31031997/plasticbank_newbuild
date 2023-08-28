@@ -55,7 +55,7 @@
 <dependency>
     <groupId>org.seleniumhq.selenium</groupId>
     <artifactId>selenium-java</artifactId>
-    <version>4.10.0</version>
+    <version>4.11.0</version>
 </dependency>
 
 <dependency>
@@ -80,7 +80,7 @@
 <dependency>
     <groupId>org.testng</groupId>
     <artifactId>testng</artifactId>
-    <version>7.4.0</version>
+    <version>7.8.0</version>
     <scope>test</scope>
 </dependency>
 
@@ -113,11 +113,63 @@
 <dependency>
     <groupId>io.github.bonigarcia</groupId>
     <artifactId>webdrivermanager</artifactId>
-    <version>5.3.2</version>
+    <version>5.4.1</version>
+    <scope>test</scope>
 </dependency>
+
+<!-- https://mvnrepository.com/artifact/io.rest-assured/rest-assured -->
+<dependency>
+    <groupId>io.rest-assured</groupId>
+    <artifactId>rest-assured</artifactId>
+    <version>5.3.0</version>
+    <scope>test</scope>
+</dependency>
+<!-- https://mvnrepository.com/artifact/io.rest-assured/json-path -->
+<dependency>
+    <groupId>io.rest-assured</groupId>
+    <artifactId>json-path</artifactId>
+    <version>5.3.0</version>
+    <scope>test</scope>
+</dependency>
+<!-- https://mvnrepository.com/artifact/org.json/json -->
+<dependency>
+    <groupId>org.json</groupId>
+    <artifactId>json</artifactId>
+    <version>20230227</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
+<dependency>
+    <groupId>com.google.code.gson</groupId>
+    <artifactId>gson</artifactId>
+    <version>2.10.1</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/org.testng/testng -->
+
+<!-- https://mvnrepository.com/artifact/com.github.scribejava/scribejava-apis -->
+<dependency>
+    <groupId>com.github.scribejava</groupId>
+    <artifactId>scribejava-apis</artifactId>
+    <version>8.3.3</version>
+    <scope>runtime</scope>
+</dependency>
+<!-- https://mvnrepository.com/artifact/io.rest-assured/json-schema-validator -->
+<dependency>
+    <groupId>io.rest-assured</groupId>
+    <artifactId>json-schema-validator</artifactId>
+    <version>5.3.0</version>
+    <scope>test</scope>
+</dependency>
+<dependency>
+  <groupId>org.xmlunit</groupId>
+  <artifactId>xmlunit-core</artifactId>
+  <version>2.9.0</version>
+</dependency>
+
+
 </dependencies>
  <properties>
      <jvm.options>--add-opens java.base/java.lang=ALL-UNNAMED</jvm.options>
+     
     </properties>
 
   <build>

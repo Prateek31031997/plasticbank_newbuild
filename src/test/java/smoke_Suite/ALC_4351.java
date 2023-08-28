@@ -74,7 +74,8 @@ public class ALC_4351 extends BaseClass {
 	System.out.println("Verify suspend Account in App"); 
 	PB_LoginPage lp =new PB_LoginPage(pbDriver);
 	lp.loginRandom(password);
-	lp.oK(); 
+	lp.suspendAccountBranchVerify();
+	
 	}
 	 
 }

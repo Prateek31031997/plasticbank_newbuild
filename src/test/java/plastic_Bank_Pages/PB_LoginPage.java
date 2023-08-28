@@ -1,5 +1,7 @@
 package plastic_Bank_Pages;
 
+import static org.testng.Assert.assertTrue;
+
 import java.time.Duration;
 import java.util.Arrays;
 
@@ -56,6 +58,13 @@ public WebElement logout;
 
 @AndroidFindBy(uiAutomator = "UiSelector().className(\"android.view.View\").instance(20)")
 public WebElement nameToBeVerified;
+
+@AndroidFindBy(uiAutomator = "new UiSelector().text(\"\")")
+public WebElement branchIcon;
+@AndroidFindBy(uiAutomator = "new UiSelector().text(\"Navigate back\")")
+public WebElement navigateBack;
+@AndroidFindBy(uiAutomator = "new UiSelector().textContains(\"Your account has been suspended\")")
+public WebElement accountSuspended;
 
 
 public void permission() {
@@ -124,15 +133,41 @@ public void clickloginButton() {
 	}
 	 
 }
-public void loginRandom(String password) {
-	clickloginButton();
-	enterRandomPhoneNumber();
+
+public void login(String phoneNumber, String password) {
+	try{
+		try {
+		WebDriverWait wait = new WebDriverWait(pbDriver,Duration.ofSeconds(10));
+		wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(permission)));
+		permission.click();
+		}
+		catch(Exception e) {
+			
+		}
+		clickloginButton();
+	}catch(Exception e) {
+		clickFinalLogin();
+	}
+	enterPhoneNumber(phoneNumber);
 	enterPassword(password);
 	clickFinalLogin();
 }
-public void login(String phoneNumber, String password) {
-	clickloginButton();
-	enterPhoneNumber(phoneNumber);
+
+public void loginRandom(String password) {
+	try{
+		try {
+		WebDriverWait wait = new WebDriverWait(pbDriver,Duration.ofSeconds(10));
+		wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(permission)));
+		permission.click();
+		}
+		catch(Exception e) {
+			
+		}
+		clickloginButton();
+	}catch(Exception e) {
+		clickFinalLogin();
+	}
+	enterRandomPhoneNumber();
 	enterPassword(password);
 	clickFinalLogin();
 }
@@ -178,5 +213,26 @@ public void nameVerify() throws InterruptedException {
 	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(nameToBeVerified)));
 	String VerifyName=nameToBeVerified.getText();
 	assert VerifyName.contentEquals("Ashish Rawat");  
+}
+public void suspendAccountBranchVerify() {
+	
+	try {
+		WebDriverWait wait = new WebDriverWait(pbDriver,Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(navigateBack)));
+		//Assertion
+		assertTrue(accountSuspended.isDisplayed());
+	}
+	catch(Exception e){
+	
+	WebDriverWait wait = new WebDriverWait(pbDriver,Duration.ofSeconds(30));
+	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(menu)));
+	menu.click();
+	branchIcon.click();
+	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(navigateBack)));
+	//Assertion
+	assertTrue(accountSuspended.isDisplayed());
+	
+	}	
+	
 }
 }

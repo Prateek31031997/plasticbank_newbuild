@@ -165,7 +165,7 @@ public void selectAndverifyMember(String pNum) throws InterruptedException {
 	clickSpecificMember();
 	String verifyName= verifyNameText.getText();
 	System.out.println("Printing after getting Text: "+verifyName);
-	assert verifyName.contains(memberName);
+	assert verifyName.contains(branchmemberName);
 	
 //	if (verifyName.contains(memberName)) {
 //	    System.out.println("Name is verified");

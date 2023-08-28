@@ -3,11 +3,14 @@ package alchemy_Pages;
 import static org.testng.Assert.assertEquals;
 
 import java.time.Duration;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
@@ -16,7 +19,6 @@ import org.openqa.selenium.support.PageFactory;
 
 
 import Utilities.BaseClass;
-import plastic_Bank_Pages.PB_Transaction;
 
 
 public class Branches extends BaseClass {
@@ -80,8 +82,12 @@ private WebElement popUp_alert;
 @FindBy(xpath = "//div/button[text()='OK']")
 private WebElement okBtn_alertBox;
 
-@FindBy(xpath = "//div[text()='Exchange History']")
+@FindBy(xpath = "//a[text()='Exchange History']")
 private WebElement exchangeHistory;
+
+@FindBy(xpath = "//a[text()='Exchange History']")
+private WebElement exchangeHistoryTab;
+
 
 
 @FindBy(xpath = "//loader/div//table") 
@@ -108,27 +114,44 @@ WebElement approveButton;
 WebElement hdpeKgAlcText;
 @FindBy(xpath = "//*[text()='Plastik-PET-Raw-Transparent']/parent::div/div[2]")
 WebElement petKgAlcText;
-@FindBy(xpath = "//*[text()='11 KG']/parent::div/div[2]")
+@FindBy(xpath = "//div[text()='TOTAL']/following-sibling::div")
 WebElement totalKgAlcText;
 
-@FindBy(xpath = "//div[@class='card-header']")
+@FindBy(xpath = "//div[@class='card-header']/div/button")
 List<WebElement> transactions;
+
+@FindBy(xpath = "//span[text()='Plastic Chain']")
+WebElement plasticChain;
+@FindBy(xpath = "//div[@class='card-body']//div/span[1]/span[1]")
+List<WebElement> hdpePetPlasticChain;
+@FindBy(xpath = "//div[@class='card-body']//div/span[1]/span[1]")
+List<WebElement> branchProcessorTransactionPlasticChain;
+@FindBy(xpath = "//i[@class='fa fa-arrow-right pointer fs15 text-green']")
+List<WebElement> greenArrow;
+@FindBy(xpath = "//i[@class='fa fa-arrow-right pointer fs15 text-orange']")
+List<WebElement> orangeArrow;
 
 @FindBy(xpath = "//div[@class='card-header']/div/div/div[contains(@class, 'row')]/div/div[1]")
 List<WebElement> noFraudNoErrorsToggle;
 
 @FindBy(xpath = "//div[@class='text-natural-green']")
-List<WebElement> branchBonusTextInAlchmeyVerify;
+WebElement branchBonusTextInAlchmeyVerify; ///////
 
-@FindBy(xpath = "//div[@class='card-header']/div/div/button")
+@FindBy(xpath = "//div[@class='card-header']/div/div/button[text()='Approved']")
 List<WebElement> approvedConfirm;
 
+@FindBy(xpath = "//div[contains(@class,'col pl')]/div")
+List<WebElement> branchDetailsTagTexts;
 
+
+public void verifybranchDetailsTagTexts() {
+	
+}
 public void searchAddedBranch(String Name) {
 	name_SearchBox.sendKeys(Name);
 }
 
-public void clickBranchsTab() {
+public void clickBranchesTab() {
 	branches_TAB.click();
 }
 
@@ -175,12 +198,13 @@ public void clickAlertBoxBtnOK() {
 public void searchSpecificBranch(String pNum) throws InterruptedException {
 	Thread.sleep(5000);
 	WebDriverWait wait = new WebDriverWait(alcDriver,Duration.ofSeconds(300));
+	wait.until(ExpectedConditions.invisibilityOf(pageLoader));
 	wait.until(ExpectedConditions.elementToBeClickable(phone_SearchBox));
 	phone_SearchBox.clear();
 	phone_SearchBox.sendKeys(pNum);
 }
 public void editBranchCityDetails(String pNum) throws InterruptedException {
-	clickBranchsTab();
+	clickBranchesTab();
 	searchSpecificBranch(pNum);
 	clickSpecificBranch();
 	editBranch();
@@ -190,7 +214,7 @@ public void editBranchCityDetails(String pNum) throws InterruptedException {
 }
 
 public void editBranchNameDetails(String pNum) throws InterruptedException {
-	clickBranchsTab();
+	clickBranchesTab();
 	searchSpecificBranch(pNum);
 	clickSpecificBranch();
 	editBranch();
@@ -200,7 +224,7 @@ public void editBranchNameDetails(String pNum) throws InterruptedException {
 }
 
 public void suspendBranchAccount(String pNum) throws InterruptedException {
-	clickBranchsTab();
+	clickBranchesTab();
 	Thread.sleep(2000);
 	WebDriverWait wait = new WebDriverWait(alcDriver,Duration.ofSeconds(300));
 	wait.until(ExpectedConditions.elementToBeClickable(phone_SearchBox));
@@ -222,7 +246,7 @@ public void clickSplitModeToggle(){
 	splitModeToggle.click();
 }
 
-public void clickUploadButReceiptsToggle(){
+public void clickUploadBuyReceiptsToggle(){
 	uploadBuyReceiptsToggle.click();
 }
 
@@ -231,135 +255,196 @@ public void clickTokenMarketToggle(){
 }
 
 public void clickTogglesInBranches(String pNum) throws InterruptedException {
-	clickBranchsTab();
+	clickBranchesTab();
 	searchSpecificBranch(pNum);
 	clickSpecificBranch();
 	editBranch();
 	//clickTokenMarketToggle();
 	//clickSplitModeToggle();
-	clickUploadButReceiptsToggle();
+	clickUploadBuyReceiptsToggle();
 }
 public void clickExchangeHistoryButton() {
+	WebDriverWait wait = new WebDriverWait(alcDriver,Duration.ofSeconds(300));
+	wait.until(ExpectedConditions.elementToBeClickable(exchangeHistory));
 	exchangeHistory.click();
 }
-public void transactionApproveExcHisB1(String pNum) throws InterruptedException {
-	clickBranchsTab();
-	searchSpecificBranch(pNum);
-	clickSpecificBranch();
-	clickExchangeHistoryButton();
-	for (WebElement transaction:transactions) {	
-		
-	transaction.click();
-	Thread.sleep(1000);
-	for (int i=0;i<2;i++)
-	{	
-		Thread.sleep(5000);
-		noFraudNoErrorsToggle.get(i).click();
-	}
-	for(int j=0; j<transactions.size();j++) {
-	String alcBonus= branchBonusTextInAlchmeyVerify.get(j).getText();
-	assertEquals(alcBonus,alc_B1_ExngHisBonusVerify[j] );
-	String kgArr[] = {hdpeKgAlcText.getText(),petKgAlcText.getText(),totalKgAlcText.getText()};
-	if(j==0) {
-		assertEquals(alc_B1_B3_ExngHisKgVerify,kgArr);
-	}
-	else if(j==1) {
-		assertEquals(alc_B1_B2_ExngHisKgVerify,kgArr);
-	}
-	else if(j==2) {
-		assertEquals(alc_M_B1_ExngHisKgVerify,kgArr);
-	}
+public void clickExchangeHistoryTab() {
 	WebDriverWait wait = new WebDriverWait(alcDriver,Duration.ofSeconds(300));
-	wait.until(ExpectedConditions.elementToBeClickable(approveButton));
-	approveButton.click();
-	Thread.sleep(5000);
-	}
-	for(int i=0;i<=approvedConfirm.size();i++) {
-		String ac=approvedConfirm.get(i).getText();
-		assertEquals(ac, "Approved");	
-	}
-}
+	wait.until(ExpectedConditions.elementToBeClickable(exchangeHistoryTab));
+	exchangeHistoryTab.click();
 }
 
-public void transactionApproveExcHisB2(String pNum) throws InterruptedException {
-	clickBranchsTab();
+
+public void firstTransactionApproveExcHisB1(String pNum) throws InterruptedException {
+	clickBranchesTab();
 	searchSpecificBranch(pNum);
 	clickSpecificBranch();
-	clickExchangeHistoryButton();
-	for (WebElement transaction:transactions) {	
+	List<String>actualbranchDetailsText=new ArrayList<>();//left for Assertion
+	for(WebElement branchDetails: branchDetailsTagTexts)
+	actualbranchDetailsText.add(branchDetails.getText());
+	Assert.assertEquals(actualbranchDetailsText, Arrays.asList("19","0","1","0"));
+	Thread.sleep(3000);
+	clickExchangeHistoryTab();
 		
-	transaction.click();
+		transactions.get(0).click();
+		Thread.sleep(2000);
+		String alcBonus= branchBonusTextInAlchmeyVerify.getText();
+		assertEquals(total_bonus_M_B1,alcBonus);
+		System.out.println("----------");
+		String kgArr[] = {hdpeKgAlcText.getText(),petKgAlcText.getText(),totalKgAlcText.getText()};
+		assertEquals(kgArr,alc_M_B1_ExngHisKgVerify);
+		System.out.println("----------");
+	 
+}
+public void transactionApproveExcHisB1(String pNum) throws InterruptedException {
+	clickBranchesTab();
+	searchSpecificBranch(pNum);
+	clickSpecificBranch();
+	List<String> actualBr1TagsDetails = new ArrayList<>();
+	for(WebElement branchDetails: branchDetailsTagTexts)
+		actualBr1TagsDetails.add(branchDetails.getText()) ;
+	System.out.println(actualBr1TagsDetails);
+	
+	clickExchangeHistoryButton();
+	for (int p=0; p<3; p++) {
+		
+	transactions.get(p).click();
 	Thread.sleep(1000);
 	for (int i=0;i<2;i++)
 	{	
-		Thread.sleep(5000);
+		
 		noFraudNoErrorsToggle.get(i).click();
+		Thread.sleep(5000);
 	}
+		
+	String actualAlcBonus= branchBonusTextInAlchmeyVerify.getText();
+	String actualAlcKgList[] = {hdpeKgAlcText.getText(),petKgAlcText.getText(),totalKgAlcText.getText()};
 	
-	for(int j=0; j<transactions.size();j++) {
-	String alcBonus= branchBonusTextInAlchmeyVerify.get(j).getText();
-	assertEquals(alcBonus,alc_B1_ExngHisBonusVerify[j] );
-	String kgArr[] = {hdpeKgAlcText.getText(),petKgAlcText.getText(),totalKgAlcText.getText()};
-	if(j==0) {
-		assertEquals(alc_B2_P_ExngHisKgVerify,kgArr);
+	if(p==0) {
+		assertEquals(actualAlcBonus,alc_B1_ExngHisBonusVerify[0] );
+		assertEquals(actualAlcKgList,alc_B1_B3_ExngHisKgVerify);
 	}
-	else if(j==1) {
-		assertEquals(alc_B1_B2_ExngHisKgVerify,kgArr);
+	else if(p==1) {
+		assertEquals(actualAlcBonus,alc_B1_ExngHisBonusVerify[1]);
+		assertEquals(actualAlcKgList,alc_B1_B2_ExngHisKgVerify);
+	}
+	else if(p==2) {
+		assertEquals(actualAlcBonus,alc_B1_ExngHisBonusVerify[2]);
+		assertEquals(actualAlcKgList,alc_M_B1_ExngHisKgVerify);
 	}
 	WebDriverWait wait = new WebDriverWait(alcDriver,Duration.ofSeconds(300));
 	wait.until(ExpectedConditions.elementToBeClickable(approveButton));
 	approveButton.click();
-	Thread.sleep(5000);
+	Thread.sleep(4000);
 	}
-	for(int i=0;i<=approvedConfirm.size();i++) {
+	
+	for(int i=0;i<approvedConfirm.size();i++) {
 		String ac=approvedConfirm.get(i).getText();
 		assertEquals(ac, "Approved");	
+}
+}
+public void transactionApproveExcHisB2(String pNum) throws InterruptedException {
+
+	clickBranchesTab();
+	searchSpecificBranch(pNum);
+	clickSpecificBranch();
+	List<String> actualBr2TagsDetails = new ArrayList<>();
+	for(WebElement branchDetails: branchDetailsTagTexts)
+		actualBr2TagsDetails.add(branchDetails.getText()) ;
+	System.out.println(actualBr2TagsDetails);
+	
+	clickExchangeHistoryButton();
+	for (int p=0; p<=1; p++) {
+	transactions.get(p).click();
+	Thread.sleep(2000);
+	
+		
+	String actualAlcBonus= branchBonusTextInAlchmeyVerify.getText();
+	String actualAlcKgList[] = {hdpeKgAlcText.getText(),petKgAlcText.getText(),totalKgAlcText.getText()};
+	
+	if(p==0) {
+		
+		assertEquals(actualAlcBonus,alc_B2_ExngHisBonusVerify[0] );
+		assertEquals(actualAlcKgList,alc_B2_P_ExngHisKgVerify);
+		
+		for (int i=0;i<2;i++)
+		{	
+			noFraudNoErrorsToggle.get(i).click();
+			Thread.sleep(5000);
+		}
+	
+		WebDriverWait wait = new WebDriverWait(alcDriver,Duration.ofSeconds(300));
+		wait.until(ExpectedConditions.elementToBeClickable(approveButton));
+		approveButton.click();
+		Thread.sleep(4000);
 	}
+	
+	else if(p==1) {
+		
+		assertEquals(actualAlcBonus,alc_B2_ExngHisBonusVerify[1]);
+		assertEquals(actualAlcKgList,alc_B1_B2_ExngHisKgVerify);
+		transactions.get(p).click();
+		Thread.sleep(2000);	
+	}
+	}
+	
+	for(int i=0;i<approvedConfirm.size();i++) {
+		String ac=approvedConfirm.get(i).getText();
+		assertEquals(ac, "Approved");	
 }
 }
 
 public void transactionApproveExcHisB3(String pNum) throws InterruptedException {
-	clickBranchsTab();
+	
+	clickBranchesTab();
 	searchSpecificBranch(pNum);
 	clickSpecificBranch();
+	List<String> actualBr2TagsDetails = new ArrayList<>();
+	for(WebElement branchDetails: branchDetailsTagTexts)
+		actualBr2TagsDetails.add(branchDetails.getText()) ;
+	System.out.println(actualBr2TagsDetails);
+	
 	clickExchangeHistoryButton();
-	for (WebElement transaction:transactions) {	
-		
-	transaction.click();
+	
+	for (int p=0; p<=1; p++) {		
+	transactions.get(p).click();
 	Thread.sleep(1000);
-	for (int i=0;i<2;i++)
-	{	
-		Thread.sleep(5000);
-		noFraudNoErrorsToggle.get(i).click();
+	
+		
+	String actualAlcBonus= branchBonusTextInAlchmeyVerify.getText();
+	String actualAlcKgList[] = {hdpeKgAlcText.getText(),petKgAlcText.getText(),totalKgAlcText.getText()};
+	
+	if(p==0) {
+		
+		assertEquals(alc_B3_ExngHisBonusVerify[0],actualAlcBonus );
+		assertEquals(alc_B3_P_ExngHisKgVerify,actualAlcKgList);
+		
+		for (int i=0;i<2;i++)
+		{	
+			noFraudNoErrorsToggle.get(i).click();
+			Thread.sleep(5000);
+		}
+	
+		WebDriverWait wait = new WebDriverWait(alcDriver,Duration.ofSeconds(300));
+		wait.until(ExpectedConditions.elementToBeClickable(approveButton));
+		approveButton.click();
+		Thread.sleep(4000);
 	}
 	
-	for(int j=0; j<transactions.size();j++) {
-	String alcBonus= branchBonusTextInAlchmeyVerify.get(j).getText();
-	assertEquals(alcBonus,alc_B1_ExngHisBonusVerify[j] );
-	String kgArr[] = {hdpeKgAlcText.getText(),petKgAlcText.getText(),totalKgAlcText.getText()};
-	if(j==0) {
-		assertEquals(alc_B3_P_ExngHisKgVerify,kgArr);
+	else if(p==1) {
+	
+		assertEquals(actualAlcBonus,alc_B3_ExngHisBonusVerify[1]);
+		assertEquals(actualAlcKgList,alc_B1_B3_ExngHisKgVerify);
+		transactions.get(p).click();
+		Thread.sleep(2000);
+		
 	}
-	else if(j==1) {
-		assertEquals(alc_B1_B3_ExngHisKgVerify,kgArr);
 	}
-	WebDriverWait wait = new WebDriverWait(alcDriver,Duration.ofSeconds(300));
-	wait.until(ExpectedConditions.elementToBeClickable(approveButton));
-	approveButton.click();
-	Thread.sleep(5000);
-	}
-	for(int i=0;i<=approvedConfirm.size();i++) {
+	
+	for(int i=0;i<approvedConfirm.size();i++) {
 		String ac=approvedConfirm.get(i).getText();
 		assertEquals(ac, "Approved");	
 	}
-}
-}
-public void verifyTransactionApproved(String pNum) throws InterruptedException {
-	clickBranchsTab();
-	searchSpecificBranch(pNum);
-	clickSpecificBranch();
-	clickExchangeHistoryButton();
-	
 }
 }
 
