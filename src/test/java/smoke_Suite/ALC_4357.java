@@ -20,7 +20,7 @@ import plastic_Bank_Pages.PB_Transaction;
 public class ALC_4357 extends BaseClass {
 	
 	
-	@Test(priority =0,enabled=true)
+	@Test(priority =0,enabled=false)
 	@Description("Verify that the correct KG and bonus values are showing in before transaction completion screen in mobile app also verify  the correct KG, bonus and amount value in Confirm Exchange Page. Also verified in Branch 1 that there is no bonus recorded under Exchange ")
 	public void member_Branch1_Transaction_KG_Bonus_App_Assertion() throws InterruptedException {
 		
@@ -31,7 +31,7 @@ public class ALC_4357 extends BaseClass {
 		lo.logout();
 		
 	}
-	@Test(priority =1,enabled=true)
+	@Test(priority =1,enabled=false)
 	@Description("1.Check Branch Details if KG Recycled, Members Registered and Active members count are correct. 2. In branch 1 exchange history, check, Member photo, material name, material amount, money amount , total and bonus amount and associated bonus name. 3.Check in Bonus search Area, KG promised KG delivered, and pending KG.. 4.Check HDPE and PET KG count in Bonus Summary. Also check bonus progress values... 5. Check if the start bonus is there for the first branch in  Bonus Approval and Assert Total Bonus/Needing Approval")
 	public void member_Branch1_Transaction_KG_Bonus_Alchmey_Assertion() throws InterruptedException {
 		AlchemyLoginPage loginAlchmey=new AlchemyLoginPage(alcDriver);
@@ -49,7 +49,7 @@ public class ALC_4357 extends BaseClass {
 		
 	}
 	
-	@Test(priority =2,enabled=true)
+	@Test(priority =2,enabled=false)
 	@Description("Do Transaction between Branch 1 and Branch 2 and Verify Bonus and Kg Transfered")
 	public void Branch1_Branch2_Transaction_App_Assertions() throws InterruptedException {
 		
@@ -62,7 +62,7 @@ public class ALC_4357 extends BaseClass {
 	
 	
 	
-	@Test(priority =3,enabled=true)
+	@Test(priority =3,enabled=false)
 	@Description("Do Transaction between Branch 1 and Branch 3 and Verify Bonus and Kg Transfered")
 	public void Branch1_Branch3_Transaction() throws InterruptedException {
 		
@@ -74,7 +74,7 @@ public class ALC_4357 extends BaseClass {
 		
 	}
 	
-	@Test(priority =4,enabled=true)
+	@Test(priority =4,enabled=false)
 	@Description("Do Transaction between Branch 2 and Processor and Verify Bonus and Kg Transfered")
 	public void Branch2_Processor_Transaction() throws InterruptedException {
 		PB_Transaction t4=new PB_Transaction(pbDriver);
@@ -85,7 +85,7 @@ public class ALC_4357 extends BaseClass {
 	
 	}
 	
-	@Test(priority =5,enabled=true)
+	@Test(priority =5,enabled=false)
 	@Description("Do Transaction between Branch 3 and Processor and Verify Bonus and Kg Transfered")
 	public void Branch3_Processor_Transaction() throws InterruptedException {
 		

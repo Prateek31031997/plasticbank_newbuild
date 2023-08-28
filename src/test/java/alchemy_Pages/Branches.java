@@ -318,7 +318,7 @@ public void transactionApproveExcHisB1(String pNum) throws InterruptedException 
 	
 	List<String> expectedBr1TagsDetails = new ArrayList<>();
 	expectedBr1TagsDetails.addAll(Arrays.asList("19","0","1","0"));
-	//Assert.assertEquals(actualBr1TagsDetails, expectedBr1TagsDetails);
+	Assert.assertEquals(actualBr1TagsDetails, expectedBr1TagsDetails);
 	Thread.sleep(2000);
 	TakesScreenshot ts = (TakesScreenshot) pbDriver;
     byte[] screenshot = ts.getScreenshotAs(OutputType.BYTES);
@@ -379,7 +379,7 @@ public void transactionApproveExcHisB2(String pNum) throws InterruptedException 
 	System.out.println("B2="+actualBr2TagsDetails);
 	List<String> expectedBr2TagsDetails = new ArrayList<>();
 	expectedBr2TagsDetails.addAll(Arrays.asList("0","0","0","0"));
-	//Assert.assertEquals(actualBr2TagsDetails, expectedBr2TagsDetails);
+	Assert.assertEquals(actualBr2TagsDetails, expectedBr2TagsDetails);
 	Thread.sleep(2000);
 	TakesScreenshot ts = (TakesScreenshot) pbDriver;
     byte[] screenshot = ts.getScreenshotAs(OutputType.BYTES);
@@ -437,10 +437,18 @@ public void transactionApproveExcHisB3(String pNum) throws InterruptedException 
 	clickBranchesTab();
 	searchSpecificBranch(pNum);
 	clickSpecificBranch();
-	List<String> actualBr2TagsDetails = new ArrayList<>();
+	List<String> actualBr3TagsDetails = new ArrayList<>();
 	for(WebElement branchDetails: branchDetailsTagTexts)
-		actualBr2TagsDetails.add(branchDetails.getText()) ;
-	System.out.println("B3="+actualBr2TagsDetails);
+		actualBr3TagsDetails.add(branchDetails.getText()) ;
+	System.out.println("B3="+actualBr3TagsDetails);
+	List<String> expectedBr3TagsDetails = new ArrayList<>();
+	//expectedBr3TagsDetails.addAll(Arrays.asList("0","0","0","0"));
+	Assert.assertEquals(actualBr3TagsDetails, expectedBr3TagsDetails);
+	Thread.sleep(2000);
+	TakesScreenshot ts = (TakesScreenshot) pbDriver;
+    byte[] screenshot = ts.getScreenshotAs(OutputType.BYTES);
+    Allure.addAttachment("Screenshot", new ByteArrayInputStream(screenshot));
+    Thread.sleep(2000);
 	
 	clickExchangeHistoryButton();
 	
