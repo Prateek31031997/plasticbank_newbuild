@@ -24,7 +24,8 @@ public PB_Menu_Options(AndroidDriver pBriver) {
 	
 	@AndroidFindBy(uiAutomator = "new UiSelector().text(\"Create Business\")")
 	public WebElement createBusiness;
-	
+	@AndroidFindBy(uiAutomator = "new UiScrollable(new UiSelector()).scrollIntoView(text(\"Create Business\"));")
+	public WebElement createBusiness_scroll;
 	
 	
 	
@@ -36,11 +37,16 @@ public PB_Menu_Options(AndroidDriver pBriver) {
 	}
 	
 	public void clickCreateBusiness() {
-		WebDriverWait wait = new WebDriverWait(pbDriver,Duration.ofSeconds(30));
-		wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(createBusiness)));
-		createBusiness.click();
+		try {
+			WebDriverWait wait = new WebDriverWait(pbDriver, Duration.ofSeconds(30));
+			wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(createBusiness)));
+			createBusiness.click();
+		}
+		catch (Exception e){
+			createBusiness_scroll.click();
+		}
 	}
-	
+
 	public void clickCreateBusness() throws InterruptedException {
 		clickmenu();
         clickCreateBusiness();
