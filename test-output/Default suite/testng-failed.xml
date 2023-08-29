@@ -5,19 +5,20 @@
     <classes>
       <class name="smoke_Suite.ALC_4357">
         <methods>
-          <include name="generateRandomNumber"/>
-          <include name="generateRandomBranchMemberNumber"/>
           <include name="VerifyBonusOrderRecieptBranchAssertions"/>
-          <include name="Plastic_Chain_After_Approval"/>
-          <include name="VerifyBonusOrderBranchValueAssertions"/>
-          <include name="Verify_Bonus_Processor"/>
-          <include name="checkMemberBonusTransfered"/>
-          <include name="setup"/>
+          <include name="afterMethod"/>
           <include name="BonusTransferedCheck"/>
           <include name="generateRandomLastName"/>
-          <include name="teardown"/>
-          <include name="generateBranchMemberName"/>
           <include name="generateBranchName"/>
+          <include name="generateRandomBranchMemberNumber"/>
+          <include name="generateRandomNumber"/>
+          <include name="Plastic_Chain_After_Approval"/>
+          <include name="dataCreation"/>
+          <include name="VerifyBonusOrderBranchValueAssertions"/>
+          <include name="checkMemberBonusTransfered"/>
+          <include name="setup"/>
+          <include name="generateBranchMemberName"/>
+          <include name="teardown"/>
         </methods>
       </class> <!-- smoke_Suite.ALC_4357 -->
     </classes>

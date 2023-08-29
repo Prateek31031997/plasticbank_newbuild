@@ -16,7 +16,6 @@ import Utilities.BaseClass;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
-import io.qameta.allure.Step;
 
 public class PB_LoginPage extends BaseClass{
 public PB_LoginPage(AndroidDriver driver) {
