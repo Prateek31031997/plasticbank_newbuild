@@ -19,7 +19,6 @@ import plastic_Bank_Pages.PB_Transaction;
 
 public class ALC_4357 extends BaseClass {
 	
-	
 	@Test(priority =0,enabled=true, description = "Verify that the correct KG and bonus values are showing in before transaction completion screen in mobile app also verify  the correct KG, bonus and amount value in Confirm Exchange Page. Also verified in Branch 1 that there is no bonus recorded under Exchange ")
 	@Description("Verify that the correct KG and bonus values are showing in before transaction completion screen in mobile app also verify  the correct KG, bonus and amount value in Confirm Exchange Page. Also verified in Branch 1 that there is no bonus recorded under Exchange ")
 	public void member_Branch1_Transaction_KG_Bonus_App_Assertion() throws InterruptedException {
@@ -101,13 +100,7 @@ public class ALC_4357 extends BaseClass {
 	@Test(priority =6,enabled=true, description = "Assert Branch Tags Values in Summary in Branch1.Check approve transaction from Branch 1. Toggle all required and Approve 1 and validate all gets approved.")
 	@Description("Assert Branch Tags Values in Summary in Branch1.Check approve transaction from Branch 1. Toggle all required and Approve 1 and validate all gets approved.")
 	public void Verify_Bonus_Branch1() throws InterruptedException {
-		alcDriver.navigate().refresh();
-		
-		try {
-		AlchemyLoginPage loginAlchmey=new AlchemyLoginPage(alcDriver);
-		loginAlchmey.alc_adminlogin(adminphoneNumber,adminpassword);
-		Thread.sleep(3000);}
-		catch(Exception e) {}
+	
 		Branches br1= new Branches(alcDriver);
 		br1.transactionApproveExcHisB1(branch1_Number);
 		
@@ -152,7 +145,7 @@ public class ALC_4357 extends BaseClass {
 	@Test(priority =11,enabled=true, description = "In Bonus Approval Check for receipts, qty bonus values from Audit trail. Also Verigy Total Weight/ Bonus in Bonus Approval Page")
 	@Description("In Bonus Approval Check for receipts, qty bonus values from Audit trail. Also Verigy Total Weight/ Bonus in Bonus Approval Page")
 	public void VerifyBonusOrderRecieptBranchAssertions() throws InterruptedException {
-		
+	
 		Bonus b1=new Bonus(alcDriver);
 		b1.bonusBranch1Verification();
 		b1.bonusBranch2Verification();
@@ -176,8 +169,7 @@ public class ALC_4357 extends BaseClass {
 	@Test(priority =13,enabled=true, description = "Check for transferred label in All the Branch exchange history.")
 	@Description("Check for transferred label in All the Branch exchange history.")
 	public void BonusTransferedCheck() throws InterruptedException {
-		AlchemyLoginPage loginAlchmey=new AlchemyLoginPage(alcDriver);
-		loginAlchmey.alc_adminlogin(adminphoneNumber,adminpassword);
+
 		Branches br = new Branches(alcDriver);
 		br.verifyBonusTransfered(branch1_Number);
 		br.verifyBonusTransfered(branch2_Number);

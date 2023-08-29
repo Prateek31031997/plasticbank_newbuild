@@ -8,7 +8,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -353,16 +352,17 @@ public void bonusBranch1Verification() throws InterruptedException {
 	confirmButton.click();
 
 	wait.until(ExpectedConditions.visibilityOf(bonusPaidText));
-	alcDriver.navigate().refresh();
-	Thread.sleep(15000);
+	Actions actions = new Actions(alcDriver);
+    actions.moveToElement(bonusNameLink).click().build().perform();	
+	Thread.sleep(2000);
 	wait.until(ExpectedConditions.elementToBeClickable(buyTransactionsButton));
 	buyTransactionsButton.click();
 
 
 	wait.until(ExpectedConditions.visibilityOfAllElements(checkMarkButton));
 	for(WebElement checkMarkButtons :checkMarkButton ) {
-		 Actions actions = new Actions(alcDriver);
-	     actions.moveToElement(checkMarkButtons).click().build().perform();	
+		 Actions actions3 = new Actions(alcDriver);
+	     actions3.moveToElement(checkMarkButtons).click().build().perform();	
 	}
 	
 	Thread.sleep(3000);
@@ -391,8 +391,10 @@ public void bonusBranch1Verification() throws InterruptedException {
 	confirmButton.click();
 
 	wait.until(ExpectedConditions.visibilityOf(bonusPaidText));
-	alcDriver.navigate().refresh();
-	wait.until(ExpectedConditions.visibilityOf(bonusNameLink));
+	 
+	//wait.until(ExpectedConditions.visibilityOf(bonusNameLink));
+	Actions actions1 = new Actions(alcDriver);
+    actions1.moveToElement(bonusNameLink).click().build().perform();	
 	bonusNameLink.click();
 	wait.until(ExpectedConditions.visibilityOf(bonusApprovalButton));
 	bonusApprovalButton.click();
@@ -497,10 +499,12 @@ public void bonusBranch2Verification() throws InterruptedException {
 
 
 	wait.until(ExpectedConditions.visibilityOf(bonusPaidText));
-	alcDriver.navigate().refresh();
-	wait.until(ExpectedConditions.invisibilityOf(pageLoader));
+	Actions actions = new Actions(alcDriver);
+    actions.moveToElement(bonusNameLink).click().build().perform();	
+	Thread.sleep(2000);
 	bonusNameLink.click();
-	wait.until(ExpectedConditions.invisibilityOf(pageLoader));
+	Thread.sleep(4000);
+	//wait.until(ExpectedConditions.invisibilityOf(pageLoader));
 	bonusApprovalButton.click();
 
 }
@@ -604,23 +608,18 @@ public void bonusBranch3Verification() throws InterruptedException {
 
 
 	wait.until(ExpectedConditions.visibilityOf(bonusPaidText));
-	alcDriver.navigate().refresh();
-	wait.until(ExpectedConditions.visibilityOf(bonusNameLink));
+	Actions actions = new Actions(alcDriver);
+    actions.moveToElement(bonusNameLink).click().build().perform();	
+	Thread.sleep(2000);
+	//wait.until(ExpectedConditions.visibilityOf(bonusNameLink));
 	bonusNameLink.click();
-	wait.until(ExpectedConditions.visibilityOf(bonusApprovalButton));
-	bonusApprovalButton.click();
-	Thread.sleep(3000);
+	Thread.sleep(4000);
 	
 }
 
 
 
 public void bonusBranch1ValueVerification() throws InterruptedException {
-	
-	clickOrdersTab();
-	clickBounsTab();
-	search_byName(bonusName);
-	clickSpecificOrdersBonus();
 	
 	WebDriverWait wait = new WebDriverWait(alcDriver, Duration.ofSeconds(30));
 	wait.until(ExpectedConditions.elementToBeClickable(bonusApprovalButton));

@@ -571,7 +571,7 @@ public void b1toB3(String b1number) throws InterruptedException {
 }
 
 public void b3ToP(String b3number) throws InterruptedException {
-	
+	Thread.sleep(4000);
 	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(menu))); 
 	menu.click();
     Thread.sleep(2000);
@@ -671,7 +671,7 @@ public void b3ToP(String b3number) throws InterruptedException {
 }
 
 public void b2ToP(String b2number) throws InterruptedException {
-	
+	Thread.sleep(4000);
 	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(menu))); 
 	menu.click();
     Thread.sleep(2000);

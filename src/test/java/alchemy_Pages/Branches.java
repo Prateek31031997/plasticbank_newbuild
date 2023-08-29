@@ -446,7 +446,7 @@ public void transactionApproveExcHisB3(String pNum) throws InterruptedException 
 	System.out.println("B3="+actualBr3TagsDetails);
 	List<String> expectedBr3TagsDetails = new ArrayList<>();
 	expectedBr3TagsDetails.addAll(Arrays.asList("0","0","0","0"));
-//	Assert.assertEquals(actualBr3TagsDetails, expectedBr3TagsDetails);
+	Assert.assertEquals(actualBr3TagsDetails, expectedBr3TagsDetails);
 	Thread.sleep(2000);
 	TakesScreenshot ts = (TakesScreenshot) pbDriver;
     byte[] screenshot = ts.getScreenshotAs(OutputType.BYTES);

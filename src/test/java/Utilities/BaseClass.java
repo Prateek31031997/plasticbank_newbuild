@@ -1,17 +1,11 @@
 package Utilities;
 
 import java.io.ByteArrayInputStream;
-import java.io.File;
 import java.io.IOException;
 import java.net.URL;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import io.qameta.allure.Allure;
-import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.NoSuchSessionException;
 import org.openqa.selenium.OutputType;
@@ -30,53 +24,32 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseClass {
 	
-	//@BeforeSuite
+	
+	@BeforeSuite
 	 public void dataCreation() throws IOException {
 			
-			/*
-			 * Ra ra =new Ra(); ra.sendPostRequest();
-			 */
-			
-			/*
-			 * bonusName = bonusOrderName; member_Name = members.get(0); member_Number
-			 * =numbers.get(0); branch1_Name = branches.get(0); branch1_Number
-			 * =numbers.get(1); branch2_Name = branches.get(1); branch2_Number
-			 * =numbers.get(2); branch3_Name = branches.get(2); branch3_Number =
-			 * numbers.get(3); processor_Name = processors.get(0); processor_Number =
-			 * numbers.get(4);
-			 */
+			PostmanNewman pn = new PostmanNewman();
+			pn.runNewman(); 
+			 
 		  }
-		
-	
-	public static String bonusOrderName;
-	public static List<String>numbers=new ArrayList<String>();
-	public static List<String>members=new ArrayList<String>();
-	public static List<String>branches=new ArrayList<String>();
-	public static List<String>processors=new ArrayList<String>();
-	public static List<String>branchhdpe=new ArrayList<String>();
-	public static List<String>branchpet=new ArrayList<String>();
-	public static List<String>processorhdpe=new ArrayList<String>();
-	public static List<String>processorpet=new ArrayList<String>();
-	public static List<String>branchIds=new ArrayList<String>();
-	public static List<String>processorIds=new ArrayList<String>();
 
-	public static String bonusName="FleekHXKS6v";
-	public static String password = "123456a";
+	public static String bonusName;
+	public static String password ="123456a"; 
 
-	public static String member_Name="FleeknDmYLP";
-	public static String member_Number="+638521744254";
+	public static String member_Name;
+	public static String member_Number;
 
-	public static String branch1_Name="brancha_fEaaRjqD";
-	public static String branch1_Number="+637326216625";
+	public static String branch1_Name;
+	public static String branch1_Number;
 
-	public static String branch2_Name="branchb_Jsig5vdK";
-	public static String branch2_Number="+633389817277";
+	public static String branch2_Name;
+	public static String branch2_Number;
 
-	public static String branch3_Name="branchc_6oVo9JlZ";
-	public static String branch3_Number="+631334388608";
+	public static String branch3_Name;
+	public static String branch3_Number;
 
-	public static String processor_Name="process_wvN7a77N";
-	public static String processor_Number="+637994683782";
+	public static String processor_Name;
+	public static String processor_Number;
 
 
 
@@ -280,17 +253,6 @@ public class BaseClass {
 		}
 
 	}
-	public void failed_test(String testMethodName, WebDriver driver) throws IOException {
-		BaseClass.alcDriver=driver;
-		File scrFile1 = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-		SimpleDateFormat sdf = new SimpleDateFormat("dd");
-		Date d=new Date();
-		String t = sdf.format(d);
-		String scrFile1name=d.toString().replace(":","_").replace(" ", "_");
 
-		FileUtils.copyFile(scrFile1, new File(".\\treatians_screenshots\\"+testMethodName+"_"+scrFile1name+".png"));
-
-		//Allure.attachment("Screenshot", new ByteArrayInputStream(((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES)));
-	}
 
 }
