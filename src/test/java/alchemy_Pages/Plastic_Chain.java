@@ -11,6 +11,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -62,6 +63,8 @@ public class Plastic_Chain extends BaseClass {
     List<WebElement> pcRow7;
     @FindBy(xpath = "(//div[contains(@class,\"row border-bottom\")])[8]/span/span[not(contains(@class,'text-green'))and(not(contains(text(),'(Branch)'))and(not(contains(text(),'(Processor)'))))]")
     List<WebElement> pcRow8;
+    @FindBy(xpath = "//button[text()='Test']")
+    WebElement testButtonScroll;
   
 	public static ArrayList<String> pcRow1exp = new ArrayList<>();
 	public static ArrayList<String> pcRow2exp = new ArrayList<>();
@@ -125,8 +128,10 @@ public class Plastic_Chain extends BaseClass {
     	search_byName(bonusName);
     	clickSpecificOrdersBonus();
     	clickExchangeHistory();
-    	
     	plasticChain.click();
+    	Actions actions =new Actions(alcDriver);
+    	actions.moveToElement(testButtonScroll).build().perform();
+    	  Thread.sleep(3000);
     	verifyOrangenarrows();	
     	
     }
@@ -224,60 +229,60 @@ public class Plastic_Chain extends BaseClass {
         for (List<String> expectedList : expectedLists) {
             if (expectedList.equals(pcRow1Actual)) {
                 isMatching = true;
-                System.out.println("1");
+                
                 break;
             }
         }
         
         assertTrue(isMatching == true);
-        System.out.println("11");
+        
         
         
         boolean isMatching2 = false;
         for (List<String> expectedList : expectedLists) {
             if (expectedList.equals(pcRow2Actual)) {
                 isMatching2 = true;
-                System.out.println("2");
+              
                 break;
             }
         }
         assertTrue(isMatching2 == true);
-        System.out.println("22");
+        
         
         
         boolean isMatching3 = false;
         for (List<String> expectedList : expectedLists) {
             if (expectedList.equals(pcRow3Actual)) {
                 isMatching3 = true;
-                System.out.println("3");
+                
                 break;
             }
         }
         assertTrue(isMatching3 == true);
-        System.out.println("33");
+        
         
         
         boolean isMatching4 = false;
         for (List<String> expectedList : expectedLists) {
             if (expectedList.equals(pcRow4Actual)) {
                 isMatching4 = true;
-                System.out.println("4");
+               
                 break;
             }
         }
         assertTrue(isMatching4 == true);
-        System.out.println("44");
+        
         
         
         boolean isMatching5 = false;
         for (List<String> expectedList : expectedLists) {
             if (expectedList.equals(pcRow5Actual)) {
                 isMatching5 = true;
-                System.out.println("5");
+                
                 break;
             }
         }
-        System.out.println("55");
+        
         assertTrue(isMatching5 == true);
         
         
@@ -285,36 +290,35 @@ public class Plastic_Chain extends BaseClass {
         for (List<String> expectedList : expectedLists) {
             if (expectedList.equals(pcRow6Actual)) {
                 isMatching6 = true;
-                System.out.println("6");
+               
                 break;
             }
         }
         assertTrue(isMatching6 == true);
-        System.out.println("66");
+        
         
         
         boolean isMatching7 = false;
         for (List<String> expectedList : expectedLists) {
             if (expectedList.equals(pcRow7Actual)) {
                 isMatching7 = true;
-                System.out.println("7");
+                
                 break;
             }
         }
         assertTrue(isMatching7 == true);
-        System.out.println("77");
+        
         
         
         boolean isMatching8 = false;
         for (List<String> expectedList : expectedLists) {
             if (expectedList.equals(pcRow8Actual)) {
                 isMatching8 = true;
-                System.out.println("8");
+               
                 break;
             }
         }
         assertTrue(isMatching8 == true);
-        System.out.println("88");
         
         
      
@@ -328,10 +332,14 @@ public class Plastic_Chain extends BaseClass {
     	clickSpecificOrdersBonus();
     	clickExchangeHistory();
     	plasticChain.click();
+
+    	Actions actions =new Actions(alcDriver);
+    	actions.moveToElement(testButtonScroll).build().perform();
+    	  Thread.sleep(3000);
     	verifyGreenarrows();
     	
     	ListElementsAssertion();
-    	  Thread.sleep(2000);
+  
     	    TakesScreenshot ts1 = (TakesScreenshot) alcDriver;
     	    byte[] screenshot1 = ts1.getScreenshotAs(OutputType.BYTES);
     	    Allure.addAttachment("Screenshot1", new ByteArrayInputStream(screenshot1));

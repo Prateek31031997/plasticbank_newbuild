@@ -137,7 +137,6 @@ public class ALC_4357 extends BaseClass {
 	@Description("Check for plastic chain in the Bonus Order.Verify if it is all in Orange Color as they are pending. Also check Chain is in correct Order")
 	public void Plastic_Chain_Before_Approval() throws InterruptedException {
 		
-		
 		Plastic_Chain pc1= new Plastic_Chain(alcDriver);
 		pc1.plastic_ChainVerificationBefore(bonusName);
 	}
@@ -180,7 +179,9 @@ public class ALC_4357 extends BaseClass {
 	@Test(priority =14,enabled=true,description = "Verified Check chain turned to green and is in order.")
 	@Description("Verified Check chain turned to green and is in order.")
 	public void Plastic_Chain_After_Approval() throws InterruptedException {
-
+		AlchemyLoginPage loginAlchmey=new AlchemyLoginPage(alcDriver);
+		loginAlchmey.alc_adminlogin(adminphoneNumber,adminpassword);
+		Thread.sleep(3000);
 		Plastic_Chain pc2= new Plastic_Chain(alcDriver);
 		pc2.plastic_ChainVerificationAfter(bonusName);
 	}

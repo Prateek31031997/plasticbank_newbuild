@@ -33,7 +33,7 @@ public class BaseClass {
 			 
 		  }
 
-	public static String bonusName;
+	public static String bonusName="FleekHUj52x";
 	public static String password ="123456a"; 
 
 	public static String member_Name;
