@@ -20,7 +20,7 @@ import plastic_Bank_Pages.PB_Transaction;
 public class ALC_4357 extends BaseClass {
 	
 	
-	@Test(priority =0,enabled=false)
+	@Test(priority =0,enabled=true, description = "Verify that the correct KG and bonus values are showing in before transaction completion screen in mobile app also verify  the correct KG, bonus and amount value in Confirm Exchange Page. Also verified in Branch 1 that there is no bonus recorded under Exchange ")
 	@Description("Verify that the correct KG and bonus values are showing in before transaction completion screen in mobile app also verify  the correct KG, bonus and amount value in Confirm Exchange Page. Also verified in Branch 1 that there is no bonus recorded under Exchange ")
 	public void member_Branch1_Transaction_KG_Bonus_App_Assertion() throws InterruptedException {
 		
@@ -31,7 +31,7 @@ public class ALC_4357 extends BaseClass {
 		lo.logout();
 		
 	}
-	@Test(priority =1,enabled=false)
+	@Test(priority =1,enabled=true, description = "1.Check Branch Details if KG Recycled, Members Registered and Active members count are correct. 2. In branch 1 exchange history, check, Member photo, material name, material amount, money amount , total and bonus amount and associated bonus name. 3.Check in Bonus search Area, KG promised KG delivered, and pending KG.. 4.Check HDPE and PET KG count in Bonus Summary. Also check bonus progress values... 5. Check if the start bonus is there for the first branch in  Bonus Approval and Assert Total Bonus/Needing Approval")
 	@Description("1.Check Branch Details if KG Recycled, Members Registered and Active members count are correct. 2. In branch 1 exchange history, check, Member photo, material name, material amount, money amount , total and bonus amount and associated bonus name. 3.Check in Bonus search Area, KG promised KG delivered, and pending KG.. 4.Check HDPE and PET KG count in Bonus Summary. Also check bonus progress values... 5. Check if the start bonus is there for the first branch in  Bonus Approval and Assert Total Bonus/Needing Approval")
 	public void member_Branch1_Transaction_KG_Bonus_Alchmey_Assertion() throws InterruptedException {
 		AlchemyLoginPage loginAlchmey=new AlchemyLoginPage(alcDriver);
@@ -49,8 +49,8 @@ public class ALC_4357 extends BaseClass {
 		
 	}
 	
-	@Test(priority =2,enabled=false)
-	@Description("Do Transaction between Branch 1 and Branch 2 and Verify Bonus and Kg Transfered")
+	@Test(priority =2,enabled=true,description = "Do Transaction between Branch 1 and Branch 2 and Verify Bonus and Kg Transferred")
+	@Description("Do Transaction between Branch 1 and Branch 2 and Verify Bonus and Kg Transferred")
 	public void Branch1_Branch2_Transaction_App_Assertions() throws InterruptedException {
 		
 		PB_Transaction t2=new PB_Transaction(pbDriver);
@@ -62,8 +62,8 @@ public class ALC_4357 extends BaseClass {
 	
 	
 	
-	@Test(priority =3,enabled=false)
-	@Description("Do Transaction between Branch 1 and Branch 3 and Verify Bonus and Kg Transfered")
+	@Test(priority =3,enabled=true,description = "Do Transaction between Branch 1 and Branch 3 and Verify Bonus and Kg Transferred")
+	@Description("Do Transaction between Branch 1 and Branch 3 and Verify Bonus and Kg Transferred")
 	public void Branch1_Branch3_Transaction() throws InterruptedException {
 		
 		PB_Transaction t3=new PB_Transaction(pbDriver);
@@ -74,8 +74,8 @@ public class ALC_4357 extends BaseClass {
 		
 	}
 	
-	@Test(priority =4,enabled=false)
-	@Description("Do Transaction between Branch 2 and Processor and Verify Bonus and Kg Transfered")
+	@Test(priority =4,enabled=true,description = "Do Transaction between Branch 2 and Processor and Verify Bonus and Kg Transferred")
+	@Description("Do Transaction between Branch 2 and Processor and Verify Bonus and Kg Transferred")
 	public void Branch2_Processor_Transaction() throws InterruptedException {
 		PB_Transaction t4=new PB_Transaction(pbDriver);
 		PB_LoginPage lo =new PB_LoginPage(pbDriver);
@@ -85,8 +85,8 @@ public class ALC_4357 extends BaseClass {
 	
 	}
 	
-	@Test(priority =5,enabled=false)
-	@Description("Do Transaction between Branch 3 and Processor and Verify Bonus and Kg Transfered")
+	@Test(priority =5,enabled=true,description = "Do Transaction between Branch 3 and Processor and Verify Bonus and Kg Transferred")
+	@Description("Do Transaction between Branch 3 and Processor and Verify Bonus and Kg Transferred")
 	public void Branch3_Processor_Transaction() throws InterruptedException {
 		
 		PB_Transaction t5=new PB_Transaction(pbDriver);
@@ -98,7 +98,7 @@ public class ALC_4357 extends BaseClass {
 	}
 	
 	
-	@Test(priority =6,enabled=true)
+	@Test(priority =6,enabled=true, description = "Assert Branch Tags Values in Summary in Branch1.Check approve transaction from Branch 1. Toggle all required and Approve 1 and validate all gets approved.")
 	@Description("Assert Branch Tags Values in Summary in Branch1.Check approve transaction from Branch 1. Toggle all required and Approve 1 and validate all gets approved.")
 	public void Verify_Bonus_Branch1() throws InterruptedException {
 		alcDriver.navigate().refresh();
@@ -113,7 +113,7 @@ public class ALC_4357 extends BaseClass {
 		
 	}
 	
-	@Test(priority =7,enabled=true)
+	@Test(priority =7,enabled=true, description = "Assert Branch Tags Values in Summary in Branch2 .Check approve transaction from Branch 2. Toggle all required and Approve and validate all gets approved.")
 	@Description("Assert Branch Tags Values in Summary in Branch2 .Check approve transaction from Branch 2. Toggle all required and Approve and validate all gets approved.")
 	public void Verify_Bonus_Branch2() throws InterruptedException {
 		
@@ -122,7 +122,7 @@ public class ALC_4357 extends BaseClass {
 		br2.transactionApproveExcHisB2(branch2_Number);
 	}
 	
-	@Test(priority =8,enabled=true)
+	@Test(priority =8,enabled=true, description = "Assert Branch Tags Values in Summary in Branch3.Check approve transaction from Branch 3. Toggle all required and Approve and validate all gets approved.")
 	@Description("Assert Branch Tags Values in Summary in Branch3.Check approve transaction from Branch 3. Toggle all required and Approve and validate all gets approved.")
 	public void Verify_Bonus_Branch3() throws InterruptedException {
 		
@@ -131,7 +131,7 @@ public class ALC_4357 extends BaseClass {
 		br3.transactionApproveExcHisB3(branch3_Number);
 	}
 	
-	@Test(priority =9,enabled=true)
+	@Test(priority =9,enabled=true, description = "Verify details of transaction from Processor and validate all gets approved in processor Exchange History.")
 	@Description("Verify details of transaction from Processor and validate all gets approved in processor Exchange History.")
 	public void Verify_Bonus_Processor() throws InterruptedException {
 		
@@ -140,7 +140,7 @@ public class ALC_4357 extends BaseClass {
 		p1.transactionApproveExcHisP1(processor_Number);
 	}
 	
-	@Test(priority =10,enabled=true)
+	@Test(priority =10,enabled=true,description = "Check for plastic chain in the Bonus Order.Verify if it is all in Orange Color as they are pending. Also check Chain is in correct Order")
 	@Description("Check for plastic chain in the Bonus Order.Verify if it is all in Orange Color as they are pending. Also check Chain is in correct Order")
 	public void Plastic_Chain_Before_Approval() throws InterruptedException {
 		
@@ -149,7 +149,7 @@ public class ALC_4357 extends BaseClass {
 		pc1.plastic_ChainVerificationBefore(bonusName);
 	}
 	
-	@Test(priority =11,enabled=true)
+	@Test(priority =11,enabled=true, description = "In Bonus Approval Check for receipts, qty bonus values from Audit trail. Also Verigy Total Weight/ Bonus in Bonus Approval Page")
 	@Description("In Bonus Approval Check for receipts, qty bonus values from Audit trail. Also Verigy Total Weight/ Bonus in Bonus Approval Page")
 	public void VerifyBonusOrderRecieptBranchAssertions() throws InterruptedException {
 		
@@ -161,7 +161,7 @@ public class ALC_4357 extends BaseClass {
 		
 	}
 	
-	@Test(priority =12,enabled=true)
+	@Test(priority =12,enabled=true, description = "This method redirects to Bonus Approval and Assert 1.'Total Bonus'/'Needing Approval' 2. Assert 'Audit Trail' under which it will Assert all the values in 'Buy/Sell Transactions' of all the Branches and Processor")
 	@Description("This method redirects to Bonus Approval and Assert 1.'Total Bonus'/'Needing Approval' 2. Assert 'Audit Trail' under which it will Assert all the values in 'Buy/Sell Transactions' of all the Branches and Processor")
 	public void VerifyBonusOrderBranchValueAssertions() throws InterruptedException {
 		
@@ -173,7 +173,7 @@ public class ALC_4357 extends BaseClass {
 		b2.processor1ValueVerification();
 	
 	}
-	@Test(priority =13,enabled=true)
+	@Test(priority =13,enabled=true, description = "Check for transferred label in All the Branch exchange history.")
 	@Description("Check for transferred label in All the Branch exchange history.")
 	public void BonusTransferedCheck() throws InterruptedException {
 		AlchemyLoginPage loginAlchmey=new AlchemyLoginPage(alcDriver);
@@ -185,7 +185,7 @@ public class ALC_4357 extends BaseClass {
 			
 	}
 	
-	@Test(priority =14,enabled=true)
+	@Test(priority =14,enabled=true,description = "Verified Check chain turned to green and is in order.")
 	@Description("Verified Check chain turned to green and is in order.")
 	public void Plastic_Chain_After_Approval() throws InterruptedException {
 
@@ -193,7 +193,7 @@ public class ALC_4357 extends BaseClass {
 		pc2.plastic_ChainVerificationAfter(bonusName);
 	}
 	
-	@Test(priority =15,enabled=true)
+	@Test(priority =15,enabled=true, description = "Check member bonus amount is accurate in Plastic Bank App.")
 	@Description("Check member bonus amount is accurate in Plastic Bank App.")
 	public void checkMemberBonusTransfered() throws InterruptedException {
 

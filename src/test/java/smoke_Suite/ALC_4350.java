@@ -1,5 +1,6 @@
 package smoke_Suite;
 
+import Utilities.ScreenshotListener;
 import org.testng.annotations.Listeners;
 import io.qameta.allure.testng.AllureTestNg;
 import org.testng.annotations.Test;
@@ -14,11 +15,11 @@ import plastic_Bank_Pages.PB_Register_Member;
 
 //ALC-4350 = In App, Member - Create , new user login, edit, check in Alchemy to confirm new user exists , suspend account
 
-@Listeners({AllureTestNg.class})
+@Listeners({AllureTestNg.class, ScreenshotListener.class})
 public class ALC_4350 extends BaseClass {
-	
-	
-	@Test(priority=0)
+
+
+	@Test(priority=0, description = "New member account should be successfully created | New member should be successfully logged in")
 	@Description("Signing up a member and Login Verification and Logout")
 	public void signUp()throws InterruptedException {
 		
@@ -31,9 +32,9 @@ public class ALC_4350 extends BaseClass {
 		pblogin.loginRandom(password);
 		Thread.sleep(5000);
 		
-	}	
-	
-	@Test(priority = 1)
+	}
+
+	@Test(priority = 1, description = "Login on alchemy with admin user")
 	@Description("Alchmey Login")
 	public void loginAlchmey() throws InterruptedException {
 		
@@ -43,7 +44,7 @@ public class ALC_4350 extends BaseClass {
 		Thread.sleep(3000);
 		
 	}
-	@Test(priority =2)
+	@Test(priority =2, description = "New member account is searchable in Alchemy under the 'Members' section")
 	@Description("Verification of member in Alchmey")
 	public void VerifyMemberAlchmey() throws InterruptedException {
 		System.out.println("Verification of member in Alchmey");
@@ -52,8 +53,8 @@ public class ALC_4350 extends BaseClass {
 		alc_mem.selectAndverifyMember(phoneNumber);
 		Thread.sleep(5000);
 	}
-	
-	@Test(priority =3 )
+
+	@Test(priority =3, description = "-New member can be successfully created in app | -New member account is searchable in Alchemy under the 'Members' section")
 	@Description("Add Branch and Create Member and LogOut")
 	public void createBranchAndMember() throws InterruptedException {
 		System.out.println("Add Branch and Create Member and LogOut");
@@ -64,15 +65,15 @@ public class ALC_4350 extends BaseClass {
 		PB_Register_Member pbRegMem=new PB_Register_Member(pbDriver);
 		pbRegMem.logout();		
 	}
-	
-	@Test(priority=4)
+
+	@Test(priority=4, description = "- Data displayed in user will turn into a field that can be edited | -Changes are saved and can be seen in user details")
 	@Description("Edit the branch member details in Alchmey")
 	public void EditMemberDetails() throws InterruptedException {
 		System.out.println("Edit the branch member details in Alchmey");
 		Members mem=new Members(alcDriver);
 		mem.editMemberDetails(branchMemberphoneNumber,"Gayas Khan");
 	}
-	@Test(priority=5)
+	@Test(priority=5, description = "User should see the updated data")
 	@Description("Login in App with Branch Member Details")
 	public void loginBranchMemberPB() throws InterruptedException {
 		System.out.println("Login in App with Branch Member Details");
@@ -82,7 +83,7 @@ public class ALC_4350 extends BaseClass {
 		PB_Register_Member pbRegMem=new PB_Register_Member(pbDriver);
 		pbRegMem.logout();
 	}
-	@Test(priority=6)
+	@Test(priority=6, description = "-A pop up confirmation will appear and ask user if they are sure to suspend the account | - Once confirming, user should have suspend checkbox checked")
 	@Description("Suspend Member in Alchmey")
 	public void suspendMemberALC() throws InterruptedException {
 		System.out.println("Suspend Member in Alchmey");
@@ -91,7 +92,7 @@ public class ALC_4350 extends BaseClass {
 		mem.suspendMember(branchMemberphoneNumber);
 		Thread.sleep(4000);
 	}
-	@Test(priority=7)
+	@Test(priority=7, description = "User should not be able to login because account was suspended")
 	@Description("Login in Mobile app with Suspended Member details")
 	public void memberSuspendVerify() {
 		
@@ -100,7 +101,7 @@ public class ALC_4350 extends BaseClass {
 		lp.login(branchMemberphoneNumber,password);
 		lp.oK();	
 	}
-	@Test(priority=8)
+	@Test(priority=8, description = "Suspended member should not appear in the search")
 	@Description("Verify Suspended member By Branch Login")
 	public void branchSuspendMemberVerification() throws InterruptedException {
 	

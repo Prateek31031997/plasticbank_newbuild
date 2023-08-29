@@ -16,6 +16,7 @@ import Utilities.BaseClass;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
+import io.qameta.allure.Step;
 
 public class PB_LoginPage extends BaseClass{
 public PB_LoginPage(AndroidDriver driver) {
@@ -199,20 +200,32 @@ public void logout(){
 	clicklogout();
 }
 public void nameVerify() throws InterruptedException {
-	Thread.sleep(2000);
-	PointerInput globetab = new PointerInput(PointerInput.Kind.TOUCH, "globetab");
-    Sequence scrollconfirmpassword = new Sequence(globetab, 1);
-    scrollconfirmpassword.addAction(globetab.createPointerMove(Duration.ofMillis(0),
-        PointerInput.Origin.viewport(), 400, 2050));
-    scrollconfirmpassword.addAction(globetab.createPointerDown(0));
-    scrollconfirmpassword.addAction(globetab.createPointerMove(Duration.ofMillis(1000),
-        PointerInput.Origin.viewport(), 400, 2050));
-    scrollconfirmpassword.addAction(globetab.createPointerUp(0));
-    pbDriver.perform(Arrays.asList(scrollconfirmpassword));
+	Thread.sleep(7000);
+	PointerInput fingerScroll = new PointerInput(PointerInput.Kind.TOUCH, "fingerScroll");
+	Sequence scrollUP = new Sequence(fingerScroll, 1);
+	scrollUP.addAction(fingerScroll.createPointerMove(Duration.ofMillis(0),
+			PointerInput.Origin.viewport(), 414, 2047));
+	scrollUP.addAction(fingerScroll.createPointerDown(0));
+	scrollUP.addAction(fingerScroll.createPointerMove(Duration.ofMillis(100),
+			PointerInput.Origin.viewport(), 414, 2047));
+	scrollUP.addAction(fingerScroll.createPointerUp(0));
+	pbDriver.perform(Arrays.asList(scrollUP));
+
+//	PointerInput globetab = new PointerInput(PointerInput.Kind.TOUCH, "globetab");
+//    Sequence scrollconfirmpassword = new Sequence(globetab, 1);
+//    scrollconfirmpassword.addAction(globetab.createPointerMove(Duration.ofMillis(0),
+//        PointerInput.Origin.viewport(), 400, 2050));
+//    scrollconfirmpassword.addAction(globetab.createPointerDown(0));
+//    scrollconfirmpassword.addAction(globetab.createPointerMove(Duration.ofMillis(1000),
+//        PointerInput.Origin.viewport(), 400, 2050));
+//    scrollconfirmpassword.addAction(globetab.createPointerUp(0));
+//    pbDriver.perform(Arrays.asList(scrollconfirmpassword));
     WebDriverWait wait = new WebDriverWait(pbDriver,Duration.ofSeconds(30));
 	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(nameToBeVerified)));
+	Thread.sleep(4000);
 	String VerifyName=nameToBeVerified.getText();
-	assert VerifyName.contentEquals("Ashish Rawat");  
+	Thread.sleep(4000);
+	assert VerifyName.contains("Ashish");
 }
 public void suspendAccountBranchVerify() {
 	

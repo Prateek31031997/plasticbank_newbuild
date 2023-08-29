@@ -4,6 +4,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import io.qameta.allure.Step;
+
 
 import Utilities.BaseClass;
 
@@ -62,6 +64,7 @@ public void twoFactorAuth() throws InterruptedException {
 	Thread.sleep(3000);
 	
 	}
+@Step("Login on app")
 public void alc_adminlogin(String adminphoneNumber, String adminpassword) throws InterruptedException {
 	enterDetails(adminphoneNumber, adminpassword);
 	Thread.sleep(2000);

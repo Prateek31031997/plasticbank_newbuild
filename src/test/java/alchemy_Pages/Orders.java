@@ -1,5 +1,6 @@
 package alchemy_Pages;
 
+import org.openqa.selenium.Keys;
 import org.testng.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -23,7 +24,9 @@ public class Orders extends BaseClass{
 
     @FindBy(xpath = "//div[@class='body']/div/div/div[text()=' Orders ']") WebElement orders_tab;
     @FindBy(xpath = "//a[@role='tab' and text()='Bonus']") WebElement ordersTab_bonus;
+    @FindBy(xpath = "//a[@role='tab' and text()='Transfers']") WebElement ordersTab_transfer;
     @FindBy(xpath = "//datatable//input[@placeholder='Name']") WebElement name_SearchBox;
+    @FindBy(xpath = "//div//datatable//table/tbody/tr[1]/td/div/div") List <WebElement> table_firstRowData;
     @FindBy(xpath = "//div[@class='container-fluid']//datatable//table/tbody/tr[1]/td[1]/div/div")
     WebElement tableData_FirstRow;
     @FindBy(xpath = "//div[@class='container-fluid']//datatable//table/tbody/tr[1]/td[5]/div/div")
@@ -102,7 +105,13 @@ public class Orders extends BaseClass{
     @FindBy(xpath = "//div[text()='Bonus']/following-sibling::div") 
     WebElement excHisTotalBonus;
     //133
-    
+    @FindBy(xpath = "//div[@role='tab']/div/button") WebElement selectAddedBranchInBonus;
+    @FindBy(xpath = "//button/span[text()=' Edit Bonus Options']") WebElement editBonusOpt;
+    @FindBy(xpath = "//span[text()='Branch to Branch bonus']/parent::div/select") WebElement branchBonusOpt;
+    @FindBy(xpath = "//span[text()='Branch to Branch bonus']/parent::div//option[text()='Any']") WebElement selectAnyOpt;
+    @FindBy(xpath = "//button[text()=' Confirm new participants']") WebElement confirmNewParticipants;
+    @FindBy(xpath = "//button[text()='Close']") WebElement closeBtnPopup;
+    @FindBy(xpath = "//button[text()='Save']") WebElement saveBonusInfoBtn;
     
     public static String expectedexcHisHdpeKG="HDPE-Clean-Clear / 10.00 kg";
     public static String expectedexcHisPetKG="PET-Raw-Transparent / 9.00 kg";
@@ -223,8 +232,9 @@ public class Orders extends BaseClass{
         createBtn.click();
     }
 
-    public void enterAuthCode(String code){
+    public void enterAuthCode(String code) throws InterruptedException {
         WebDriverWait wait = new WebDriverWait(alcDriver, Duration.ofSeconds(30));
+        Thread.sleep(2000);
         wait.until(ExpectedConditions.elementToBeClickable(authCode));
         authCode.sendKeys(code);
     }
@@ -233,9 +243,10 @@ public class Orders extends BaseClass{
         authCodeSubmitBtn.click();
     }
 
-    public static void clickBonusApprovalTab(){
-        WebDriverWait wait = new WebDriverWait(alcDriver, Duration.ofSeconds(30));
-        wait.until(ExpectedConditions.elementToBeClickable(bonusApprovalTab));
+    public static void clickBonusApprovalTab() throws InterruptedException {
+//        WebDriverWait wait = new WebDriverWait(alcDriver, Duration.ofSeconds(30));
+//        wait.until(ExpectedConditions.elementToBeClickable(bonusApprovalTab));
+        Thread.sleep(3000);
         bonusApprovalTab.click();
     }
 
@@ -249,14 +260,76 @@ public class Orders extends BaseClass{
         branchInBonus.click();
     }
 
-    public void clickConfirmBtn(){
+    public void clickConfirmBtn() throws InterruptedException {
+        Thread.sleep(3000);
         confirmBtn.click();
     }
 
-    public void checkOrderStopped() throws InterruptedException {
+    public void clickAddedBranch() throws InterruptedException {
+        Thread.sleep(5000);
+        WebDriverWait wait = new WebDriverWait(alcDriver, Duration.ofSeconds(30));
+        wait.until(ExpectedConditions.elementToBeClickable(selectAddedBranchInBonus));
+        selectAddedBranchInBonus.click();
+    }
+
+    public void clickEditBonusOptions() throws InterruptedException {
+        Thread.sleep(4000);
+        editBonusOpt.click();
+    }
+
+    public void clickBranchBonus(){
+        WebDriverWait wait = new WebDriverWait(alcDriver, Duration.ofSeconds(30));
+        wait.until(ExpectedConditions.elementToBeClickable(branchBonusOpt));
+        branchBonusOpt.click();
+    }
+
+    public void clickConfirmNewParticipants(){
+        WebDriverWait wait = new WebDriverWait(alcDriver, Duration.ofSeconds(30));
+        wait.until(ExpectedConditions.elementToBeClickable(confirmNewParticipants));
+        confirmNewParticipants.click();
+    }
+
+    public void selectAnyOption_branchBonus() {
+        WebDriverWait wait = new WebDriverWait(alcDriver, Duration.ofSeconds(30));
+        wait.until(ExpectedConditions.elementToBeClickable(branchBonusOpt));
+        branchBonusOpt.sendKeys((Keys.ARROW_UP));
+        branchBonusOpt.sendKeys((Keys.ENTER));
+    }
+
+    public void saveBonusInformation(){
+        saveBonusInfoBtn.click();
+    }
+
+    public void clickCloseBtnPopUp(){
+        closeBtnPopup.click();
+    }
+    private void clickOrdersTransferTab() throws InterruptedException {
+        Thread.sleep(5000);
+        ordersTab_transfer.click();
+        Thread.sleep(15000);
+    }
+    private String verifySenderName(){
+        return table_firstRowData.get(1).getText();
+    }
+    private String verifyRecipientName(){
+        return table_firstRowData.get(2).getText();
+    }
+    private String verifyReason(){
+        String text = table_firstRowData.get(3).getText();
+        String[] split = text.split(":");
+        return split[1];
+    }
+    private String verifyTokenTransferType(){
+        return table_firstRowData.get(4).getText();
+    }
+    private String verifyAmount(){
+        return table_firstRowData.get(5).getText();
+    }
+
+    public void checkOrderStopped(String createdBonusName) throws InterruptedException {
         clickOrdersTab();
         clickBounsTab();
-        search_byName(null);
+        search_byName(createdBonusName);
         clickSpecificOrdersBonus();
         clickEmergencyStopBtn();
         assert verifyAlertBox().equals(true);
@@ -265,7 +338,7 @@ public class Orders extends BaseClass{
     }
 
 
-    public void createBonus(String createBonusName, String brandName, String totalWeight, String membersBonus, String branchBonus, String authCode, String bonusName, String branchName) throws InterruptedException {
+    public void createBonus(String createBonusName, String brandName, String totalWeight, String membersBonus, String branchBonus, String authCode, String bonusName) throws InterruptedException {
         clickOrdersTab();
         clickBounsTab();
         clickBonusCreate_Btn();
@@ -279,13 +352,38 @@ public class Orders extends BaseClass{
         clickCreateBonusBtn();
         enterAuthCode(authCode);
         clickSubmitAuthCode();
-        search_byName(bonusName);
+        search_byName(createBonusName);
         clickSpecificOrdersBonus();
         clickBonusApprovalTab();
         clickAddBranchBtn();
-        search_byName(branchName);
+        search_byName(bonusName);
         clickAddBranchInBonus();
         clickConfirmBtn();
+        clickConfirmNewParticipants();
+        clickAlertBoxBtnOK();
+        enterAuthCode(authCode);
+        clickSubmitAuthCode();
+    }
+
+    public void changeBranchBonusDetails() throws InterruptedException {
+        clickAddedBranch();
+        clickEditBonusOptions();
+        clickBranchBonus();
+        selectAnyOption_branchBonus();
+        saveBonusInformation();
+        clickConfirmBtn();
+        clickCloseBtnPopUp();
+    }
+
+    public void verifyOrdersTransferData(String senderName, String recipientName, String reason, String type, String amount) throws InterruptedException {
+        clickOrdersTab();
+        clickOrdersTransferTab();
+        assert verifySenderName().equals(senderName);
+        assert verifyRecipientName().equals(recipientName);
+        assert verifyReason().equals(reason);
+        assert verifyTokenTransferType().equals(type);
+        assert verifyAmount().equals(amount);
+
     }
     public void searchBonus(String bonusName) throws InterruptedException {
     	clickOrdersTab();
@@ -330,7 +428,7 @@ public class Orders extends BaseClass{
     	Assert.assertEquals(actualexcHisTotalBonus, expectedexcHisTotalBonus);
     }
     
-    public void bonusApprovalCheckPoints() {
+    public void bonusApprovalCheckPoints() throws InterruptedException {
     	
     	clickBonusApprovalTab();
     	

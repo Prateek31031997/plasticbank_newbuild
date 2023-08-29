@@ -267,15 +267,15 @@ public void addMemberToCreatedBranch() throws InterruptedException {
     scrollpassword.addAction(fingerpassword.createPointerUp(0));
     pbDriver.perform(Arrays.asList(scrollpassword));
     Thread.sleep(2000);
-    pbDriver.pressKey(new KeyEvent(AndroidKey.P));
-    pbDriver.pressKey(new KeyEvent(AndroidKey.A));
-    pbDriver.pressKey(new KeyEvent(AndroidKey.S));
-    pbDriver.pressKey(new KeyEvent(AndroidKey.S));
-    pbDriver.pressKey(new KeyEvent(AndroidKey.W));
-    pbDriver.pressKey(new KeyEvent(AndroidKey.O));
-    pbDriver.pressKey(new KeyEvent(AndroidKey.R));
-    pbDriver.pressKey(new KeyEvent(AndroidKey.D));
     pbDriver.pressKey(new KeyEvent(AndroidKey.DIGIT_1));
+    pbDriver.pressKey(new KeyEvent(AndroidKey.DIGIT_2));
+    pbDriver.pressKey(new KeyEvent(AndroidKey.DIGIT_3));
+    pbDriver.pressKey(new KeyEvent(AndroidKey.DIGIT_4));
+    pbDriver.pressKey(new KeyEvent(AndroidKey.DIGIT_5));
+    pbDriver.pressKey(new KeyEvent(AndroidKey.DIGIT_6));
+    pbDriver.pressKey(new KeyEvent(AndroidKey.A));
+//    pbDriver.pressKey(new KeyEvent(AndroidKey.D));
+//    pbDriver.pressKey(new KeyEvent(AndroidKey.DIGIT_1));
    
    
     PointerInput fingerconfirmpassword = new PointerInput(PointerInput.Kind.TOUCH, "fingerconfirmpassword");
@@ -287,15 +287,15 @@ public void addMemberToCreatedBranch() throws InterruptedException {
         PointerInput.Origin.viewport(), 320, 770));
     scrollconfirmpassword.addAction(fingerconfirmpassword.createPointerUp(0));
     pbDriver.perform(Arrays.asList(scrollconfirmpassword));
-    pbDriver.pressKey(new KeyEvent(AndroidKey.P));
-    pbDriver.pressKey(new KeyEvent(AndroidKey.A));
-    pbDriver.pressKey(new KeyEvent(AndroidKey.S));
-    pbDriver.pressKey(new KeyEvent(AndroidKey.S));
-    pbDriver.pressKey(new KeyEvent(AndroidKey.W));
-    pbDriver.pressKey(new KeyEvent(AndroidKey.O));
-    pbDriver.pressKey(new KeyEvent(AndroidKey.R));
-    pbDriver.pressKey(new KeyEvent(AndroidKey.D));
     pbDriver.pressKey(new KeyEvent(AndroidKey.DIGIT_1));
+    pbDriver.pressKey(new KeyEvent(AndroidKey.DIGIT_2));
+    pbDriver.pressKey(new KeyEvent(AndroidKey.DIGIT_3));
+    pbDriver.pressKey(new KeyEvent(AndroidKey.DIGIT_4));
+    pbDriver.pressKey(new KeyEvent(AndroidKey.DIGIT_5));
+    pbDriver.pressKey(new KeyEvent(AndroidKey.DIGIT_6));
+    pbDriver.pressKey(new KeyEvent(AndroidKey.A));
+//    pbDriver.pressKey(new KeyEvent(AndroidKey.D));
+//    pbDriver.pressKey(new KeyEvent(AndroidKey.DIGIT_1));
     Thread.sleep(5000);
 	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(finishButton)));
     finishButton.click();

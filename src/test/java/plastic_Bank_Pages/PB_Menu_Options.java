@@ -28,7 +28,8 @@ public PB_Menu_Options(AndroidDriver pBriver) {
 	
 	
 	
-	public void clickmenu() {
+	public void clickmenu() throws InterruptedException {
+		Thread.sleep(10000);
 		WebDriverWait wait = new WebDriverWait(pbDriver,Duration.ofSeconds(30));
 		wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(menu)));
 		menu.click();
@@ -40,7 +41,7 @@ public PB_Menu_Options(AndroidDriver pBriver) {
 		createBusiness.click();
 	}
 	
-	public void clickCreateBusness(){
+	public void clickCreateBusness() throws InterruptedException {
 		clickmenu();
         clickCreateBusiness();
     }

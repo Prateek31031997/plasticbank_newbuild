@@ -1,16 +1,27 @@
 package Utilities;
 
+import java.io.ByteArrayInputStream;
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import io.qameta.allure.Allure;
+import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.RandomStringUtils;
+import org.openqa.selenium.NoSuchSessionException;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
 import io.appium.java_client.android.AndroidDriver;
@@ -49,24 +60,28 @@ public class BaseClass {
 	public static List<String>branchIds=new ArrayList<String>();
 	public static List<String>processorIds=new ArrayList<String>();
 
-	public static String bonusName="FleekPIUvOb"; 
+	public static String bonusName="FleekHXKS6v";
 	public static String password = "123456a";
 
-	public static String member_Name="FleekNAPjYH";
-	public static String member_Number="+633795251733";
+	public static String member_Name="FleeknDmYLP";
+	public static String member_Number="+638521744254";
 
-	public static String branch1_Name="brancha_3jarrtxR";
-	public static String branch1_Number="+637978283825";
+	public static String branch1_Name="brancha_fEaaRjqD";
+	public static String branch1_Number="+637326216625";
 
-	public static String branch2_Name="branchb_P6ew9Hil";
-	public static String branch2_Number="+634430973253";
+	public static String branch2_Name="branchb_Jsig5vdK";
+	public static String branch2_Number="+633389817277";
 
-	public static String branch3_Name="branchc_wtnZvZhQ";
-	public static String branch3_Number="+637036420188";
+	public static String branch3_Name="branchc_6oVo9JlZ";
+	public static String branch3_Number="+631334388608";
 
-	public static String processor_Name="process_G1LDAJxi";
-	public static String processor_Number="+637635655695";
-	
+	public static String processor_Name="process_wvN7a77N";
+	public static String processor_Number="+637994683782";
+
+
+
+
+
 
 	public String memberBonus = "7";
 	public String branchBonus = "2";
@@ -169,7 +184,7 @@ public class BaseClass {
 		caps.setCapability(MobileCapabilityType.PLATFORM_VERSION, "11.0");
 		caps.setCapability(MobileCapabilityType.DEVICE_NAME, "Android Emulator");
 		caps.setCapability(MobileCapabilityType.UDID, "emulator-5554");
-		caps.setCapability("newCommandTimeout", 3000);
+		caps.setCapability("newCommandTimeout", 9000);
 		caps.setCapability("appPackage", "org.plasticbank.app");
 		caps.setCapability("appActivity", "org.plasticbank.app.MainActivity");
 		URL url = new URL("http://0.0.0.0:4723/wd/hub");
@@ -241,14 +256,41 @@ public class BaseClass {
 	  protected String getBranchName() { 
 		  return randomBusinessName; 
 		  }
-	 
 
+	@AfterMethod
+	public void afterMethod(ITestResult result) {
+		if (result.getStatus() == ITestResult.FAILURE) {
+			TakesScreenshot ts = (TakesScreenshot) alcDriver;
+			byte[] screenshot = ts.getScreenshotAs(OutputType.BYTES);
+			Allure.addAttachment("Screenshot", new ByteArrayInputStream(screenshot));
+			TakesScreenshot pb_ts = pbDriver;
+			byte[] screenshot_pb = pb_ts.getScreenshotAs(OutputType.BYTES);
+			Allure.addAttachment("Screenshot_pb", new ByteArrayInputStream(screenshot_pb));
+		}
+	}
 	@AfterClass
 	public void teardown() {
 
-		pbDriver.quit();
-		alcDriver.quit();
+		try {
+			pbDriver.quit();
+			alcDriver.quit();
+		}
+		catch (NoSuchSessionException e){
+			System.out.print("No such session exception call"+e.getMessage());
+		}
 
+	}
+	public void failed_test(String testMethodName, WebDriver driver) throws IOException {
+		BaseClass.alcDriver=driver;
+		File scrFile1 = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		SimpleDateFormat sdf = new SimpleDateFormat("dd");
+		Date d=new Date();
+		String t = sdf.format(d);
+		String scrFile1name=d.toString().replace(":","_").replace(" ", "_");
+
+		FileUtils.copyFile(scrFile1, new File(".\\treatians_screenshots\\"+testMethodName+"_"+scrFile1name+".png"));
+
+		//Allure.attachment("Screenshot", new ByteArrayInputStream(((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES)));
 	}
 
 }

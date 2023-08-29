@@ -112,6 +112,22 @@ public WebElement processor;
 @AndroidFindBy(uiAutomator="new UiSelector().textContains(\"133 = 72\")")
 public WebElement bonusMemberVerify;
 
+    @AndroidFindBy(uiAutomator="new UiSelector().text(\"BONUS\")")
+    public WebElement bonusText;
+    @AndroidFindBy(uiAutomator="new UiSelector().text(\"OK\")")
+    public WebElement okButton;
+    @AndroidFindBy(uiAutomator="new UiSelector().text(\"HDPE-Clean-Clear\")")
+    public WebElement hdpeMixed;
+    @AndroidFindBy(uiAutomator = "new UiSelector().text(\"History\")")
+    public WebElement historyButton;
+    @AndroidFindBy(uiAutomator="new UiSelector().text(\"seventhaug collector\")")
+    public List<WebElement> M1MemberButton;
+    @AndroidFindBy(uiAutomator = "new UiSelector().className(\"Reward\")")
+    public WebElement rewardText;
+    @AndroidFindBy(uiAutomator = "new UiSelector().text(\"Direct Token Transfer\")")
+    public WebElement directTokenTransferText;
+
+
  
 WebDriverWait wait = new WebDriverWait(pbDriver,Duration.ofSeconds(10));
 public void doTransaction(String number, String load1, String load2) throws InterruptedException {
@@ -557,7 +573,8 @@ public void b1toB3(String b1number) throws InterruptedException {
 public void b3ToP(String b3number) throws InterruptedException {
 	
 	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(menu))); 
-	menu.click(); 
+	menu.click();
+    Thread.sleep(2000);
 	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(processor))); 
 	processor.click(); 
 	Thread.sleep(4000);
@@ -656,7 +673,8 @@ public void b3ToP(String b3number) throws InterruptedException {
 public void b2ToP(String b2number) throws InterruptedException {
 	
 	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(menu))); 
-	menu.click(); 
+	menu.click();
+    Thread.sleep(2000);
 	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(processor))); 
 	processor.click(); 
 	Thread.sleep(4000);
@@ -766,4 +784,107 @@ public void CheckMemberBonus() throws InterruptedException {
     Allure.addAttachment("Screenshot2", new ByteArrayInputStream(screenshot2));
     Thread.sleep(2000);
 }
+    public boolean transactionBranchStopBonus(String number, String load) throws InterruptedException {
+
+        wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(searchOutline)));
+        search.sendKeys(number);
+        wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(searchOutline)));
+        searchOutline.click();
+        wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(searchResult)));
+        searchResult.click();
+        Thread.sleep(5000);
+        wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(checkmark.get(0))));
+        checkmark.get(0).click();
+
+        boolean bounus_text = false;
+        try {
+            // Code that might throw an exception
+            bounus_text = bonusText.isDisplayed();
+            if (bounus_text == true) {
+
+            }
+
+
+        } catch (Exception e) {
+
+
+        }
+//        wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(bonusText)));
+//        assertEquals(bonusText.getText(), "BONUS");
+
+        wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(hdpeMixed)));
+        hdpeMixed.click();
+
+
+        wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(requiredQuantity)));
+        requiredQuantity.sendKeys(load);
+        wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(checkmark.get(1))));
+        checkmark.get(1).click();
+        wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(checkmark.get(0))));
+        checkmark.get(0).click();
+
+
+
+        wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(checkmark.get(0))));
+        checkmark.get(0).click();
+        Thread.sleep(2000);
+        checkmark.get(0).click();
+        wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(okButton)));
+        okButton.click();
+        return bounus_text;
+
+    }
+
+    public boolean verifyHistoryStopBonusReward() throws InterruptedException {
+
+        Thread.sleep(5000);
+        PointerInput finger1 = new PointerInput(PointerInput.Kind.TOUCH, "finger1");
+        Sequence scrolla = new Sequence(finger1, 1);
+        scrolla.addAction(finger1.createPointerMove(Duration.ofMillis(0),
+                PointerInput.Origin.viewport(),400 ,2060));
+        scrolla.addAction(finger1.createPointerDown(0));
+        scrolla.addAction(finger1.createPointerMove(Duration.ofMillis(100),
+                PointerInput.Origin.viewport(),400 ,2060));
+        scrolla.addAction(finger1.createPointerUp(0));
+        pbDriver.perform(Arrays.asList(scrolla));
+
+        wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(historyButton)));
+        historyButton.click();
+        Thread.sleep(5000);
+        wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(M1MemberButton.get(0))));
+        M1MemberButton.get(0).click();
+        boolean reward_text = false;
+        try {
+            // Code that might throw an exception
+            reward_text = rewardText.isDisplayed();
+            if (reward_text== true) {
+                System.out.println("Element is not visible on the screen.");
+
+            }
+
+        } catch (Exception e) {
+            // Generic catch block to handle any other exceptions
+            System.out.println("Bonus is disabled for new member"+ e);
+
+        }
+        return reward_text;
+    }
+
+    public boolean verifyExchangeHistoryToken() throws InterruptedException {
+        PointerInput fingerScroll = new PointerInput(PointerInput.Kind.TOUCH, "fingerScroll");
+        Sequence scrollUP = new Sequence(fingerScroll, 1);
+        scrollUP.addAction(fingerScroll.createPointerMove(Duration.ofMillis(0),
+                PointerInput.Origin.viewport(), 545, 1930));
+        scrollUP.addAction(fingerScroll.createPointerDown(0));
+        scrollUP.addAction(fingerScroll.createPointerMove(Duration.ofMillis(100),
+                PointerInput.Origin.viewport(), 545, 200));
+        scrollUP.addAction(fingerScroll.createPointerUp(0));
+        pbDriver.perform(Arrays.asList(scrollUP));
+        wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(exchangeHistory)));
+        exchangeHistory.click();
+        Thread.sleep(7000);
+        return directTokenTransferText.isDisplayed();
+
+    }
+
 }

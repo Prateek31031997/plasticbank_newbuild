@@ -2,7 +2,7 @@ package alchemy_Pages;
 
 
 import java.time.Duration;
-
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
@@ -121,11 +121,31 @@ private WebElement popUp_alert;
 @CacheLookup private WebElement alertBoxOkButton;
 @FindBy(xpath="//button[normalize-space()='Cancel']") 
 @CacheLookup private WebElement alertBoxCancelButton;
+	@FindBy(xpath = "//loader/div//table")
+	WebElement pageLoader;
+	@FindBy(xpath = "//h4") WebElement directTokenTransfer_PopUp;
+	@FindBy(xpath = "//input[@id='amount']") WebElement tokenAmount;
+	@FindBy(xpath = "//select[@id='type']") WebElement tokenType;
+	@FindBy(xpath = "//select[@id='type']/option[text()='EPR Rewards']") WebElement EPRRewards;
+	@FindBy(xpath= "//button[text()='Send']") WebElement sendTokenBtn;
+	@FindBy(xpath = "//input[@id='smsCode']") WebElement authCode;
+	@FindBy(xpath = "//button[@type='button' and text()='Submit']") WebElement authCodeSubmitBtn;
+	@FindBy(xpath = "//button[text()='Close']") WebElement closeBtnPopup;
+	@FindBy(xpath = "//input[@placeholder='Phone']")
+	WebElement phoneSearchBox;
+
 
 
 public void searchAddedMember(String memberName) {
 	nameSearchBox.sendKeys(memberName);
 }
+
+	public void searchAddedMemberByPhone(String memberName) throws InterruptedException {
+		WebDriverWait wait = new WebDriverWait(alcDriver, Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.invisibilityOf(pageLoader));
+		phoneSearchBox.sendKeys(memberName);
+		wait.until(ExpectedConditions.invisibilityOf(pageLoader));
+	}
 
 public void clickMembersTab() {
 	WebDriverWait wait = new WebDriverWait(alcDriver,Duration.ofSeconds(300));
@@ -162,10 +182,11 @@ public void selectAndverifyMember(String pNum) throws InterruptedException {
 	wait.until(ExpectedConditions.elementToBeClickable(phone));
 	phone.clear();
 	phone.sendKeys(pNum);
-	clickSpecificMember();
-	String verifyName= verifyNameText.getText();
+//	clickSpecificMember();
+	wait.until(ExpectedConditions.invisibilityOf(pageLoader));
+	String verifyName= tableData_FirstRow.getText();
 	System.out.println("Printing after getting Text: "+verifyName);
-	assert verifyName.contains(branchmemberName);
+	assert verifyName.contains("Gayas");
 	
 //	if (verifyName.contains(memberName)) {
 //	    System.out.println("Name is verified");
@@ -213,4 +234,59 @@ public void refresh() {
 	members_TAB.click();
 }
 
+	private void clickDirectTokenTransfer() {
+		directTokenTransfer.click();
+	}
+	private String verify_DirectTokenTransferTextPopUp() throws InterruptedException {
+		Thread.sleep(3000);
+		WebDriverWait wait = new WebDriverWait(alcDriver, Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.invisibilityOf(pageLoader));
+		return directTokenTransfer_PopUp.getText();
+	}
+	private void enterAmountTransferToken(String amount){
+		tokenAmount.clear();
+		tokenAmount.sendKeys(amount);
+	}
+	private void selectTokenTransferType() throws InterruptedException {
+		tokenType.click();
+		Thread.sleep(2000);
+		EPRRewards.click();
+//		tokenType.sendKeys(Keys.ARROW_DOWN);
+//		Thread.sleep(2000);
+//		tokenType.sendKeys((Keys.ENTER));
+//		Thread.sleep(2000);
+		tokenType.sendKeys((Keys.ENTER));
+	}
+	private void clickSendTokenTransferBtn(){
+		sendTokenBtn.click();
+	}
+	private void enterAuthCode(String code) throws InterruptedException {
+		WebDriverWait wait = new WebDriverWait(alcDriver, Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.elementToBeClickable(authCode));
+		authCode.sendKeys(code);
+		Thread.sleep(2000);
+	}
+
+	private void clickSubmitAuthCode(){
+		authCodeSubmitBtn.click();
+	}
+
+	private void clickCloseBtnPopUp(){
+		closeBtnPopup.click();
+	}
+
+	public void tokenDirectTransfer(String phone, String TokenHeading, String amount, String code, String successMsg) throws InterruptedException {
+		clickMembersTab();
+		searchAddedMemberByPhone(phone);
+		clickSpecificMember();
+		clickDirectTokenTransfer();
+		assert verify_DirectTokenTransferTextPopUp().equals(TokenHeading);
+		enterAmountTransferToken(amount);
+		selectTokenTransferType();
+		clickSendTokenTransferBtn();
+		enterAuthCode(code);
+		clickSubmitAuthCode();
+		assert verify_DirectTokenTransferTextPopUp().equals(successMsg);
+		clickCloseBtnPopUp();
+	}
 }
