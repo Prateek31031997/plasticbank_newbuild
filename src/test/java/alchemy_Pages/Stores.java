@@ -1,7 +1,10 @@
 package alchemy_Pages;
 
 import Utilities.BaseClass;
+import io.qameta.allure.Allure;
 
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -9,6 +12,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.io.ByteArrayInputStream;
 import java.time.Duration;
 
 
@@ -54,11 +58,16 @@ public class Stores extends BaseClass {
         edit_store.click();
     }
 
-    public void editUserCity(String cityName) {
+    public void editUserCity(String cityName) throws InterruptedException {
         WebDriverWait wait = new WebDriverWait(alcDriver, Duration.ofSeconds(30));
         wait.until(ExpectedConditions.elementToBeClickable(edit_city));
         edit_city.clear();
         edit_city.sendKeys(cityName);
+        Thread.sleep(2000);
+        TakesScreenshot ts1 = (TakesScreenshot) alcDriver;
+        byte[] screenshot1 = ts1.getScreenshotAs(OutputType.BYTES);
+        Allure.addAttachment("Screenshot1", new ByteArrayInputStream(screenshot1));
+        Thread.sleep(2000);
     }
 
     public void saveStoreDetails() {
@@ -68,6 +77,11 @@ public class Stores extends BaseClass {
     public void verifyCreatedStore(String name) throws InterruptedException{
         clickStoreTab();
         search_byName(name);
+        Thread.sleep(2000);
+        TakesScreenshot ts1 = (TakesScreenshot) alcDriver;
+        byte[] screenshot1 = ts1.getScreenshotAs(OutputType.BYTES);
+        Allure.addAttachment("Screenshot1", new ByteArrayInputStream(screenshot1));
+        Thread.sleep(2000);
         assert verifyCreatedStoreVisble().contains(name);
     }
 
@@ -75,6 +89,11 @@ public class Stores extends BaseClass {
     	clickCreatedStoreVisble();
     	clickEditStore();
         editUserCity(cityName);
+        Thread.sleep(2000);
+        TakesScreenshot ts1 = (TakesScreenshot) alcDriver;
+        byte[] screenshot1 = ts1.getScreenshotAs(OutputType.BYTES);
+        Allure.addAttachment("Screenshot1", new ByteArrayInputStream(screenshot1));
+        Thread.sleep(2000);
         saveStoreDetails();
     }
 }

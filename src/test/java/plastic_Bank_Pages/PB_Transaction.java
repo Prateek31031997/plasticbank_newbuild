@@ -197,13 +197,15 @@ public void doTransaction(String number, String load1, String load2) throws Inte
             pbDriver.perform(Arrays.asList(scrollShutter));
         	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(photoDone)));
         	photoDone.click();
-        	 wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(
-        				checkmark.get(0)))); checkmark.get(0).click();
+        	 wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(checkmark.get(0))));
+        	 checkmark.get(0).click();
         	
         	
         }
+    Thread.sleep(1000);
     wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(checkmark.get(0))));
     checkmark.get(0).click();
+    Thread.sleep(1000);
     wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(
 	checkmark.get(0)))); checkmark.get(0).click();
 	 wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(
@@ -559,7 +561,7 @@ public void b1toB3(String b1number) throws InterruptedException {
     TakesScreenshot ts2 = (TakesScreenshot) pbDriver;
     byte[] screenshot2 = ts2.getScreenshotAs(OutputType.BYTES);
     Allure.addAttachment("Screenshot2", new ByteArrayInputStream(screenshot2));
-    Thread.sleep(2000);
+    Thread.sleep(3000);
     assertTrue(bonusToBranch1fromBranch3.isDisplayed());
     assertTrue(kgBranch1toBranch3.isDisplayed());
     wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(checkmark.get(0))));
@@ -654,18 +656,18 @@ public void b3ToP(String b3number) throws InterruptedException {
         	
         	
         }
-    Thread.sleep(2000);
     TakesScreenshot ts2 = (TakesScreenshot) pbDriver;
     byte[] screenshot2 = ts2.getScreenshotAs(OutputType.BYTES);
     Allure.addAttachment("Screenshot2", new ByteArrayInputStream(screenshot2));
-    Thread.sleep(2000);
+    Thread.sleep(3000);
     assertTrue(bonusTobranch3fromProcessor.isDisplayed());
     assertTrue(kgbranch3toProcessor.isDisplayed());
-    
+    Thread.sleep(2000);
     wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(checkmark.get(0))));
     checkmark.get(0).click();
-    wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(
-	checkmark.get(0)))); checkmark.get(0).click();
+    Thread.sleep(1000);
+    wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(checkmark.get(0))));
+    checkmark.get(0).click();
 	 wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(
 				ok))); ok.click();
 }
@@ -674,7 +676,7 @@ public void b2ToP(String b2number) throws InterruptedException {
 	Thread.sleep(4000);
 	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(menu))); 
 	menu.click();
-    Thread.sleep(2000);
+    Thread.sleep(4000);
 	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(processor))); 
 	processor.click(); 
 	Thread.sleep(4000);
@@ -795,6 +797,11 @@ public void CheckMemberBonus() throws InterruptedException {
         Thread.sleep(5000);
         wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(checkmark.get(0))));
         checkmark.get(0).click();
+        Thread.sleep(2000);
+        TakesScreenshot ts1 = (TakesScreenshot) pbDriver;
+        byte[] screenshot1 = ts1.getScreenshotAs(OutputType.BYTES);
+        Allure.addAttachment("Screenshot1", new ByteArrayInputStream(screenshot1));
+        Thread.sleep(2000);
 
         boolean bounus_text = false;
         try {
@@ -853,6 +860,11 @@ public void CheckMemberBonus() throws InterruptedException {
         Thread.sleep(5000);
         wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(M1MemberButton.get(0))));
         M1MemberButton.get(0).click();
+        Thread.sleep(2000);
+        TakesScreenshot ts1 = (TakesScreenshot) pbDriver;
+        byte[] screenshot1 = ts1.getScreenshotAs(OutputType.BYTES);
+        Allure.addAttachment("Screenshot1", new ByteArrayInputStream(screenshot1));
+        Thread.sleep(2000);
         boolean reward_text = false;
         try {
             // Code that might throw an exception
@@ -883,6 +895,10 @@ public void CheckMemberBonus() throws InterruptedException {
         wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(exchangeHistory)));
         exchangeHistory.click();
         Thread.sleep(7000);
+        TakesScreenshot ts1 = (TakesScreenshot) pbDriver;
+        byte[] screenshot1 = ts1.getScreenshotAs(OutputType.BYTES);
+        Allure.addAttachment("Screenshot1", new ByteArrayInputStream(screenshot1));
+        Thread.sleep(2000);
         return directTokenTransferText.isDisplayed();
 
     }

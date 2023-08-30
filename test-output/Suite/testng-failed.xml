@@ -5,27 +5,16 @@
     <classes>
       <class name="smoke_Suite.ALC_4357">
         <methods>
-          <include name="member_Branch1_Transaction_KG_Bonus_Alchmey_Assertion"/>
-          <include name="Branch3_Processor_Transaction"/>
-          <include name="VerifyBonusOrderRecieptBranchAssertions"/>
-          <include name="Branch1_Branch3_Transaction"/>
-          <include name="Verify_Bonus_Branch1"/>
-          <include name="Verify_Bonus_Branch3"/>
-          <include name="generateRandomLastName"/>
-          <include name="Verify_Bonus_Branch2"/>
-          <include name="generateBranchName"/>
-          <include name="generateRandomNumber"/>
           <include name="generateRandomBranchMemberNumber"/>
-          <include name="Plastic_Chain_Before_Approval"/>
-          <include name="Plastic_Chain_After_Approval"/>
-          <include name="Branch1_Branch2_Transaction_App_Assertions"/>
-          <include name="VerifyBonusOrderBranchValueAssertions"/>
-          <include name="Verify_Bonus_Processor"/>
-          <include name="Branch2_Processor_Transaction"/>
+          <include name="generateRandomNumber"/>
+          <include name="dataCreation"/>
+          <include name="afterMethod"/>
           <include name="setup"/>
-          <include name="member_Branch1_Transaction_KG_Bonus_App_Assertion"/>
-          <include name="quit"/>
+          <include name="BonusTransferedCheck"/>
+          <include name="generateRandomLastName"/>
+          <include name="teardown"/>
           <include name="generateBranchMemberName"/>
+          <include name="generateBranchName"/>
         </methods>
       </class> <!-- smoke_Suite.ALC_4357 -->
     </classes>

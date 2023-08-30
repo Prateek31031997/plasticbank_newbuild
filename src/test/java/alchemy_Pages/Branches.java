@@ -229,6 +229,11 @@ public void editBranchNameDetails(String pNum) throws InterruptedException {
 	editBranch();
 	editNameTextFeild.clear();
 	editNameTextFeild.sendKeys("Ashish "+randomLastName);
+	Thread.sleep(2000);
+    TakesScreenshot ts1 = (TakesScreenshot) alcDriver;
+    byte[] screenshot1 = ts1.getScreenshotAs(OutputType.BYTES);
+    Allure.addAttachment("Screenshot1", new ByteArrayInputStream(screenshot1));
+    Thread.sleep(2000);
 	saveUserDetails();
 }
 
@@ -246,7 +251,11 @@ public void suspendBranchAccount(String pNum) throws InterruptedException {
 	Boolean verify = verfiyAlertBox();
 	assert verify.equals(true);
 	clickAlertBoxBtnOK();
-	Thread.sleep(10000);
+	Thread.sleep(2000);
+    TakesScreenshot ts1 = (TakesScreenshot) alcDriver;
+    byte[] screenshot1 = ts1.getScreenshotAs(OutputType.BYTES);
+    Allure.addAttachment("Screenshot1", new ByteArrayInputStream(screenshot1));
+    Thread.sleep(2000);
 }
 
 public void clickTokensActiveToggle(){
@@ -507,17 +516,17 @@ public void verifyBonusTransfered(String pNum) throws InterruptedException {
 	searchSpecificBranch(pNum);
 	clickSpecificBranch();
 	clickExchangeHistoryButton();
-	
+	Thread.sleep(2000);
 	for (WebElement transaction:transactions) {
 
 		transaction.click();
-		Thread.sleep(3000);
+		Thread.sleep(4000);
 		assertTrue(transferedTextDisplay.isDisplayed());
 		Thread.sleep(2000);
 			TakesScreenshot ts1 = (TakesScreenshot) alcDriver;
 		    byte[] screenshot1 = ts1.getScreenshotAs(OutputType.BYTES);
 		    Allure.addAttachment("Screenshot1", new ByteArrayInputStream(screenshot1));
-		    Thread.sleep(2000);
+		    Thread.sleep(3000);
 		    transaction.click();
 		}
 	}

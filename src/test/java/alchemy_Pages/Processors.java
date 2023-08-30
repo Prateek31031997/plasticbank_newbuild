@@ -75,7 +75,7 @@ public void clickSpecificProcessor() throws InterruptedException {
 public void clickExchangeHistoryButton() {
 	exchangeHistory.click();
 }
-	public void SearchAndEditProcessorInAlchemy(String numberToBeEdited) {
+	public void SearchAndEditProcessorInAlchemy(String numberToBeEdited) throws InterruptedException {
 		processors_TAB.click();
 		waitforloader();
 		phoneSearch.clear();
@@ -85,6 +85,11 @@ public void clickExchangeHistoryButton() {
 		edit.click();
 		editNameField.clear();
 		editNameField.sendKeys("Gayas Processor "+randomLastName);
+		Thread.sleep(2000);
+	    TakesScreenshot ts1 = (TakesScreenshot) alcDriver;
+	    byte[] screenshot1 = ts1.getScreenshotAs(OutputType.BYTES);
+	    Allure.addAttachment("Screenshot1", new ByteArrayInputStream(screenshot1));
+	    Thread.sleep(2000);
 		save.click();
 	}
 	

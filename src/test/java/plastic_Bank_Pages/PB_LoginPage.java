@@ -2,9 +2,12 @@ package plastic_Bank_Pages;
 
 import static org.testng.Assert.assertTrue;
 
+import java.io.ByteArrayInputStream;
 import java.time.Duration;
 import java.util.Arrays;
 
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.PointerInput;
 import org.openqa.selenium.interactions.Sequence;
@@ -16,6 +19,7 @@ import Utilities.BaseClass;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
+import io.qameta.allure.Allure;
 
 public class PB_LoginPage extends BaseClass{
 public PB_LoginPage(AndroidDriver driver) {
@@ -224,9 +228,14 @@ public void nameVerify() throws InterruptedException {
 	Thread.sleep(4000);
 	String VerifyName=nameToBeVerified.getText();
 	Thread.sleep(4000);
+	Thread.sleep(2000);
+    TakesScreenshot ts1 = (TakesScreenshot) pbDriver;
+    byte[] screenshot1 = ts1.getScreenshotAs(OutputType.BYTES);
+    Allure.addAttachment("Screenshot1", new ByteArrayInputStream(screenshot1));
+    Thread.sleep(2000);
 	assert VerifyName.contains("Ashish");
 }
-public void suspendAccountBranchVerify() {
+public void suspendAccountBranchVerify() throws InterruptedException {
 	
 	try {
 		WebDriverWait wait = new WebDriverWait(pbDriver,Duration.ofSeconds(30));
@@ -241,6 +250,11 @@ public void suspendAccountBranchVerify() {
 	menu.click();
 	branchIcon.click();
 	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(navigateBack)));
+	Thread.sleep(2000);
+    TakesScreenshot ts1 = (TakesScreenshot) pbDriver;
+    byte[] screenshot1 = ts1.getScreenshotAs(OutputType.BYTES);
+    Allure.addAttachment("Screenshot1", new ByteArrayInputStream(screenshot1));
+    Thread.sleep(2000);
 	//Assertion
 	assertTrue(accountSuspended.isDisplayed());
 	

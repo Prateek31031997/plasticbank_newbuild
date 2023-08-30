@@ -1,8 +1,11 @@
 package alchemy_Pages;
 
 
+import java.io.ByteArrayInputStream;
 import java.time.Duration;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
@@ -12,6 +15,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import Utilities.BaseClass;
+import io.qameta.allure.Allure;
 
 public class Members extends BaseClass{
 	
@@ -186,14 +190,13 @@ public void selectAndverifyMember(String pNum) throws InterruptedException {
 	wait.until(ExpectedConditions.invisibilityOf(pageLoader));
 	String verifyName= tableData_FirstRow.getText();
 	System.out.println("Printing after getting Text: "+verifyName);
+	Thread.sleep(2000);
+    TakesScreenshot ts1 = (TakesScreenshot) alcDriver;
+    byte[] screenshot1 = ts1.getScreenshotAs(OutputType.BYTES);
+    Allure.addAttachment("Screenshot1", new ByteArrayInputStream(screenshot1));
+    Thread.sleep(2000);
 	assert verifyName.contains("Gayas");
 	
-//	if (verifyName.contains(memberName)) {
-//	    System.out.println("Name is verified");
-//	    
-//	} else {
-//	    System.out.println("Name verification failed");
-//		}
 	}
 public void editMemberDetails(String pNumber,String editdetail) throws InterruptedException {
 	Thread.sleep(2000);
@@ -210,6 +213,11 @@ public void editMemberDetails(String pNumber,String editdetail) throws Interrupt
 	edit.click();
 	edit_name.clear();
 	edit_name.sendKeys(editdetail);
+	Thread.sleep(2000);
+    TakesScreenshot ts1 = (TakesScreenshot) alcDriver;
+    byte[] screenshot1 = ts1.getScreenshotAs(OutputType.BYTES);
+    Allure.addAttachment("Screenshot1", new ByteArrayInputStream(screenshot1));
+    Thread.sleep(2000);
 	saveButton.click();	
 }
 public void suspendMember(String suspendPNumber) throws InterruptedException {
@@ -224,6 +232,10 @@ public void suspendMember(String suspendPNumber) throws InterruptedException {
 	Thread.sleep(3000);
 	suspendAccount();
 	Thread.sleep(2000);
+    TakesScreenshot ts1 = (TakesScreenshot) alcDriver;
+    byte[] screenshot1 = ts1.getScreenshotAs(OutputType.BYTES);
+    Allure.addAttachment("Screenshot1", new ByteArrayInputStream(screenshot1));
+    Thread.sleep(2000);
 	Boolean verify = verfiyAlertBox();
 	assert verify.equals(true);
 	clickAlertBoxBtnOK();
@@ -287,6 +299,11 @@ public void refresh() {
 		enterAuthCode(code);
 		clickSubmitAuthCode();
 		assert verify_DirectTokenTransferTextPopUp().equals(successMsg);
+		Thread.sleep(2000);
+	    TakesScreenshot ts1 = (TakesScreenshot) alcDriver;
+	    byte[] screenshot1 = ts1.getScreenshotAs(OutputType.BYTES);
+	    Allure.addAttachment("Screenshot1", new ByteArrayInputStream(screenshot1));
+	    Thread.sleep(2000);
 		clickCloseBtnPopUp();
 	}
 }

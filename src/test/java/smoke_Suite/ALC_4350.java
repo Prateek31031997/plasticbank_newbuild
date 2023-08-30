@@ -1,6 +1,11 @@
 package smoke_Suite;
 
 import Utilities.ScreenshotListener;
+
+import java.io.ByteArrayInputStream;
+
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.testng.annotations.Listeners;
 import io.qameta.allure.testng.AllureTestNg;
 import org.testng.annotations.Test;
@@ -8,6 +13,7 @@ import org.testng.annotations.Test;
 import Utilities.BaseClass;
 import alchemy_Pages.AlchemyLoginPage;
 import alchemy_Pages.Members;
+import io.qameta.allure.Allure;
 import io.qameta.allure.Description;
 import plastic_Bank_Pages.PB_LoginPage;
 import plastic_Bank_Pages.PB_Register_CollectionPoint;
@@ -94,11 +100,16 @@ public class ALC_4350 extends BaseClass {
 	}
 	@Test(priority=7, description = "User should not be able to login because account was suspended")
 	@Description("Login in Mobile app with Suspended Member details")
-	public void memberSuspendVerify() {
+	public void memberSuspendVerify() throws InterruptedException {
 		
 		System.out.println("Login in Mobile app with Suspended Member details");
 		PB_LoginPage lp =new PB_LoginPage(pbDriver);
 		lp.login(branchMemberphoneNumber,password);
+		Thread.sleep(2000);
+	    TakesScreenshot ts1 = (TakesScreenshot) alcDriver;
+	    byte[] screenshot1 = ts1.getScreenshotAs(OutputType.BYTES);
+	    Allure.addAttachment("Screenshot1", new ByteArrayInputStream(screenshot1));
+	    Thread.sleep(2000);
 		lp.oK();	
 	}
 	@Test(priority=8, description = "Suspended member should not appear in the search")
@@ -111,6 +122,11 @@ public class ALC_4350 extends BaseClass {
 		lp.loginRandom(password);
 		Thread.sleep(2000);
 		lp.clickSuspendedMemebr();
+		Thread.sleep(2000);
+	    TakesScreenshot ts1 = (TakesScreenshot) alcDriver;
+	    byte[] screenshot1 = ts1.getScreenshotAs(OutputType.BYTES);
+	    Allure.addAttachment("Screenshot1", new ByteArrayInputStream(screenshot1));
+	    Thread.sleep(2000);
 		lp.oK();
 		
 	}

@@ -1,6 +1,8 @@
 package alchemy_Pages;
 
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.testng.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -10,7 +12,9 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import Utilities.BaseClass;
+import io.qameta.allure.Allure;
 
+import java.io.ByteArrayInputStream;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -393,6 +397,11 @@ public class Orders extends BaseClass{
     }
     public void verifyDetailsInBonusSearch(String bonusName) throws InterruptedException {
     	searchBonus(bonusName);
+    	Thread.sleep(2000);
+        TakesScreenshot ts1 = (TakesScreenshot) alcDriver;
+        byte[] screenshot1 = ts1.getScreenshotAs(OutputType.BYTES);
+        Allure.addAttachment("Screenshot1", new ByteArrayInputStream(screenshot1));
+        Thread.sleep(2000);
     	String kgd=tableData_FirstRow_KGDelivered.getText();
     	Assert.assertEquals(kgd, kgdelivered);
     	String kgpr =tableData_FirstRow_KGPromised.getText();
@@ -409,7 +418,11 @@ public class Orders extends BaseClass{
     	Thread.sleep(3000);
     	 List<String> lst= new ArrayList<>();
     		 lst.addAll(Arrays.asList(summary_HDPE_KG_Text.getText(),summary_PET_KG_Text.getText(),summary_Total_KG_Text.getText()));
-         // Assert.assertTrue(Arrays.deepEquals(arr,alc_M_B1_ExngHisKgVerify));
+    		 Thread.sleep(2000);
+    		    TakesScreenshot ts1 = (TakesScreenshot) alcDriver;
+    		    byte[] screenshot1 = ts1.getScreenshotAs(OutputType.BYTES);
+    		    Allure.addAttachment("Screenshot1", new ByteArrayInputStream(screenshot1));
+    		    Thread.sleep(2000);
           Assert.assertEquals(lst,Arrays.asList("10kg","9kg","19 Kg")); 	 	
     }
     public void bonusExchangeHistoryCheckPoint() {

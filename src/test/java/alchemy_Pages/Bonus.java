@@ -147,6 +147,8 @@ WebElement orders_tab;
 WebElement ordersTab_bonus;
 @FindBy(xpath = "//a[text()='Buy Transactions (0)']")
 WebElement buyTransactionTag;
+@FindBy(xpath = "//label[text()=' Select Equivalent ']/input")
+WebElement selectEquivalentCheckBox;
 
 
 public static String expectedexcHisHdpeKG="HDPE-Clean-Clear / 10.00 kg";
@@ -182,10 +184,10 @@ private void clickSpecificOrdersBonus() {
 
 public void bounusTransaction1ValueVerify() throws InterruptedException {
 	
-	clickOrdersTab();
+	/*clickOrdersTab();
 	clickBounsTab();
 	search_byName(bonusName);
-	clickSpecificOrdersBonus();
+	clickSpecificOrdersBonus();*/
 	
 	WebDriverWait wait = new WebDriverWait(alcDriver, Duration.ofSeconds(30));
 	Orders.clickBonusApprovalTab();
@@ -244,31 +246,21 @@ public void bonusBranch1Verification() throws InterruptedException {
 	bonusApprovalButton.click();
 	wait.until(ExpectedConditions.elementToBeClickable(branchButton.get(0)));
 	branchButton.get(0).click();
-	wait.until(ExpectedConditions.elementToBeClickable(verifyReceiptsButton));
+	
 
+	wait.until(ExpectedConditions.elementToBeClickable(verifyReceiptsButton));
 	verifyReceiptsButton.click();
 	wait.until(ExpectedConditions.elementToBeClickable(approveRecipt.get(0)));
 	
 	Set<String>expectedBranchOneRecieptKgB1 = new HashSet<>(Arrays.asList("PET- / 5.00 kg", "HDPE- / 6.00 kg",  "Total Weight: 11.00 KG","PET- / 7.00 kg","HDPE- / 8.00 kg","Total Weight: 15.00 KG","PET- / 9.00 kg","HDPE- / 10.00 kg","Total Weight: 19.00 KG"));
 	Set<String>expectedBranchOneReciptBonusB1 = new HashSet<>(Arrays.asList("Bonus 4", "Bonus 4","Bonus 16","Bonus 14","Bonus 63","Bonus 70"));
 	ArrayList<String>expectedBranchOneReciptTotalBonusB1 = new ArrayList<>(Arrays.asList("8", "30", "133"));
-	
-	ArrayList<String>expectedBranchOnesellTransactionsWeightB1 = new ArrayList<>(Arrays.asList("0 kg", "19 kg"));
-	ArrayList<String>expectedBranchOnesellTransactionsBonusB1 = new ArrayList<>(Arrays.asList("0", "38", "38"));
-	ArrayList<String>expectedOneBuyTransactionsWeightB1 = new ArrayList<>(Arrays.asList("19 kg", "0 kg"));
-	ArrayList<String>expectedOneBuyTransactionsBonusB1 = new ArrayList<>(Arrays.asList("133", "0", "133"));
 
 	
 	Set<String> actualBranchOneRecieptKgB1 = new HashSet<>();   // branch one all 9 kg values
 	Set<String> actualBranchOneRecieptBonusB1 = new HashSet<>(); 
 	ArrayList<String> actualBranchOneRecieptTotalBonusB1 = new ArrayList<>(); 
 	
-	ArrayList<String> actualBranchOnesellTransactionsWeightB1 = new ArrayList<>(); 
-	ArrayList<String> actualBranchOnesellTransactionsBonusB1 = new ArrayList<>(); 
-	
-	ArrayList<String> actualBranchOneBuyTransactionsWeightB1 = new ArrayList<>(); 
-	ArrayList<String> actualBranchOneBuyTransactionsBonusB1 = new ArrayList<>(); 
-
 	
 	for (WebElement element : kgVerifyUnverifiedReciept) {
 		actualBranchOneRecieptKgB1.add(element.getText());
@@ -309,9 +301,23 @@ public void bonusBranch1Verification() throws InterruptedException {
 	wait.until(ExpectedConditions.elementToBeClickable(closeButton));
 	closeButton.click();
 
+	
+	ArrayList<String>expectedBranchOnesellTransactionsWeightB1 = new ArrayList<>(Arrays.asList("0 kg", "19 kg"));
+	ArrayList<String>expectedBranchOnesellTransactionsBonusB1 = new ArrayList<>(Arrays.asList("0", "38", "38"));
+	ArrayList<String>expectedOneBuyTransactionsWeightB1 = new ArrayList<>(Arrays.asList("19 kg", "19 kg"));
+	ArrayList<String>expectedOneBuyTransactionsBonusB1 = new ArrayList<>(Arrays.asList("133", "38", "171"));
+	
+	ArrayList<String> actualBranchOnesellTransactionsWeightB1 = new ArrayList<>(); 
+	ArrayList<String> actualBranchOnesellTransactionsBonusB1 = new ArrayList<>(); 
+	
+	ArrayList<String> actualBranchOneBuyTransactionsWeightB1 = new ArrayList<>(); 
+	ArrayList<String> actualBranchOneBuyTransactionsBonusB1 = new ArrayList<>(); 
+
+	
 	wait.until(ExpectedConditions.elementToBeClickable(startApprovalButton));
 	startApprovalButton.click();
-	 Thread.sleep(2000);
+	
+	Thread.sleep(2000);
 	wait.until(ExpectedConditions.elementToBeClickable(buyTransactionsButton));
 	buyTransactionsButton.click();
 	Thread.sleep(2000);
@@ -342,30 +348,15 @@ public void bonusBranch1Verification() throws InterruptedException {
 	  Thread.sleep(2000);
 	    TakesScreenshot ts2 = (TakesScreenshot) alcDriver;
 	    byte[] screenshot2 = ts2.getScreenshotAs(OutputType.BYTES);
-	    Allure.addAttachment("Screenshot2", new ByteArrayInputStream(screenshot2));
+	    Allure.addAttachment("Screenshot1", new ByteArrayInputStream(screenshot2));
 	    Thread.sleep(2000);
-	
-	wait.until(ExpectedConditions.elementToBeClickable(payBonusButton));
-	payBonusButton.click();
-
-	wait.until(ExpectedConditions.elementToBeClickable(confirmButton));
-	confirmButton.click();
-
-	wait.until(ExpectedConditions.visibilityOf(bonusPaidText));
-	Actions actions = new Actions(alcDriver);
-    actions.moveToElement(bonusNameLink).click().build().perform();	
-	Thread.sleep(2000);
-	wait.until(ExpectedConditions.elementToBeClickable(buyTransactionsButton));
-	buyTransactionsButton.click();
-
-
-	wait.until(ExpectedConditions.visibilityOfAllElements(checkMarkButton));
-	for(WebElement checkMarkButtons :checkMarkButton ) {
-		 Actions actions3 = new Actions(alcDriver);
-	     actions3.moveToElement(checkMarkButtons).click().build().perform();	
-	}
-	
-	Thread.sleep(3000);
+	    
+    buyTransactionsButton.click();
+    Thread.sleep(2000);
+    Actions actions1 = new Actions(alcDriver);
+    actions1.moveToElement(selectEquivalentCheckBox).click().build().perform();
+   	 
+    Thread.sleep(3000);
 	
 	for (WebElement element3 : sellTransactionsWeight) {
 		actualBranchOneBuyTransactionsWeightB1.add(element3.getText());
@@ -383,7 +374,7 @@ public void bonusBranch1Verification() throws InterruptedException {
 	    byte[] screenshot3 = ts3.getScreenshotAs(OutputType.BYTES);
 	    Allure.addAttachment("Screenshot3", new ByteArrayInputStream(screenshot3));
 	    Thread.sleep(2000);
-	
+	    
 	wait.until(ExpectedConditions.elementToBeClickable(payBonusButton));
 	payBonusButton.click();
 
@@ -391,11 +382,11 @@ public void bonusBranch1Verification() throws InterruptedException {
 	confirmButton.click();
 
 	wait.until(ExpectedConditions.visibilityOf(bonusPaidText));
-	 
-	//wait.until(ExpectedConditions.visibilityOf(bonusNameLink));
-	Actions actions1 = new Actions(alcDriver);
-    actions1.moveToElement(bonusNameLink).click().build().perform();	
+	Actions actions = new Actions(alcDriver);
+    actions.moveToElement(bonusNameLink).click().build().perform();	
+	Thread.sleep(2000);
 	bonusNameLink.click();
+	
 	wait.until(ExpectedConditions.visibilityOf(bonusApprovalButton));
 	bonusApprovalButton.click();
 
@@ -557,7 +548,6 @@ public void bonusBranch3Verification() throws InterruptedException {
 	    Allure.addAttachment("Screenshot1", new ByteArrayInputStream(screenshot1));
 	    Thread.sleep(2000);
 	
-	
 		approveRecipt.get(0).click();
 		Thread.sleep(2000);
 		okButton.click();
@@ -569,7 +559,7 @@ public void bonusBranch3Verification() throws InterruptedException {
 	
 	wait.until(ExpectedConditions.elementToBeClickable(startApprovalButton));
 	startApprovalButton.click();
-	Thread.sleep(1000);
+	Thread.sleep(3000);
 	wait.until(ExpectedConditions.elementToBeClickable(buyTransactionsButton));
 	buyTransactionsButton.click();
 	Thread.sleep(2000);

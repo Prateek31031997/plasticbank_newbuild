@@ -33,7 +33,7 @@ public class BaseClass {
 			 
 		  }
 
-	public static String bonusName="FleekHUj52x";
+	public static String bonusName;
 	public static String password ="123456a"; 
 
 	public static String member_Name;
@@ -236,7 +236,7 @@ public class BaseClass {
 			TakesScreenshot ts = (TakesScreenshot) alcDriver;
 			byte[] screenshot = ts.getScreenshotAs(OutputType.BYTES);
 			Allure.addAttachment("Screenshot", new ByteArrayInputStream(screenshot));
-			TakesScreenshot pb_ts = pbDriver;
+			TakesScreenshot pb_ts = (TakesScreenshot)pbDriver;
 			byte[] screenshot_pb = pb_ts.getScreenshotAs(OutputType.BYTES);
 			Allure.addAttachment("Screenshot_pb", new ByteArrayInputStream(screenshot_pb));
 		}

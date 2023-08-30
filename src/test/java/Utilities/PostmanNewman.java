@@ -76,7 +76,7 @@ public class PostmanNewman extends BaseClass{
 		  branch3_Number = values.get(6); 
 		  processor_Name = values.get(9); 
 		  processor_Number = values.get(8);
-		 // bonusName = values.get(10);
+		  bonusName = values.get(10);
 	    
 	    
 	}

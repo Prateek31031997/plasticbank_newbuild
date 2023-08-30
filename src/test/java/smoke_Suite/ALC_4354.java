@@ -1,12 +1,18 @@
 package smoke_Suite;
 
 import Utilities.ScreenshotListener;
+
+import java.io.ByteArrayInputStream;
+
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import Utilities.BaseClass;
 import alchemy_Pages.AlchemyLoginPage;
 import alchemy_Pages.Processors;
+import io.qameta.allure.Allure;
 import io.qameta.allure.Description;
 import io.qameta.allure.testng.AllureTestNg;
 import plastic_Bank_Pages.PB_LoginPage;
@@ -49,6 +55,10 @@ public class ALC_4354 extends BaseClass {
 		l.logout();
 		l.loginRandom(password);
 		l.menu();
+		Thread.sleep(2000);
+	    TakesScreenshot ts1 = (TakesScreenshot) alcDriver;
+	    byte[] screenshot1 = ts1.getScreenshotAs(OutputType.BYTES);
+	    Allure.addAttachment("Screenshot1", new ByteArrayInputStream(screenshot1));
 		Thread.sleep(4000);
 	}
 

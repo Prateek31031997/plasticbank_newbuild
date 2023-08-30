@@ -7,8 +7,7 @@
         <methods>
           <include name="generateRandomBranchMemberNumber"/>
           <include name="generateRandomNumber"/>
-          <include name="Plastic_Chain_After_Approval"/>
-          <include name="dataCreation"/>
+          <include name="VerifyBonusOrderRecieptBranchAssertions"/>
           <include name="setup"/>
           <include name="afterMethod"/>
           <include name="generateRandomLastName"/>
