@@ -25,7 +25,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class BaseClass {
 	
 	
-	//@BeforeSuite
+	@BeforeSuite
 	 public void dataCreation() throws IOException {
 			
 			PostmanNewman pn = new PostmanNewman();
