@@ -148,8 +148,7 @@ public class ALC_4357 extends BaseClass {
 		b1.bonusBranch1Verification();
 		b1.bonusBranch2Verification();
 		b1.bonusBranch3Verification();
-		
-		
+			
 	}
 	
 	@Test(priority =12,enabled=true, description = "Verify in Bonus Approval and Assert 1.'Total Bonus'/'Needing Approval' | 2. Assert 'Audit Trail' under which it will Assert all the values in 'Buy/Sell Transactions' of all the Branches and Processor")

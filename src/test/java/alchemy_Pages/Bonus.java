@@ -149,7 +149,8 @@ WebElement ordersTab_bonus;
 WebElement buyTransactionTag;
 @FindBy(xpath = "//label[text()=' Select Equivalent ']/input")
 WebElement selectEquivalentCheckBox;
-
+@FindBy(xpath="//button[text()='Approved']")
+public List<WebElement> approvedTextInBonusApproval ;
 
 public static String expectedexcHisHdpeKG="HDPE-Clean-Clear / 10.00 kg";
 public static String expectedexcHisPetKG="PET-Raw-Transparent / 9.00 kg";
@@ -962,6 +963,116 @@ public void processor1ValueVerification() throws InterruptedException {
 	branchButton.get(3).click();
 	Thread.sleep(3000);
 
+}
+
+public void bonusVerifyInBonusApproval(String Name) throws InterruptedException {
+	
+	clickOrdersTab();
+	clickBounsTab();
+	search_byName(Name);
+	clickSpecificOrdersBonus();
+	
+	WebDriverWait wait = new WebDriverWait(alcDriver, Duration.ofSeconds(60));
+	wait.until(ExpectedConditions.elementToBeClickable(bonusApprovalButton));
+	bonusApprovalButton.click();
+	wait.until(ExpectedConditions.elementToBeClickable(branchButton.get(0)));
+	branchButton.get(0).click();
+	Thread.sleep(2000);
+	wait.until(ExpectedConditions.elementToBeClickable(startApprovalButton));
+	startApprovalButton.click();
+	
+	  Thread.sleep(3000);
+	    TakesScreenshot ts2 = (TakesScreenshot) alcDriver;
+	    byte[] screenshot2 = ts2.getScreenshotAs(OutputType.BYTES);
+	    Allure.addAttachment("Screenshot1", new ByteArrayInputStream(screenshot2));
+	    Thread.sleep(2000);
+	    ArrayList<String> approvedText = new ArrayList<>(); // branch one all 6 bonus values
+		ArrayList<String>expectedApproved = new ArrayList<>(Arrays.asList("Approved", "Approved"));
+
+	for (WebElement element : approvedTextInBonusApproval) {
+		approvedText.add(element.getText());
+	}
+	
+	Assert.assertEquals(approvedText, expectedApproved);
+	
+}
+
+public void bonusApproval(String Name) throws InterruptedException {
+
+	clickOrdersTab();
+	clickBounsTab();
+	search_byName(Name);
+	clickSpecificOrdersBonus();
+	
+	WebDriverWait wait = new WebDriverWait(alcDriver, Duration.ofSeconds(60));
+	wait.until(ExpectedConditions.elementToBeClickable(bonusApprovalButton));
+	bonusApprovalButton.click();
+	wait.until(ExpectedConditions.elementToBeClickable(branchButton.get(0)));
+	branchButton.get(0).click();
+	
+
+	wait.until(ExpectedConditions.elementToBeClickable(verifyReceiptsButton));
+	verifyReceiptsButton.click();
+
+	// for all receipts
+	try {
+		for (int i = 1; i <= 3; i++) {
+			approveRecipt.get(0).click();
+			Thread.sleep(2000);
+			okButton.click();
+			Thread.sleep(2000);
+		}
+	} catch (Exception e) {
+		System.out.println("Exception caught: " + e.getMessage());
+	}
+
+
+	wait.until(ExpectedConditions.elementToBeClickable(closeButton));
+	closeButton.click();
+	Thread.sleep(2000);
+	wait.until(ExpectedConditions.elementToBeClickable(startApprovalButton));
+	startApprovalButton.click();
+
+	Thread.sleep(2000);
+	wait.until(ExpectedConditions.elementToBeClickable(buyTransactionsButton));
+	buyTransactionsButton.click();
+	Thread.sleep(2000);
+	wait.until(ExpectedConditions.elementToBeClickable(sellTransactionsButton));
+	sellTransactionsButton.click();
+	Thread.sleep(2000);
+	wait.until(ExpectedConditions.visibilityOfAllElements(checkMarkButton));
+	for(WebElement checkMarkButtons :checkMarkButton ) {
+		 Actions actions = new Actions(alcDriver);
+	     actions.moveToElement(checkMarkButtons).click().build().perform();	
+	}
+	
+	Thread.sleep(2000);
+	    
+    buyTransactionsButton.click();
+    Thread.sleep(2000);
+    Actions actions1 = new Actions(alcDriver);
+    actions1.moveToElement(selectEquivalentCheckBox).click().build().perform();
+   	 
+	  Thread.sleep(1000);
+	  
+	    
+	wait.until(ExpectedConditions.elementToBeClickable(payBonusButton));
+	payBonusButton.click();
+
+	wait.until(ExpectedConditions.elementToBeClickable(confirmButton));
+	confirmButton.click();
+
+	Thread.sleep(2000);
+    TakesScreenshot ts1 = (TakesScreenshot) alcDriver;
+    byte[] screenshot1 = ts1.getScreenshotAs(OutputType.BYTES);
+    Allure.addAttachment("Screenshot1", new ByteArrayInputStream(screenshot1));
+    Thread.sleep(2000);
+
+	wait.until(ExpectedConditions.visibilityOf(bonusPaidText));
+	Actions actions = new Actions(alcDriver);
+    actions.moveToElement(bonusNameLink).click().build().perform();	
+	Thread.sleep(2000);
+	
 }
 }
 

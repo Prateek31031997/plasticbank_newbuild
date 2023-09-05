@@ -7,12 +7,14 @@
         <methods>
           <include name="generateRandomBranchMemberNumber"/>
           <include name="generateRandomNumber"/>
-          <include name="VerifyBonusOrderRecieptBranchAssertions"/>
+          <include name="dataCreation"/>
+          <include name="VerifyBonusOrderBranchValueAssertions"/>
           <include name="setup"/>
+          <include name="BonusTransferedCheck"/>
           <include name="afterMethod"/>
           <include name="generateRandomLastName"/>
-          <include name="teardown"/>
           <include name="generateBranchMemberName"/>
+          <include name="teardown"/>
           <include name="generateBranchName"/>
         </methods>
       </class> <!-- smoke_Suite.ALC_4357 -->

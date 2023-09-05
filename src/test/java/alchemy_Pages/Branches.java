@@ -530,5 +530,55 @@ public void verifyBonusTransfered(String pNum) throws InterruptedException {
 		    transaction.click();
 		}
 	}
+
+public void transactionApproveInBranch(String pNum) throws InterruptedException {
+	clickBranchesTab();
+	searchSpecificBranch(pNum);
+	clickSpecificBranch();
+	Thread.sleep(2000);
+    
+	clickExchangeHistoryButton();
+	for (int p=0; p<3; p++) {
+		
+	transactions.get(p).click();
+	Thread.sleep(1000);
+	for (int i=0;i<2;i++)
+	{	
+		
+		noFraudNoErrorsToggle.get(i).click();
+		Thread.sleep(5000);
+	}
+		
+	WebDriverWait wait = new WebDriverWait(alcDriver,Duration.ofSeconds(300));
+	wait.until(ExpectedConditions.elementToBeClickable(approveButton));
+	approveButton.click();
+	Thread.sleep(4000);
+	}
+	    TakesScreenshot ts1 = (TakesScreenshot) alcDriver;
+	    byte[] screenshot1 = ts1.getScreenshotAs(OutputType.BYTES);
+	    Allure.addAttachment("Screenshot1", new ByteArrayInputStream(screenshot1));
+	    Thread.sleep(2000);
+	
+}
+public void verifyBonusInBranchExcHistory(String pNum) throws InterruptedException {
+	
+	clickBranchesTab();
+	searchSpecificBranch(pNum);
+	clickSpecificBranch();
+	clickExchangeHistoryButton();
+	Thread.sleep(2000);
+	for (WebElement transaction:transactions) {
+
+		transaction.click();
+		Thread.sleep(4000);
+		assertTrue(transferedTextDisplay.isDisplayed());
+		Thread.sleep(2000);
+			TakesScreenshot ts1 = (TakesScreenshot) alcDriver;
+		    byte[] screenshot1 = ts1.getScreenshotAs(OutputType.BYTES);
+		    Allure.addAttachment("Screenshot1", new ByteArrayInputStream(screenshot1));
+		    Thread.sleep(3000);
+		    transaction.click();
+		}
+}
 }
 
