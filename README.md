@@ -3,15 +3,24 @@ To execute TestScript follow these steps.
 SetUp Test Environment:
 
 1.Install Appium server (version 1.22.3-4 )
+	
+	install nodejs
 
 2.Install Android Studio - 
 
 	2.1 Device : pixel 4 API 30
 		Android 11
 		
-3.Install Ide : Eclipse/IntelliJ IDEA
+3.Install Ide :
 
-4.Download Java 17 and set path for it in Environment Variable.
+	 Eclipse/IntelliJ IDEA
+
+4.Download Java 17 and set path for it in Environment Variable
+
+5.Install Newman
+	
+	Use Command:
+	5.1 npm install -g newman
 
 
 Execute Test Script:
@@ -22,6 +31,8 @@ Execute Test Script:
 
 2.1	After Execution refresh Package Explorer and copy the path of allure-results in package Explorer
 
-2.2	Open cmd write command allure serve <path of allure-results>
+2.2	Open cmd write command 
+
+	allure serve <path of allure-results>
 
 

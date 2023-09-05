@@ -6,6 +6,7 @@ import org.testng.annotations.Test;
 
 import Utilities.BaseClass;
 import Utilities.PostmanNewman;
+import alchemy_Pages.AlchemyLoginPage;
 import alchemy_Pages.Bonus;
 import alchemy_Pages.Branches;
 import io.qameta.allure.Description;
@@ -20,6 +21,11 @@ public class ALC_4362 extends BaseClass {
 		Bonus bn =new Bonus(alcDriver);
 		
 		pn.runNewmanALC_4362_4363();
+		
+		AlchemyLoginPage loginAlchmey=new AlchemyLoginPage(alcDriver);
+		loginAlchmey.alc_adminlogin(adminphoneNumber,adminpassword);
+		Thread.sleep(3000);
+		
 		br.transactionApproveInBranch(branch1_Number);
 		bn.bonusVerifyInBonusApproval(bonusName);
 		

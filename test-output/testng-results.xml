@@ -1,432 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="16" passed="14" failed="2" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-08-30T19:43:46 IST" name="Default suite" finished-at="2023-08-30T20:17:14 IST" duration-ms="2007523">
+  <suite started-at="2023-09-05T18:15:20 IST" name="Default suite" finished-at="2023-09-05T18:24:02 IST" duration-ms="522488">
     <groups>
     </groups>
-    <test started-at="2023-08-30T19:43:46 IST" name="Default test" finished-at="2023-08-30T20:17:14 IST" duration-ms="2007523">
-      <class name="smoke_Suite.ALC_4357">
-        <test-method is-config="true" signature="dataCreation()[pri:0, instance:smoke_Suite.ALC_4357@43015c69]" started-at="2023-08-30T19:41:50 IST" name="dataCreation" finished-at="2023-08-30T19:43:46 IST" duration-ms="116547" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- dataCreation -->
-        <test-method is-config="true" signature="generateBranchMemberName()[pri:0, instance:smoke_Suite.ALC_4357@43015c69]" started-at="2023-08-30T19:43:46 IST" name="generateBranchMemberName" finished-at="2023-08-30T19:43:46 IST" duration-ms="4" status="PASS">
+    <test started-at="2023-09-05T18:15:20 IST" name="Default test" finished-at="2023-09-05T18:24:02 IST" duration-ms="522488">
+      <class name="smoke_Suite.ALC_4363">
+        <test-method is-config="true" signature="generateBranchMemberName()[pri:0, instance:smoke_Suite.ALC_4363@928763c]" started-at="2023-09-05T18:15:20 IST" name="generateBranchMemberName" finished-at="2023-09-05T18:15:20 IST" duration-ms="14" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- generateBranchMemberName -->
-        <test-method is-config="true" signature="generateBranchName()[pri:0, instance:smoke_Suite.ALC_4357@43015c69]" started-at="2023-08-30T19:43:46 IST" name="generateBranchName" finished-at="2023-08-30T19:43:46 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="generateBranchName()[pri:0, instance:smoke_Suite.ALC_4363@928763c]" started-at="2023-09-05T18:15:20 IST" name="generateBranchName" finished-at="2023-09-05T18:15:20 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- generateBranchName -->
-        <test-method is-config="true" signature="generateRandomBranchMemberNumber()[pri:0, instance:smoke_Suite.ALC_4357@43015c69]" started-at="2023-08-30T19:43:46 IST" name="generateRandomBranchMemberNumber" finished-at="2023-08-30T19:43:46 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="generateRandomBranchMemberNumber()[pri:0, instance:smoke_Suite.ALC_4363@928763c]" started-at="2023-09-05T18:15:20 IST" name="generateRandomBranchMemberNumber" finished-at="2023-09-05T18:15:20 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- generateRandomBranchMemberNumber -->
-        <test-method is-config="true" signature="generateRandomLastName()[pri:0, instance:smoke_Suite.ALC_4357@43015c69]" started-at="2023-08-30T19:43:46 IST" name="generateRandomLastName" finished-at="2023-08-30T19:43:46 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="generateRandomLastName()[pri:0, instance:smoke_Suite.ALC_4363@928763c]" started-at="2023-09-05T18:15:20 IST" name="generateRandomLastName" finished-at="2023-09-05T18:15:20 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- generateRandomLastName -->
-        <test-method is-config="true" signature="generateRandomNumber()[pri:0, instance:smoke_Suite.ALC_4357@43015c69]" started-at="2023-08-30T19:43:46 IST" name="generateRandomNumber" finished-at="2023-08-30T19:43:46 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="generateRandomNumber()[pri:0, instance:smoke_Suite.ALC_4363@928763c]" started-at="2023-09-05T18:15:20 IST" name="generateRandomNumber" finished-at="2023-09-05T18:15:20 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- generateRandomNumber -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:smoke_Suite.ALC_4357@43015c69]" started-at="2023-08-30T19:43:46 IST" name="setup" finished-at="2023-08-30T19:45:19 IST" duration-ms="92803" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:smoke_Suite.ALC_4363@928763c]" started-at="2023-09-05T18:15:20 IST" name="setup" finished-at="2023-09-05T18:17:20 IST" duration-ms="119513" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="member_Branch1_Transaction_KG_Bonus_App_Assertion()[pri:0, instance:smoke_Suite.ALC_4357@43015c69]" started-at="2023-08-30T19:45:19 IST" name="member_Branch1_Transaction_KG_Bonus_App_Assertion" description="Verify that the correct KG and bonus values are showing in before transaction completion screen in mobile app | verify  the correct KG, bonus and amount value in Confirm Exchange Page | Verify in Branch 1 that there is no bonus recorded under Exchange " finished-at="2023-08-30T19:46:34 IST" duration-ms="75000" status="PASS">
+        <test-method signature="Approve_transactions_branch_exchange_history_Verify_In_BonusApproval()[pri:0, instance:smoke_Suite.ALC_4363@928763c]" started-at="2023-09-05T18:17:20 IST" name="Approve_transactions_branch_exchange_history_Verify_In_BonusApproval" description="Approve_transactions_branch_exchange_history_Verify_In_BonusApproval" finished-at="2023-09-05T18:24:01 IST" duration-ms="401189" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- member_Branch1_Transaction_KG_Bonus_App_Assertion -->
-        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:smoke_Suite.ALC_4357@43015c69]" started-at="2023-08-30T19:46:34 IST" name="afterMethod" finished-at="2023-08-30T19:46:34 IST" duration-ms="11" status="PASS">
+        </test-method> <!-- Approve_transactions_branch_exchange_history_Verify_In_BonusApproval -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:smoke_Suite.ALC_4363@928763c]" started-at="2023-09-05T18:24:01 IST" name="afterMethod" finished-at="2023-09-05T18:24:01 IST" duration-ms="9" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=member_Branch1_Transaction_KG_Bonus_App_Assertion status=SUCCESS method=ALC_4357.member_Branch1_Transaction_KG_Bonus_App_Assertion()[pri:0, instance:smoke_Suite.ALC_4357@43015c69] output={null}]]]>
+                <![CDATA[[TestResult name=Approve_transactions_branch_exchange_history_Verify_In_BonusApproval status=SUCCESS method=ALC_4363.Approve_transactions_branch_exchange_history_Verify_In_BonusApproval()[pri:0, instance:smoke_Suite.ALC_4363@928763c] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method signature="member_Branch1_Transaction_KG_Bonus_Alchmey_Assertion()[pri:1, instance:smoke_Suite.ALC_4357@43015c69]" started-at="2023-08-30T19:46:34 IST" name="member_Branch1_Transaction_KG_Bonus_Alchmey_Assertion" description="1.Check Branch Details if KG Recycled, Members Registered and Active members count are correct. | 2. In branch 1 exchange history, check, Member photo, material name, material amount, money amount , total and bonus amount and associated bonus name. | 3.Check in Bonus search Area, KG promised KG delivered, and pending KG. | 4.Check HDPE and PET KG count in Bonus Summary. Also check bonus progress values. | 5. Check if the start bonus is there for the first branch in  Bonus Approval and Assert Total Bonus/Needing Approval" finished-at="2023-08-30T19:50:27 IST" duration-ms="233014" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- member_Branch1_Transaction_KG_Bonus_Alchmey_Assertion -->
-        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:smoke_Suite.ALC_4357@43015c69]" started-at="2023-08-30T19:50:27 IST" name="afterMethod" finished-at="2023-08-30T19:50:27 IST" duration-ms="7" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=member_Branch1_Transaction_KG_Bonus_Alchmey_Assertion status=SUCCESS method=ALC_4357.member_Branch1_Transaction_KG_Bonus_Alchmey_Assertion()[pri:1, instance:smoke_Suite.ALC_4357@43015c69] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method signature="Branch1_Branch2_Transaction_App_Assertions()[pri:2, instance:smoke_Suite.ALC_4357@43015c69]" started-at="2023-08-30T19:50:27 IST" name="Branch1_Branch2_Transaction_App_Assertions" description="Do Transaction between Branch 1 and Branch 2 and Verify Bonus and Kg Transferred" finished-at="2023-08-30T19:51:34 IST" duration-ms="66687" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Branch1_Branch2_Transaction_App_Assertions -->
-        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:smoke_Suite.ALC_4357@43015c69]" started-at="2023-08-30T19:51:34 IST" name="afterMethod" finished-at="2023-08-30T19:51:34 IST" duration-ms="5" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=Branch1_Branch2_Transaction_App_Assertions status=SUCCESS method=ALC_4357.Branch1_Branch2_Transaction_App_Assertions()[pri:2, instance:smoke_Suite.ALC_4357@43015c69] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method signature="Branch1_Branch3_Transaction()[pri:3, instance:smoke_Suite.ALC_4357@43015c69]" started-at="2023-08-30T19:51:34 IST" name="Branch1_Branch3_Transaction" description="Do Transaction between Branch 1 and Branch 3 and Verify Bonus and Kg Transferred" finished-at="2023-08-30T19:52:42 IST" duration-ms="67975" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Branch1_Branch3_Transaction -->
-        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:smoke_Suite.ALC_4357@43015c69]" started-at="2023-08-30T19:52:42 IST" name="afterMethod" finished-at="2023-08-30T19:52:42 IST" duration-ms="13" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=Branch1_Branch3_Transaction status=SUCCESS method=ALC_4357.Branch1_Branch3_Transaction()[pri:3, instance:smoke_Suite.ALC_4357@43015c69] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method signature="Branch2_Processor_Transaction()[pri:4, instance:smoke_Suite.ALC_4357@43015c69]" started-at="2023-08-30T19:52:42 IST" name="Branch2_Processor_Transaction" description="Do Transaction between Branch 2 and Processor and Verify Bonus and Kg Transferred" finished-at="2023-08-30T19:53:56 IST" duration-ms="73691" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Branch2_Processor_Transaction -->
-        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:smoke_Suite.ALC_4357@43015c69]" started-at="2023-08-30T19:53:56 IST" name="afterMethod" finished-at="2023-08-30T19:53:56 IST" duration-ms="11" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=Branch2_Processor_Transaction status=SUCCESS method=ALC_4357.Branch2_Processor_Transaction()[pri:4, instance:smoke_Suite.ALC_4357@43015c69] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method signature="Branch3_Processor_Transaction()[pri:5, instance:smoke_Suite.ALC_4357@43015c69]" started-at="2023-08-30T19:53:56 IST" name="Branch3_Processor_Transaction" description="Do Transaction between Branch 3 and Processor and Verify Bonus and Kg Transferred" finished-at="2023-08-30T19:55:09 IST" duration-ms="72743" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Branch3_Processor_Transaction -->
-        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:smoke_Suite.ALC_4357@43015c69]" started-at="2023-08-30T19:55:09 IST" name="afterMethod" finished-at="2023-08-30T19:55:09 IST" duration-ms="4" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=Branch3_Processor_Transaction status=SUCCESS method=ALC_4357.Branch3_Processor_Transaction()[pri:5, instance:smoke_Suite.ALC_4357@43015c69] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method signature="Verify_Bonus_Branch1()[pri:6, instance:smoke_Suite.ALC_4357@43015c69]" started-at="2023-08-30T19:55:09 IST" name="Verify_Bonus_Branch1" description="Assert Branch Tags Values in Summary in Branch1. | Check approve transaction from Branch 1. | Toggle all required, Verify Values and validate all gets approved." finished-at="2023-08-30T19:57:31 IST" duration-ms="142657" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Verify_Bonus_Branch1 -->
-        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:smoke_Suite.ALC_4357@43015c69]" started-at="2023-08-30T19:57:31 IST" name="afterMethod" finished-at="2023-08-30T19:57:31 IST" duration-ms="8" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=Verify_Bonus_Branch1 status=SUCCESS method=ALC_4357.Verify_Bonus_Branch1()[pri:6, instance:smoke_Suite.ALC_4357@43015c69] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method signature="Verify_Bonus_Branch2()[pri:7, instance:smoke_Suite.ALC_4357@43015c69]" started-at="2023-08-30T19:57:31 IST" name="Verify_Bonus_Branch2" description="Assert Branch Tags Values in Summary in Branch2 | .Check approve transaction from Branch 2. | Toggle all required, Verify Values and validate all gets approved." finished-at="2023-08-30T19:59:32 IST" duration-ms="120334" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Verify_Bonus_Branch2 -->
-        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:smoke_Suite.ALC_4357@43015c69]" started-at="2023-08-30T19:59:32 IST" name="afterMethod" finished-at="2023-08-30T19:59:32 IST" duration-ms="8" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=Verify_Bonus_Branch2 status=SUCCESS method=ALC_4357.Verify_Bonus_Branch2()[pri:7, instance:smoke_Suite.ALC_4357@43015c69] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method signature="Verify_Bonus_Branch3()[pri:8, instance:smoke_Suite.ALC_4357@43015c69]" started-at="2023-08-30T19:59:32 IST" name="Verify_Bonus_Branch3" description="Assert Branch Tags Values in Summary in Branch3. | Check approve transaction from Branch 3. | Toggle all required, Verify Vallues and validate all gets approved." finished-at="2023-08-30T20:01:26 IST" duration-ms="114624" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Verify_Bonus_Branch3 -->
-        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:smoke_Suite.ALC_4357@43015c69]" started-at="2023-08-30T20:01:26 IST" name="afterMethod" finished-at="2023-08-30T20:01:26 IST" duration-ms="3" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=Verify_Bonus_Branch3 status=SUCCESS method=ALC_4357.Verify_Bonus_Branch3()[pri:8, instance:smoke_Suite.ALC_4357@43015c69] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method signature="Verify_Bonus_Processor()[pri:9, instance:smoke_Suite.ALC_4357@43015c69]" started-at="2023-08-30T20:01:26 IST" name="Verify_Bonus_Processor" description="Verify details of transaction from Processor and validate all gets approved in processor Exchange History." finished-at="2023-08-30T20:03:00 IST" duration-ms="93331" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Verify_Bonus_Processor -->
-        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:smoke_Suite.ALC_4357@43015c69]" started-at="2023-08-30T20:03:00 IST" name="afterMethod" finished-at="2023-08-30T20:03:00 IST" duration-ms="6" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=Verify_Bonus_Processor status=SUCCESS method=ALC_4357.Verify_Bonus_Processor()[pri:9, instance:smoke_Suite.ALC_4357@43015c69] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method signature="Plastic_Chain_Before_Approval()[pri:10, instance:smoke_Suite.ALC_4357@43015c69]" started-at="2023-08-30T20:03:00 IST" name="Plastic_Chain_Before_Approval" description="Check for plastic chain in the Bonus Order.Verify if it is all in Orange Color as they are pending. Also check Chain is in correct Order" finished-at="2023-08-30T20:04:45 IST" duration-ms="105052" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Plastic_Chain_Before_Approval -->
-        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:smoke_Suite.ALC_4357@43015c69]" started-at="2023-08-30T20:04:45 IST" name="afterMethod" finished-at="2023-08-30T20:04:45 IST" duration-ms="2" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=Plastic_Chain_Before_Approval status=SUCCESS method=ALC_4357.Plastic_Chain_Before_Approval()[pri:10, instance:smoke_Suite.ALC_4357@43015c69] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method signature="VerifyBonusOrderRecieptBranchAssertions()[pri:11, instance:smoke_Suite.ALC_4357@43015c69]" started-at="2023-08-30T20:04:45 IST" name="VerifyBonusOrderRecieptBranchAssertions" description="In Bonus Approval Check for receipts | qty bonus values from Audit trail | Verify Total Weight/ Bonus in Bonus Approval Page" finished-at="2023-08-30T20:08:06 IST" duration-ms="200948" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- VerifyBonusOrderRecieptBranchAssertions -->
-        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:smoke_Suite.ALC_4357@43015c69]" started-at="2023-08-30T20:08:06 IST" name="afterMethod" finished-at="2023-08-30T20:08:06 IST" duration-ms="4" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=VerifyBonusOrderRecieptBranchAssertions status=SUCCESS method=ALC_4357.VerifyBonusOrderRecieptBranchAssertions()[pri:11, instance:smoke_Suite.ALC_4357@43015c69] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method signature="VerifyBonusOrderBranchValueAssertions()[pri:12, instance:smoke_Suite.ALC_4357@43015c69]" started-at="2023-08-30T20:08:06 IST" name="VerifyBonusOrderBranchValueAssertions" description="Verify in Bonus Approval and Assert 1.&#039;Total Bonus&#039;/&#039;Needing Approval&#039; | 2. Assert &#039;Audit Trail&#039; under which it will Assert all the values in &#039;Buy/Sell Transactions&#039; of all the Branches and Processor" finished-at="2023-08-30T20:11:08 IST" duration-ms="181730" status="FAIL">
-          <exception class="org.openqa.selenium.TimeoutException">
-            <message>
-              <![CDATA[Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: //div[text()=" Total Bonus "]' (tried for 30 second(s) with 500 milliseconds interval)]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: //div[text()=" Total Bonus "]' (tried for 30 second(s) with 500 milliseconds interval)
-at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
-at alchemy_Pages.Bonus.processor1ValueVerification(Bonus.java:922)
-at smoke_Suite.ALC_4357.VerifyBonusOrderBranchValueAssertions(ALC_4357.java:164)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:848)
-at org.testng.TestRunner.run(TestRunner.java:621)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
-at org.testng.SuiteRunner.run(SuiteRunner.java:336)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
-at org.testng.TestNG.runSuites(TestNG.java:1114)
-at org.testng.TestNG.run(TestNG.java:1082)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[text()=" Total Bonus "]"}
-  (Session info: chrome=116.0.5845.140)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.11.0', revision: '040bc5406b'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [f4b2e19f83e056265aa433312f202aa9, findElement {using=xpath, value=//div[text()=" Total Bonus "]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.140, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\Fleek\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59820}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59820/devtoo..., se:cdpVersion: 116.0.5845.140, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: f4b2e19f83e056265aa433312f202aa9
-at jdk.internal.reflect.GeneratedConstructorAccessor22.newInstance(Unknown Source)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
-at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at jdk.proxy2/jdk.proxy2.$Proxy54.isDisplayed(Unknown Source)
-at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:304)
-at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:37)
-at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
-at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:205)
-... 30 more
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- VerifyBonusOrderBranchValueAssertions -->
-        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:smoke_Suite.ALC_4357@43015c69]" started-at="2023-08-30T20:11:08 IST" name="afterMethod" finished-at="2023-08-30T20:11:09 IST" duration-ms="1148" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=VerifyBonusOrderBranchValueAssertions status=FAILURE method=ALC_4357.VerifyBonusOrderBranchValueAssertions()[pri:12, instance:smoke_Suite.ALC_4357@43015c69] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method signature="BonusTransferedCheck()[pri:13, instance:smoke_Suite.ALC_4357@43015c69]" started-at="2023-08-30T20:11:09 IST" name="BonusTransferedCheck" description="Check for transferred label in All the Branch exchange history." finished-at="2023-08-30T20:13:52 IST" duration-ms="162550" status="FAIL">
-          <exception class="org.openqa.selenium.NoSuchElementException">
-            <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//span[text()='(transferred)']"}
-  (Session info: chrome=116.0.5845.140)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.11.0', revision: '040bc5406b'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [f4b2e19f83e056265aa433312f202aa9, findElement {using=xpath, value=//span[text()='(transferred)']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.140, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\Fleek\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59820}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59820/devtoo..., se:cdpVersion: 116.0.5845.140, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: f4b2e19f83e056265aa433312f202aa9]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[text()='(transferred)']"}
-  (Session info: chrome=116.0.5845.140)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.11.0', revision: '040bc5406b'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [f4b2e19f83e056265aa433312f202aa9, findElement {using=xpath, value=//span[text()='(transferred)']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.140, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\Fleek\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59820}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59820/devtoo..., se:cdpVersion: 116.0.5845.140, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: f4b2e19f83e056265aa433312f202aa9
-at jdk.internal.reflect.GeneratedConstructorAccessor22.newInstance(Unknown Source)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
-at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at jdk.proxy2/jdk.proxy2.$Proxy54.isDisplayed(Unknown Source)
-at alchemy_Pages.Branches.verifyBonusTransfered(Branches.java:524)
-at smoke_Suite.ALC_4357.BonusTransferedCheck(ALC_4357.java:172)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:848)
-at org.testng.TestRunner.run(TestRunner.java:621)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
-at org.testng.SuiteRunner.run(SuiteRunner.java:336)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
-at org.testng.TestNG.runSuites(TestNG.java:1114)
-at org.testng.TestNG.run(TestNG.java:1082)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- BonusTransferedCheck -->
-        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:smoke_Suite.ALC_4357@43015c69]" started-at="2023-08-30T20:13:52 IST" name="afterMethod" finished-at="2023-08-30T20:13:53 IST" duration-ms="1053" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=BonusTransferedCheck status=FAILURE method=ALC_4357.BonusTransferedCheck()[pri:13, instance:smoke_Suite.ALC_4357@43015c69] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method signature="Plastic_Chain_After_Approval()[pri:14, instance:smoke_Suite.ALC_4357@43015c69]" started-at="2023-08-30T20:13:53 IST" name="Plastic_Chain_After_Approval" description="Verified Check chain turned to green and is in order." finished-at="2023-08-30T20:15:31 IST" duration-ms="98030" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Plastic_Chain_After_Approval -->
-        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:smoke_Suite.ALC_4357@43015c69]" started-at="2023-08-30T20:15:31 IST" name="afterMethod" finished-at="2023-08-30T20:15:31 IST" duration-ms="5" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=Plastic_Chain_After_Approval status=SUCCESS method=ALC_4357.Plastic_Chain_After_Approval()[pri:14, instance:smoke_Suite.ALC_4357@43015c69] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method signature="checkMemberBonusTransfered()[pri:15, instance:smoke_Suite.ALC_4357@43015c69]" started-at="2023-08-30T20:15:31 IST" name="checkMemberBonusTransfered" description="Check member bonus amount is accurate in Plastic Bank App." finished-at="2023-08-30T20:17:12 IST" duration-ms="100840" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- checkMemberBonusTransfered -->
-        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:smoke_Suite.ALC_4357@43015c69]" started-at="2023-08-30T20:17:12 IST" name="afterMethod" finished-at="2023-08-30T20:17:12 IST" duration-ms="6" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=checkMemberBonusTransfered status=SUCCESS method=ALC_4357.checkMemberBonusTransfered()[pri:15, instance:smoke_Suite.ALC_4357@43015c69] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:smoke_Suite.ALC_4357@43015c69]" started-at="2023-08-30T20:17:12 IST" name="teardown" finished-at="2023-08-30T20:17:14 IST" duration-ms="1950" status="PASS">
+        <test-method is-config="true" signature="teardown()[pri:0, instance:smoke_Suite.ALC_4363@928763c]" started-at="2023-09-05T18:24:01 IST" name="teardown" finished-at="2023-09-05T18:24:02 IST" duration-ms="1496" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-      </class> <!-- smoke_Suite.ALC_4357 -->
+      </class> <!-- smoke_Suite.ALC_4363 -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

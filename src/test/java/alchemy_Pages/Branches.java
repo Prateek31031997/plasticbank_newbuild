@@ -528,6 +528,7 @@ public void verifyBonusTransfered(String pNum) throws InterruptedException {
 		    Allure.addAttachment("Screenshot1", new ByteArrayInputStream(screenshot1));
 		    Thread.sleep(3000);
 		    transaction.click();
+		    Thread.sleep(2000);
 		}
 	}
 
@@ -578,6 +579,7 @@ public void verifyBonusInBranchExcHistory(String pNum) throws InterruptedExcepti
 		    Allure.addAttachment("Screenshot1", new ByteArrayInputStream(screenshot1));
 		    Thread.sleep(3000);
 		    transaction.click();
+		    Thread.sleep(2000);
 		}
 }
 }

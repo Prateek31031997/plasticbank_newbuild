@@ -3,21 +3,19 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="smoke_Suite.ALC_4357">
+      <class name="smoke_Suite.ALC_4363">
         <methods>
-          <include name="generateRandomBranchMemberNumber"/>
           <include name="generateRandomNumber"/>
-          <include name="dataCreation"/>
-          <include name="VerifyBonusOrderBranchValueAssertions"/>
-          <include name="setup"/>
-          <include name="BonusTransferedCheck"/>
+          <include name="generateRandomBranchMemberNumber"/>
+          <include name="Approve_transactions_branch_exchange_history_Verify_In_BonusApproval"/>
           <include name="afterMethod"/>
+          <include name="setup"/>
           <include name="generateRandomLastName"/>
-          <include name="generateBranchMemberName"/>
           <include name="teardown"/>
+          <include name="generateBranchMemberName"/>
           <include name="generateBranchName"/>
         </methods>
-      </class> <!-- smoke_Suite.ALC_4357 -->
+      </class> <!-- smoke_Suite.ALC_4363 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
