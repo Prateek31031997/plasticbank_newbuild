@@ -10,8 +10,6 @@ import java.util.ArrayList;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import alchemy_Pages.Stores;
-
 public class Data extends BaseClass{
 	
 	public ArrayList<String> values=new ArrayList<String>();
@@ -54,6 +52,13 @@ public class Data extends BaseClass{
 	  	public static String processor_Name4359;
 	  	public static String processor_Number4359;
 	  	public static String bonusName4359;
+	  	
+	  	 public static String member1_Number380;
+		 public static String member2_Number380;
+		 public static String member1_Name380;
+		 public static String member2_Name380;
+
+	    
 	  
 	  
 	public void runNewman() throws IOException {
@@ -295,10 +300,12 @@ public class Data extends BaseClass{
             e.printStackTrace();
         
         }
-          Stores.member1_Name380 = values380.get(0); 
-          Stores.member1_Number380=values380.get(1);
-          Stores.member2_Name380 = values380.get(2); 
-          Stores.member2_Number380=values380.get(3);
+          member1_Name380 = values380.get(0); 
+          member1_Number380=values380.get(1);
+          member2_Name380 = values380.get(2); 
+          member2_Number380=values380.get(3);
+          
+          
 	}
 	public void runNewman1711() throws IOException {
 	    try {

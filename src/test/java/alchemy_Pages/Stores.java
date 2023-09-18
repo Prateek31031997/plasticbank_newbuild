@@ -1,7 +1,6 @@
 package alchemy_Pages;
 
 import Utilities.BaseClass;
-import Utilities.Data;
 import io.qameta.allure.Allure;
 
 import org.openqa.selenium.OutputType;
@@ -27,13 +26,8 @@ public class Stores extends BaseClass {
         PageFactory.initElements(alcDriver, this);
     }
 	
-	 public static String member1_Number380=Data.values380.get(1);
-	 public static String member2_Number380=Data.values380.get(2);
-	 public static String member1_Name380=Data.values380.get(0);
-	 public static String member2_Name380=Data.values380.get(3);
-
-    
-	public String name = " GKStore ";
+	 
+	//public String name = " GKStore ";
 	
     @FindBy(xpath = "//div[@class='body']/div/div/div[text()=' Stores ']")
     private WebElement stores_tab;

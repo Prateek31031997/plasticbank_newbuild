@@ -17,7 +17,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import Utilities.BaseClass;
-import alchemy_Pages.Stores;
+import Utilities.Data;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
@@ -249,7 +249,7 @@ public PB_Register_Store(AndroidDriver pBriver) {
 		PB_Menu_Options pbMenu= new PB_Menu_Options(pbDriver);
 		PB_LoginPage pblogin = new PB_LoginPage(pbDriver);
 		pblogin.permission();
-		pblogin.login(Stores.member2_Number380, password);
+		pblogin.login(Data.member2_Number380, password);
 		Thread.sleep(1000);
 		pbMenu.clickCreateBusness();
 		System.out.println(store_name380);
@@ -304,7 +304,7 @@ public PB_Register_Store(AndroidDriver pBriver) {
         pbDriver.perform(Arrays.asList(scrollShutter1));
         
         wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(memberSearch)));
-		memberSearch.sendKeys(Stores.member1_Number380);
+		memberSearch.sendKeys(Data.member1_Number380);
 		Thread.sleep(2000);
 		searchButton.click();
 		
@@ -364,7 +364,7 @@ public PB_Register_Store(AndroidDriver pBriver) {
         Thread.sleep(3000);
         
 		pblogin.logout();
-		pblogin.login(Stores.member1_Number380, password);
+		pblogin.login(Data.member1_Number380, password);
 		Thread.sleep(2000);	
         
 	}
