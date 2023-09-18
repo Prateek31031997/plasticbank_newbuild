@@ -2,11 +2,15 @@ package smoke_Suite;
 
 import Utilities.ScreenshotListener;
 import io.qameta.allure.testng.AllureTestNg;
+
+import java.io.IOException;
+
 import org.apache.commons.lang3.RandomStringUtils;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import Utilities.BaseClass;
+import Utilities.Data;
 import alchemy_Pages.AlchemyLoginPage;
 import alchemy_Pages.Stores;
 import io.qameta.allure.Description;
@@ -16,21 +20,23 @@ import plastic_Bank_Pages.PB_Register_Store;
 
 @Listeners({AllureTestNg.class, ScreenshotListener.class})
 public class ALC_4352  extends BaseClass {
-	String loginNumber = "+63789654";
-	String loginPassword52 = "password1";
+	
 	String business_name ="Buss"+RandomStringUtils.randomAlphabetic(5);
 	public String adminphoneNumber="+919560071590";
 	public String adminpassword="123456a";
 
 	@Test(priority=0, description = "New store account should be successfully created")
 	@Description("Create a Store and add Item")
-	public void createNewStore()throws InterruptedException {
+	public void createNewStore()throws InterruptedException, IOException {
+		
+		Data d1= new Data();
+		d1.createMember();
 		System.out.println("Create a Store and add Item\");");
 		PB_Menu_Options pbMenu= new PB_Menu_Options(pbDriver);
 		PB_LoginPage pblogin = new PB_LoginPage(pbDriver);
 		PB_Register_Store pbStore = new PB_Register_Store(pbDriver);
 		pblogin.permission();
-		pblogin.login(loginNumber, loginPassword52);
+		pblogin.login(Data.member_Number_4352, password);
 		Thread.sleep(1000);
 		pbMenu.clickCreateBusness();
 		pbStore.fillBusnessData(business_name);
@@ -52,14 +58,11 @@ public class ALC_4352  extends BaseClass {
 	@Description("Verify edited details in Alchmey")
 	public void verifyNewStore()throws InterruptedException {
 
-		System.out.println();
 		Stores webStore = new Stores(alcDriver);
 		webStore.verifyCreatedStore(business_name);
 		webStore.editStore_Details("Dheradun");
 
 	}
-
-
-
+	
 }
 

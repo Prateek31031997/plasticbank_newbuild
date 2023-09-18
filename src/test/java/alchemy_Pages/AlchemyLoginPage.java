@@ -1,9 +1,14 @@
 package alchemy_Pages;
 
+import java.time.Duration;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 import io.qameta.allure.Step;
 
 
@@ -46,7 +51,8 @@ public WebElement resendCode ;
 
 @FindBy(xpath="//button[normalize-space()='Log in']")
 public WebElement logInButton ;
-
+@FindBy(xpath="//div[@class='body']/div/div/div[text()=' Branches ']")
+private WebElement branches_TAB;
 
 public void enterDetails(String adminphoneNumber, String adminpassword) {
 	
@@ -61,9 +67,10 @@ public void twoFactorAuth() throws InterruptedException {
 	four.sendKeys("8");
 	five.sendKeys("9");
 	six.sendKeys("9");
-	Thread.sleep(3000);
-	
-	}
+	WebDriverWait wait = new WebDriverWait(pbDriver,Duration.ofSeconds(10));
+    wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(branches_TAB)));
+    branches_TAB.isDisplayed();
+}
 @Step("Login on app")
 public void alc_adminlogin(String adminphoneNumber, String adminpassword) throws InterruptedException {
 	enterDetails(adminphoneNumber, adminpassword);

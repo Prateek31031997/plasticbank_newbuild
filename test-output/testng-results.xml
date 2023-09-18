@@ -2,55 +2,16 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-09-05T18:15:20 IST" name="Default suite" finished-at="2023-09-05T18:24:02 IST" duration-ms="522488">
+  <suite started-at="2023-09-15T18:11:27 IST" name="Default suite" finished-at="2023-09-15T18:12:14 IST" duration-ms="47295">
     <groups>
     </groups>
-    <test started-at="2023-09-05T18:15:20 IST" name="Default test" finished-at="2023-09-05T18:24:02 IST" duration-ms="522488">
-      <class name="smoke_Suite.ALC_4363">
-        <test-method is-config="true" signature="generateBranchMemberName()[pri:0, instance:smoke_Suite.ALC_4363@928763c]" started-at="2023-09-05T18:15:20 IST" name="generateBranchMemberName" finished-at="2023-09-05T18:15:20 IST" duration-ms="14" status="PASS">
+    <test started-at="2023-09-15T18:11:27 IST" name="Default test" finished-at="2023-09-15T18:12:14 IST" duration-ms="47295">
+      <class name="smoke_Suite.ALC_1711">
+        <test-method signature="run1711()[pri:0, instance:smoke_Suite.ALC_1711@4a07d605]" started-at="2023-09-15T18:11:27 IST" name="run1711" finished-at="2023-09-15T18:12:14 IST" duration-ms="47211" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- generateBranchMemberName -->
-        <test-method is-config="true" signature="generateBranchName()[pri:0, instance:smoke_Suite.ALC_4363@928763c]" started-at="2023-09-05T18:15:20 IST" name="generateBranchName" finished-at="2023-09-05T18:15:20 IST" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- generateBranchName -->
-        <test-method is-config="true" signature="generateRandomBranchMemberNumber()[pri:0, instance:smoke_Suite.ALC_4363@928763c]" started-at="2023-09-05T18:15:20 IST" name="generateRandomBranchMemberNumber" finished-at="2023-09-05T18:15:20 IST" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- generateRandomBranchMemberNumber -->
-        <test-method is-config="true" signature="generateRandomLastName()[pri:0, instance:smoke_Suite.ALC_4363@928763c]" started-at="2023-09-05T18:15:20 IST" name="generateRandomLastName" finished-at="2023-09-05T18:15:20 IST" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- generateRandomLastName -->
-        <test-method is-config="true" signature="generateRandomNumber()[pri:0, instance:smoke_Suite.ALC_4363@928763c]" started-at="2023-09-05T18:15:20 IST" name="generateRandomNumber" finished-at="2023-09-05T18:15:20 IST" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- generateRandomNumber -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:smoke_Suite.ALC_4363@928763c]" started-at="2023-09-05T18:15:20 IST" name="setup" finished-at="2023-09-05T18:17:20 IST" duration-ms="119513" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="Approve_transactions_branch_exchange_history_Verify_In_BonusApproval()[pri:0, instance:smoke_Suite.ALC_4363@928763c]" started-at="2023-09-05T18:17:20 IST" name="Approve_transactions_branch_exchange_history_Verify_In_BonusApproval" description="Approve_transactions_branch_exchange_history_Verify_In_BonusApproval" finished-at="2023-09-05T18:24:01 IST" duration-ms="401189" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Approve_transactions_branch_exchange_history_Verify_In_BonusApproval -->
-        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:smoke_Suite.ALC_4363@928763c]" started-at="2023-09-05T18:24:01 IST" name="afterMethod" finished-at="2023-09-05T18:24:01 IST" duration-ms="9" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=Approve_transactions_branch_exchange_history_Verify_In_BonusApproval status=SUCCESS method=ALC_4363.Approve_transactions_branch_exchange_history_Verify_In_BonusApproval()[pri:0, instance:smoke_Suite.ALC_4363@928763c] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:smoke_Suite.ALC_4363@928763c]" started-at="2023-09-05T18:24:01 IST" name="teardown" finished-at="2023-09-05T18:24:02 IST" duration-ms="1496" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- teardown -->
-      </class> <!-- smoke_Suite.ALC_4363 -->
+        </test-method> <!-- run1711 -->
+      </class> <!-- smoke_Suite.ALC_1711 -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

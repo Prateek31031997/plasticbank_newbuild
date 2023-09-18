@@ -25,13 +25,16 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class BaseClass {
 	
 	
-	@BeforeSuite
+	
+		
+	 //@BeforeSuite
 	 public void dataCreation() throws IOException {
 			
-			PostmanNewman pn = new PostmanNewman();
+			Data pn = new Data();
 			pn.runNewman(); 
 			 
 		  }
+
 
 	public static String bonusName;
 	public static String password ="123456a"; 

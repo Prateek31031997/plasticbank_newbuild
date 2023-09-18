@@ -138,6 +138,9 @@ private WebElement popUp_alert;
 	@FindBy(xpath = "//input[@placeholder='Phone']")
 	WebElement phoneSearchBox;
 
+	@FindBy(xpath = "//*[text()='Bonus Eligible']")
+	WebElement bonusEligibleText;
+
 
 
 public void searchAddedMember(String memberName) {
@@ -272,6 +275,11 @@ public void refresh() {
 	private void clickSendTokenTransferBtn(){
 		sendTokenBtn.click();
 	}
+	
+	private void clickBonusEligible() throws InterruptedException {
+		Thread.sleep(2000);
+		bonusEligibleText.click();
+	}
 	private void enterAuthCode(String code) throws InterruptedException {
 		WebDriverWait wait = new WebDriverWait(alcDriver, Duration.ofSeconds(30));
 		wait.until(ExpectedConditions.elementToBeClickable(authCode));
@@ -305,5 +313,22 @@ public void refresh() {
 	    Allure.addAttachment("Screenshot1", new ByteArrayInputStream(screenshot1));
 	    Thread.sleep(2000);
 		clickCloseBtnPopUp();
+	}
+	
+	public void editMemberUncheckBonus(String pNumber) throws InterruptedException {
+		Thread.sleep(2000);
+		members_TAB.click();
+		Thread.sleep(10000);
+		WebDriverWait wait = new WebDriverWait(alcDriver, Duration.ofSeconds(300));
+		wait.until(ExpectedConditions.elementToBeClickable(phone));
+		//phone.click();
+		phone.clear();
+		phone.sendKeys(pNumber);
+		clickSpecificMember();
+		Thread.sleep(3000);
+		wait.until(ExpectedConditions.elementToBeClickable(edit));
+		edit.click();
+		clickBonusEligible();
+		saveButton.click();
 	}
 }

@@ -5,7 +5,7 @@ import java.io.IOException;
 import org.testng.annotations.Test;
 
 import Utilities.BaseClass;
-import Utilities.PostmanNewman;
+import Utilities.Data;
 import alchemy_Pages.AlchemyLoginPage;
 import alchemy_Pages.Bonus;
 import alchemy_Pages.Branches;
@@ -16,7 +16,7 @@ public class ALC_4362 extends BaseClass {
 	@Description("Approve_transactions_In_Bonus_Sell_Buy_Verify_In_BranchExchangeHistory")
 	public void  Approve_transactions_In_Bonus_Sell_Buy_Verify_In_BranchExchangeHistory() throws IOException, InterruptedException {
 		
-		PostmanNewman pn=new PostmanNewman();
+		Data pn=new Data();
 		Branches br = new Branches(alcDriver);
 		Bonus bn =new Bonus(alcDriver);
 		

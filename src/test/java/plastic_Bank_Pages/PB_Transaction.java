@@ -112,6 +112,7 @@ public WebElement processor;
 @AndroidFindBy(uiAutomator="new UiSelector().textContains(\"133 = 72\")")
 public WebElement bonusMemberVerify;
 
+
     @AndroidFindBy(uiAutomator="new UiSelector().text(\"BONUS\")")
     public WebElement bonusText;
     @AndroidFindBy(uiAutomator="new UiSelector().text(\"OK\")")
@@ -127,6 +128,22 @@ public WebElement bonusMemberVerify;
     @AndroidFindBy(uiAutomator = "new UiSelector().text(\"Direct Token Transfer\")")
     public WebElement directTokenTransferText;
 
+    @AndroidFindBy(uiAutomator="new UiSelector().text(\"Logout\")")
+    public WebElement logout;
+    @AndroidFindBy(uiAutomator = "new UiSelector().textContains(\"Loading\")")
+    public WebElement loading;
+    @AndroidFindBy(uiAutomator="new UiSelector().text(\"DONATION\")")
+    public WebElement donation;
+    @AndroidFindBy(uiAutomator="new UiSelector().text(\"arrow round-forward\")")
+    public WebElement donnationIn;
+    @AndroidFindBy(uiAutomator="new UiSelector().text(\"arrow round-backward\")")
+    public WebElement donnationOut;
+    @AndroidFindBy(uiAutomator="new UiSelector().text(\"Donation Accepted\")")
+    public WebElement donationaccepted;
+    @AndroidFindBy(uiAutomator = "new UiSelector().textContains(\"Fleek\")")
+    public WebElement historyExpense;
+    @AndroidFindBy(uiAutomator = "new UiSelector().text(\"0\")")
+    WebElement processorBonus;
 
  
 WebDriverWait wait = new WebDriverWait(pbDriver,Duration.ofSeconds(10));
@@ -901,6 +918,197 @@ public void CheckMemberBonus() throws InterruptedException {
         Thread.sleep(2000);
         return directTokenTransferText.isDisplayed();
 
+    }
+    public void memberToBranchDonation(String number) {
+    	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(searchOutline)));
+    	search.sendKeys(number);
+    	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(searchOutline)));
+    	searchOutline.click();
+    	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(searchResult)));
+    	searchResult.click();
+    	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(checkmark.get(0))));
+        checkmark.get(0).click();
+        wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(donation)));
+    	donation.click();
+    	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(requiredQuantity)));
+    	requiredQuantity.sendKeys("100");
+    	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(checkmark.get(1))));
+        checkmark.get(1).click();
+        wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(checkmark.get(0))));
+        checkmark.get(0).click();
+        wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(checkmark.get(0))));
+        checkmark.get(0).click();
+     
+
+    	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(ok)));
+        assertTrue(donationaccepted.isDisplayed());
+        TakesScreenshot ts2 = (TakesScreenshot) pbDriver;
+        byte[] screenshot2 = ts2.getScreenshotAs(OutputType.BYTES);
+        Allure.addAttachment("donation accepted screenshot", new ByteArrayInputStream(screenshot2));
+    	ok.click();
+    	wait.until(ExpectedConditions.refreshed(ExpectedConditions.invisibilityOf(loading)));
+    	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(menu)));
+    	menu.click();
+    	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(logout)));
+    	logout.click();
+    }
+    
+    public void branchToProcessorDonation(String number) {
+    	wait.until(ExpectedConditions.refreshed(ExpectedConditions.invisibilityOf(loading)));
+    	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(menu)));
+    	  menu.click();
+    	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(processor)));
+    	  processor.click();
+    	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(searchOutline)));
+    	search.sendKeys(number);
+    	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(searchOutline)));
+    	searchOutline.click();
+    	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(searchResult)));
+    	searchResult.click();
+    	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(checkmark.get(0))));
+        checkmark.get(0).click();
+        wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(donation)));
+    	donation.click();
+    	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(requiredQuantity)));
+    	requiredQuantity.sendKeys("100");
+    	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(checkmark.get(1))));
+        checkmark.get(1).click();
+        wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(checkmark.get(0))));
+        checkmark.get(0).click();
+        wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(checkmark.get(0))));
+        checkmark.get(0).click();
+        wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(ok)));
+        assertTrue(donationaccepted.isDisplayed());
+        TakesScreenshot ts2 = (TakesScreenshot) pbDriver;
+        byte[] screenshot2 = ts2.getScreenshotAs(OutputType.BYTES);
+        Allure.addAttachment("donation accepted screenshot", new ByteArrayInputStream(screenshot2));
+    	ok.click();
+    	wait.until(ExpectedConditions.refreshed(ExpectedConditions.invisibilityOf(loading)));
+    	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(menu)));
+    	menu.click();
+    	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(logout)));
+    	logout.click();
+    }
+    public void verifyNoBonusForDonation(){
+    	wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(searchOutline)));
+        PointerInput finger1 = new PointerInput(PointerInput.Kind.TOUCH, "finger1");
+        Sequence scrolla = new Sequence(finger1, 1);
+        scrolla.addAction(finger1.createPointerMove(Duration.ofMillis(0),
+                PointerInput.Origin.viewport(),400 ,2122));
+        scrolla.addAction(finger1.createPointerDown(0));
+        scrolla.addAction(finger1.createPointerMove(Duration.ofMillis(100),
+                PointerInput.Origin.viewport(),400 ,2122));
+        scrolla.addAction(finger1.createPointerUp(0));
+        pbDriver.perform(Arrays.asList(scrolla));
+        wait.until(ExpectedConditions.refreshed(ExpectedConditions.invisibilityOf(loading)));
+         assertTrue(noBonus.isDisplayed());
+         
+         TakesScreenshot ts2 = (TakesScreenshot) pbDriver;
+         byte[] screenshot2 = ts2.getScreenshotAs(OutputType.BYTES);
+         Allure.addAttachment("No bonus screenshot", new ByteArrayInputStream(screenshot2));
+    }
+    
+    public boolean transactionBranchStopBonus4359(String number, String load) throws InterruptedException {
+
+        wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(searchOutline)));
+        search.sendKeys(number);
+        wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(searchOutline)));
+        searchOutline.click();
+        wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(searchResult)));
+        searchResult.click();
+        Thread.sleep(5000);
+        wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(checkmark.get(0))));
+        checkmark.get(0).click();
+        boolean bounus_text = bonusText.isDisplayed();
+        wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(hdpeMixed)));
+        hdpeMixed.click();
+
+        wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(requiredQuantity)));
+        requiredQuantity.sendKeys(load);
+        wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(checkmark.get(1))));
+        checkmark.get(1).click();
+        wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(checkmark.get(0))));
+        checkmark.get(0).click();
+
+        wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(checkmark.get(0))));
+        checkmark.get(0).click();
+        Thread.sleep(2000);
+        checkmark.get(0).click();
+        wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(okButton)));
+        okButton.click();
+        return bounus_text;
+
+    }
+    public boolean verifyHistoryStopBonusReward4359() throws InterruptedException {
+
+        Thread.sleep(5000);
+        PointerInput finger1 = new PointerInput(PointerInput.Kind.TOUCH, "finger1");
+        Sequence scrolla = new Sequence(finger1, 1);
+        scrolla.addAction(finger1.createPointerMove(Duration.ofMillis(0),
+                PointerInput.Origin.viewport(),400 ,2060));
+        scrolla.addAction(finger1.createPointerDown(0));
+        scrolla.addAction(finger1.createPointerMove(Duration.ofMillis(100),
+                PointerInput.Origin.viewport(),400 ,2060));
+        scrolla.addAction(finger1.createPointerUp(0));
+        pbDriver.perform(Arrays.asList(scrolla));
+
+        wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(historyButton)));
+        historyButton.click();
+        Thread.sleep(5000);
+        wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(historyExpense)));
+        historyExpense.click();
+        boolean reward_text = false;
+        try {
+            // Code that might throw an exception
+            reward_text = rewardText.isDisplayed();
+            if (reward_text== true) {
+                System.out.println("Element is not visible on the screen.");
+
+            }
+
+        } catch (Exception e) {
+            // Generic catch block to handle any other exceptions
+            System.out.println("Bonus is disabled for new member"+ e);
+
+        }
+        return reward_text;
+    }
+    public void clickProcessor() throws InterruptedException {
+        Thread.sleep(4000);
+        wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(menu)));
+        menu.click();
+        Thread.sleep(2000);
+        wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOf(processor)));
+        processor.click();
+    }
+    public void logout() throws InterruptedException {
+        Thread.sleep(2000);
+        arrowBack.click();
+        Thread.sleep(2000);
+        arrowBack.click();
+        Thread.sleep(5000);
+        menu.click();
+        Thread.sleep(2000);
+        logout.click();
+    }
+    public boolean verifyStopBonusProcessor4359() throws InterruptedException {
+
+        Thread.sleep(5000);
+        PointerInput finger1 = new PointerInput(PointerInput.Kind.TOUCH, "finger1");
+        Sequence scrolla = new Sequence(finger1, 1);
+        scrolla.addAction(finger1.createPointerMove(Duration.ofMillis(0),
+                PointerInput.Origin.viewport(),400 ,2060));
+        scrolla.addAction(finger1.createPointerDown(0));
+        scrolla.addAction(finger1.createPointerMove(Duration.ofMillis(100),
+                PointerInput.Origin.viewport(),400 ,2060));
+        scrolla.addAction(finger1.createPointerUp(0));
+        pbDriver.perform(Arrays.asList(scrolla));
+        Thread.sleep(3000);
+            boolean reward_text = processorBonus.isDisplayed();
+            if (reward_text) {
+                System.out.println("Bonus is 0 in processor transaction.");
+            }
+        return reward_text;
     }
 
 }

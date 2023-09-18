@@ -29,10 +29,10 @@ Execute Test Script:
 
 2.Open Allure Results (follow steps below to generate report)-
 
-2.1	After Execution refresh Package Explorer and copy the path of allure-results in package Explorer
+	2.1 After Execution refresh Package Explorer
+	2.2 Copy the path of allure-results in package Explorer
 
-2.2	Open cmd write command 
-
-	allure serve <path of allure-results>
+	2.2 Open cmd write command : 
+		allure serve <path of allure-results>
 
 

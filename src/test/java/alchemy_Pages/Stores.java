@@ -1,6 +1,7 @@
 package alchemy_Pages;
 
 import Utilities.BaseClass;
+import Utilities.Data;
 import io.qameta.allure.Allure;
 
 import org.openqa.selenium.OutputType;
@@ -12,24 +13,53 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import static org.testng.Assert.assertEquals;
+
 import java.io.ByteArrayInputStream;
 import java.time.Duration;
 
 
 public class Stores extends BaseClass {
+	
+
 
 	public Stores(WebDriver alcDriver){
         PageFactory.initElements(alcDriver, this);
     }
+	
+	 public static String member1_Number380=Data.values380.get(1);
+	 public static String member2_Number380=Data.values380.get(2);
+	 public static String member1_Name380=Data.values380.get(0);
+	 public static String member2_Name380=Data.values380.get(3);
+
     
 	public String name = " GKStore ";
-    @FindBy(xpath = "//div[@class='body']/div/div/div[text()=' Stores ']") private WebElement stores_tab;
-    @FindBy(xpath = "//datatable//input[@placeholder='Name']") private WebElement name_SearchBox;
-    @FindBy(xpath = "//div[@class='container-fluid']//datatable//table/tbody/tr[1]/td[1]/div/div") private WebElement tableData_FirstRow;
-    @FindBy(xpath = "//div[@role='tabpanel']/div/div[1]/span") private WebElement edit_store;
-    @FindBy(xpath = "//input[@name='city']") private WebElement edit_city;
-    @FindBy(xpath = "//div[contains(@class, 'pb-button') and text()= 'Save ']") private WebElement save_btn;
-
+	
+    @FindBy(xpath = "//div[@class='body']/div/div/div[text()=' Stores ']")
+    private WebElement stores_tab;
+    @FindBy(xpath = "//datatable//input[@placeholder='Name']")
+    private WebElement name_SearchBox;
+    @FindBy(xpath = "//div[@class='container-fluid']//datatable//table/tbody/tr[1]/td[1]/div/div")
+    private WebElement tableData_FirstRow;
+    @FindBy(xpath = "//div[@role='tabpanel']/div/div[1]/span")
+    private WebElement edit_store;
+    @FindBy(xpath = "//input[@name='city']")
+    private WebElement edit_city;
+    @FindBy(xpath = "//div[contains(@class, 'pb-button') and text()= 'Save ']")
+    private WebElement save_btn;
+    @FindBy(xpath = "//input[@id='reqPin']")
+    private WebElement canSeeTokenInWallet;
+    @FindBy(xpath = "//label[text()='Tokens Active']/following::mdl-switch")
+    private WebElement tokenActiveToggle;
+    @FindBy(xpath = "//select[@id='level']/option[text()=' Plastic Bank Operated']")
+    private WebElement levelToPlasticBankOperated;
+    @FindBy(xpath = "//select[@id='level']")
+    private WebElement levelDropDown;
+    @FindBy(xpath = "//loader/div//table")
+    WebElement pageLoader;
+    @FindBy(xpath = "//div[text()='Tokens in Wallet']/following::div[text()][1]")
+    WebElement tokenWalletValue;
+    
 
     public void clickStoreTab(){
         stores_tab.click();
@@ -52,9 +82,9 @@ public class Stores extends BaseClass {
     }
     
     public void clickEditStore() throws InterruptedException {
-       // WebDriverWait wait = new WebDriverWait(alcDriver, Duration.ofSeconds(30));
-       // wait.until(ExpectedConditions.elementToBeClickable(edit_store));
-        Thread.sleep(20000);
+       WebDriverWait wait = new WebDriverWait(alcDriver, Duration.ofSeconds(90));
+       wait.until(ExpectedConditions.invisibilityOf(pageLoader));
+       // Thread.sleep(15000);
         edit_store.click();
     }
 
@@ -95,5 +125,59 @@ public class Stores extends BaseClass {
         Allure.addAttachment("Screenshot1", new ByteArrayInputStream(screenshot1));
         Thread.sleep(2000);
         saveStoreDetails();
+        
     }
+    public void canSeeTokenInWallet() {
+
+    	 canSeeTokenInWallet.click();   	
+    
+    }
+    public void tokenActiveToggle() {
+    	 WebDriverWait wait = new WebDriverWait(alcDriver, Duration.ofSeconds(30));
+    	 wait.until(ExpectedConditions.elementToBeClickable(tokenActiveToggle));
+     	tokenActiveToggle.click();
+    }
+    public void levelDropDown() {
+    	
+     	levelDropDown.click();
+    }
+    public void levelToPlasticBankOperated() {
+    	 WebDriverWait wait = new WebDriverWait(alcDriver, Duration.ofSeconds(30));
+    	 wait.until(ExpectedConditions.elementToBeClickable(levelToPlasticBankOperated));
+     	levelToPlasticBankOperated.click();
+    }
+    
+    public void editStore_ALC_380(String store_name) throws InterruptedException{
+    	
+    	clickStoreTab();
+        search_byName(store_name);
+    	clickCreatedStoreVisble();
+    	clickEditStore();
+    	Thread.sleep(2000);
+    	
+    	
+    	tokenActiveToggle();
+    	canSeeTokenInWallet();
+    	levelDropDown();
+    	levelToPlasticBankOperated();
+    	
+    	Thread.sleep(3000);
+        TakesScreenshot ts1 = (TakesScreenshot) alcDriver;
+        byte[] screenshot1 = ts1.getScreenshotAs(OutputType.BYTES);
+        Allure.addAttachment("Screenshot1", new ByteArrayInputStream(screenshot1));
+        Thread.sleep(2000);
+        saveStoreDetails();
+    		
+    }
+    public void verifyTokenInAlchemy() throws InterruptedException {
+    	
+    	String tokenValue=tokenWalletValue.getText();
+    	Thread.sleep(2000);
+    	TakesScreenshot ts1 = (TakesScreenshot) alcDriver;
+        byte[] screenshot1 = ts1.getScreenshotAs(OutputType.BYTES);
+        Allure.addAttachment("Screenshot1", new ByteArrayInputStream(screenshot1));
+        Thread.sleep(2000);
+    	assertEquals(tokenValue, "9,900");
+    }
+	
 }

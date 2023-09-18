@@ -1,11 +1,14 @@
 package smoke_Suite;
 
 import Utilities.BaseClass;
+import Utilities.Data;
 import Utilities.ScreenshotListener;
 import alchemy_Pages.AlchemyLoginPage;
 import alchemy_Pages.Orders;
 import io.qameta.allure.Description;
 import io.qameta.allure.testng.AllureTestNg;
+
+import java.io.IOException;
 
 import org.testng.Assert;
 import org.testng.annotations.Listeners;
@@ -17,20 +20,25 @@ import plastic_Bank_Pages.PB_Transaction;
 
 @Listeners({AllureTestNg.class, ScreenshotListener.class})
 public class ALC_4365 extends BaseClass {
-    String branchPhoneNumber = "+639822222222";
-    String phoneNumber = "+639811111111";
-    String password = "123456a";
+	
+    public String branchPhoneNumber = Data.branch1_NumberMB;
+    public String phoneNumber = Data.member_NumberMB;
+    public String password = "123456a";
 
 
 	@Test(priority=0, description = "Bonus order should be  stopped")
     @Description("Login on alchemy and create new bonus")
-    public void createNewBonusAndSuspendedBonus() throws InterruptedException {
+    public void createNewBonusAndSuspendedBonus() throws InterruptedException, IOException {
+		
+		Data d2= new Data();
+		d2.createMemberBranch();
+		
         AlchemyLoginPage loginAlchmey=new AlchemyLoginPage(alcDriver);
         loginAlchmey.alc_adminlogin(adminphoneNumber,adminpassword);
 		PB_LoginPage pblogin = new PB_LoginPage(pbDriver);
 		pblogin.permission();
 		Orders alc_orders = new Orders(alcDriver);
-        alc_orders.createBonus("Fleek_Bonus_22_1", "plastic", "10000", "7", "2", "778899", "seventhaugb1");
+        alc_orders.createBonus("Fleek_Bonus_22_1", "plastic", "10000", "7", "2", "778899", Data.branch1_NameMB);
         alc_orders.changeBranchBonusDetails();
         alc_orders.checkOrderStopped("Fleek_Bonus_22_1");
     }

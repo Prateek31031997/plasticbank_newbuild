@@ -1,0 +1,109 @@
+{
+  "id": "535be897-896d-46ef-adb7-1ea4cddb1127",
+  "values": [
+    {
+      "type": "any",
+      "value": "FleekVoyONi",
+      "key": "m1randomUsername"
+    },
+    {
+      "type": "any",
+      "value": "+633232521516",
+      "key": "m1randomNumber"
+    },
+    {
+      "type": "any",
+      "value": "BDE6A919-E3AB-B5A3-5ADF-FB0D6F93DB56",
+      "key": "m1deviceID"
+    },
+    {
+      "type": "any",
+      "value": "691ba900-f5ac-46a0-ad1f-8c190c02d3bb",
+      "key": "m1id"
+    },
+    {
+      "type": "any",
+      "value": "691ba900-f5ac-46a0-ad1f-8c190c02d3bb",
+      "key": "m1entityId"
+    },
+    {
+      "type": "any",
+      "value": "FleekmUHTsj",
+      "key": "b1randomUsername"
+    },
+    {
+      "type": "any",
+      "value": "+635071966752",
+      "key": "b1randomNumber"
+    },
+    {
+      "type": "any",
+      "value": "723FC9A9-029B-EB2A-E014-720578DBBE11",
+      "key": "b1deviceID"
+    },
+    {
+      "type": "any",
+      "value": "2159a2e9-28c1-4a9d-872e-c0592a422aa0",
+      "key": "b1id"
+    },
+    {
+      "type": "any",
+      "value": "2159a2e9-28c1-4a9d-872e-c0592a422aa0",
+      "key": "b1entityId"
+    },
+    {
+      "type": "any",
+      "value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MjU2NTUwMTksInN1YiI6IjIxNTlhMmU5LTI4YzEtNGE5ZC04NzJlLWMwNTkyYTQyMmFhMCJ9.osQANIqG3p7YqScNsd2SyAHfy5ssLs7OmesgFFlA_9yaQypo6Kv-xH7gDwTqJMjNTnnTYcw-Xr0u0qyIkUDiMg",
+      "key": "b1accessToken"
+    },
+    {
+      "type": "any",
+      "value": "brancha_tkD6OHhX",
+      "key": "b1randomBranchName"
+    },
+    {
+      "type": "any",
+      "value": "df30f807-189f-4b3b-b7e1-6158b29dbd38",
+      "key": "b1branchid"
+    },
+    {
+      "type": "any",
+      "value": "Fleeki2PMDM",
+      "key": "p1randomUsername"
+    },
+    {
+      "type": "any",
+      "value": "+639977697552",
+      "key": "p1randomNumber"
+    },
+    {
+      "type": "any",
+      "value": "4CCED726-2C54-9424-7D3D-F76BFF520165",
+      "key": "p1deviceID"
+    },
+    {
+      "type": "any",
+      "value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MjU2NTUwMjUsInN1YiI6IjAyOGZkYmM1LTYwNjEtNGRjZi05N2QwLTZlZTIzNDBlMTkwYSJ9.UEUgr8nHGYsvgJ6Nw1sHFqbYUQKb8HHnyTuyKFK-o58DB3yMUMpushmgonLAlRMHR9y3M4pnWnuII-aEhBf2ng",
+      "key": "p1accessToken"
+    },
+    {
+      "type": "any",
+      "value": "028fdbc5-6061-4dcf-97d0-6ee2340e190a",
+      "key": "p1userId"
+    },
+    {
+      "type": "any",
+      "value": "process_tbVGSmix",
+      "key": "p1randomProcessorName"
+    },
+    {
+      "type": "any",
+      "value": "3caccbd0-9268-4907-86d2-4dc892a7590a",
+      "key": "p1processorid"
+    }
+  ],
+  "name": "environment",
+  "_postman_variable_scope": "environment",
+  "_postman_exported_at": "2023-09-08T06:37:08.450Z",
+  "_postman_exported_using": "Newman/5.3.2"
+}
